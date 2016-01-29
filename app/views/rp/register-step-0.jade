@@ -1,0 +1,12 @@
+// Terms and Conditions
+#panel-0.input-panel.center-aligned(style={display: 'none'})
+    .row
+        h4#titleTermsAndConditions(data-i18n='mgrp-terms-and-conditions-title') Terms and Conditions
+        div.terms-container
+            p#listTermsAndConditions.explanation(data-i18n='mgrp-terms-and-conditions-list') '[List of terms and conditions go here]'
+        div.alert.alert-danger.sizable
+            p#pDisclaimer(data-i18n='mgrp-disclaimer'):  strong Disclaimer: Participation in our trials does not entail the loss of ellegilibilty for economical support
+        div.accept-terms-container
+            input/#cbxTermsAccepted(type='checkbox')
+            label#lblTermsAccepted(data-i18n='mgrp-accept-terms-and-conditions') I have read and accept the terms and conditions
+

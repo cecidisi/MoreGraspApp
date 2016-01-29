@@ -1,0 +1,24 @@
+
+@import "bg-linear-gradient";
+
+@mixin margin($margin) {
+    margin: $margin;
+}
+
+// Center-align a block level element
+
+@mixin center-block() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+@mixin vendor-prefix($name, $argument) {
+    -webkit-#{$name}: #{$argument};
+    -ms-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    -o-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+}

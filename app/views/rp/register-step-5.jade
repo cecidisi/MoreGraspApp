@@ -1,0 +1,17 @@
+// Video
+#panel-5.input-panel.center-aligned(name='video', style={display: 'none'})
+    h4(data-i18n='mgrp-header-video') Pre-Injury Conditions
+    p.explanation(data-i18n="mgrp-header-video-explanation") Please upload a demo video. This will give us a better idea of your condition.
+    p.explanation(data-i18n="mgrp-header-video-guidelines") '[Guidelines go here]'
+    br 
+    
+    #file-uploader
+        #file-drop-zone.ajax-upload-dragdrop
+            div.btn-file-upload
+                span(data-i18n="mgrp-video-upload-btn-select")
+                form#form-video-upload(method="post", action="http://localhost:3000/upload", enctype="multipart/form-data")
+                    input#file-input.btn.btn-primary-mg(type="file", name="files[]", accept="video/*", multiple)
+            label(data-i18n="mgrp-video-upload-drag-and-drop-msg") Drop files here
+            
+    output#file-list:  ul
+  

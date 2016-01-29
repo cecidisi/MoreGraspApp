@@ -1,0 +1,30 @@
+
+// Pre-Injury
+#panel-2.input-panel.center-aligned(name='pre_injury', style={display: 'none'})
+    h4(data-i18n='mgrp-header-pre-injury') Pre-Injury Conditions
+    p.explanation(data-i18n="mgrp-header-pre-injury-explanation") Please indicate if any of the following conditions apply in the present or the past
+    br 
+    // 1st row  
+    .row
+        label.question(for="cbxImplant", data-i18n="mgrp-lbl-metal-implant") Metal Implant in Forearm</label>
+        input/#cbxImplant.cbx-toggle(name='metal_implant', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 2nd row  
+    .row
+        label.question(for="cbxPacemaker", data-i18n="mgrp-lbl-pacemaker") Pacemaker
+        input/#cbxPacemaker.cbx-toggle(name='pacemaker', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 3rd row  
+    .row
+        label.question(for="cbxPump", data-i18n="mgrp-lbl-medication-pump") Medication Pump
+        input/#cbxPump.cbx-toggle(name='medication_pump', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 4th row  
+    .row
+        label.question(for="cbxStroke", data-i18n="mgrp-lbl-stroke") Stroke
+        input/#cbxStroke.cbx-toggle(name='stroke', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 5th row  
+    .row
+        label.question(for="cbxEpilepsy", data-i18n="mgrp-lbl-epilepsy") Epilepsy
+        input/#cbxEpilepsy.cbx-toggle(name='epilepsy', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 6th row  
+    .row
+        label.question(for="cbxLongTermCare", data-i18n="mgrp-lbl-long-term-care") Long-term Care
+        input/#cbxLongTermCare.cbx-toggle(name='long_term_care', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")

@@ -1,0 +1,109 @@
+{
+    "@metadata": {
+        "authors": ["Cecilia di Sciascio"],
+        "last-updated": "2015-12-03",
+        "locale": "en",
+        "copyright": "MoreGrasp"
+    },
+    "mgrp-title": "Registration Platform",
+    "mgrp-nav-home": "Home",
+    "mgrp-nav-register": "Register",
+    "mgrp-nav-faq": "FAQ",
+    "mgrp-btn-go-to-registration": "Go to Registration",
+
+    "mgrp-terms-and-conditions-title": "Terms and Conditions",
+    "mgrp-terms-and-conditions-list": "[List of terms and conditions go here]",
+    "mgrp-disclaimer": "<strong>Disclaimer:</strong> Participation in our trials does not entail the loss of ellegilibilty for economical support",
+    "mgrp-accept-terms-and-conditions": "I have read and accept the terms and conditions",
+
+    "mgrp-header-personal-data": "Personal Data",
+    "mgrp-header-personal-data-short": "Personal Data",
+    "mgrp-lbl-first-name": "First Name",
+    "mgrp-lbl-last-name": "Last Name",
+    "mgrp-lbl-country": "Country",
+    "mgrp-lbl-city": "City",
+    "mgrp-lbl-street": "Street",
+    "mgrp-lbl-number": "Number",
+    "mgrp-lbl-door": "Door",
+    "mgrp-lbl-zip": "ZIP",
+    "mgrp-lbl-email": "Email",
+    "mgrp-lbl-phone": "Phone",
+
+    "mgrp-header-pre-injury": "Pre-Injury Conditions",
+    "mgrp-header-pre-injury-short": "Pre-Injury",
+    "mgrp-header-pre-injury-explanation": "Please indicate if any of the following conditions apply in the present or the past",
+    "mgrp-lbl-metal-implant": "Metal Implant in Forearm",
+    "mgrp-lbl-pacemaker": "Pacemaker",
+    "mgrp-lbl-medication-pump": "Medication Pump",
+    "mgrp-lbl-stroke": "Stroke",
+    "mgrp-lbl-epilepsy": "Epilepsy",
+    "mgrp-lbl-long-term-care": "Long-term Care",
+
+    "mgrp-header-injury": "Injury Details",
+    "mgrp-header-injury-short": "Injury",
+    "mgrp-lbl-date-of-injury": "Date of Injury",
+    "mgrp-lbl-caused-by-accident": "Was the injury caused by an accident?",
+
+    "mgrp-header-abilities": "Current Abilities",
+    "mgrp-header-abilities-short": "Abilities",
+    "mgrp-lbl-hand-to-mouth": "Can you bring your hand to your mouth?",
+    "mgrp-lbl-glass-to-mouth": "Can you bring a glass to your mouth?",
+    "mgrp-lbl-extend wrist": "Can you extend your wrist?",
+    "mgrp-lbl-improve-grasp": "Do you need to imporve grasp function?",
+
+    "mgrp-header-video": "Video",
+    "mgrp-header-video-short": "Video",
+    "mgrp-header-video-explanation": "Please upload a demo video. This will give us a better idea of your condition.",
+    "mgrp-header-video-guidelines": "[Guidelines go here]",
+    "mgrp-video-upload-btn-select": "Select",
+    "mgrp-video-upload-drag-and-drop-msg": "<span><b>Drag &amp; Drop Files</b></span>",
+    "mgrp-video-upload-btn-delete": "Delete",
+
+    "mgrp-header-misc": "Miscellaneous",
+    "mgrp-header-misc-short": "Miscellaneous",
+    "mgrp-misc-q1": "How did you find us?",
+    "mgrp-misc-q1-opt-doctor": "My Doctor told me",
+    "mgrp-misc-q1-opt-caregiver": "A Caregiver told me",
+    "mgrp-misc-q1-opt-relative": "A Relative told me",
+    "mgrp-misc-q1-opt-internet": "On the Internet",
+    "mgrp-misc-q1-opt-tv": "On T.V. or Advertisement",
+    "mgrp-misc-q1-opt-other": "Other",
+    "mgrp-misc-q2": "Who is filling this form?",
+    "mgrp-misc-q2-opt-myself": "Myself",
+    "mgrp-misc-q2-opt-relative": "Relative",
+    "mgrp-misc-q2-opt-caregiver": "Caregiver",
+
+    "mgrp-header-review": "Your registration is complete",
+    "mgrp-header-review-short": "Review",
+    "mgrp-header-review-explanation": "Please review your information carefully and press submit when read",
+
+    "mgrp-submitted-line-1": "Thank you for participating",
+    "mgrp-submitted-line-2": "Your registration has been succesfully submitted",
+    "mgrp-submitted-line-3": "A representative from MoreGrasp will contact you soon",
+
+    "mgrp-toggle-on": "Yes",
+    "mgrp-toggle-off": "No",
+
+    "mgrp-btn-start-registration": "Start Registration",
+    "mgrp-btn-previous": "Previous",
+    "mgrp-btn-continue": "Continue",
+    "mgrp-btn-submit": "Submit",
+
+    "mgrp-faqs-back-up": "Back Up",
+
+    "mgrp-faq-question1": "What is a BCI-controlled FES-orthosis?",
+    "mgrp-faq-answer1": "A spinal cord injury (SCI) interrupts information transfer from the brain to the target muscle. The goal of the MoreGrasp project is to bypass this interruption and to directly improve upper extremity motor functions in SCI persons. This will be achieved by a combination of Functional Electrical Stimulation (FES), a Brain-Computer Interface (BCI) and an orthosis.<br><strong>BCI:</strong> A BCI is based on electroencephalogram (EEG) signals that contain the electrical activity of predefined brain areas (motor cortex). The EEG is recorded non-invasively by electrodes placed on the user’s head surface. The EEG is recorded and processed by a computer in order to obtain an analog or binary control signal. A common control strategy is the imagination of movements (MI).<br><strong>FES-Orthosis:</strong> A modular, adjustable upper- and lower arm orthosis. Via FES, nerves are electrically stimulated and elicit a muscle contraction. The mechanical orthosis supports the desired movements and provides space for additional sensors. <br><br>The MoreGrasp project aims at answering the following questions:<br>• What possibilities emerge in the case of a BCI controlling an FES-orthosis?<br>• What is needed to safely and efficiently use the BCI as a control device?<br>• What are the required properties of the system to increase the independence of SCI individuals?<br>• How well is the system suitable for daily use and which tasks can be performed?<br>",
+
+    "mgrp-faq-question2": "What are the benefits of participating in the study?",
+    "mgrp-faq-answer2": "• By application of FES, it is likely that we will restore a gross but usable function in one hand. Nowadays this cannot be achieved by any other means available. We would like to stress that application of FES will not improve your active hand function when FES is turned off.<br>• During the study, you will be able to voluntarily move your hand by the BCI-controlled FES-orthosis system. This requires a successful training in both FES and BCI.<br>• The BCI does not influence your all day living situation and disability.<br><br>Beyond the direct functional improvements, there are many positive side effects of the use of FES in spinal cord injured patients: <br>Injury-related muscle atrophy can be decreased or even reversed, there is proof of positive effects on blood circulation, the viability of mechanical structures like tendons and joints is preserved and neurogenic pain is reduced.<br>",
+
+    "mgrp-faq-question3": "What can you expect during the study?",
+    "mgrp-faq-answer3": "The maximum study duration is three months. During this time, there will be various tests and trainings in your home and maybe in a clinic. There are two kinds of training: One for the BCI to teach the computer to recognize an imagined movement. The other training is for the FES to increase muscle strength and fatigue resistance so the hand is strong enough to grasp. FES training is performed mostly in your home.<br><br>At first, you will be visited by MoreGrasp study personnel to examine your muscular status and to conduct a first BCI training. Afterwards you will collectively decide on if and how to proceed with the study.<br><br>During the study, there will be neurological and functional examinations. The latter encompass standardized tasks like manipulating objects of all day living. A focus of the MoreGrasp project is to monitor your satisfaction with the technology via standardized questionnaires that will be assessed a few times during your study participation.<br><br>During the first few weeks, you might need about 10 hours per week for the study. After that, your effort is reduced to about 5 hours per week.<br>",
+
+    "mgrp-faq-question4": "What are the risks and undesired effects of participation in the study?",
+    "mgrp-faq-answer4": "• Surface EEG recordings for BCI control do not bear any risks.<br>• All devices are compliant to the current regulatory requirements.<br>• Occasionally, during FES application, spasticity can increase during triggering of tetanic contractions. This issue can be solved by altering parameters and a slower increase of stimulation frequency. A general increase in spasticity can be caused by various reasons, e.g. an infection, so this issue is subject to a clinical examination.<br>• The main burdens for you as a potential study participant are the time efforts for training and the examinations (at your home and in the clinic).<br><br>It goes without saying that you can quit your study participation without any disadvantages for your medical care. Your data will be treated confidentially and only processed without making reference to your identity.<br>",
+
+    "mgrp-faq-question5": "What are the inclusion / exclusion criteria for the study?",
+    "mgrp-faq-answer5": "<strong>Inclusion criteria</strong><br>You can participate, if<br><br>• you acquired a traumatic spinal cord injury at least 9 months ago. The lesion height is C4-C5 and you are not artificially ventilated.<br>• you cannot move your hand and fingers<br>• you still can move your elbow and shoulder.<br>• you are older than 18 years.<br>• you have a supportive environment that is willing to support you actively during the study (under expert supervision)<br><br><strong>Exclusion criteria</strong><br>You cannot participate, if<br>• you have active medical implants (cardiac pacemaker, breath pacemaker, bladder pacemaker, medication pump)<br>• you have a known history of epilepsy<br>• you have metal implants in the arm that is to be electrically stimulated<br>• you are pregnant.<br><br>If you are eligible according to these criteria and you are interested in participating in the study, please sign up on this website.<br>Prior to begin of the study, consent from the ethical committee of Heidelberg University is given.<br>"
+
+}

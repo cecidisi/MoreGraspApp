@@ -1,0 +1,58 @@
+extends layout
+
+mixin question(n)
+    i.fa.fa-question-circle
+    //  a(href="/registration-platform/faq#q"+n, data-i18n="mgrp-faq-question"+n)
+    a(href="#q"+n, data-i18n="mgrp-faq-question"+n)
+    br
+
+
+mixin answer(n)
+    a(name='q'+n)
+    .inner
+        h4        
+            i.fa.fa-check
+            label(data-i18n='mgrp-faq-question'+n)
+        p(data-i18n='mgrp-faq-answer'+n)
+        a.up(href='#questions', data-i18n='mgrp-faqs-back-up')
+
+block tab-faq
+    li.active:  a(href='/registration-platform/faq', data-i18n='mgrp-nav-faq') FAQ
+
+block content
+    #faq.nav-panel
+        .row
+            .panel-container
+                div.question-container
+                    a(name='questions')
+                    .question-list
+                        each val in [1, 2, 3, 4, 5]
+                            +question(val)
+                    img(src="/media/np-user.png")
+        
+                .answer-container
+                    each val in [1, 2, 3, 4, 5]
+                        +answer(val)
+    
+    
+    
+block js
+    // bower:js
+    script(src='/components/jquery/dist/jquery.js')
+    script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
+    script(src='/components/bootstrap-toggle/js/bootstrap-toggle.min.js')
+    script(src='/components/moment/moment.js')
+    script(src='/components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js')
+    script(src='/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')
+    script(src='/components/jquery-ui/jquery-ui.min.js')
+    script(src='/components/jquery-mousewheel/jquery.mousewheel.js')
+    script(src='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js')
+    // endbower
+    script(src='/js/i18n-handler.js')
+    
+    
+block custom-js
+    script.
+        (function($ ){ $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], });  })(jQuery)
+
+    

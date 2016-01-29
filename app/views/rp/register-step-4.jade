@@ -1,0 +1,20 @@
+// Current Abilities
+#panel-4.input-panel.center-aligned(name='current_abilities', style={display: 'none'})
+    h4(data-i18n='mgrp-header-abilities') 
+    br 
+    // 1st row  
+    .row
+        label.question(for="cbxHandToMouth", data-i18n="mgrp-lbl-hand-to-mouth") Can you bring your hand to your mouth?
+        input/#cbxHandToMouth.cbx-toggle(name='hand_to_mouth', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 2nd row  
+    .row
+        label.question(for="cbxGlassToMouth", data-i18n="mgrp-lbl-glass-to-mouth") Can you bring a glass to your mouth?
+        input/#cbxGlassTomouth.cbx-toggle(name='glass_to_mouth', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 3rd row  
+    .row
+        label.question(for="cbxWristExtension", data-i18n="mgrp-lbl-extend wrist") Can you extend your wrist?
+        input/#cbxHandToMouth.cbx-toggle(name='extend_wrist', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
+    // 4th row  
+    .row
+        label.question(for="cbxImproveGrasp", data-i18n="mgrp-lbl-improve-grasp") Do you need to imporve grasp function?
+        input/#cbxImproveGrasp.cbx-toggle(name='need_improve_grasp', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")

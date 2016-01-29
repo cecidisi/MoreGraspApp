@@ -1,0 +1,34 @@
+// Personal Data
+#panel-1.input-panel.center-aligned(name='personal_data', style={display: 'none'})
+    h4(data-i18n='mgrp-header-personal-data') Personal Data
+    br
+    // 1st row
+    .row
+        label.default(for='inputFirstname', data-i18n='mgrp-lbl-first-name') First Name
+        input/#inputFirstname.form-control(name='first_name', type='text', placeholder='John')
+        label.default(for='inputLastname', data-i18n='mgrp-lbl-last-name') Last Name
+        input/#inputLastname.form-control(name='last_name', type='text', placeholder='Doe')
+    // 2nd row  
+    .row
+        label.default(for='selCountry', data-i18n='mgrp-lbl-country') Country
+        select#selCountry.form-control(name='country')
+            option Austria
+            option Germany
+        label.default(for='selCity', data-i18n='mgrp-lbl-city') City
+        select#selCity.form-control(name='city')
+            option Graz
+            option Wien
+    // 3rd row  
+    .row
+        label.default(for="inputStreet", data-i18n="mgrp-lbl-street") Street
+        input/#inputStreet.form-control(name='street', type="text", placeholder="Inffeldgasse")
+        label.default.sm(for="inputDoor", data-i18n="mgrp-lbl-number") Door
+        input/#inputDoor.form-control.sm(name='number', type="text", placeholder="6")
+        label.default.sm(for="inputDoor", data-i18n="mgrp-lbl-zip") ZIP
+        input/#inputZip.form-control.sm(name='zip', type="text", placeholder="8010")
+    // 4rd row  
+    .row
+        label.default(for="inputEmail", data-i18n="mgrp-lbl-email") Email
+        input/#inputEmail.form-control(name='email', type="text", placeholder="john.doe@example.com")
+        label.default(for="inputPhone", data-i18n="mgrp-lbl-phone") Phone
+        input/#inputPhone.form-control(name='phone', type="text", placeholder="+43 680 5555 999")

@@ -1,0 +1,109 @@
+{
+    "@metadata": {
+        "authors": ["Cecilia di Sciascio"],
+        "last-updated": "2015-12-03",
+        "locale": "de",
+        "copyright": "MoreGrasp"
+    },
+    "mgrp-title": "Registration Platform",
+    "mgrp-nav-home": "Home",
+    "mgrp-nav-register": "Anmeldung",
+    "mgrp-nav-faq": "FAQ",
+    "mgrp-btn-go-to-registration": "Zur Anmeldung",
+
+    "mgrp-terms-and-conditions-title": "Gesch&auml;ftsbedingungen",
+    "mgrp-terms-and-conditions-list": "[Liste der Bedingungen und Konditionen hier gehen]",
+    "mgrp-disclaimer": "<strong>Haftungsausschluss:</strong> Participation in our trials does not entail the loss of ellegilibilty for economical support",
+    "mgrp-accept-terms-and-conditions": "Ich habe die Allgemeinen Geschäftsbedingungen akzeptieren",
+
+    "mgrp-header-personal-data": "Pers&ouml;nliche Daten",
+    "mgrp-header-personal-data-short": "Pers&ouml;nliche Daten",
+    "mgrp-lbl-first-name": "Vorname(n)",
+    "mgrp-lbl-last-name": "Familienname(n)",
+    "mgrp-lbl-country": "Land",
+    "mgrp-lbl-city": "Stadt",
+    "mgrp-lbl-street": "Straße",
+    "mgrp-lbl-number": "Haus",
+    "mgrp-lbl-door": "Haus",
+    "mgrp-lbl-zip": "PLZ",
+    "mgrp-lbl-email": "E-mail",
+    "mgrp-lbl-phone": "Telefon",
+
+    "mgrp-header-pre-injury": "Pre-Injury Conditions",
+    "mgrp-header-pre-injury-short": "Pre-Injury Conditions",
+    "mgrp-header-pre-injury-explanation": "Please indicate if any of the following conditions apply in the present or the past",
+    "mgrp-lbl-metal-implant": "Metal Implant in Forearm",
+    "mgrp-lbl-pacemaker": "Pacemaker",
+    "mgrp-lbl-medication-pump": "Medication Pump",
+    "mgrp-lbl-stroke": "Stroke",
+    "mgrp-lbl-epilepsy": "Epilepsy",
+    "mgrp-lbl-long-term-care": "Long-term Care",
+
+    "mgrp-header-injury": "Injury Details",
+    "mgrp-header-injury-short": "Injury",
+    "mgrp-lbl-date-of-injury": "Date of Injury",
+    "mgrp-lbl-causeb-by-accident": "Was the injury caused by an accident?",
+
+    "mgrp-header-abilities": "Current Abilities",
+    "mgrp-header-abilities-short": "Abilities",
+    "mgrp-lbl-hand-to-mouth": "Can you bring your hand to your mouth?",
+    "mgrp-lbl-glass-to-mouth": "Can you bring a glass to your mouth?",
+    "mgrp-lbl-extend wrist": "Can you extend your wrist?",
+    "mgrp-lbl-improve-grasp": "Do you need to improve grasp function?",
+
+    "mgrp-header-video": "Video",
+    "mgrp-header-video-short": "Video",
+    "mgrp-header-video-explanation": "Please upload a demo video. This will give us a better idea of your condition.",
+    "mgrp-header-video-guidelines": "[Guidelines go here]",
+    "mgrp-video-upload-btn-select": "Ausw&auml;hlen",
+    "mgrp-video-upload-drag-and-drop-msg": "<span><b>Drag &amp; Drop Datei</b></span>",
+    "mgrp-video-upload-btn-delete": "L&ouml;schen",
+
+    "mgrp-header-misc": "Miscellaneous",
+    "mgrp-header-misc-short": "Miscellaneous",
+    "mgrp-misc-q1": "Wie haben Sie uns gefunden?",
+    "mgrp-misc-q1-opt-doctor": "Mein Artzt hat mir erz&auml;lt",
+    "mgrp-misc-q1-opt-caregiver": "A Caregiver hat mir erz&auml;lt",
+    "mgrp-misc-q1-opt-relative": "Ein Verwandte hat mir erz&auml;lt",
+    "mgrp-misc-q1-opt-internet": "Auf der Internet",
+    "mgrp-misc-q1-opt-tv": "Fernseher oder Bewung",
+    "mgrp-misc-q1-opt-other": "Anders",
+    "mgrp-misc-q2": "Wer füllt dieses Formular aus?",
+    "mgrp-misc-q2-opt-myself": "Ich selber",
+    "mgrp-misc-q2-opt-relative": "Verwandte",
+    "mgrp-misc-q2-opt-caregiver": "Caregiver",
+
+    "mgrp-header-review": "Ihre Anmeldung is sch&ouml;n fertig",
+    "mgrp-header-review-short": "Review",
+    "mgrp-header-review-explanation": "Bitte kontrollieren Sie Ihre Daten",
+
+    "mgrp-submitted-line-1": "Danke f&uuml;r Ihre Zeit",
+    "mgrp-submitted-line-2": "Ihre Anmeldung wurde erforlgreich abgesendet",
+    "mgrp-submitted-line-3": "Ein Ansprechpartner wird Sie kontaktieren",
+
+    "mgrp-toggle-on": "Ja",
+    "mgrp-toggle-off": "Nein",
+
+    "mgrp-btn-start-registration": "Begin Anmeldung",
+    "mgrp-btn-previous": "Vorherig",
+    "mgrp-btn-continue": "Weiter",
+    "mgrp-btn-submit": "Senden",
+
+    "mgrp-faqs-back-up": "Zur&uuml;ck",
+
+    "mgrp-faq-question1": "Was ist eine BCI-gesteuerte FES-Orthese?",
+    "mgrp-faq-answer1": "Bei einer Querschnittl&#xE4;hmung ist die Informations&#xFC;bertragung vom Gehirn zum Zielmuskel unterbrochen. Die hier vorgestellte Technologie versucht diese Unterbrechung zu umgehen. Dazu wird ein System, bestehend aus dem BCI (Brain-Computer Interface) und einer Orthese in Kombination mit einer Funktionellen Elektro-stimulation (FES) eingesetzt. Das BCI dient zur Steuerung, mit der FES-Orthese k&#xF6;nnen Bewegungen ausgef&#xFC;hrt bzw. eine bestimmte Gelenkposition gehalten werden.<br><strong>BCI</strong>: Durch nicht invasive Aufnahme von Gehirnaktivit&#xE4;ten (Elektroenzephalogramm, EEG) w&#xE4;hrend Bewegungs-vor-stellungen und anschlie&#xDF;ender Verarbeitung wird ein Kontrollsignal f&#xFC;r die FES-Orthese generiert.<br><strong>FES-Orthese</strong>: Die FES-Orthese besteht aus zwei Komponenten, der FES und  der Orthese. Bei der FES werden Nerven durch Stromimpulse stimuliert, so dass eine Kontraktion der Muskeln ausgel&#xF6;st wird. Zus&#xE4;tzlich wird dieser Mechanismus durch eine Orthese unterst&#xFC;tzt, um Erm&#xFC;dungserscheinungen vorzu-beugen und Bewegungs-abl&#xE4;ufe zu unterst&#xFC;tzen. Eine Orthese ist eine Art &#xC4;rmel, welcher von au&#xDF;en mechanische Kr&#xE4;fte auf den menschlichen K&#xF6;rper &#xFC;bertragen kann.<br><br>Mit der klinischen Pilotstudie sollen folgende Fragen gekl&#xE4;rt werden:<br>• Welche neuen M&#xF6;glichkeiten bietet das BCI f&#xFC;r die Steuer-ung von FES-Orthesen?<br>• Welcher Trainingsansatz beim BCI eignet sich besonders f&#xFC;r eine sichere Bedienung?<br>• Welche Eigenschaften muss die BCI-kontrollierte FES-Orthese besitzen, damit Querschnittgel&#xE4;hmte ihre Selbstst&#xE4;ndigkeit verbessern k&#xF6;nnen?<br>• Wie m&#xFC;ssen das BCI und die FES-Orthese gestaltet werden, um alltagstauglich zu sein und f&#xFC;r welche Aufgaben w&#xFC;rden diese eingesetzt werden?<br>",
+
+    "mgrp-faq-question2": "Welchen Nutzen haben Sie von der Studienteilnahme?",
+    "mgrp-faq-answer2": "• Durch die FES kann bei Ihnen voraussichtlich eine grobe, aber dennoch brauchbare Greiffunktion an einer Hand wiederhergestellt werden. Dies ist beim momentanen Stand der Technik durch kein anderes Verfahren zu erreichen. Es sei aber ausdr&#xFC;cklich darauf hingewiesen, dass die Anwendung der FES keinen direkten Einfluss auf Ihre Querschnittl&#xE4;hmung in Sinne eines aktiven Funktionsgewinns haben wird. Dies bedeutet, dass Sie auch nach der Therapie die Hand nicht willentlich bewegen k&#xF6;nnen.<br>• Durch die funktionelle Nutzung der im Rahmen dieses Projektes verwendeten BCI-gesteuerten FES-Orthese werden Sie Ihre Handfunktion mittels Bewegungsvor-stellungen kontrollieren k&#xF6;nnen. Dies setzt allerdings einen erfolgreichen Verlauf der FES- und BCI-Testung voraus.<br>• Von der Verwendung des BCI ist kein direkter Einfluss auf Ihre Allgemein- und L&#xE4;hmungssituation zu erwarten.<br><br>Die Anwendung der FES ist &#xFC;ber den direkten Funktionsgewinn hinaus mit positiven Nebeneffekten verbunden, die sich mit steigender Anwendungsdauer deutlicher auswirken:<br>• Der infolge der L&#xE4;hmung auftretende Muskelabbau kann r&#xFC;ckg&#xE4;ngig gemacht werden.<br>• Die Funktionsf&#xE4;higkeit mechanischer Strukturen wie Sehnen und Gelenke kann erhalten werden; einer Einsteifung kann entgegengewirkt werden.<br>",
+
+    "mgrp-faq-question3": "Was erwartet Sie in der Studie?",
+    "mgrp-faq-answer3": "Der Studienzeitraum betr&#xE4;gt maximal 3 Monate. W&#xE4;hrend dieser Zeit sind verschiedene Untersuchungen und Trainings bei Ihnen zu Hause und evtl. in der Klinik notwendig. Es gibt zwei Arten von Trainings: Zum einen das BCI-Training, damit der Computer lernt, eine Bewegungsvorstellung bei Ihnen zu erkennen, und zum anderen ein FES-Training, damit die Muskulatur stark genug f&#xFC;r Greifbewegungen wird. Das FES-Training soll unter &#xDC;berwachung durch das Studienpersonal schwerpunktm&#xE4;&#xDF;ig zu Hause durchgef&#xFC;hrt werden.<br><br>Zun&#xE4;chst werden Sie von Mitarbeitern des Klinikums besucht, um Ihre Muskulatur zu untersuchen und ein erstes BCI-Training durchzuf&#xFC;hren. Danach wird zusammen entschieden, ob und in welcher Form eine Studienteilnahme erfolgen kann.<br><br>Zu den Untersuchungen w&#xE4;hrend der Studie z&#xE4;hlen vor allem neurologische und funktionelle Tests. Die neurologischen Untersuchungen sind zu Beginn und zum Ende des Trainings notwendig, um Ihren Status genau zu bestimmen. Bei den funktionellen Tests wird die Zeit gemessen, die Sie f&#xFC;r die Durchf&#xFC;hrung von standardisierten Aufgaben, wie z.B. das Greifen und Mani--pulieren eines Bechers oder einer Gabel, ben&#xF6;tigen.<br><br>Ein wesentlicher Schwerpunkt des Projekts liegt in der Unter-suchung Ihrer Zufriedenheit mit dem technischen Hilfsmittel. Um diese wissenschaftlich erfassen zu k&#xF6;nnen, werden regelm&#xE4;&#xDF;ig eine Reihe von Interviews durchgef&#xFC;hrt.<br><br>In den ersten Wochen der Studienteilnahme kann eine intensive Einarbeitung von 10 Stunden pro Woche erforderlich sein. W&#xE4;hrend der gesamten restlichen Studiendauer reduziert sich der Trainingsaufwand auf ca. 5 Stunden pro Woche.<br>",
+
+    "mgrp-faq-question4": "Welche Risiken oder Belastungen sind mit der Studienteilnahme verbunden?",
+    "mgrp-faq-answer4": "• Bei der oberfl&#xE4;chlichen Ableitung der elektrischen Gehirnaktivit&#xE4;ten zur Steuerung des BCI existieren keine Risiken. <br>• Alle verwendeten Ger&#xE4;te entsprechen den aktuellen gesetzlichen Vorschriften, so dass keine spezielle Gefahr von diesen ausgeht.<br>• Bei der FES kann es gelegentlich zu einer Erh&#xF6;hung der Spastik kommen. In diesem Falle m&#xFC;ssen die Stimulationsparameter angepasst und die Trainings-intensit&#xE4;t langsamer gesteigert werden. Ein genereller Anstieg der Spastik kann vielf&#xE4;ltige Gr&#xFC;nde (Blaseninfekt, sonst. Ent-z&#xFC;ndungen) haben, so dass in diesem Fall eine klinische Abkl&#xE4;rung angestrebt werden sollte.<br>• Die Hauptbelastung f&#xFC;r Sie als m&#xF6;glicher Studienteil-nehmer besteht im Zeitaufwand f&#xFC;r die unterschiedlichen Trainingsphasen und f&#xFC;r die ambulanten Kontroll- und Untersuchungstermine.<br><br>Selbstverst&#xE4;ndlich k&#xF6;nnen Sie die Studienteilnahme jederzeit ohne Nachteile f&#xFC;r Ihre medizinische Versorgung widerrufen. Ebenso werden Ihre Daten absolut vertraulich behandelt und nur verschl&#xFC;sselt, ohne Hinweise auf Ihre Identit&#xE4;t weitergegeben.<br>",
+
+    "mgrp-faq-question5": "Welche Teilnahmekriterien muss ich erfüllen?",
+    "mgrp-faq-answer5": "<strong>Einschlusskriterien</strong><br>Sie d&#xFC;rfen an der Studie teilnehmen, wenn <br><br>• bei Ihnen seit mindestens 9 Monaten eine unfallbedingte Querschnittl&#xE4;hmung vorliegt. Sie haben eine Tetraplegie in H&#xF6;he von C3-C5 und sind nicht extern beatmet.<br>• sie Ihre Finger und Ihre Hand nicht bewegen k&#xF6;nnen.<br>• sie idealerweise ihren Oberarm bewegen k&#xF6;nnen.<br>• sie &#xE4;lter als 18 Jahre sind.<br>• sie haben eine gute soziale Betreuung, die bereit ist, aktiv unter Anleitung die Studie zu begleiten.<br><br><strong>Ausschlusskriterien</strong><br>Sie d&#xFC;rfen nicht an der Studie teilnehmen, wenn<br>• aktive Implantate bei Ihnen vorhanden sind (Herzschrittmacher, Atemschrittmacher, Blasenschrittmacher, Medikamentenpumpen).<br>• eine bekannte aktive Epilepsie vorliegt.<br>• sich in dem zu stimulierenden Arm Metallteile befinden.<br>• sie schwanger sind.<br><br>Wenn Sie die oben genannten Voraussetzungen erf&#xFC;llen und im Raum Heidelberg (Umkreis 100 km) wohnen oder mobil sind sowie Interesse an der Studienteilnahme haben, dann m&#xF6;chten wir Sie um Kontaktaufnahme zur Abkl&#xE4;rung der Details bitten.<br><br>Vor Beginn der Studie ist die Einwilligung der Ethikkommission der Universit&#xE4;t Heidelberg schriftlich erfolgt.<br><br>Weitere Informationen zum Projekt sind unter http://moregrasp.dev.webtourismus.at/ zu finden.<br>"
+
+}

@@ -1,0 +1,18 @@
+{
+  "name": "moregraspapp",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.6",
+    "bootstrap-toggle": "~2.2.1",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "font-awesome": "~4.5.0",
+    "jquery-ui": "~1.11.4",
+    "jquery": "~2.2.0",
+    "malihu-custom-scrollbar-plugin": "~3.1.3"
+  }
+}

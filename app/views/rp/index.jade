@@ -1,0 +1,19 @@
+extends layout
+
+block tab-home
+    li.active:  a(href='/registration-platform/home', data-i18n='mgrp-nav-home') Home
+
+block content
+  #home.nav-panel
+    .row
+      .video-container-outer
+        .video-container
+          video.demo(width='100%', height='100%', controls, autoplay, loop)
+            source(type='video/mp4', src='http://urank.know-center.tugraz.at/demo/demo.mp4')
+      .button-area
+        a#btn-go-to-registration.btn.btn-primary-mg.btn-lg.reg-navigation(data-i18n='mgrp-btn-go-to-registration', href='/registration-platform/register') Go to Registration
+
+
+block js
+//  h1= title
+//  p Welcome to #{title}

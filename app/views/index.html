@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>MoreGraspRP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" />
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
+    <!-- endbower -->
+    <!-- injector:css -->
+    <!-- endinjector -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+      <header data-spy="affix" data-offeset-top="75">
+          <nav class="navbar">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mg-navbar-collapse" aria-expanded="false">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="#">
+                          <img src="media/moregrasp-logo.jpg" height="68" width="120">
+                          <div class="title"><h3 data-i18n="mgrp-title">Registration Portal</h3></div>
+                      </a>
+                  </div>
+                  <div class="navbar-collapse collapse" id="mg-navbar-collapse" aria-expanded="true">
+                      <ul class="nav navbar-nav navbar-right flag-container">
+                          <li class="active"><a class="flag flag-en active" name="en" href="#/lang/en" hreflang="en"></a></li>
+                          <li><a class="flag flag-de" name="de" href="#/lang/de" hreflang="de"></a></li>
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right menu">
+                          <li class="active" navigateTo="#home"><a href="#/home" data-i18n="mgrp-nav-home">Home</a></li>
+                          <li navigateTo="#register"><a href="#/register" data-i18n="mgrp-nav-register">Register</a></li>
+                          <li navigateTo="#faq"><a href="#/faq" data-i18n="mgrp-nav-faq">FAQ</a></li>
+                      </ul>
+
+                  </div>
+              </div>
+          </nav>
+      </header>
+
+      <div class="content">
+          <div class="container">
+
+              <div class="nav-panel" id="home">
+                  <div class="row">
+                      <div class="video-container-outer">
+                          <div class="video-container">
+                              <video class="demo" width="100%" height="100%" controls autoplay loop>
+                                  <source type="video/mp4" src="http://urank.know-center.tugraz.at/demo/demo.mp4">
+                              </video>
+                          </div>
+                      </div>
+                      <div class="button-area">
+                          <button type="button" id="btn-go-to-registration" class="btn btn-primary-mg btn-lg  reg-navigation" data-i18n="mgrp-btn-go-to-registration">Go to Registration</button>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="nav-panel fade" id="register">
+                  <div class="panel-container form-section">
+
+
+                      <!--  Terms & Conditions -->
+                      <div class="input-panel center-aligned" id="panel-0">
+                          <div class="row">
+                              <h4 id="titleTermsAndConditions" data-i18n="mgrp-terms-and-conditions-title">Terms and Conditions</h4>
+                              <div class="terms-container">
+                                  <p class="explanation" id="listTermsAndConditions" data-i18n="mgrp-terms-and-conditions-list">[List of terms and conditions here]</p>
+                              </div>
+                              <div class="alert alert-danger sizable">
+                                  <p id="pDisclaimer" data-i18n="mgrp-disclaimer"><strong>Disclaimer:</strong> Participation in our trials does not entail the loss of ellegilibilty for economical support</p>
+                              </div>
+                              <div class="accept-terms-container">
+                                <input type="checkbox" id="cbxTermsAccepted">
+                                  <label id="lblTermsAccepted" data-i18n="mgrp-accept-terms-and-conditions">I have read and accept the terms and conditions</label>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Personal Data Panel -->
+                      <div class="center-aligned input-panel" id="panel-1" name="mgrp-header-personal-data-short" style="display:none;">
+                          <h4 data-i18n="mgrp-header-personal-data">Personal Data</h4><br>
+                          <!-- 1st row -->
+                          <div class="row">
+                              <label class="default" for="inputFirstame" data-i18n="mgrp-lbl-first-name">First Name</label>
+                              <input type="text" class="form-control" id="inputFirstname" placeholder="John">
+                              <label class="default" for="inputLastname" data-i18n="mgrp-lbl-last-name">Last Name</label>
+                              <input type="text" class="form-control" id="inputLastname" placeholder="Doe">
+                          </div>
+                          <!-- 2nd row -->
+                          <div class="row">
+                              <label class="default" for="selCountry" data-i18n="mgrp-lbl-country">Country</label>
+                              <select class="form-control" id="selCountry">
+                                  <option>Austria</option>
+                                  <option>Germany</option>
+                              </select>
+                              <label class="default" for="selCity" data-i18n="mgrp-lbl-city">City</label>
+                              <select class="form-control" id="selCity">
+                                  <option>Wien</option>
+                                  <option>Graz</option>
+                              </select>
+                          </div>
+                          <!-- 3rd row -->
+                          <div class="row">
+                              <label class="default" for="inputStreet" data-i18n="mgrp-lbl-street">Street</label>
+                              <input type="text" class="form-control" id="inputStreet" placeholder="Inffeldgasse">
+                              <label class="default sm" for="inputDoor" data-i18n="mgrp-lbl-number">Door</label>
+                              <input type="text" class="form-control sm" id="inputDoor" placeholder="6">
+                              <label class="default sm" for="inputDoor" data-i18n="mgrp-lbl-zip">ZIP</label>
+                              <input type="text" class="form-control sm" id="inputZip" placeholder="8010">
+                          </div>
+                          <!-- 4th row -->
+                          <div class="row">
+                              <label class="default" for="inputEmail" data-i18n="mgrp-lbl-email">Email</label>
+                              <input type="text" class="form-control" id="inputEmail" placeholder="john.doe@example.com">
+                              <label class="default" for="inputPhone" data-i18n="mgrp-lbl-phone">Phone</label>
+                              <input type="text" class="form-control" id="inputPhone" placeholder="+43 680 5555 999">
+                          </div>
+                      </div>
+
+                      <!--  Pre-Injury -->
+                      <div class="center-aligned input-panel" id="panel-2" name="mgrp-header-pre-injury-short" style="display:none;">
+                          <h4 data-i18n="mgrp-header-pre-injury">Pre-Injury Conditions</h4>
+                          <p class="explanation" data-i18n="mgrp-header-pre-injury-explanation">Please indicate if any of the following conditions apply in the present or the past</p>
+                          <br>
+                          <!-- 1st row -->
+                          <div class="row">
+                              <label class="question" for="cbxImplant" data-i18n="mgrp-lbl-metal-implant">Metal Implant in Forearm</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxImplant" />
+                          </div>
+                          <!-- 2nd row -->
+                          <div class="row">
+                              <label class="question" for="cbxPacemaker" data-i18n="mgrp-lbl-pacemaker">Pacemaker</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxPacemaker" />
+                          </div>
+                          <!-- 3rd row -->
+                          <div class="row">
+                              <label class="question" for="cbxPump" data-i18n="mgrp-lbl-medication-pump">Medication Pump</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxPump" />
+                          </div>
+                          <!-- 4th row -->
+                          <div class="row">
+                              <label class="question" for="cbxStroke" data-i18n="mgrp-lbl-stroke">Stroke</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxStroke" />
+                          </div>
+                          <!-- 5th row -->
+                          <div class="row">
+                              <label class="question" for="cbxEpilepsy" data-i18n="mgrp-lbl-epilepsy">Epilepsy</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxEpilepsy" />
+                          </div>
+                          <!-- 6th row -->
+                          <div class="row">
+                              <label class="question" for="cbxLongTermCare" data-i18n="mgrp-lbl-long-term-care">Long term care</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxLongTermCare" />
+                          </div>
+                      </div>
+
+                      <!--  Injury -->
+                      <div class="center-aligned input-panel" id="panel-3" name="mgrp-header-injury-short" style="display:none;">
+                          <h4 data-i18n="mgrp-header-injury">Injury Details</h4>
+                          <!-- 1st row -->
+                          <div class="row">
+                              <label class="question" data-i18n="mgrp-lbl-date-of-injury">Date of Injury</label>
+                              <div class="form-group">
+                                  <div class='input-group date datetimepicker' id='dtpDateInjury'>
+                                      <input type='text' class="form-control" />
+                                      <span class="input-group-addon">
+                                          <span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- 2nd row -->
+                          <div class="row">
+                              <label class="question" for="cbxAccident" data-i18n="mgrp-lbl-dauseb-by-accident">Was the injury caused by an accident?</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxAccident" />
+                          </div>
+                      </div>
+
+                      <!--  Current abilities -->
+                      <div class="center-aligned input-panel" id="panel-4" name="mgrp-header-abilities-short" style="display:none;">
+                          <h4 data-i18n="mgrp-header-abilities">Current Abilities</h4>
+                          <!-- 1st row -->
+                          <div class="row">
+                              <label class="question" for="cbxHandToMouth" data-i18n="mgrp-lbl-hand-to-mouth">Can you bring your hand to your mouth?</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-onstyle="success" id="cbxHandToMouth" />
+                          </div>
+                          <!-- 2nd row -->
+                          <div class="row">
+                              <label class="question" for="cbxGlassToMouth" data-i18n="mgrp-lbl-glass-to-mouth">Can you bring a glass to your mouth?</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-onstyle="success" id="cbxGlassToMouth" />
+                          </div>
+                          <!-- 3rd row -->
+                          <div class="row">
+                              <label class="question" for="cbxWristExtension" data-i18n="mgrp-lbl-extend wrist">Can you extend your wrist?</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-onstyle="success" id="cbxWristExtension" />
+                          </div>
+                          <!-- 4th row -->
+                          <div class="row">
+                              <label class="question" for="cbxImproveGrasp" data-i18n="mgrp-lbl-improve-grasp">Do you need to imporve grasp function?</label>
+                              <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-onstyle="success" id="cbxImproveGrasp" />
+                          </div>
+                      </div>
+
+                      <!--  Video -->
+                      <div class="center-aligned input-panel" id="panel-5" name="mgrp-header-video-short" style="display:none;">
+                          <h4 data-i18n="mgrp-header-video">Video</h4>
+                          <p class="explanation" data-i18n="mgrp-header-video-explanation">Please upload a demo video. This will give us a better idea of your condition.</p>
+                          <p class="explanation" data-i18n="mgrp-header-video-guidelines">[Guidelines go here]</p>
+
+                          <div id="file-uploader">
+                              <div id="file-drop-zone" class="ajax-upload-dragdrop">
+                                  <div class="btn-file-upload">
+                                      <span  data-i18n="mgrp-video-upload-btn-select"></span>
+                                      <form id="form-video-upload" method="post" action="http://localhost:3000/upload", enctype="multipart/form-data">
+                                          <input type="file" id="file-input" name="files[]" class="btn btn-primary-mg" accept="video/*" multiple />
+                                      </form>
+                                  </div>
+                                  <label data-i18n="mgrp-video-upload-drag-and-drop-msg">Drop files here</label>
+                              </div>
+                          </div>
+
+                          <output id="file-list"><ul></ul></output>
+
+
+<!--                          <div id="mulitplefileuploader">Select</div>
+                          <div id="status"></div>-->
+
+                      </div>
+
+                      <!--  Miscellaneous -->
+                      <div class="center-aligned input-panel" id="panel-6" name="mgrp-header-misc-short" style="display:none;">
+                          <h4 data-i18n="mgrp-header-misc">Miscellaneous</h4><br>
+                          <div class="misc-list-container">
+                              <h5 data-i18n="mgrp-misc-q1">How did you find us?</h5>
+                              <!-- 1st row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxDoctor" data-i18n="mgrp-misc-q1-opt-doctor">My Doctor told me</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxDoctor" />
+                              </div>
+                              <!-- 2nd row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxCaregiver" data-i18n="mgrp-misc-q1-opt-caregiver">A Caregiver told me</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxCaregiver" />
+                              </div>
+                              <!-- 3rd row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxRelative" data-i18n="mgrp-misc-q1-opt-relative">A Relative told me</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxRelative" />
+                              </div>
+                              <!-- 4th row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxInternet" data-i18n="mgrp-misc-q1-opt-internet">On the Internet</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxInternet" />
+                              </div>
+                              <!-- 5th row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxTV" data-i18n="mgrp-misc-q1-opt-tv">On T.V. or Advertisement</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxTV" />
+                              </div>
+                              <!-- 6th row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxOther" data-i18n="mgrp-misc-q1-opt-other">Other</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxOther" />
+                              </div>
+                              <br>
+                              <h5 data-i18n="mgrp-misc-q2">Who is filling this form?</h5>
+                              <!-- 1st row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxFilledMyself" data-i18n="mgrp-misc-q2-opt-myself">Myself</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxFilledMyself" />
+                              </div>
+                              <!-- 2nd row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxFilledRelative" data-i18n="mgrp-misc-q2-opt-relative">Relative</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxFilledRelative" />
+                              </div>
+                              <!-- 3rd row -->
+                              <div class="row">
+                                  <label class="question secondary" for="cbxFilledCaregiver" data-i18n="mgrp-misc-q2-opt-caregiver">Caregiver</label>
+                                  <input type="checkbox" class="cbx-toggle" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" id="cbxFilledCaregiver" />
+                              </div>
+                          </div>
+                      </div>
+
+                      <!--  Form Review -->
+                      <div class="center-aligned input-panel" id="panel-7" name="mgrp-header-review-short" style="display:none;">
+                          <h4 data-i18n="mgrp-header-review">Your registration is complete</h4>
+                          <p class="explanation" data-i18n="mgrp-header-review-explanation">Please review your information carefully and press submit when ready</p><br>
+
+                          <div class="answer-container large">
+                              <h5 data-i18n="mgrp-header-personal-data" data-i18n-noreplace>Personal Data <a href="#/register/1"><i class="edit-answer"></i></a></h5>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-first-name">First Name:</label>
+                                  <p class="form-answer" field="inputFirstname"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-last-name">Last Name:</label>
+                                  <p class="form-answer" field="inputLastname"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-country">Country:</label>
+                                  <p class="form-answer" field="selCountry"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-city">City:</label>
+                                  <p class="form-answer" field="selCity"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-street">Street:</label>
+                                  <p class="form-answer" field="inputStreet"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-number">Door:</label>
+                                  <p class="form-answer" field="inputDoor"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-zip">ZIP:</label>
+                                  <p class="form-answer" field="inputZip"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-email">Email:</label>
+                                  <p class="form-answer" field="inputEmail"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-phone">Phone:</label>
+                                  <p class="form-answer" field="inputPhone"></p>
+                              </div>
+                          </div>
+
+                          <div class="answer-container large">
+                              <h5 data-i18n="mgrp-header-pre-injury" data-i18n-noreplace>Pre-Injury Conditions <a href="#/register/2"><i class="edit-answer"></i></a></h5>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-metal-implant">Metal Implant in Forearm:</label>
+                                  <p class="form-answer" field="cbxImplant"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-pacemaker">Pacemaker:</label>
+                                  <p class="form-answer" field="cbxPacemaker"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-medication-pump">Medication Pump:</label>
+                                  <p class="form-answer" field="cbxPump"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-stroke">Stroke:</label>
+                                  <p class="form-answer" field="cbxStroke"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-epilepsy">Epilepsy:</label>
+                                  <p class="form-answer" field="cbxEpilepsy"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-long-term-care">Long Term Care:</label>
+                                  <p class="form-answer" field="cbxLongTermCare"></p>
+                              </div>
+                          </div>
+
+                          <div class="answer-container large">
+                              <h5 data-i18n="mgrp-header-injury" data-i18n-noreplace>Injury Details <a href="#/register/3"><i class="edit-answer"></i></a></h5>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-date-of-injury">Date of Injury</label>
+                                  <p class="form-answer" field="dtpDateInjury"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-dauseb-by-accident">Was the injury caused by an accident?</label>
+                                  <p class="form-answer" field="cbxAccident"></p>
+                              </div>
+                          </div>
+
+                          <div class="answer-container">
+                              <h5 data-i18n="mgrp-header-abilities" data-i18n-noreplace>Current Abilities <a href="#/register/4"><i class="edit-answer"></i></a></h5>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-hand-to-mouth">Can you bring your hand to your mouth?</label>
+                                  <p class="form-answer" field="cbxHandToMouth"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-glass-to-mouth">Can you bring a glass to your mouth?</label>
+                                  <p class="form-answer" field="cbxGlassToMouth"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-extend wrist">Can you extend your wrist?</label>
+                                  <p class="form-answer" field="cbxWristExtension"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer" data-i18n="mgrp-lbl-improve-grasp">Do you need to imporve grasp function?</label>
+                                  <p class="form-answer" field="cbxImproveGrasp"></p>
+                              </div>
+                          </div>
+
+                          <div class="answer-container">
+                              <h5 data-i18n="mgrp-header-video" data-i18n-noreplace>Video <a href="#/register/5"><i class="edit-answer"></i></a></h5>
+                              <div class="row">
+                                  <div class="extrahtml"></div>
+                              </div>
+                          </div>
+
+                          <div class="answer-container">
+
+                              <h5 data-i18n="mgrp-header-misc" data-i18n-noreplace>Miscellaneous <a href="#/register/6"><i class="edit-answer"></i></a></h5>
+                              <label class="answer" data-i18n="mgrp-misc-q1">How did you find us?</label>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q1-opt-doctor">My Doctor told me</label>:
+                                  <p class="form-answer" field="cbxDoctor"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q1-opt-caregiver">A Caregiver told me</label>:
+                                  <p class="form-answer" field="cbxCaregiver"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q1-opt-relative">A Relative told me</label>:
+                                  <p class="form-answer" field="cbxRelative"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q1-opt-internet">On the Internet</label>:
+                                  <p class="form-answer" field="cbxInternet"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q1-opt-tv">On T.V. or Advertisement</label>:
+                                  <p class="form-answer" field="cbxTV"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q1-opt-other">Other</label>:
+                                  <p class="form-answer secondary" field="cbxOther"></p>
+                              </div><br>
+
+                              <label class="answer" data-i18n="mgrp-misc-q2">Who is filling this form?</label>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q2-opt-myself">Myself</label>:
+                                  <p class="form-answer" field="cbxFilledMyself"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q2-opt-relative">Relative</label>:
+                                  <p class="form-answer" field="cbxFilledRelative"></p>
+                              </div>
+                              <div class="row">
+                                  <label class="answer secondary" data-i18n="mgrp-misc-q2-opt-caregiver">Caregiver</label>:
+                                  <p class="form-answer" field="cbxFilledCaregiver"></p>
+                              </div>
+                          </div>
+
+                      </div>
+
+                      <div class="input-panel-submitted center-aligned" id="panel-submitted"style="display:none;">
+                          <h4>Thank you for participating</h4>
+                          <h4>Your registration has been succesfully submitted</h4>
+                          <h4>A representative from MoreGrasp will contact you soon</h4>
+                      </div>
+                  </div>
+
+                  <div class="panel-container controls-section">
+                      <div id="form-progress" class="progress" style="visibility:hidden;">
+                          <div id="form-progress-bar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only"></span>
+                          </div>
+                      </div>
+                      <div class="progress-steps-container" style="visibility:hidden;"></div>
+                      <div class="button-area">
+                          <button type="button" id="btn-start" class="btn btn-primary-mg reg-navigation" move="forward" data-i18n="mgrp-btn-start-registration" disabled>Start Registration</button>
+                          <button type="button" id="btn-previous" class="btn btn-default reg-navigation" move="backward" data-i18n="mgrp-btn-previous" style="display:none;">Previous</button>
+                          <button type="button" id="btn-continue" class="btn btn-default reg-navigation" move="forward" data-i18n="mgrp-btn-continue" style="display:none;">Continue</button>
+                          <button type="submit" id="btn-submit" class="btn btn-primary-mg" data-i18n="mgrp-btn-submit" style="display:none;">Submit</button>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="nav-panel fade" id="faq">
+                  <div class="row">
+                      <div class="panel-container">
+                          <div id="question-container">
+                              <div class="question-list">
+                                  <i class="fa fa-question-circle"></i><a href="#/faq/q1" data-i18n="mgrp-faq-question1">Was ist eine BCI-gesteuerte FES-Orthese?</a><br>
+                                  <i class="fa fa-question-circle"></i><a href="#/faq/q2" data-i18n="mgrp-faq-question2">Welchen Nutzen haben Sie von der Studienteilnahme?</a><br>
+                                  <i class="fa fa-question-circle"></i><a href="#/faq/q3" data-i18n="mgrp-faq-question3">Was erwartet Sie in der Studie?</a><br>
+                                  <i class="fa fa-question-circle"></i><a href="#/faq/q4" data-i18n="mgrp-faq-question4">Welche Risiken oder Belastungen sind mit der Studienteilnahme verbunden?</a><br>
+                                  <i class="fa fa-question-circle"></i><a href="#/faq/q5" data-i18n="mgrp-faq-question5">Welche Teilnahmekriterien muss ich erfüllen?</a><br>
+                              </div>
+                              <img src="media/np-user.png">
+                          </div>
+                          <div class="answer-container">
+                              <!--  Question 1  -->
+                              <div class="inner">
+                                  <h4 id="q1"><i class="fa fa-check"></i><label data-i18n="mgrp-faq-question1">Was ist eine BCI-gesteuerte FES-Orthese?</label></h4>
+                                  <p data-i18n="mgrp-faq-answer1">Bei einer Querschnittlähmung ist die Informationsübertragung vom Gehirn zum Zielmuskel unterbrochen. Die hier vorgestellte Technologie versucht diese Unterbrechung zu umgehen. Dazu wird ein System, bestehend aus dem BCI (Brain-Computer Interface) und einer Orthese in Kombination mit einer Funktionellen Elektro¬stimulation (FES) eingesetzt. Das BCI dient zur Steuerung, mit der FES-Orthese können Bewegungen ausgeführt bzw. eine bestimmte Gelenkposition gehalten werden.<br>
+                                      <strong>BCI</strong>: Durch nicht invasive Aufnahme von Gehirnaktivitäten (Elektroenzephalogramm, EEG) während Bewegungs¬vor-stellungen und anschließender Verarbeitung wird ein Kontrollsignal für die FES-Orthese generiert.<br>
+                                      <strong>FES-Orthese</strong>: Die FES-Orthese besteht aus zwei Komponenten, der FES und  der Orthese. Bei der FES werden Nerven durch Stromimpulse stimuliert, so dass eine Kontraktion der Muskeln ausgelöst wird. Zusätzlich wird dieser Mechanismus durch eine Orthese unterstützt, um Ermüdungserscheinungen vorzu¬beugen und Bewegungs-abläufe zu unterstützen. Eine Orthese ist eine Art Ärmel, welcher von außen mechanische Kräfte auf den menschlichen Körper übertragen kann.<br><br>
+                                      Mit der klinischen Pilotstudie sollen folgende Fragen geklärt werden:<br>
+                                      •	Welche neuen Möglichkeiten bietet das BCI für die Steuer-ung von FES-Orthesen?<br>
+                                      •	Welcher Trainingsansatz beim BCI eignet sich besonders für eine sichere Bedienung?<br>
+                                      •	Welche Eigenschaften muss die BCI-kontrollierte FES-Orthese besitzen, damit Querschnittgelähmte ihre Selbstständigkeit verbessern können?<br>
+                                      •	Wie müssen das BCI und die FES-Orthese gestaltet werden, um alltagstauglich zu sein und für welche Aufgaben würden diese eingesetzt werden?<br>
+                                  </p>
+<!--                                  <a class="up" href="#question-container">Back up</a>-->
+                                  <a class="up" href="#/faq/back" data-i18n="mgrp-faqs-back-up">Back up</a>
+                              </div>
+                              <!--  Question 2  -->
+                              <div class="inner">
+                                  <h4 id="q2"><i class="fa fa-check"></i><label data-i18n="mgrp-faq-question2">Welchen Nutzen haben Sie von der Studienteilnahme?</label></h4>
+                                  <p data-i18n="mgrp-faq-answer2">•	Durch die FES kann bei Ihnen voraussichtlich eine grobe, aber dennoch brauchbare Greiffunktion an einer Hand wiederhergestellt werden. Dies ist beim momentanen Stand der Technik durch kein anderes Verfahren zu erreichen. Es sei aber ausdrücklich darauf hingewiesen, dass die Anwendung der FES keinen direkten Einfluss auf Ihre Querschnittlähmung in Sinne eines aktiven Funktionsgewinns haben wird. Dies bedeutet, dass Sie auch nach der Therapie die Hand nicht willentlich bewegen können.<br>
+                                      •	Durch die funktionelle Nutzung der im Rahmen dieses Projektes verwendeten BCI-gesteuerten FES-Orthese werden Sie Ihre Handfunktion mittels Bewegungsvor-stellungen kontrollieren können. Dies setzt allerdings einen erfolgreichen Verlauf der FES- und BCI-Testung voraus.<br>
+                                      •	Von der Verwendung des BCI ist kein direkter Einfluss auf Ihre Allgemein- und Lähmungssituation zu erwarten.<br><br>
+                                      Die Anwendung der FES ist über den direkten Funktionsgewinn hinaus mit positiven Nebeneffekten verbunden, die sich mit steigender Anwendungsdauer deutlicher auswirken:<br>
+                                      •	Der infolge der Lähmung auftretende Muskelabbau kann rückgängig gemacht werden.<br>
+                                      •	Die Funktionsfähigkeit mechanischer Strukturen wie Sehnen und Gelenke kann erhalten werden; einer Einsteifung kann entgegengewirkt werden.<br>
+                                  </p>
+<!--                                  <a class="up" href="#question-container">Back up</a>-->
+                                  <a class="up" href="#/faq/back" data-i18n="mgrp-faqs-back-up">Back up</a>
+                              </div>
+                              <!--  Question 3  -->
+                              <div class="inner">
+                                  <h4 id="q3"><i class="fa fa-check"></i><label data-i18n="mgrp-faq-question3">Welchen Nutzen haben Sie von der Studienteilnahme?</label></h4>
+                                  <p  data-i18n="mgrp-faq-answer3">
+                                      Der Studienzeitraum beträgt maximal 3 Monate. Während dieser Zeit sind verschiedene Untersuchungen und Trainings bei Ihnen zu Hause und evtl. in der Klinik notwendig. Es gibt zwei Arten von Trainings: Zum einen das BCI-Training, damit der Computer lernt, eine Bewegungsvorstellung bei Ihnen zu erkennen, und zum anderen ein FES-Training, damit die Muskulatur stark genug für Greifbewegungen wird. Das FES-Training soll unter Überwachung durch das Studienpersonal schwerpunktmäßig zu Hause durchgeführt werden.<br><br>
+                                      Zunächst werden Sie von Mitarbeitern des Klinikums besucht, um Ihre Muskulatur zu untersuchen und ein erstes BCI-Training durchzuführen. Danach wird zusammen entschieden, ob und in welcher Form eine Studienteilnahme erfolgen kann.<br><br>
+                                      Zu den Untersuchungen während der Studie zählen vor allem neurologische und funktionelle Tests. Die neurologischen Untersuchungen sind zu Beginn und zum Ende des Trainings notwendig, um Ihren Status genau zu bestimmen. Bei den funktionellen Tests wird die Zeit gemessen, die Sie für die Durchführung von standardisierten Aufgaben, wie z.B. das Greifen und Mani¬¬pulieren eines Bechers oder einer Gabel, benötigen.<br><br>
+                                      Ein wesentlicher Schwerpunkt des Projekts liegt in der Unter-suchung Ihrer Zufriedenheit mit dem technischen Hilfsmittel. Um diese wissenschaftlich erfassen zu können, werden regelmäßig eine Reihe von Interviews durchgeführt.<br><br>
+                                      In den ersten Wochen der Studienteilnahme kann eine intensive Einarbeitung von 10 Stunden pro Woche erforderlich sein. Während der gesamten restlichen Studiendauer reduziert sich der Trainingsaufwand auf ca. 5 Stunden pro Woche.<br>
+                                  </p>
+<!--                                  <a class="up" href="#question-container">Back up</a>-->
+                                  <a class="up" href="#/faq/back" data-i18n="mgrp-faqs-back-up">Back up</a>
+                              </div>
+                              <!--  Question 4  -->
+                              <div class="inner">
+                                  <h4 id="q4"><i class="fa fa-check"></i><label data-i18n="mgrp-faq-question4">Welche Risiken oder Belastungen sind mit der Studienteilnahme verbunden?</label></h4>
+                                  <p data-i18n="mgrp-faq-answer4">•	Bei der oberflächlichen Ableitung der elektrischen Gehirnaktivitäten zur Steuerung des BCI existieren keine Risiken. <br>
+                                      •	Alle verwendeten Geräte entsprechen den aktuellen gesetzlichen Vorschriften, so dass keine spezielle Gefahr von diesen ausgeht.<br>
+                                      •	Bei der FES kann es gelegentlich zu einer Erhöhung der Spastik kommen. In diesem Falle müssen die Stimulationsparameter angepasst und die Trainings-intensität langsamer gesteigert werden. Ein genereller Anstieg der Spastik kann vielfältige Gründe (Blaseninfekt, sonst. Ent¬zündungen) haben, so dass in diesem Fall eine klinische Abklärung angestrebt werden sollte.<br>
+                                      •	Die Hauptbelastung für Sie als möglicher Studienteil-nehmer besteht im Zeitaufwand für die unterschiedlichen Trainingsphasen und für die ambulanten Kontroll- und Untersuchungstermine.<br><br>
+                                      Selbstverständlich können Sie die Studienteilnahme jederzeit ohne Nachteile für Ihre medizinische Versorgung widerrufen. Ebenso werden Ihre Daten absolut vertraulich behandelt und nur verschlüsselt, ohne Hinweise auf Ihre Identität weitergegeben.<br>
+                                  </p>
+<!--                                  <a class="up" href="#question-container">Back up</a>-->
+                                  <a class="up" href="#/faq/back" data-i18n="mgrp-faqs-back-up">Back up</a>
+                                </div>
+                              <!--  Question 5  -->
+                              <div class="inner">
+                                  <h4 id="q5"><i class="fa fa-check"></i><label data-i18n="mgrp-faq-question5">Welche Teilnahmekriterien muss ich erfüllen?</label></h4>
+                                  <p data-i18n="mgrp-faq-answer5"><strong>Einschlusskriterien</strong><br>
+                                      Sie dürfen an der Studie teilnehmen, wenn <br><br>
+                                      •	bei Ihnen seit mindestens 9 Monaten eine unfallbedingte Querschnittlähmung vorliegt. Sie haben eine Tetraplegie in Höhe von C3-C5 und sind nicht extern beatmet.<br>
+                                      •	sie Ihre Finger und Ihre Hand nicht bewegen können.<br>
+                                      •	sie idealerweise ihren Oberarm bewegen können.<br>
+                                      •	sie älter als 18 Jahre sind.<br>
+                                      •	sie haben eine gute soziale Betreuung, die bereit ist, aktiv unter Anleitung die Studie zu begleiten.<br><br>
+                                      <strong>Ausschlusskriterien</strong><br>
+                                      Sie dürfen nicht an der Studie teilnehmen, wenn<br>
+                                      •	aktive Implantate bei Ihnen vorhanden sind (Herzschrittmacher, Atemschrittmacher, Blasenschrittmacher, Medikamentenpumpen).<br>
+                                      •	eine bekannte aktive Epilepsie vorliegt.<br>
+                                      •	sich in dem zu stimulierenden Arm Metallteile befinden.<br>
+                                      •	sie schwanger sind.<br><br>
+                                      Wenn Sie die oben genannten Voraussetzungen erfüllen und im Raum Heidelberg (Umkreis 100 km) wohnen oder mobil sind sowie Interesse an der Studienteilnahme haben, dann möchten wir Sie um Kontaktaufnahme zur Abklärung der Details bitten.<br><br>
+                                      Vor Beginn der Studie ist die Einwilligung der Ethikkommission der Universität Heidelberg schriftlich erfolgt.<br><br>
+                                      Weitere Informationen zum Projekt sind unter http://moregrasp.dev.webtourismus.at/ zu finden.<br>
+                                  </p>
+<!--                                  <a class="up" href="#question-container">Back up</a>-->
+                                  <a class="up" href="#/faq/back" data-i18n="mgrp-faqs-back-up">Back up</a>
+                              </div>
+                              <!-- End questions-->
+                          </div>
+
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <div class="footer">
+        <div class="container"><p>© MoreGrasp 2015</p></div>
+      </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/d3pie/d3pie/d3pie.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <script src="bower_components/jquery-upload-file-for-bower/js/jquery.uploadfile.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+    <!-- endbower -->
+    <!-- injector:js -->
+    <!-- endinjector -->
+    <!-- endbuild -->
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+//      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+//      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+//      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+//      e.src='//www.google-analytics.com/analytics.js';
+//      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+//      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/scrollto.js"></script>
+        <script src="scripts/i18n-handler.js"></script>
+        <script src="scripts/helper.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

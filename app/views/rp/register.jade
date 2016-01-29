@@ -1,0 +1,59 @@
+extends layout
+
+block css
+  link(rel='stylesheet', href='/css/main-rp.css')
+  // bower:css
+  link(rel='stylesheet', href='/components/bootstrap-toggle/css/bootstrap-toggle.min.css')
+  link(rel='stylesheet', href='/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
+  link(rel='stylesheet', href='/components/jquery-ui/themes/base/jquery-ui.min.css')
+  link(rel='stylesheet', href='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')
+  // endbower
+
+
+block tab-register
+    li.active:  a(href='/registration-platform/register', data-i18n='mgrp-nav-register') Register
+
+block content
+  #register.nav-panel
+    .panel-container.form-section
+      include register-step-0
+      include register-step-1
+      include register-step-2
+      include register-step-3
+      include register-step-4
+      include register-step-5
+      include register-step-6
+      include register-step-7
+      
+    .panel-container.controls-section
+        // hide when currentPanel = 0
+        #form-progress.progress 
+          #form-progress-bar.progress-bar.progress-bar-success(role='progressbar', aria-valuenow=progress, aria-valuemin='0', aria-valuemax='100', style={ width: progress+'%' })
+            span.sr-only
+        .progress-steps-container
+        .button-area
+            a#btn-start.btn.btn-primary-mg(href='#panel-1', data-i18n='mgrp-btn-start-registration') Start Registration
+            a#btn-previous.btn.btn-default(href='#', data-i18n='mgrp-btn-previous') Previous
+            a#btn-continue.btn.btn-default(href='#', data-i18n='mgrp-btn-continue') Continue
+            a#btn-submit.btn.btn-primary-mg(data-i18n='mgrp-btn-submit') Submit
+    
+            
+block js
+  // bower:js
+  script(src='/components/jquery/dist/jquery.js')
+  script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
+  script(src='/components/bootstrap-toggle/js/bootstrap-toggle.min.js')
+  script(src='/components/moment/moment.js')
+  script(src='/components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js')
+  script(src='/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')
+  script(src='/components/jquery-ui/jquery-ui.min.js')
+  script(src='/components/jquery-mousewheel/jquery.mousewheel.js')
+  script(src='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js')
+  // endbower
+  script(src='/js/helper.js')
+  script(src='/js/i18n-handler.js')
+  //script(src='/js/scrollto.js')
+  script(src='/js/rp/main.js')
+  
+block custom-js
+

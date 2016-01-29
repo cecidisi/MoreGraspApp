@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    block css
+      link(rel='stylesheet', href='/css/main-rp.css')
+      
+    block livereload
+      if ENV_DEVELOPMENT
+        script(src='http://localhost:35729/livereload.js')
+        
+  body
+    header(data-spy='affix', data-offeset-top='75')
+      nav.navbar
+        div.container-fluid
+          div(class='navbar-header')
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#mg-navbar-collapse', aria-expanded='false')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='#')
+              img(src='/media/moregrasp-logo.jpg', height='68', width='120')
+              div.title:  h3(data-i18n='mgrp-title')=title
+          #mg-navbar-collapse.navbar-collapse.collapse(aria-expanded=true)
+            ul.nav.navbar-nav.navbar-right.flag-container
+              li.active:  a.flag.flag-en.active(name='en', href='/registration-platform/lang=en', hreflang='en')
+              li:  a.flag.flag-de(name='de', href='/registration-platform/lang=de', hreflang='de')
+            ul.nav.navbar-nav.navbar-right.menu
+              li.active:  a(href='/registration-platform/home', data-i18n='mgrp-nav-home') Home
+              li:  a(href='/registration-platform/register', data-i18n='mgrp-nav-register') Register
+              li:  a(href='/registration-platform/faq', data-i18n='mgrp-nav-faq') FAQ
+    
+    .content
+      .container
+          block content
+
+    .footer
+      .container:  p © MoreGrasp 201
+      
+    block js
+      // bower:js
+      script(src='/components/jquery/dist/jquery.js')
+      script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
+      script(src='/components/bootstrap-toggle/js/bootstrap-toggle.min.js')
+      script(src='/components/moment/moment.js')
+      script(src='/components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js')
+      script(src='/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')
+      script(src='/components/jquery-ui/jquery-ui.min.js')
+      script(src='/components/jquery-mousewheel/jquery.mousewheel.js')
+      script(src='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js')
+      // endbower
+      script(src='/js/helper.js')
+      script(src='/js/i18n-handler.js')
+      script(src='/js/rp-main.js')
+      
+    block custom-js
+      
