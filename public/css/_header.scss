@@ -1,0 +1,113 @@
+
+header {
+    @extend .affix-top;
+    display: block;
+    top: 0px;
+    height: 70px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 99999;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0px 1px 4px #ddd;
+
+    .navbar {
+        position: fixed;
+        height: 70px;
+        width: 100%;
+        margin: 0px;
+
+        .navbar-header {
+            height: 100%;
+            .navbar-brand {
+                padding: 0px 15px;
+                height: 100%;
+
+                img {
+                    display: inline-block;
+                    float: left;
+                }
+
+                .title {
+                    display: inline-block;
+                    float: left;
+                    height: 68px;
+                    margin: 0px 16px;
+                    color: #ed1848;
+                    h3 {
+                        font-weight: 800;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav.menu {
+        height: 68px;
+        float: right;
+
+        li {
+            height: 100%;
+            & > a {
+                height: 100%;
+                border-radius: 0px;
+                padding: 15px 30px;
+                font-size: 1.4em;
+                line-height: 1.7em;
+                text-transform: capitalize;
+                background-color: transparent;
+                color: #000;
+            }
+            &:hover > a {
+                color: #fff;
+                background-color: #4d9d2a;
+            }
+            &.active > a {
+                color: #fff;
+                background-color: #ed1848;
+                box-shadow: 0px 2px #ed1848;
+            }
+
+        }
+
+        & > li + li {
+            margin-left: 0px;
+        }
+    }
+
+    .nav.flag-container {
+        display: inline-block;
+        height: 100%;
+        padding: 9px 30px;
+
+        li {
+            &:hover {
+                background-color: transparent;
+            }
+
+            a.flag {
+                display: inline-block;
+                margin: 0px 3px;
+                text-decoration: none;
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    background-repeat: no-repeat;
+                    width: 16px;
+                    height: 11px;
+                }
+                &.flag-de:before { background-image: url(/media/de.png); }
+                &.flag-en:before { background-image: url(/media/gb.png); }
+                &.active:before {
+                    box-shadow: 1px 1px 4px #555, -1px -1px 4px #555;
+                }
+                &:hover {
+                    background-color: transparent;
+                    &:before { transform: scale(1.1); }
+                }
+            }
+
+        }
+    }
+
+}

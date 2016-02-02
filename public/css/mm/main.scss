@@ -1,0 +1,347 @@
+// MATCHMAKING SCSS
+
+//$icon-font-path: "/../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "../../components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import "../header";
+@import "../content";
+@import "../footer";
+@import "../mixins/custom-mixins";
+@import "home";
+@import "overview";
+
+
+html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Space out content a bit */
+body {
+    width: calc(100% - 8px);
+    height: calc(100% - 78px);
+    margin: 4px;
+    overflow: hidden;
+}
+
+
+
+
+.container {
+    /*height: 100%;*/
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+
+
+
+/*******************************************************************************************************/
+
+$marginLarge: 50px;
+
+
+.container-main {
+    height: calc(100% - 80px);
+    overflow-y: auto;
+
+    .row {
+        height: auto;
+
+        .col {
+            height: auto;
+            padding-bottom: 10px;
+
+            &.col-70, &.col-30 {
+                height: auto;
+            }
+        }
+    }
+
+    .panel {
+        margin: 0px !important;
+        height: 100%;
+        float: left;
+        display: inline-block;
+        width: 100%;
+
+        .panel-heading {
+            .collapse-icon {
+                position: relative;
+                top: -17px;
+            }
+        }
+
+        &#panel-filters > .panel-body {
+            overflow-y: hidden;
+        }
+
+        &#panel-filters .row {
+            display: block;
+            margin: 5px 0px;
+            width: 100%;
+
+            &.filter-type-header {
+
+                margin: 0px;
+
+                h4.filter-type-title a {
+
+                    color: #AF1336;
+                    text-decoration: none;
+
+                    i.fa {
+                        width: 25px;
+                    }
+
+                    i.collapse-icon {
+                        @extend .glyphicon, .glyphicon-chevron-up;
+                        float: right;
+                    }
+                    &.collapsed i.collapse-icon {
+                        @extend .glyphicon, .glyphicon-chevron-down;
+                    }
+
+                }
+
+                div.filter-type-line {
+                    width: calc(100% - 4px);
+                    height: 0px;
+                    margin: 0px 2px;
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+
+            .filter-group {
+                padding: 2px 0px;
+            }
+
+            label.filter-label {
+                @extend .col-xs-12, .col-sm-6, .col-md-6, .col-lg-6;
+                padding: 5px 2px 0px 2px;
+                color: #666;
+            }
+
+            div.filter-element {
+                @extend .col-xs-12, .col-sm-6, .col-md-6, .col-lg-6;
+                padding: 1px 2px;
+
+                .btn-group-small {
+                    padding: 1px 0px;
+                }
+
+                div.slider {
+                    width: 80%;
+                    min-width: 100px;
+                    max-width: 200px;
+                    height: 10px;
+                    margin: 14px 0px;
+
+                    .ui-slider-handle {
+                        left: 66.6667%;
+                        border-radius: 9px;
+                        width: 18px;
+                        height: 18px;
+                        top: -5px;
+
+/*                        &:hover {
+                            background-color: #428bca;
+                        }*/
+                    }
+                }
+
+                span.map {
+                    display: block;
+                    background-image: url(../media/map-32.png);
+                    background-repeat: no-repeat;
+                    width: 30px;
+                    height: 32px;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+        }
+
+        #overview-container {
+            padding: 0px;
+            width: 100%;
+            height: 500px;
+//            height: calc(100% - 38px);
+        }
+
+
+        &#panel-details {
+
+            & .panel-body {
+                overflow-y: auto;
+            }
+
+            .tab-content {
+                padding: 4px;
+            }
+
+            .media-left {
+                display: table-cell;
+                vertical-align: top;
+                padding-right: 10px;
+            }
+
+            .media-body {
+                display: table-cell;
+            }
+
+            #user-name {
+                height: 17px;
+            }
+            #user-photo {
+                width: 24px;
+                height: 24px;
+            }
+
+
+
+
+        }
+
+    }
+}
+
+
+/******************************************************************************************/
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1530px;
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: $screen-sm-min) {
+
+//    body {
+//        font-size: .7em;
+//    }
+
+    .container {
+        width: 100%;
+        margin: 0px 0px;
+
+        .panel {
+            .panel-heading {
+                .collapse-icon {
+                    display: none;
+                }
+            }
+
+            &#panel-filters > .panel-body {
+                width: calc(100%);
+                height: calc(100% - 38px);
+            }
+        }
+    }
+
+    .container-main {
+        overflow-y: hidden !important;
+        .row {
+            height: 100%;
+            .col {
+                height: 100%;
+                &.col-70 {
+                    height: 65%;
+                }
+                &.col-30 {
+                    height: 35%;
+                }
+            }
+        }
+    }
+
+
+
+    #overview-container {
+        height: calc(100% - 38px) !important;
+    }
+
+
+    /* Remove the padding we set earlier */
+    header,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-xl-min) {
+    .btn-group-adaptive {
+        .btn {
+            width: 80%;
+            min-width: 100px;
+            border-radius: 0px;
+            &:first-child {
+                border-top-left-radius: 3px !important;
+                border-top-right-radius: 3px !important;
+            }
+            &:last-child {
+                border-bottom-left-radius: 3px !important;
+                border-bottom-right-radius: 3px !important;
+            }
+            &:not(:first-child) {
+                margin-left: 0px;
+            }
+        }
+    }
+
+}
+
+
+
+@media (min-width: $screen-md-min) {
+
+    .container {
+        width: calc(100% - 10px);
+        margin: 0px 5px;
+    }
+
+    #user-photo {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+
+@media (min-width: $screen-lg-min) {
+
+    .container {
+        width: calc(100% - 20px);
+        margin: 0px 10px;
+    }
+    #user-photo {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+
+}
+
+
+@media (min-width: $screen-xl-min) {
+
+
+    #user-photo {
+        width: 64px !important;
+        height: 64px !important;
+    }
+}
+
+
+
+

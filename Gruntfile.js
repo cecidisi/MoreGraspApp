@@ -26,8 +26,9 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         files: {
-          'public/css/style.css': 'public/css/style.scss',
-          'public/css/main-rp.css': 'public/css/main-rp.scss'  
+            'public/css/rp/main.css': 'public/css/rp/main.scss',
+            'public/css/mm/main.css': 'public/css/mm/main.scss',
+          //'public/css/**/*.css': 'public/css/**/*.scss'
         }
       }
     },
@@ -59,6 +60,11 @@ module.exports = function (grunt) {
           'app/views/**/*.jade'
         ],
         options: { livereload: reloadPort }
+      },
+      sass: {
+        files: ['./public/css//{,*/}*.{scss,sass}'],
+        //tasks: ['sass:server', 'autoprefixer'],
+        tasks: ['sass:dist']
       }
     },
       // Automatically inject Bower components into the HTML file

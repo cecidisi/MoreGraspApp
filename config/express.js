@@ -8,9 +8,7 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 var fsSync = require('fs-sync');
-var multer = require('multer');
-
-//var Person = require('./app/models/person');
+//var multer = require('multer');
 
 
 module.exports = function(app, config) {
@@ -36,38 +34,6 @@ module.exports = function(app, config) {
   controllers.forEach(function (controller) {
       require(controller)(app);
   });
-
-    
-    /************************************
-     *  Handle storage
-     ************************************/
-    
-    var storage = multer.diskStorage({
-        destination: function (req, file, cb) {
-            cb(null, './public/videos/')
-        },
-        filename: function (req, file, cb) {
-            cb(null, file.originalname);
-        }
-    })
-
-    //var upload = multer({ dest: './uploads/', limits: { fieldSize: 52428800, fileSize: 52428800 } });
-    var upload = multer({ storage: storage, limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 } });
-
-    app.post('/upload-video', upload.single('video'), function(req, res, next){
-        if (req.file) {
-            console.log(req.file);
-            res.status(200).send('File uploaded');
-        }
-        else {
-            res.status(500).send('No files');
-
-        }
-    });
-    
-    /************************************
-     *  End Handle storage
-     ************************************/
     
     
 

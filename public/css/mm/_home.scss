@@ -1,0 +1,30 @@
+.home-col {
+    @extend .col-lg-6, .col-md-6, .col-sm-12, .col-xs-12;
+    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+
+    .table-border {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}
+
+h5 {
+    font-size: 1.1em;
+    color: rgb(237, 24, 72);
+    font-weight: bold;
+
+    a {
+        margin-left: 9px;
+
+        i.open-icon {
+            @extend .fa, .fa-external-link;
+            color: #555;
+
+        }
+    }
+
+}

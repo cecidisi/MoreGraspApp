@@ -1,46 +1,48 @@
 // Model for registered candidates
 
-var mongoose = require('mongoose'),
+var fs = require('fs'),
+    mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var personSchema = new Schema({
     personal_data: {
-        first_name: String,
-        last_name: String,
-        country: String,
-        city: String,
-        street: String,
-        number: String,
-        zip: String,
-        email: String,
-        phone: String
+        first_name: { type: String, required: true },
+        last_name: { type: String, required: true },
+        country: { type: String, required: true },
+        city: { type: String, required: true },
+        street: { type: String, required: true },
+        number: { type: String, required: true },
+        zip: { type: String, required: true },
+        email: { type: String, required: true },
+        phone: { type: String, required: true }
     },
     pre_injury: {
-        metal_implant: Boolean,
-        pacemaker: Boolean,
-        medication_pump: Boolean,
-        stroke: Boolean,
-        epilepsy: Boolean,
-        long_term_care: Boolean      
+        metal_implant: { type: Boolean, required: true },
+        pacemaker:  { type: Boolean, required: true },
+        medication_pump:  { type: Boolean, required: true },
+        stroke:  { type: Boolean, required: true },
+        epilepsy:  { type: Boolean, required: true },
+        long_term_care:  { type: Boolean, required: true }
     },
     injury_details: {
-        date_injury: Date,
-        accidental_injury: Boolean
+        date_injury:  { type: Date, required: true },
+        accidental_injury:  { type: Boolean, required: true }
     },
     current_abilities: {
-        hand_to_mouth: Boolean,
-        glass_to_mouth: Boolean,
-        extend_wrist: Boolean,
-        need_improve_grasp: Boolean        
+        hand_to_mouth:  { type: Boolean, required: true },
+        glass_to_mouth:  { type: Boolean, required: true },
+        extend_wrist:  { type: Boolean, required: true },
+        need_improve_grasp:  { type: Boolean, required: true }
     },
     video: {
-        paths: Array
+        //paths: Array
+        files: Array
     },
-    misc: {
-        question_how_found_us: Array,
-        question_who_fills_form: Array
-    },
-    info: {
+    misc: [{
+        question:  { type: String, required: true },
+        answer:  { type: String, required: true }
+    }],
+    meta: {
         date_registered: Date,
         status: String
     }
@@ -50,16 +52,31 @@ var personSchema = new Schema({
 // Add date_registered before saving
 // save is a built-in method 
 personSchema.pre('save', function(next){
-    this.info.date_registered = new Date();
-    this.info.status = 'registered';
+    this.meta.date_registered = new Date();
+    this.meta.status = 'registered';
     next();
 });
 
+// Remove video files before removing document
+personSchema.pre('remove', true, function(next, done){
+    this.video.files.forEach(function(filePath){
+        var path = './public/uploads/'+filePath;
+        fs.stat(path, function(err, stats){
+            if(stats) {
+                console.log('Pre-remove: Deleting --> ' + filePath);
+                fs.unlinkSync(path);
+            }
+        });
+    });
+    console.log(next);
+    next();
+})
 
-//personSchema.virtual('date')
-//    .get(function(){
-//    return this._id.getTimestamp();
-//});
+// Find methods
+personSchema.static('findByStatus', function(status, callback){
+    return this.find({'meta.status': status}, callback);
+});
+
 
 var Person = mongoose.model('Person', personSchema);
 

@@ -1,7 +1,7 @@
 extends layout
 
 block css
-  link(rel='stylesheet', href='/css/main-rp.css')
+  link(rel='stylesheet', href='/css/rp/main.css')
   // bower:css
   link(rel='stylesheet', href='/components/bootstrap-toggle/css/bootstrap-toggle.min.css')
   link(rel='stylesheet', href='/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
@@ -32,7 +32,8 @@ block content
             span.sr-only
         .progress-steps-container
         .button-area
-            a#btn-start.btn.btn-primary-mg(href='#panel-1', data-i18n='mgrp-btn-start-registration') Start Registration
+            button#btn-start.btn.btn-primary-mg
+                a(href='#panel-1', data-i18n='mgrp-btn-start-registration') Start Registration
             a#btn-previous.btn.btn-default(href='#', data-i18n='mgrp-btn-previous') Previous
             a#btn-continue.btn.btn-default(href='#', data-i18n='mgrp-btn-continue') Continue
             a#btn-submit.btn.btn-primary-mg(data-i18n='mgrp-btn-submit') Submit

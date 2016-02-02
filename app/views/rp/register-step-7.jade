@@ -1,87 +1,57 @@
 // Review
+
+mixin get_answer(i18n_label, field, isSecondary)
+    .row
+        if(isSecondary)
+            label.answer.secondary(data-i18n=i18n_label)
+        else
+            label.answer(data-i18n=i18n_label)
+        label.answer :
+        p.form-answer(field=field)
+
+mixin get_answer_no_dots(i18n_label, field)
+    .row
+        label.answer(data-i18n=i18n_label)
+        p.form-answer(field=field)
+
+
 #panel-7.input-panel.center-aligned(name='review', style={display: 'none'})
     h4(data-i18n='mgrp-header-review') Review
     p.explanation(data-i18n="mgrp-header-review-explanation")
     br 
     // Personal Data
     .answer-container.large
-        h5(data-i18n='mgrp-header-personal-data', data-i18n-noreplace)
-            a(href='#panel-1'): i.edit-answer
-        .row
-            label.answer(data-i18n="mgrp-lbl-first-name") 
-            p.form-answer(field='first_name')
-        .row
-            label.answer(data-i18n="mgrp-lbl-last-name") 
-            p.form-answer(field='last_name')
-        .row
-            label.answer(data-i18n="mgrp-lbl-country") 
-            p.form-answer(field='country')
-        .row
-            label.answer(data-i18n="mgrp-lbl-city") 
-            p.form-answer(field='city')
-        .row
-            label.answer(data-i18n="mgrp-lbl-street") 
-            p.form-answer(field='street')
-        .row
-            label.answer(data-i18n="mgrp-lbl-number") 
-            p.form-answer(field='number')
-        .row
-            label.answer(data-i18n="mgrp-lbl-zip") 
-            p.form-answer(field='zip')
-        .row
-            label.answer(data-i18n="mgrp-lbl-email") 
-            p.form-answer(field='email')
-        .row
-            label.answer(data-i18n="mgrp-lbl-phone") 
-            p.form-answer(field='phone')
+        h5(data-i18n='mgrp-header-personal-data', data-i18n-noreplace): a(href='#panel-1'): i.edit-answer
+        +get_answer('mgrp-lbl-first-name', 'first_name')
+        +get_answer('mgrp-lbl-last-name', 'last_name')
+        +get_answer('mgrp-lbl-country', 'country')
+        +get_answer('mgrp-lbl-city', 'city')
+        +get_answer('mgrp-lbl-street', 'street')
+        +get_answer('mgrp-lbl-number', 'number')
+        +get_answer('mgrp-lbl-zip', 'zip')
+        +get_answer('mgrp-lbl-email', 'email')
+        +get_answer('mgrp-lbl-phone', 'phone')
     // Pre-Injury
     .answer-container.large
-        h5(data-i18n='mgrp-header-pre-injury', data-i18n-noreplace)
-            a(href='#panel-2'): i.edit-answer
-        .row
-            label.answer(data-i18n="mgrp-lbl-metal-implant") 
-            p.form-answer(field='metal_implant')
-        .row
-            label.answer(data-i18n="mgrp-lbl-pacemaker") 
-            p.form-answer(field='pacemaker')
-        .row
-            label.answer(data-i18n="mgrp-lbl-medication-pump") 
-            p.form-answer(field='medication_pump')
-        .row
-            label.answer(data-i18n="mgrp-lbl-stroke") 
-            p.form-answer(field='stroke')
-        .row
-            label.answer(data-i18n="mgrp-lbl-epilepsy") 
-            p.form-answer(field='epilepsy')
-        .row
-            label.answer(data-i18n="mgrp-lbl-long-term-care") 
-            p.form-answer(field='long_term_care')
+        h5(data-i18n='mgrp-header-pre-injury', data-i18n-noreplace):    a(href='#panel-2'): i.edit-answer
+        +get_answer('mgrp-lbl-metal-implant', 'metal_implant')
+        +get_answer('mgrp-lbl-pacemaker', 'pacemaker')
+        +get_answer('mgrp-lbl-medication-pump', 'medication_pump')
+        +get_answer('mgrp-lbl-stroke', 'stroke')
+        +get_answer('mgrp-lbl-epilepsy', 'epilepsy')
+        +get_answer('mgrp-lbl-long-term-care', 'long_term_care')
     // Injury Details        
     .answer-container.large
-        h5(data-i18n='mgrp-header-injury', data-i18n-noreplace)
-            a(href='#panel-3'): i.edit-answer
-        .row
-            label.answer(data-i18n="mgrp-lbl-date-of-injury") 
-            p.form-answer(field='date_injury')
-        .row
-            label.answer(data-i18n="mgrp-lbl-caused-by-accident") 
-            p.form-answer(field='accidental_injury')
+        h5(data-i18n='mgrp-header-injury', data-i18n-noreplace):    a(href='#panel-3'): i.edit-answer
+        +get_answer('mgrp-lbl-date-of-injury', 'date_injury')
+        +get_answer('mgrp-lbl-caused-by-accident', 'accidental_injury')
     // Current Abilities
     .answer-container.large
-        h5(data-i18n='mgrp-header-abilities', data-i18n-noreplace) 
-            a(href='#panel-4'): i.edit-answer
-        .row
-            label.answer(data-i18n="mgrp-lbl-hand-to-mouth") 
-            p.form-answer(field='hand_to_mouth')
-        .row
-            label.answer(data-i18n="mgrp-lbl-glass-to-mouth") 
-            p.form-answer(field='glass_to_mouth')
-        .row
-            label.answer(data-i18n="mgrp-lbl-extend wrist") 
-            p.form-answer(field='extend_wrist')
-        .row
-            label.answer(data-i18n="mgrp-lbl-improve-grasp") 
-            p.form-answer(field='need_improve_grasp')
+        h5(data-i18n='mgrp-header-abilities', data-i18n-noreplace): a(href='#panel-4'): i.edit-answer
+        +get_answer_no_dots('mgrp-lbl-hand-to-mouth', 'hand_to_mouth')
+        +get_answer_no_dots('mgrp-lbl-glass-to-mouth', 'glass_to_mouth')
+        +get_answer_no_dots('mgrp-lbl-extend-wrist', 'extend_wrist')
+        +get_answer_no_dots('mgrp-lbl-improve-grasp', 'need_improve_grasp')
     // Video
     .answer-container.large
         h5(data-i18n='mgrp-header-video', data-i18n-noreplace)
@@ -91,40 +61,19 @@
             //p.form-answer(field='hand_to_mouth')
     // Misc
     .answer-container.large
-        h5(data-i18n='mgrp-header-misc', data-i18n-noreplace)
-            a(href='#panel-6'): i.edit-answer
+        h5(data-i18n='mgrp-header-misc', data-i18n-noreplace):  a(href='#panel-6'): i.edit-answer
         label.answer(data-i18n='mgrp-misc-q1')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q1-opt-doctor") 
-            p.form-answer(field='q1_doctor')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q1-opt-caregiver") 
-            p.form-answer(field='q1_caregiver')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q1-opt-relative") 
-            p.form-answer(field='q1_relative')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q1-opt-internet") 
-            p.form-answer(field='q1_internet')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q1-opt-tv") 
-            p.form-answer(field='q1_tv')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q1-opt-other") 
-            p.form-answer(field='q1_other')
+        +get_answer('mgrp-misc-q1-opt-doctor', 'q1_doctor', true)
+        +get_answer('mgrp-misc-q1-opt-caregiver', 'q1_caregiver', true)
+        +get_answer('mgrp-misc-q1-opt-relative', 'q1_relative', true)
+        +get_answer('mgrp-misc-q1-opt-internet', 'q1_internet', true)
+        +get_answer('mgrp-misc-q1-opt-tv', 'q1_tv', true)
+        +get_answer('mgrp-misc-q1-opt-other', 'q1_other', true)
         br
         label.answer(data-i18n='mgrp-misc-q2')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q2-opt-myself") 
-            p.form-answer(field='q2_self')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q2-opt-relative") 
-            p.form-answer(field='q2_relative')
-        .row
-            label.answer.secondary(data-i18n="mgrp-misc-q2-opt-caregiver") 
-            p.form-answer(field='q2_caregiver')
-
-            
+        +get_answer('mgrp-misc-q2-opt-myself', 'q2_self', true)
+        +get_answer('mgrp-misc-q2-opt-relative', 'q2_relative', true)
+        +get_answer('mgrp-misc-q2-opt-caregiver', 'q2_caregiver', true)
             
             
             

@@ -1,11 +1,14 @@
-//$icon-font-path: "../components/bootstrap-sass/assets/fonts/bootstrap/";
+
 // bower:scss
-@import "../components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "../components/font-awesome/scss/font-awesome.scss";
+@import "../../components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../components/font-awesome/scss/font-awesome.scss";
 // endbower
 
 //@import "file-upload";
-@import "mixins/custom-mixins";
+@import "../header";
+@import "../content";
+@import "../footer";
+@import "../mixins/custom-mixins";
 
 
 html {
@@ -19,7 +22,6 @@ body {
     width: 100%;
     height: calc(100% - 80px);
     margin-bottom: 70px;
-//    margin-top: 80px;
 }
 
 .container {
@@ -27,160 +29,17 @@ body {
 }
 
 .bg-mg {
-    background-image: url(../media/moregrasp-logo.jpg);
+    background-image: url(/media/moregrasp-logo.jpg);
     background-repeat: repeat;
     width: 100%;
     height: 100%;
 }
 
-/* Custom page header */
-header {
-    @extend .affix-top;
-    display: block;
-    top: 0px;
-    height: 70px;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    z-index: 99999;
-    border-bottom: 1px solid #e5e5e5;
-    box-shadow: 0px 1px 4px #ddd;
-
-    .navbar {
-        position: fixed;
-        height: 70px;
-        width: 100%;
-        margin: 0px;
-
-        .navbar-header {
-            height: 100%;
-            .navbar-brand {
-                padding: 0px 15px;
-                height: 100%;
-
-                img {
-                    display: inline-block;
-                    float: left;
-                }
-
-                .title {
-                    display: inline-block;
-                    float: left;
-                    height: 68px;
-                    margin: 0px 16px;
-                    color: #ed1848;
-                    h3 {
-                        font-weight: 800;
-                    }
-                }
-            }
-        }
-    }
-
-    .nav.menu {
-        height: 68px;
-        float: right;
-
-        li {
-            height: 100%;
-            & > a {
-                height: 100%;
-                border-radius: 0px;
-                padding: 15px 30px;
-                font-size: 1.4em;
-                line-height: 1.7em;
-                text-transform: capitalize;
-                background-color: transparent;
-                color: #000;
-            }
-            &:hover > a {
-                color: #fff;
-                background-color: #4d9d2a;
-            }
-            &.active > a {
-                color: #fff;
-                background-color: #ed1848;
-                box-shadow: 0px 2px #ed1848;
-            }
-
-        }
-
-        & > li + li {
-            margin-left: 0px;
-        }
-    }
-
-    .nav.flag-container {
-        display: inline-block;
-        height: 100%;
-        padding: 9px 30px;
-
-        li {
-            &:hover {
-                background-color: transparent;
-            }
-
-            a.flag {
-                display: inline-block;
-                margin: 0px 3px;
-                text-decoration: none;
-                &:before {
-                    content: '';
-                    display: inline-block;
-                    background-repeat: no-repeat;
-                    width: 16px;
-                    height: 11px;
-                }
-                &.flag-de:before { background-image: url(../media/de.png); }
-                &.flag-en:before { background-image: url(../media/gb.png); }
-                &.active:before {
-                    box-shadow: 1px 1px 4px #555, -1px -1px 4px #555;
-                }
-                &:hover {
-                    background-color: transparent;
-                    &:before { transform: scale(1.1); }
-                }
-            }
-
-        }
-    }
-
+.nav-panel {
+    @extend .col-sm-12, .col-md-12, .col-lg-12;
+    height: calc(100% - 5px);
+    &.fade { display: none !important; }
 }
-
-/* Custom page footer */
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #f5f5f5;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-
-
-.content {
-//    height: 530px;
-    height: calc(100% - 75px);
-    overflow-y: auto;
-    display: block;
-    position: relative;
-    top: 80px;
-//    padding-top: 70px;
-//    margin-top: 80px;
-
-    .nav-panel {
-        @extend .col-sm-12, .col-md-12, .col-lg-12;
-//        height: 525px;
-        height: calc(100% - 5px);
-        &.fade { display: none !important; }
-    }
-}
-
 
 /////////////// HOME
 
@@ -547,7 +406,7 @@ div.bg-processing {
         width: 128px;
         height: 128px;
         margin: auto;
-        background-image: url(../media/processing.gif);
+        background-image: url(/media/processing.gif);
         background-color: transparent;
         background-repeat: no-repeat;
     }

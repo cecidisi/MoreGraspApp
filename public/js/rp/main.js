@@ -39,8 +39,8 @@
         
         $(panelId + ' .cbx-toggle').each(function(i, toggle){
             var field = $(toggle).attr('name'),
-                value = $(toggle).prop('checked'),
-                boolVal = value ? cbxValue.yes : cbxValue.no;
+                boolVal = $(toggle).prop('checked'),
+                value = boolVal ? cbxValue.yes : cbxValue.no;
             
             // Save field values in session object
             session[panelName][field] =  boolVal; 
@@ -48,8 +48,8 @@
             $('.input-panel[name="review"] p[field="' + field + '"]').html(value);
         });
         
-        console.log('session updated');
-        console.log(session);
+        //console.log('session updated');
+        //console.log(session);
         // Save session in storage
         sessionStorage[sessionKey] = JSON.stringify(session);
     }
@@ -57,8 +57,8 @@
     
     // on document ready
     var loadSession = function(session){
-        console.log('load session');
-        console.log(session);
+        //console.log('load session');
+        //console.log(session);
         
         Object.keys(session).forEach(function(panelName) {
             var panelId = '#'+ $('.input-panel[name="' + panelName + '"]').attr('id');
@@ -141,9 +141,6 @@
             $progress.css('visibility', 'visible');
             $progressSteps.css('visibility', 'visible');
         }
-        
-        // fill session data
-        //loadSession();
     };
     
     
@@ -152,7 +149,8 @@
             hashPattern = /(#panel-)\d/
         if(hashPattern.test(hash)){
             var currentPanel = sessionStorage[curPanelKey];
-            if(currentPanel > 0) updateSession(currentPanel);
+            if(currentPanel > 0 && currentPanel < numberPanels)
+                updateSession(currentPanel);
             // Update currentPanel to match number in hash
             currentPanel = parseInt(hash.replace('#panel-', ''));
             // Show panel indicated in hash
@@ -267,8 +265,11 @@
     /************************************************
      * Event handlers
      ************************************************/
+    // Uncomment for normal workflow
+/*
     
     $('#cbxTermsAccepted').change(function(){
+        //console.log($(this).prop('checked'));
         $('#btn-start').prop('disabled', !$(this).prop('checked'));
     }).change();
 
@@ -276,6 +277,7 @@
         $('#cbxTermsAccepted').prop('checked', !$('#cbxTermsAccepted').prop('checked')).change();
     });
     
+*/
     
     
     
@@ -303,77 +305,119 @@
     /************************************************
      * Data submit
      ************************************************/
+    var getTimestamp = function(){
+        var date = new Date();
+        return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDay() + '.' +
+            date.getHours() + '.' + date.getMinutes() + '.' +date.getMilliseconds();
+    };
 
     var submitData = function(){
+        // Store filestoUpload in array specifying new filename
+        var videosToUpload = [];
+
+        // Prepare user data
+        var session = JSON.parse(sessionStorage[sessionKey]);
+        var data = $.extend(true, {}, session);
+        // Set injury date
+        var dateParts = data.injury_details.date_injury.split('/');
+        data.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1);
+        // Set video paths
+        data.video.files = [];
+
+        Object.keys(filesToUpload).forEach(function(videoKey, i){
+            var videoName = data.personal_data.last_name.toLowerCase().replace(' ', '_') + '-video-' + i + '_' + getTimestamp() + filesToUpload[videoKey].type.replace('video/', '.');
+            videosToUpload.push({ filename: videoName, file: filesToUpload[videoKey], originalname: videoKey });
+            data.video.files.push(videoName);
+        });
+        //Misc Questions
+        var misc = {
+            q1: { question: $.i18nCustom.val('mgrp-misc-q1'), values: [] },
+            q2: { question: $.i18nCustom.val('mgrp-misc-q2'), values: [] }
+        };
+        Object.keys(session.misc).forEach(function(question){
+            var questionParts = question.split('_');
+            var qNum = questionParts[0], qValue = questionParts[1];
+            if(session.misc[question])
+                misc[qNum].values.push(qValue);
+        });
+        data.misc = [];
+        Object.keys(misc).forEach(function(qNum){
+            data.misc.push({ question: misc[qNum].question, answer: misc[qNum].values.join(', ') });
+        });
+
+//        console.log('retrieved session');
+//        console.log(session);
+        console.log('data to submit');
+        console.log(data);
+
         
         // TODO submit data to server
         var $bgProcessing = $('<div/>', { class: 'bg-processing' }).appendTo($('body'));
         $('<div/>', { class: 'loading' }).appendTo($bgProcessing);
 
-        var formData = new FormData();
         var totalUploads= 0;
+        var onAllUploaded = function(){
+            $bgProcessing.remove();
+            $('.input-panel').hide();
+            $('.controls-section').hide();
+            $('.input-panel-submitted').show();
+        };
 
-        var uploadFile = function(data, route){
-            var path = "http://localhost:3000/upload-video";
+        var uploadVideoFile = function(video){
+
+            var formData = new FormData();
+            formData.append('filename', video.filename);
+            formData.append('video', video.file, video.key);
+
+            var path = "/mg-rest-api/upload-video";
             var xhr = new XMLHttpRequest();
-            xhr.onload = function (e) {
-                // file upload is complete
-                //console.log(xhr.responseText);
-            };
+
             xhr.onerror = function(XMLHttpRequest, textStatus, errorThrown) {
                 console.log('error uploading video');
                 console.log(XMLHttpRequest);
                 $bgProcessing.remove();
             };
-            xhr.open("POST", path, true);
-
             xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
+                if(xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         console.log(xhr.responseText);
                         totalUploads++;
-                        if(totalUploads === Object.keys(filesToUpload).length) {
-                            $bgProcessing.remove();
-                            $('.input-panel').hide();
-                            $('.controls-section').hide();
-                            $('.input-panel-submitted').show();
-                        }
+                        if(totalUploads === Object.keys(filesToUpload).length)
+                            onAllUploaded.call(this);
                     } else {
                         console.error(xhr.statusText);
+                        console.error(xhr);
                     }
                 }
             };
-            xhr.send(data);
+            xhr.open("POST", path, true);
+            xhr.send(formData);
         };
-
-        // Prepare user data
-        var datum = { "name": "John Doe", "age": "99" };
 
         // POST user data. On success upload video/s
         $.ajax({
             "async": true,
-            "crossDomain": true,
-            "url": "http://localhost:3000/upload",
+            "url": "/mg-rest-api/save-candidate",
             "method": "POST",
             "headers": { "content-type": "application/x-www-form-urlencoded" },
-            "data": datum
-        }).success(function(){
-
-
-            Object.keys(filesToUpload).forEach(function(key){
-                var formData = new FormData();
-                formData.append('video', filesToUpload[key], key);
-                uploadFile(formData);
-            });
-
+            "data": data
+        }).success(function(data, textStatus, jqXHR){
+            console.log(textStatus);
+            if(videosToUpload.length > 0)
+                videosToUpload.forEach(function(video){ uploadVideoFile(video) });
+            else
+                onAllUploaded.call(this);
         }).error(function(jqXHR){
             console.log('Error');
             console.log(jqXHR);
-            console.log(datum);
         });
 
     };
     
+    $('a#btn-submit').click(function(evt){
+        evt.stopPropagation();
+        submitData();
+    });
     
     /************************************************
      * Entry Point
@@ -390,16 +434,7 @@
         var currentPanel = sessionStorage[curPanelKey] || 0;
         if(currentPanel)
             moveToFormPanel(currentPanel);
-        window.location.hash = '#panel-'+currentPanel;            
-
-        
-        // Redirect to corresponding panel
-//        var hash = sessionStorage[curPanelKey];
-//        if(! hash || hash === '')
-//            hash = window.location.hash || '#panel-0';
-//        
-//        window.location.hash = hash;
-//        $(window).trigger('hashchange');
+        window.location.hash = '#panel-'+currentPanel;
     });
 
 

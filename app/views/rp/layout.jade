@@ -5,7 +5,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width')
     title= title
     block css
-      link(rel='stylesheet', href='/css/main-rp.css')
+      link(rel='stylesheet', href='/css/rp/main.css')
       
     block livereload
       if ENV_DEVELOPMENT
@@ -15,7 +15,7 @@ html(lang='en')
     header(data-spy='affix', data-offeset-top='75')
       nav.navbar
         div.container-fluid
-          div(class='navbar-header')
+          div.navbar-header
             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#mg-navbar-collapse', aria-expanded='false')
               span.sr-only Toggle navigation
               span.icon-bar
@@ -60,4 +60,3 @@ html(lang='en')
       script(src='/js/rp-main.js')
       
     block custom-js
-      
