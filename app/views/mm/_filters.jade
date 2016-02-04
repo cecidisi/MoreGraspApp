@@ -1,0 +1,75 @@
+
+mixin filter_header(filterTitle, icon, togglePanel)
+    .filter-type-header
+        //.filter-type-line
+        h4.filter-type-title
+            a(href=togglePanel, data-toggle='collapse')
+                i.fa(class='fa-'+icon)
+                label=filterTitle
+                i.collapse-icon
+
+
+
+mixin filter_radiobtn(label, name, category)
+    .filter-item(filter-name=name, filter-category=category, filter-type='bool')
+        label.filter-label=label
+        .filter-element
+            .btn-group.btn-group-small(data-toggle='buttons')
+                label.btn.btn-default.btn-sm
+                    input(type='radio', value='true', autocomplete='off')
+                    |   Yes
+                label.btn.btn-default.btn-sm
+                    input(type='radio', value='false', autocomplete='off')
+                    |   No
+                label.btn.btn-default.btn-sm.active
+                    input(type='radio', value='both', autocomplete='off', checked)
+                    |   Both
+
+mixin filter_datetimepicker(label, name, category)
+    .filter-item(filter-name=name, filter-category=category, filter-type='date')
+        label.filter-label=label
+        .filter-element
+            .form-group
+                .input-group.data.datetimepicker
+                    input/.form-control(type='text')
+                    span.input-group-addon: span.glyphicon.glyphicon-calendar
+
+
+#panel-filters.panel.panel-default
+    .panel-heading
+        h3.panel-title Filters
+        span.collapse-icon.pull-right.clickable:    i.glyphicon.glyphicon-chevron-up
+        button#btn-update.btn.btn-default.pull-right.fa.fa-refresh(title='Update Overview')
+        button#btn-clear-filters.btn.btn-default.pull-right.fa.fa-trash(title='Clear Filters')
+        //button#btn-update.btn.btn-default.pull-right Update
+
+
+    #filters-container.panel-body
+        // Personal Data
+        +filter_header('Personal Data', 'user', '#filter-group-personal-data')
+        #filter-group-personal-data.filter-group.collapse.in
+
+        // Pre-Injury conditions
+        +filter_header('Pre-Injury Conditions', 'hand-o-left', '#filter-group-pre-injury')
+        #filter-group-pre-injury.filter-group.collapse.in
+            +filter_radiobtn('Metal Implant', 'metal_implant', 'pre_injury')
+            +filter_radiobtn('Pacemaker', 'pacemaker', 'pre_injury')
+            +filter_radiobtn('Medication Pump', 'medication_pump', 'pre_injury')
+            +filter_radiobtn('Stroke', 'stroke', 'pre_injury')
+            +filter_radiobtn('Epilepsy', 'epilepsy', 'pre_injury')
+            +filter_radiobtn('Long Term Care', 'long_term_care', 'pre_injury')
+
+        // Injury Details
+        +filter_header('Injury Details', 'wheelchair', '#filter-group-injury')
+        #filter-group-injury.filter-group.collapse.in
+            +filter_datetimepicker('From Date Injury', 'date_injury', 'injury_details')
+            +filter_radiobtn('Traumatic Injury', 'accidental_injury', 'injury_details')
+
+        // Current Abilities
+        +filter_header('Current Abilities', 'hand-paper-o', '#filter-group-abilities')
+        #filter-group-abilities.filter-group.collapse.in
+            +filter_radiobtn('Hand to Mouth', 'hand_to_mouth', 'current_abilites')
+            +filter_radiobtn('Glass to Mouth', 'glass_to_mouth', 'current_abilites')
+            +filter_radiobtn('Wrist Extension', 'extend_wrist', 'current_abilites')
+            +filter_radiobtn('Need to Improve Grasp', 'need_improve_grasp', 'current_abilites')
+

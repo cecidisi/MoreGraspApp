@@ -1,0 +1,24 @@
+mixin table(id)
+    .table-responsive
+        table.table.table-condensed.table-stripped.table-hover(id=id)
+            thead
+                th  #
+                th  Name
+                th  Email
+                th  Phone
+                th  Registered
+                th  Status
+            tbody
+
+#panel-overview.panel.panel-default
+    .panel-heading
+        h3.panel-title Overview
+        span.collapse-icon.pull-right.clickable:    i.glyphicon.glyphicon-chevron-up
+        button#btn-reset.btn.btn-default.pull-right.fa.fa-trash(title='Remove highlights and/or selection')
+
+    .panel-body
+        #overview-table
+            +table('table-overview')
+
+        #overview-vis.fade
+            // here goes svg

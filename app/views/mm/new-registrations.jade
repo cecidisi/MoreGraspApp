@@ -1,3 +1,4 @@
+
 extends layout
 
 
@@ -7,3 +8,18 @@ block tab-new-registration
 
 block content
     .row
+        .col.col-xs-12.col-sm-12.col-md-4.col-lg-4
+            include _filters
+        .col.col-xs-12.col-sm-12.col-md-8.col-lg-8
+            include _overview
+            include _details
+
+
+
+block custom-js
+    script(src='/js/helper.js')
+    script(src='/js/mm/filter-view.js')
+    script(src='/js/mm/detail-view.js')
+    script(src='/js/mm/overview-vis.js')
+    script(src='/js/mm/overview-table.js')
+    script(src='/js/mm/main.js')

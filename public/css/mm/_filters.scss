@@ -1,0 +1,147 @@
+
+.panel-filters-container {
+    @extend .col-lg-4, .col-md-4, .col-sm-12, .col-xs-12;
+}
+
+
+#panel-filters {
+//    @extend .col-lg-4, .col-md-4, .col-sm-12, .col-xs-12;
+    display: block;
+    margin: 5px 0px;
+}
+#panel-filters {
+
+    .panel-body {
+        overflow-y: hidden;
+
+        .filter-type-header {
+            @extend .row;
+            height: auto;
+            margin: 0px;
+            padding-left: 5px;
+            padding-right: 5px;
+            //background-color: #efefef;
+            border-top: 1px solid #ddd;
+
+            h4.filter-type-title {
+
+                font-size: 1.1em;
+
+                a {
+                    width: 100%;
+                    display: inline-block;
+                    color: #333;
+                    //color: #AF1336;
+
+                    text-decoration: none;
+
+                    i.fa {
+                        width: 25px;
+                        display: inline-block;
+                    }
+
+                    label {
+                        font-weight: normal;
+                    }
+
+                    i.collapse-icon {
+                        @extend .glyphicon, .glyphicon-chevron-up;
+                        float: right;
+                    }
+                    &.collapsed i.collapse-icon {
+                        @extend .glyphicon, .glyphicon-chevron-down;
+                    }
+
+                }
+            }
+        }
+
+        .filter-group {
+            //@extend .row;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 0px 4px;
+            margin-top: 6px;
+            margin-bottom: 10px;
+
+            .filter-item {
+                @extend .row;
+                margin: 1px 0px;
+
+                label.filter-label {
+                    @extend .col-xs-12, .col-sm-7, .col-md-7, .col-lg-7;
+                    padding: 0px 2px 0px 10px;
+                    margin-top: 7px;
+                    font-weight: normal;
+                    color: #666;
+                }
+
+                div.filter-element {
+                    @extend .col-xs-12, .col-sm-5, .col-md-5, .col-lg-5;
+                    padding: 0px 5px;
+                    //                padding: 1px 2px;
+
+                    .btn-group-small {
+                        @extend .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12;
+                        padding: 0px;
+                        margin-top: 1px;
+                        margin-bottom: 1px;
+
+                        label.btn {
+                            @extend .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4;
+                            padding: 5px;
+                            text-align: center;
+                        }
+                    }
+
+                    .form-group {
+                        width: 100%;
+                        margin-bottom: 0px;
+                    }
+
+                    .input-group-addon {
+                        cursor: pointer;
+                    }
+
+                    div.slider {
+                        width: 80%;
+                        min-width: 100px;
+                        max-width: 200px;
+                        height: 10px;
+                        margin: 14px 0px;
+
+                        .ui-slider-handle {
+                            left: 66.6667%;
+                            border-radius: 9px;
+                            width: 18px;
+                            height: 18px;
+                            top: -5px;
+
+                            /*                        &:hover {
+                            background-color: #428bca;
+                        }*/
+                        }
+                    }
+
+                    span.map {
+                        display: block;
+                        background-image: url(../media/map-32.png);
+                        background-repeat: no-repeat;
+                        width: 30px;
+                        height: 32px;
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+    }
+
+}

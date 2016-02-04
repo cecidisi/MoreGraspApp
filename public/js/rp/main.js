@@ -320,7 +320,8 @@
         var data = $.extend(true, {}, session);
         // Set injury date
         var dateParts = data.injury_details.date_injury.split('/');
-        data.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1);
+        data.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1));
+        //console.log(data.injury_details.date_injury + ' --> ' + typeof data.injury_details.date_injury);
         // Set video paths
         data.video.files = [];
 

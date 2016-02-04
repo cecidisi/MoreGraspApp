@@ -12,6 +12,8 @@
 @import "../mixins/custom-mixins";
 @import "home";
 @import "overview";
+@import "filters";
+@import "details";
 
 
 html {
@@ -32,7 +34,7 @@ body {
 
 
 .container {
-    /*height: 100%;*/
+    height: 100%;
 }
 
 .container-narrow > hr {
@@ -48,7 +50,7 @@ $marginLarge: 50px;
 
 
 .container-main {
-    height: calc(100% - 80px);
+    //height: calc(100% - 80px);
     overflow-y: auto;
 
     .row {
@@ -56,7 +58,7 @@ $marginLarge: 50px;
 
         .col {
             height: auto;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
 
             &.col-70, &.col-30 {
                 height: auto;
@@ -65,155 +67,60 @@ $marginLarge: 50px;
     }
 
     .panel {
-        margin: 0px !important;
+//        margin: 0px !important;
         height: 100%;
         float: left;
         display: inline-block;
         width: 100%;
 
         .panel-heading {
+
+            h3.panel-title {
+                display: inline-block;
+                font-weight: bold;
+                color: #ed1848;
+                font-size: 1.2em;
+            }
+
+            button.btn.pull-right {
+                position: relative;
+                top: -7px;
+
+                &.fa {
+                    top: -4px;
+                }
+            }
+
             .collapse-icon {
                 position: relative;
-                top: -17px;
+                right: -4px;
+                margin-left: 12px;
+                font-size: 18px;
             }
         }
 
-        &#panel-filters > .panel-body {
-            overflow-y: hidden;
-        }
+        .panel-body {
+            height: calc(100% - 37px);
+            padding: 5px;
 
-        &#panel-filters .row {
-            display: block;
-            margin: 5px 0px;
+        }
+    }
+
+
+    #panel-overview {
+        height: calc(60% - 10px);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+
+        .panel-body {
+            padding: 5px;
             width: 100%;
-
-            &.filter-type-header {
-
-                margin: 0px;
-
-                h4.filter-type-title a {
-
-                    color: #AF1336;
-                    text-decoration: none;
-
-                    i.fa {
-                        width: 25px;
-                    }
-
-                    i.collapse-icon {
-                        @extend .glyphicon, .glyphicon-chevron-up;
-                        float: right;
-                    }
-                    &.collapsed i.collapse-icon {
-                        @extend .glyphicon, .glyphicon-chevron-down;
-                    }
-
-                }
-
-                div.filter-type-line {
-                    width: calc(100% - 4px);
-                    height: 0px;
-                    margin: 0px 2px;
-                    border-bottom: 1px solid #ddd;
-                }
-            }
-
-            .filter-group {
-                padding: 2px 0px;
-            }
-
-            label.filter-label {
-                @extend .col-xs-12, .col-sm-6, .col-md-6, .col-lg-6;
-                padding: 5px 2px 0px 2px;
-                color: #666;
-            }
-
-            div.filter-element {
-                @extend .col-xs-12, .col-sm-6, .col-md-6, .col-lg-6;
-                padding: 1px 2px;
-
-                .btn-group-small {
-                    padding: 1px 0px;
-                }
-
-                div.slider {
-                    width: 80%;
-                    min-width: 100px;
-                    max-width: 200px;
-                    height: 10px;
-                    margin: 14px 0px;
-
-                    .ui-slider-handle {
-                        left: 66.6667%;
-                        border-radius: 9px;
-                        width: 18px;
-                        height: 18px;
-                        top: -5px;
-
-/*                        &:hover {
-                            background-color: #428bca;
-                        }*/
-                    }
-                }
-
-                span.map {
-                    display: block;
-                    background-image: url(../media/map-32.png);
-                    background-repeat: no-repeat;
-                    width: 30px;
-                    height: 32px;
-                    cursor: pointer;
-
-                    &:hover {
-                        transform: scale(1.05);
-                    }
-                }
-            }
-
-        }
-
-        #overview-container {
-            padding: 0px;
-            width: 100%;
-            height: 500px;
-//            height: calc(100% - 38px);
-        }
-
-
-        &#panel-details {
-
-            & .panel-body {
-                overflow-y: auto;
-            }
-
-            .tab-content {
-                padding: 4px;
-            }
-
-            .media-left {
-                display: table-cell;
-                vertical-align: top;
-                padding-right: 10px;
-            }
-
-            .media-body {
-                display: table-cell;
-            }
-
-            #user-name {
-                height: 17px;
-            }
-            #user-photo {
-                width: 24px;
-                height: 24px;
-            }
-
-
-
-
+            //            height: calc(100% - 38px);
         }
 
     }
+
 }
 
 
@@ -251,7 +158,7 @@ $screen-xl-min: 1530px;
 
     .container-main {
         overflow-y: hidden !important;
-        .row {
+        > .row {
             height: 100%;
             .col {
                 height: 100%;
@@ -271,13 +178,6 @@ $screen-xl-min: 1530px;
         height: calc(100% - 38px) !important;
     }
 
-
-    /* Remove the padding we set earlier */
-    header,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
 }
 
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-xl-min) {

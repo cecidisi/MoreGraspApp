@@ -86,6 +86,13 @@ router.get('/get-accepted-candidates', function (req, res, next) {
     });
 });
 
+router.get('/get-rejected-candidates', function (req, res, next) {
+    Person.findByStatus('rejected', function (err, persons) {
+        if (err) return next(err);
+        res.status(200).send(JSON.stringify(persons));
+    });
+});
+
 
 //  DELETE candidates
 
@@ -112,5 +119,23 @@ router.delete('/remove-all-candidates', function (req, res, next) {
         res.status(200).send('Deleted All');
     });
 
+});
+
+
+router.put('/update-candidate-status', function(req, res, next){
+
+    console.log(req.body);
+    if(req.body) {
+        var user_id = req.body.user_id,
+            status = req.body.status;
+
+        Person.findByIdAndUpdate(user_id, { 'meta.status': status, 'meta.date_status_changed': new Date() }, function(err, user){
+            if(err) throw err;
+            res.status(200).send('User ' + user._id + ' --> new status = ' + status);
+        });
+    }
+    else {
+        res.status(500);
+    }
 });
 

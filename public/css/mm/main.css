@@ -241,7 +241,7 @@ th {
   src: url("/fonts/bootstrap/glyphicons-halflings-regular.eot");
   src: url("/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
-.glyphicon, .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a i.collapse-icon, .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a.collapsed i.collapse-icon {
+.glyphicon, #panel-filters .panel-body .filter-type-header h4.filter-type-title a i.collapse-icon, #panel-filters .panel-body .filter-type-header h4.filter-type-title a.collapsed i.collapse-icon {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -595,10 +595,10 @@ th {
 .glyphicon-magnet:before {
   content: "\e112"; }
 
-.glyphicon-chevron-up:before, .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a i.collapse-icon:before {
+.glyphicon-chevron-up:before, #panel-filters .panel-body .filter-type-header h4.filter-type-title a i.collapse-icon:before {
   content: "\e113"; }
 
-.glyphicon-chevron-down:before, .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a.collapsed i.collapse-icon:before {
+.glyphicon-chevron-down:before, #panel-filters .panel-body .filter-type-header h4.filter-type-title a.collapsed i.collapse-icon:before {
   content: "\e114"; }
 
 .glyphicon-retweet:before {
@@ -1530,22 +1530,22 @@ pre {
   .container-fluid:after {
     clear: both; }
 
-.row {
+.row, #panel-filters .panel-body .filter-type-header, #panel-filters .panel-body .filter-group .filter-item {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, .row:after {
+  .row:before, #panel-filters .panel-body .filter-type-header:before, #panel-filters .panel-body .filter-group .filter-item:before, .row:after, #panel-filters .panel-body .filter-type-header:after, #panel-filters .panel-body .filter-group .filter-item:after {
     content: " ";
     display: table; }
-  .row:after {
+  .row:after, #panel-filters .panel-body .filter-type-header:after, #panel-filters .panel-body .filter-group .filter-item:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element, .col-md-6, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element, .col-lg-6, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element, .col-sm-12, .home-col, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-lg-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-xs-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-sm-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-md-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-lg-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-xs-5, .col-sm-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-md-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-lg-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-xs-6, .col-sm-6, .col-md-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-lg-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, .col-xs-7, .col-sm-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-md-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item label.filter-label, #panel-filters .panel-body .filter-group .filter-item div.filter-element, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-sm-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-md-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, .col-lg-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item label.filter-label, #panel-filters .panel-body .filter-group .filter-item div.filter-element, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container {
   float: left; }
 
 .col-xs-1 {
@@ -1557,7 +1557,7 @@ pre {
 .col-xs-3 {
   width: 25%; }
 
-.col-xs-4 {
+.col-xs-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn {
   width: 33.3333333333%; }
 
 .col-xs-5 {
@@ -1581,7 +1581,7 @@ pre {
 .col-xs-11 {
   width: 91.6666666667%; }
 
-.col-xs-12, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element {
+.col-xs-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item label.filter-label, #panel-filters .panel-body .filter-group .filter-item div.filter-element, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -1702,7 +1702,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .home-col {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-sm-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-sm-6, .col-sm-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container {
     float: left; }
   .col-sm-1 {
     width: 8.3333333333%; }
@@ -1710,13 +1710,13 @@ pre {
     width: 16.6666666667%; }
   .col-sm-3 {
     width: 25%; }
-  .col-sm-4 {
+  .col-sm-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn {
     width: 33.3333333333%; }
-  .col-sm-5 {
+  .col-sm-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element {
     width: 41.6666666667%; }
-  .col-sm-6, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element {
+  .col-sm-6 {
     width: 50%; }
-  .col-sm-7 {
+  .col-sm-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label {
     width: 58.3333333333%; }
   .col-sm-8 {
     width: 66.6666666667%; }
@@ -1726,7 +1726,7 @@ pre {
     width: 83.3333333333%; }
   .col-sm-11 {
     width: 91.6666666667%; }
-  .col-sm-12, .home-col {
+  .col-sm-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container {
     width: 100%; }
   .col-sm-pull-0 {
     right: auto; }
@@ -1808,21 +1808,21 @@ pre {
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-md-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-md-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-md-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-md-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
     float: left; }
   .col-md-1 {
     width: 8.3333333333%; }
   .col-md-2 {
     width: 16.6666666667%; }
-  .col-md-3 {
+  .col-md-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm {
     width: 25%; }
-  .col-md-4 {
+  .col-md-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn {
     width: 33.3333333333%; }
-  .col-md-5 {
+  .col-md-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element {
     width: 41.6666666667%; }
-  .col-md-6, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element {
+  .col-md-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .video-container {
     width: 50%; }
-  .col-md-7 {
+  .col-md-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label {
     width: 58.3333333333%; }
   .col-md-8 {
     width: 66.6666666667%; }
@@ -1832,7 +1832,7 @@ pre {
     width: 83.3333333333%; }
   .col-md-11 {
     width: 91.6666666667%; }
-  .col-md-12 {
+  .col-md-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
     width: 100%; }
   .col-md-pull-0 {
     right: auto; }
@@ -1914,21 +1914,21 @@ pre {
     margin-left: 100%; } }
 
 @media (min-width: 1200px) {
-  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+  .col-lg-1, .col-lg-2, .col-lg-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-lg-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-lg-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-lg-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
     float: left; }
   .col-lg-1 {
     width: 8.3333333333%; }
   .col-lg-2 {
     width: 16.6666666667%; }
-  .col-lg-3 {
+  .col-lg-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm {
     width: 25%; }
-  .col-lg-4 {
+  .col-lg-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, #panel-details .panel-body .tab-content .tab-pane .video-container {
     width: 33.3333333333%; }
-  .col-lg-5 {
+  .col-lg-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element {
     width: 41.6666666667%; }
-  .col-lg-6, .home-col, .container-main .panel#panel-filters .row label.filter-label, .container-main .panel#panel-filters .row div.filter-element {
+  .col-lg-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item {
     width: 50%; }
-  .col-lg-7 {
+  .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label {
     width: 58.3333333333%; }
   .col-lg-8 {
     width: 66.6666666667%; }
@@ -1938,7 +1938,7 @@ pre {
     width: 83.3333333333%; }
   .col-lg-11 {
     width: 91.6666666667%; }
-  .col-lg-12 {
+  .col-lg-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
     width: 100%; }
   .col-lg-pull-0 {
     right: auto; }
@@ -8014,12 +8014,167 @@ h5 {
     h5 a i.open-icon {
       color: #555; }
 
-.axis path, .axis line {
-  stroke-width: 0;
-  fill: none; }
+#overview-vis {
+  height: calc(60% - 10px);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block; }
+  #overview-vis .axis path, #overview-vis .axis line {
+    stroke-width: 0;
+    fill: none; }
+  #overview-vis g.user-glyph {
+    cursor: pointer; }
 
-g.user-glyph {
-  cursor: pointer; }
+#overview-table tbody tr {
+  cursor: pointer;
+  color: #666; }
+  #overview-table tbody tr.selected {
+    text-decoration: underline;
+    color: #337ab7; }
+  #overview-table tbody tr.highlighted {
+    background: rgba(92, 184, 92, 0.5);
+    background: -webkit-linear-gradient(top, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5));
+    background: linear-gradient(180deg, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5)); }
+
+#panel-filters {
+  display: block;
+  margin: 5px 0px; }
+
+#panel-filters .panel-body {
+  overflow-y: hidden; }
+  #panel-filters .panel-body .filter-type-header {
+    height: auto;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: 1px solid #ddd; }
+    #panel-filters .panel-body .filter-type-header h4.filter-type-title {
+      font-size: 1.1em; }
+      #panel-filters .panel-body .filter-type-header h4.filter-type-title a {
+        width: 100%;
+        display: inline-block;
+        color: #333;
+        text-decoration: none; }
+        #panel-filters .panel-body .filter-type-header h4.filter-type-title a i.fa, #panel-filters .panel-body .filter-type-header h4.filter-type-title h5 a i.open-icon, h5 #panel-filters .panel-body .filter-type-header h4.filter-type-title a i.open-icon {
+          width: 25px;
+          display: inline-block; }
+        #panel-filters .panel-body .filter-type-header h4.filter-type-title a label {
+          font-weight: normal; }
+        #panel-filters .panel-body .filter-type-header h4.filter-type-title a i.collapse-icon {
+          float: right; }
+  #panel-filters .panel-body .filter-group {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 4px;
+    margin-top: 6px;
+    margin-bottom: 10px; }
+    #panel-filters .panel-body .filter-group .filter-item {
+      margin: 1px 0px; }
+      #panel-filters .panel-body .filter-group .filter-item label.filter-label {
+        padding: 0px 2px 0px 10px;
+        margin-top: 7px;
+        font-weight: normal;
+        color: #666; }
+      #panel-filters .panel-body .filter-group .filter-item div.filter-element {
+        padding: 0px 5px; }
+        #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small {
+          padding: 0px;
+          margin-top: 1px;
+          margin-bottom: 1px; }
+          #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn {
+            padding: 5px;
+            text-align: center; }
+        #panel-filters .panel-body .filter-group .filter-item div.filter-element .form-group {
+          width: 100%;
+          margin-bottom: 0px; }
+        #panel-filters .panel-body .filter-group .filter-item div.filter-element .input-group-addon {
+          cursor: pointer; }
+        #panel-filters .panel-body .filter-group .filter-item div.filter-element div.slider {
+          width: 80%;
+          min-width: 100px;
+          max-width: 200px;
+          height: 10px;
+          margin: 14px 0px; }
+          #panel-filters .panel-body .filter-group .filter-item div.filter-element div.slider .ui-slider-handle {
+            left: 66.6667%;
+            border-radius: 9px;
+            width: 18px;
+            height: 18px;
+            top: -5px;
+            /*                        &:hover {
+                            background-color: #428bca;
+                        }*/ }
+        #panel-filters .panel-body .filter-group .filter-item div.filter-element span.map {
+          display: block;
+          background-image: url(../media/map-32.png);
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 32px;
+          cursor: pointer; }
+          #panel-filters .panel-body .filter-group .filter-item div.filter-element span.map:hover {
+            transform: scale(1.05); }
+
+#panel-details {
+  height: 40%;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  display: inline-block; }
+  #panel-details .panel-body {
+    overflow-y: hidden;
+    padding: 2px;
+    height: calc(100% - 42px);
+    background-color: #fafafa; }
+    #panel-details .panel-body ul.nav-tabs {
+      background-color: white; }
+      #panel-details .panel-body ul.nav-tabs li a {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px; }
+      #panel-details .panel-body ul.nav-tabs li.active a {
+        background-color: #fafafa; }
+    #panel-details .panel-body .tab-content {
+      display: inline-block;
+      float: left;
+      width: calc(100% - 100px);
+      height: calc(100% - 50px);
+      padding: 10px 5px; }
+      #panel-details .panel-body .tab-content .tab-pane {
+        height: 100%;
+        width: 100%; }
+        #panel-details .panel-body .tab-content .tab-pane .detail-item {
+          display: inline-block;
+          padding: 2px 4px; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item.sm {
+            padding: 2px 4px; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
+            padding: 2px 4px; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item label {
+            margin-right: 3px;
+            margin-bottom: 10px; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item p {
+            display: inline-block; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item .media-left {
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 10px; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item .media-body {
+            display: table-cell; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item #user-name {
+            height: 17px; }
+          #panel-details .panel-body .tab-content .tab-pane .detail-item #user-photo {
+            width: 24px;
+            height: 24px; }
+        #panel-details .panel-body .tab-content .tab-pane .video-container {
+          height: 150px;
+          display: inline-block; }
+    #panel-details .panel-body .button-group {
+      display: inline-block;
+      width: 100px;
+      float: left;
+      margin-top: 10px; }
+      #panel-details .panel-body .button-group .btn {
+        display: inline-block;
+        min-width: 95px;
+        margin: 3px 0px; }
 
 html {
   position: relative;
@@ -8034,103 +8189,52 @@ body {
   overflow: hidden; }
 
 .container {
-  /*height: 100%;*/ }
+  height: 100%; }
 
 .container-narrow > hr {
   margin: 30px 0; }
 
 /*******************************************************************************************************/
 .container-main {
-  height: calc(100% - 80px);
   overflow-y: auto; }
-  .container-main .row {
+  .container-main .row, .container-main #panel-filters .panel-body .filter-type-header, #panel-filters .panel-body .container-main .filter-type-header, .container-main #panel-filters .panel-body .filter-group .filter-item, #panel-filters .panel-body .filter-group .container-main .filter-item {
     height: auto; }
-    .container-main .row .col {
+    .container-main .row .col, .container-main #panel-filters .panel-body .filter-type-header .col, #panel-filters .panel-body .container-main .filter-type-header .col, .container-main #panel-filters .panel-body .filter-group .filter-item .col, #panel-filters .panel-body .filter-group .container-main .filter-item .col {
       height: auto;
-      padding-bottom: 10px; }
-      .container-main .row .col.col-70, .container-main .row .col.col-30 {
+      padding-bottom: 5px; }
+      .container-main .row .col.col-70, .container-main #panel-filters .panel-body .filter-type-header .col.col-70, #panel-filters .panel-body .container-main .filter-type-header .col.col-70, .container-main #panel-filters .panel-body .filter-group .filter-item .col.col-70, #panel-filters .panel-body .filter-group .container-main .filter-item .col.col-70, .container-main .row .col.col-30, .container-main #panel-filters .panel-body .filter-type-header .col.col-30, #panel-filters .panel-body .container-main .filter-type-header .col.col-30, .container-main #panel-filters .panel-body .filter-group .filter-item .col.col-30, #panel-filters .panel-body .filter-group .container-main .filter-item .col.col-30 {
         height: auto; }
   .container-main .panel {
-    margin: 0px !important;
     height: 100%;
     float: left;
     display: inline-block;
     width: 100%; }
+    .container-main .panel .panel-heading h3.panel-title {
+      display: inline-block;
+      font-weight: bold;
+      color: #ed1848;
+      font-size: 1.2em; }
+    .container-main .panel .panel-heading button.btn.pull-right {
+      position: relative;
+      top: -7px; }
+      .container-main .panel .panel-heading button.btn.pull-right.fa {
+        top: -4px; }
     .container-main .panel .panel-heading .collapse-icon {
       position: relative;
-      top: -17px; }
-    .container-main .panel#panel-filters > .panel-body {
-      overflow-y: hidden; }
-    .container-main .panel#panel-filters .row {
-      display: block;
-      margin: 5px 0px;
+      right: -4px;
+      margin-left: 12px;
+      font-size: 18px; }
+    .container-main .panel .panel-body {
+      height: calc(100% - 37px);
+      padding: 5px; }
+  .container-main #panel-overview {
+    height: calc(60% - 10px);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block; }
+    .container-main #panel-overview .panel-body {
+      padding: 5px;
       width: 100%; }
-      .container-main .panel#panel-filters .row.filter-type-header {
-        margin: 0px; }
-        .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a {
-          color: #AF1336;
-          text-decoration: none; }
-          .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a i.fa, .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title h5 a i.open-icon, h5 .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a i.open-icon {
-            width: 25px; }
-          .container-main .panel#panel-filters .row.filter-type-header h4.filter-type-title a i.collapse-icon {
-            float: right; }
-        .container-main .panel#panel-filters .row.filter-type-header div.filter-type-line {
-          width: calc(100% - 4px);
-          height: 0px;
-          margin: 0px 2px;
-          border-bottom: 1px solid #ddd; }
-      .container-main .panel#panel-filters .row .filter-group {
-        padding: 2px 0px; }
-      .container-main .panel#panel-filters .row label.filter-label {
-        padding: 5px 2px 0px 2px;
-        color: #666; }
-      .container-main .panel#panel-filters .row div.filter-element {
-        padding: 1px 2px; }
-        .container-main .panel#panel-filters .row div.filter-element .btn-group-small {
-          padding: 1px 0px; }
-        .container-main .panel#panel-filters .row div.filter-element div.slider {
-          width: 80%;
-          min-width: 100px;
-          max-width: 200px;
-          height: 10px;
-          margin: 14px 0px; }
-          .container-main .panel#panel-filters .row div.filter-element div.slider .ui-slider-handle {
-            left: 66.6667%;
-            border-radius: 9px;
-            width: 18px;
-            height: 18px;
-            top: -5px;
-            /*                        &:hover {
-                            background-color: #428bca;
-                        }*/ }
-        .container-main .panel#panel-filters .row div.filter-element span.map {
-          display: block;
-          background-image: url(../media/map-32.png);
-          background-repeat: no-repeat;
-          width: 30px;
-          height: 32px;
-          cursor: pointer; }
-          .container-main .panel#panel-filters .row div.filter-element span.map:hover {
-            transform: scale(1.05); }
-    .container-main .panel #overview-container {
-      padding: 0px;
-      width: 100%;
-      height: 500px; }
-    .container-main .panel#panel-details .panel-body {
-      overflow-y: auto; }
-    .container-main .panel#panel-details .tab-content {
-      padding: 4px; }
-    .container-main .panel#panel-details .media-left {
-      display: table-cell;
-      vertical-align: top;
-      padding-right: 10px; }
-    .container-main .panel#panel-details .media-body {
-      display: table-cell; }
-    .container-main .panel#panel-details #user-name {
-      height: 17px; }
-    .container-main .panel#panel-details #user-photo {
-      width: 24px;
-      height: 24px; }
 
 /******************************************************************************************/
 /* Responsive: Portrait tablets and up */
@@ -8145,21 +8249,16 @@ body {
       height: calc(100% - 38px); }
   .container-main {
     overflow-y: hidden !important; }
-    .container-main .row {
+    .container-main > .row, #panel-filters .panel-body .container-main > .filter-type-header, #panel-filters .panel-body .filter-group .container-main > .filter-item {
       height: 100%; }
-      .container-main .row .col {
+      .container-main > .row .col, #panel-filters .panel-body .container-main > .filter-type-header .col, #panel-filters .panel-body .filter-group .container-main > .filter-item .col {
         height: 100%; }
-        .container-main .row .col.col-70 {
+        .container-main > .row .col.col-70, #panel-filters .panel-body .container-main > .filter-type-header .col.col-70, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-70 {
           height: 65%; }
-        .container-main .row .col.col-30 {
+        .container-main > .row .col.col-30, #panel-filters .panel-body .container-main > .filter-type-header .col.col-30, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-30 {
           height: 35%; }
   #overview-container {
-    height: calc(100% - 38px) !important; }
-  /* Remove the padding we set earlier */
-  header,
-  .footer {
-    padding-left: 0;
-    padding-right: 0; } }
+    height: calc(100% - 38px) !important; } }
 
 @media screen and (min-width: 768px) and (max-width: 1530px) {
   .btn-group-adaptive .btn {

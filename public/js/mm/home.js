@@ -5,15 +5,6 @@
         tblAcceptedId = '#table-accepted';
 
 
-    var getDDMMYYY = function(date){
-        date = new Date(date);
-        var day = date.getDay().toString().length === 1 ? '0'+date.getDay() : date.getDay(),
-            month = (date.getMonth() + 1).toString().length === 1 ? '0'+(date.getMonth()+1) : date.getMonth()+1,
-            year = date.getFullYear();
-        return day + '/' + month + '/' + year;
-    };
-
-
     var populateTable = function(tableId, data){
 
         var $table = $(tableId + ' tbody');
@@ -23,7 +14,7 @@
             $('<td/>', { html: d.personal_data.first_name + ' ' + d.personal_data.last_name }).appendTo($row);
             $('<td/>', { html: d.personal_data.email }).appendTo($row);
             $('<td/>', { html: d.personal_data.phone }).appendTo($row);
-            $('<td/>', { html: getDDMMYYY(d.meta.date_registered) }).appendTo($row);
+            $('<td/>', { html: getDDMMYYYY(d.meta.date_registered) }).appendTo($row);
             $('<td/>', { html: d.meta.status }).appendTo($row);
         });
     };

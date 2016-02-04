@@ -1,8 +1,35 @@
-.axis path, .axis line {
-    stroke-width: 0;
-    fill: none;
+#overview-vis {
+    height: calc(60% - 10px);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+    .axis path, .axis line {
+        stroke-width: 0;
+        fill: none;
+    }
+
+    g.user-glyph {
+        cursor: pointer;
+    }
 }
 
-g.user-glyph {
-    cursor: pointer;
+
+#overview-table {
+
+    tbody tr {
+        cursor: pointer;
+        color: #666;
+
+        &.selected {
+            text-decoration: underline;
+            color: #337ab7;
+        }
+
+        &.highlighted {
+            //@include linear-gradient(rgba(77, 157, 42, .2), rgba(77, 157, 42, .1), rgba(77, 157, 42, .2));
+            @include linear-gradient(rgba(92, 184, 92, .5), rgba(92, 184, 92, .4), rgba(92, 184, 92, .5));
+        }
+    }
+
 }

@@ -1,0 +1,107 @@
+#panel-details {
+    height: 40%;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    display: inline-block;
+
+    .panel-body {
+        overflow-y: hidden;
+        padding: 2px;
+        height: calc(100% - 42px);
+        background-color: #fafafa;
+
+        ul.nav-tabs {
+            background-color: white;
+
+            li {
+                a {
+                    border-top-left-radius: 7px;
+                    border-top-right-radius: 7px;
+                }
+                &.active a {
+                    background-color: #fafafa;
+                }
+            }
+        }
+
+        .tab-content {
+            display: inline-block;
+            float: left;
+            width: calc(100% - 100px);
+            height: calc(100% - 50px);
+            padding: 10px 5px;
+            //border: 1px solid #ddd;
+
+            .tab-pane {
+                height: 100%;
+                width: 100%;
+
+                .detail-item {
+                    @extend .col-xs-12, .col-sm-12, .col-md-6, .col-lg-6;
+                    display: inline-block;
+                    padding: 2px 4px;
+
+                    &.sm {
+                        @extend .col-xs-12, .col-sm-12, .col-md-3, .col-lg-3;
+                        padding: 2px 4px;
+                    }
+
+                    &.lg {
+                        @extend .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12;
+                        padding: 2px 4px;
+                    }
+
+                    label {
+                        //@extend .col-lg-6;
+                        margin-right: 3px;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        display: inline-block;
+                    }
+
+                    .media-left {
+                        display: table-cell;
+                        vertical-align: top;
+                        padding-right: 10px;
+                    }
+
+                    .media-body {
+                        display: table-cell;
+                    }
+
+                    #user-name {
+                        height: 17px;
+                    }
+                    #user-photo {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                .video-container {
+                    @extend .col-xs-12, .col-sm-12, .col-md-6, .col-lg-4;
+                    height: 150px;
+                    //width: 300px;
+                    display: inline-block;
+                }
+
+            }
+        }
+
+        .button-group {
+            display: inline-block;
+            width: 100px;
+            float: left;
+            margin-top: 10px;
+
+            .btn {
+                display: inline-block;
+                min-width: 95px;
+                margin: 3px 0px;
+            }
+        }
+    }
+
+}

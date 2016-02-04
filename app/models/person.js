@@ -44,7 +44,8 @@ var personSchema = new Schema({
     }],
     meta: {
         date_registered: Date,
-        status: String
+        status: String,
+        date_status_changed: Date
     }
     
 });
@@ -54,6 +55,7 @@ var personSchema = new Schema({
 personSchema.pre('save', function(next){
     this.meta.date_registered = new Date();
     this.meta.status = 'registered';
+    this.meta.date_registered = new Date();
     next();
 });
 

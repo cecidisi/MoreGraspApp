@@ -1,0 +1,68 @@
+mixin item_content(label, field)
+    label #{label}:
+    p(name=field)
+
+mixin detail_item(label, field)
+    .detail-item
+        +item_content(label, field)
+
+mixin detail_item_sm(label, field)
+    .detail-item.sm
+        +item_content(label, field)
+
+mixin detail_item_lg(label, field)
+    .detail-item.lg
+        +item_content(label, field)
+
+
+#panel-details.panel.panel-default
+    .panel-heading
+        h3.panel-title Candidate Details
+        span.collapse-icon.pull-right.clickable:    i.glyphicon.glyphicon-chevron-up
+        button#btn-clear-details.btn.btn-default.pull-right.fa.fa-trash(title='Clear Candidate Details')
+    #root-details.panel-body
+
+            ul.nav.nav-tabs(role="tablist")
+                li.active(role="presentation"): a#tab-personal-data(href="#pane-personal-data", aria-controls="personal data", role="tab" data-toggle="tab") Personal Data
+                li(role="presentation"): a#tab-pre-injury(href="#pane-pre-injury", aria-controls="pre-injury conditions", role="tab" data-toggle="tab") Pre-Injury
+                li(role="presentation"): a#tab-injury-conditions(href="#pane-injury-conditions", aria-controls="injury details", role="tab" data-toggle="tab") Injury Details
+                li(role="presentation"): a#tab-current-abilities(href="#pane-current-abilities", aria-controls="current abilities", role="tab" data-toggle="tab") Current Abilities
+                li(role="presentation"): a#tab-video(href="#pane-video", aria-controls="video", role="tab" data-toggle="tab") Video/s
+                li(role="presentation"): a#tab-misc(href="#pane-misc", aria-controls="miscellaneous", role="tab" data-toggle="tab") Miscellaneous
+
+            .tab-content
+                #pane-personal-data.tab-pane.active.in(aria-labelledby='#tab-personal-data')
+                    +detail_item('First Name', 'first_name')
+                    +detail_item('Last Name', 'last_name')
+                    +detail_item('Country', 'country')
+                    +detail_item('City', 'city')
+                    +detail_item('Street', 'street')
+                    +detail_item_sm('Number', 'number')
+                    +detail_item_sm('ZIP', 'zip')
+                    +detail_item('Email', 'email')
+                    +detail_item('Phone', 'phone')
+                #pane-pre-injury.tab-pane.fade(aria-labelledby='#tab-pre-injury')
+                    +detail_item('Metal Implant', 'metal_implant')
+                    +detail_item('Pacemaker', 'pacemaker')
+                    +detail_item('Medication Pump', 'medication_pump')
+                    +detail_item('Stroke', 'stroke')
+                    +detail_item('Epilepsy', 'epilepsy')
+                    +detail_item('Long Term Care', 'long_term_care')
+                #pane-injury-conditions.tab-pane.fade(aria-labelledby='#tab-injury-conditions')
+                    +detail_item('Date of Injury', 'date_injury')
+                    +detail_item('Traumatic Injury', 'accidental_injury')
+                #pane-current-abilities.tab-pane.fade(aria-labelledby='#tab-current-abilities')
+                    +detail_item_lg('Can bring hand to mouth', 'hand_to_mouth')
+                    +detail_item_lg('Can bring glass to mouth', 'glass_to_mouth')
+                    +detail_item_lg('Can extend wrist', 'extend_wrist')
+                    +detail_item_lg('Needs to improve grasp', 'need_improve_grasp')
+                #pane-video.tab-pane.fade(arialabelledby='#tab-video')
+                    p No video uploaded
+
+                #pane-misc.tab-pane.fade(aria-labelledby='#tab-misc')
+
+            .button-group
+                button#btn-accept-candidate.btn.btn-success.disabled Accept
+                button#btn-reject-candidate.btn.btn-danger.disabled Not Accept
+
+
