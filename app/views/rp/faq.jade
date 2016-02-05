@@ -8,9 +8,10 @@ mixin question(n)
 
 
 mixin answer(n)
-    a(name='q'+n)
+    //a(name='q'+n)
     .inner
         h4        
+            a(name='q'+n)
             i.fa.fa-check
             label(data-i18n='mgrp-faq-question'+n)
         p(data-i18n='mgrp-faq-answer'+n)
@@ -52,9 +53,31 @@ block js
     script(src='/components/lodash/lodash.js')
     // endbower
     script(src='/js/i18n-handler.js')
+    script(src='/js/scrollto.js')
     
     
 block custom-js
     script.
-        (function($ ){ $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], });  })(jQuery)
+        (function($){
+            $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], });
+
+            var navigateTo = function(hash) {
+                var hashPattern = /(#q)\d/;
+                console.log(hash);
+                if(hashPattern.test(hash) || hash === '#questions'){
+                    console.log('Entra --> ' + '[name="' + hash.replace('#', '') + '"]');
+                    console.log($('[name="' + hash.replace('#', '') + '"]'));
+                    $('#faq').scrollTo('[name="' + hash.replace('#', '') + '"]');
+                }
+            };
+
+            window.onhashchanged = function(){
+                navigateTo(window.location.hash);
+            }
+
+            $(document).ready(function(){
+                navigateTo(window.location.hash);
+            });
+
+        })(jQuery)
 

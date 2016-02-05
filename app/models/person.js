@@ -39,8 +39,8 @@ var personSchema = new Schema({
         files: Array
     },
     misc: [{
-        question:  { type: String, required: true },
-        answer:  { type: String, required: true }
+        question:  { type: String},
+        answer:  { type: String}
     }],
     meta: {
         date_registered: Date,

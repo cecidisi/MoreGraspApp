@@ -102,6 +102,7 @@
         
         //console.log('move to --> ' + hash);
         var panelId = '#panel-'+currentPanel;
+        console.log(panelId);
         // show current panel and hide others
         $('.input-panel:not(' + panelId+ ')').hide();
         $(panelId).slideDown('slow');
@@ -117,30 +118,39 @@
                 $('#progress-step-'+i).removeClass('complete');
         }
         // enable/disable buttons
-        if(currentPanel > 0 && currentPanel < numberPanels-1) {
-            $btnStart.hide();
-            $btnPrevious.attr('href', '#panel-' + (currentPanel-1)).show();
-            $btnContinue.attr('href', '#panel-' + (currentPanel+1)).show();
-            $btnSubmit.hide();
-            $progress.css('visibility', 'visible');
-            $progressSteps.css('visibility', 'visible');
-        }
-        else if(currentPanel == 0) {
-            $btnStart.show();
-            $btnPrevious.hide();
-            $btnContinue.hide();
-            $btnSubmit.hide();
-            $progress.css('visibility', 'hidden');
-            $progressSteps.css('visibility', 'hidden');
+        if(!isNaN(currentPanel)) {
+            if(currentPanel > 0 && currentPanel < numberPanels-1) {
+                $btnStart.hide();
+                $btnPrevious.attr('href', '#panel-' + (currentPanel-1)).show();
+                $btnContinue.attr('href', '#panel-' + (currentPanel+1)).show();
+                $btnSubmit.hide();
+                $progress.css('visibility', 'visible');
+                $progressSteps.css('visibility', 'visible');
+            }
+            else if(currentPanel == 0) {
+                $btnStart.show();
+                $btnPrevious.hide();
+                $btnContinue.hide();
+                $btnSubmit.hide();
+                $progress.css('visibility', 'hidden');
+                $progressSteps.css('visibility', 'hidden');
+            }
+            else {
+                $btnStart.hide();
+                $btnPrevious.hide();
+                $btnContinue.hide();
+                $btnSubmit.show();
+                $progress.css('visibility', 'visible');
+                $progressSteps.css('visibility', 'visible');
+            }
         }
         else {
-            $btnStart.hide();
-            $btnPrevious.hide();
-            $btnContinue.hide();
-            $btnSubmit.show();
-            $progress.css('visibility', 'visible');
-            $progressSteps.css('visibility', 'visible');
+            // #panel-submitted
+            $('.input-panel').hide();
+            $('.controls-section').hide();
+            $('#panel-submitted').show();
         }
+
     };
     
     
@@ -312,24 +322,25 @@
     };
 
     var submitData = function(){
-        // Store filestoUpload in array specifying new filename
-        var videosToUpload = [];
 
         // Prepare user data
         var session = JSON.parse(sessionStorage[sessionKey]);
         var data = $.extend(true, {}, session);
+
         // Set injury date
         var dateParts = data.injury_details.date_injury.split('/');
-        data.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1));
-        //console.log(data.injury_details.date_injury + ' --> ' + typeof data.injury_details.date_injury);
+        data.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1);
+
         // Set video paths
         data.video.files = [];
-
+        // Store filestoUpload in array specifying new filename
+        var videosToUpload = [];
         Object.keys(filesToUpload).forEach(function(videoKey, i){
             var videoName = data.personal_data.last_name.toLowerCase().replace(' ', '_') + '-video-' + i + '_' + getTimestamp() + filesToUpload[videoKey].type.replace('video/', '.');
             videosToUpload.push({ filename: videoName, file: filesToUpload[videoKey], originalname: videoKey });
             data.video.files.push(videoName);
         });
+
         //Misc Questions
         var misc = {
             q1: { question: $.i18nCustom.val('mgrp-misc-q1'), values: [] },
@@ -343,6 +354,7 @@
         });
         data.misc = [];
         Object.keys(misc).forEach(function(qNum){
+            console.log(misc[qNum].values.join(', '));
             data.misc.push({ question: misc[qNum].question, answer: misc[qNum].values.join(', ') });
         });
 
@@ -350,7 +362,6 @@
 //        console.log(session);
         console.log('data to submit');
         console.log(data);
-
         
         // TODO submit data to server
         var $bgProcessing = $('<div/>', { class: 'bg-processing' }).appendTo($('body'));
@@ -359,11 +370,11 @@
         var totalUploads= 0;
         var onAllUploaded = function(){
             $bgProcessing.remove();
-            $('.input-panel').hide();
-            $('.controls-section').hide();
-            $('.input-panel-submitted').show();
+            sessionStorage[curPanelKey] = 'submitted';
+            moveToFormPanel('submitted');
         };
 
+        // Video upload functions
         var uploadVideoFile = function(video){
 
             var formData = new FormData();
