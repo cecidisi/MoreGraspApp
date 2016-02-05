@@ -78,8 +78,8 @@
             detailView.clear();
         },
         onUserAccepted: function() {
-            //changeCandidateStatus(currentUserId, 'accepted', retrieveDataAndLoadViews);
-            retrieveDataAndLoadViews();
+            changeCandidateStatus(currentUserId, 'accepted', retrieveDataAndLoadViews);
+            //retrieveDataAndLoadViews();
         },
         onUserRejected: function() {
             changeCandidateStatus(currentUserId, 'rejected', retrieveDataAndLoadViews);
