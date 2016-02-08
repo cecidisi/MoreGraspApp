@@ -35,7 +35,6 @@ var personSchema = new Schema({
         need_improve_grasp:  { type: Boolean, required: true }
     },
     video: {
-        //paths: Array
         files: Array
     },
     misc: [{
@@ -45,9 +44,12 @@ var personSchema = new Schema({
     meta: {
         date_registered: Date,
         status: String,
-        date_status_changed: Date
+        date_status_changed: Date,
+        statusChangedBy: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Admin'
+        }]
     }
-    
 });
 
 // Add date_registered before saving

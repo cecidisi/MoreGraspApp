@@ -138,4 +138,3 @@ router.put('/update-candidate-status', function(req, res, next){
         res.status(500);
     }
 });
-

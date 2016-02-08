@@ -32,8 +32,8 @@ router.get('/home', function(req, res, next){
     });
 });
 
-router.get('/new-registrations', function(req, res, next){
-    res.render('mm/new-registrations', {
+router.get('/registrations', function(req, res, next){
+    res.render('mm/registrations', {
         title: 'Matchmaking Platform'
     });
 });
