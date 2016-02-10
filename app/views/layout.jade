@@ -5,7 +5,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width')
     title= title
     block css
-      link(rel='stylesheet', href='/css/main-rp.css')
+      link(rel='stylesheet', href='/css/rp-style.css')
       
     block livereload
       if ENV_DEVELOPMENT
@@ -41,22 +41,5 @@ html(lang='en')
       .container:  p © MoreGrasp 2015
       
     block js
-      // bower:js
-      script(src='/components/jquery/dist/jquery.js')
-      script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
-      script(src='/components/bootstrap-toggle/js/bootstrap-toggle.min.js')
-      script(src='/components/moment/moment.js')
-      script(src='/components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js')
-      script(src='/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')
-      script(src='/components/jquery-ui/jquery-ui.min.js')
-      script(src='/components/jquery-mousewheel/jquery.mousewheel.js')
-      script(src='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js')
-      script(src='/components/d3/d3.js')
-      script(src='/components/d3pie/d3pie/d3pie.min.js')
-      script(src='/components/lodash/lodash.js')
-      // endbower
-      script(src='/js/helper.js')
-      script(src='/js/i18n-handler.js')
-      script(src='/js/rp-main.js')
       
     block custom-js

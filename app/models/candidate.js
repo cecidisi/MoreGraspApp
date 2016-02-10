@@ -4,7 +4,7 @@ var fs = require('fs'),
     mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var personSchema = new Schema({
+var candidateSchema = new Schema({
     personal_data: {
         first_name: { type: String, required: true },
         last_name: { type: String, required: true },
@@ -45,24 +45,24 @@ var personSchema = new Schema({
         date_registered: Date,
         status: String,
         date_status_changed: Date,
-        statusChangedBy: [{
+        status_changed_by: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Admin'
-        }]
+            ref: 'User'
+        }
     }
 });
 
 // Add date_registered before saving
-// save is a built-in method 
-personSchema.pre('save', function(next){
+// save is a built-in method
+candidateSchema.pre('save', function(next){
     this.meta.date_registered = new Date();
     this.meta.status = 'registered';
-    this.meta.date_registered = new Date();
+    this.meta.date_status_changed = new Date();
     next();
 });
 
 // Remove video files before removing document
-personSchema.pre('remove', true, function(next, done){
+candidateSchema.pre('remove', true, function(next, done){
     this.video.files.forEach(function(filePath){
         var path = './public/uploads/'+filePath;
         fs.stat(path, function(err, stats){
@@ -76,12 +76,14 @@ personSchema.pre('remove', true, function(next, done){
     next();
 })
 
-// Find methods
-personSchema.static('findByStatus', function(status, callback){
+// Schema static methods
+candidateSchema.static('findByStatus', function(status, callback){
     return this.find({'meta.status': status}, callback);
 });
 
 
-var Person = mongoose.model('Person', personSchema);
 
-module.exports = Person;
+
+var Candidate = mongoose.model('Candidate', candidateSchema);
+
+module.exports = Candidate;

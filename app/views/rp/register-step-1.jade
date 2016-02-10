@@ -1,12 +1,15 @@
-mixin input_field(field, i18nAttr, placeholder, isSmall)
+mixin input_field(field, i18nAttr, isSmall)
     - var label_class = 'default';
     - var input_class = 'form-control';
     - if(isSmall)
         - label_class += ' sm';
         - input_class += ' sm';
-
     label(class=label_class, for=field, data-i18n=i18nAttr)
-    input(class=input_class, name=field, type='text', placeholder=placeholder)
+    input(class=input_class, name=field, type='text')
+
+mixin country_option(name)
+    - var selected = (name === 'Germany') ? true : false;
+    option(value=name, selected=selected)=name
 
 
 // Personal Data
@@ -15,21 +18,22 @@ mixin input_field(field, i18nAttr, placeholder, isSmall)
     br
     // 1st row
     .row
-        +input_field('first_name', 'mgrp-lbl-first-name', 'John')
-        +input_field('last_name', 'mgrp-lbl-last-name', 'Doe')
+        +input_field('first_name', 'mgrp-lbl-first-name')
+        +input_field('last_name', 'mgrp-lbl-last-name')
     // 2nd row  
     .row
         label.default(for='selCountry', data-i18n='mgrp-lbl-country') Country
         select#selCountry.form-control(name='country')
-            option Austria
-            option Germany
-        +input_field('city', 'mgrp-lbl-city', 'Graz')
+            each country in countries
+                +country_option(country)
+
+        +input_field('city', 'mgrp-lbl-city')
     // 3rd row  
     .row
-        +input_field('street', 'mgrp-lbl-street', 'Inffeldgasse')
-        +input_field('number', 'mgrp-lbl-number', '13', true)
-        +input_field('zip', 'mgrp-lbl-zip', '8010', true)
+        +input_field('street', 'mgrp-lbl-street')
+        +input_field('number', 'mgrp-lbl-number', true)
+        +input_field('zip', 'mgrp-lbl-zip', true)
     // 4rd row  
     .row
-        +input_field('email', 'mgrp-lbl-email', 'john.doe@example.com')
-        +input_field('phone', 'mgrp-lbl-phone', '+43 680 5555 999')
+        +input_field('email', 'mgrp-lbl-email')
+        +input_field('phone', 'mgrp-lbl-phone')

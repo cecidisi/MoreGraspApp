@@ -372,25 +372,6 @@ body {
 }
 
 
-
-.btn-primary-mg {
-    color: #fff;
-    background-color: #4d9d2a;
-    border: 1px solid #4a9a27;
-
-    &:hover {
-        background-color: #459522;
-        color: #eee;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-        &:hover { color:inherit; }
-    }
-}
-
-
 div.bg-processing {
     display: block;
     position: absolute;

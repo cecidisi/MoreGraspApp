@@ -15,6 +15,15 @@ mixin table(id)
         h3.panel-title Overview
         span.collapse-icon.pull-right.clickable:    i.glyphicon.glyphicon-chevron-up
         button#btn-reset.btn.btn-default.pull-right.fa.fa-trash(title='Remove highlights and/or selection')
+        .btn-group.btn-group-small.pull-right(data-toggle='buttons')
+            label.btn.btn-default.btn-sm
+                input(type='radio', value='true', autocomplete='off')
+                |   On
+            label.btn.btn-default.btn-sm.active
+                input(type='radio', value='false', autocomplete='off', checked)
+                |   Off
+        label.pull-right Show all
+
 
     .panel-body
         #overview-table

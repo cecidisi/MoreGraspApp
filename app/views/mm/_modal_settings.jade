@@ -1,0 +1,23 @@
+#modal-settings.modal.fade(tabindex='-1', role='dialog', aria-labelled-by='#modal-settings-title')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='close', data-dismiss='modal', aria-label='Close'): span(aria-hidden='true') &times;
+                h4#modal-settings-title.modal-title Settings
+            .modal-body
+                form#form-change-settings
+                    h5 Personal Data
+                    .form-group
+                        label(for='phone') Phone
+                        input.form-control(type='text', name='phone', value=user.personal_data.phone)
+                    .form-group
+                        label(for='email') Email
+                        input.form-control(type='text', name='email', value=user.personal_data.email)
+                    h5 Preferences
+                    .form-group.row
+                        label.question(for='notify_new_registration') Receive notifications of new registrations
+                        input/.cbx-toggle(name='notify_new_registration', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success", checked=user.preferences.notify_new_registration)
+                    p.error.fade
+            .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+                button#btn-submit-settings.btn.btn-primary-mg(type='button', for='#form-change-settings') Save Changes

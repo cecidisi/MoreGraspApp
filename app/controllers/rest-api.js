@@ -3,7 +3,7 @@ var express = require('express'),
     multer = require('multer'),
     fs = require('fs'),
     mongoose = require('mongoose'),
-    Person = mongoose.model('Person');
+    Candidate = mongoose.model('Candidate');
 
 
 module.exports = function (app) {
@@ -46,9 +46,9 @@ module.exports = function (app) {
 
 router.post('/save-candidate', function (req, res, next) {
     if(req.body) {
-        var person = Person(req.body);
-        console.log(person);
-        person.save(function(err){
+        var candidate = Candidate(req.body);
+        console.log(candidate);
+        candidate.save(function(err){
             if(err) throw err;
             console.log('New registration successful!!');
             res.status(200).send('New Registration uploaded successfully');
@@ -64,33 +64,54 @@ router.post('/save-candidate', function (req, res, next) {
 //  GET candidates
 
 router.get('/get-all-candidates', function (req, res, next) {
-    Person.find(function (err, persons) {
-        if (err) return next(err);
-        res.status(200).send(JSON.stringify(persons));
-    });
+    if(req.user) {
+        Candidate.find(function (err, candidates) {
+            if (err) return next(err);
+            res.status(200).send(JSON.stringify(candidates));
+        });
+    }
+    else {
+        res.status(401).send('Unauthorized: Access denied');
+    }
 });
 
 
 router.get('/get-registered-candidates', function (req, res, next) {
-    Person.findByStatus('registered', function (err, persons) {
-        if (err) return next(err);
-        res.status(200).send(JSON.stringify(persons));
-    });
+    if (req.user) {
+        Candidate.findByStatus('registered', function (err, candidates) {
+            if (err) return next(err);
+            res.status(200).send(JSON.stringify(candidates));
+        });
+    }
+    else {
+        res.status(401).send('Unauthorized: Access denied');
+    }
 });
 
 
 router.get('/get-accepted-candidates', function (req, res, next) {
-    Person.findByStatus('accepted', function (err, persons) {
-        if (err) return next(err);
-        res.status(200).send(JSON.stringify(persons));
-    });
+    if(req.user) {
+        Candidate.findByStatus('accepted', function (err, candidates) {
+            if (err) return next(err);
+            res.status(200).send(JSON.stringify(candidates));
+        });
+    }
+    else {
+        res.status(401).send('Unauthorized: Access denied');
+    }
 });
 
+
 router.get('/get-rejected-candidates', function (req, res, next) {
-    Person.findByStatus('rejected', function (err, persons) {
-        if (err) return next(err);
-        res.status(200).send(JSON.stringify(persons));
-    });
+    if(req.user) {
+        Candidate.findByStatus('rejected', function (err, candidates) {
+            if (err) return next(err);
+            res.status(200).send(JSON.stringify(candidates));
+        });
+    }
+    else {
+        res.status(401).send('Unauthorized: Access denied');
+    }
 });
 
 
@@ -98,24 +119,36 @@ router.get('/get-rejected-candidates', function (req, res, next) {
 
 router.delete('/remove-all-candidates', function (req, res, next) {
 
-//    Person.find(function(err, persons){
-//        if (err) return next(err);
-//        var total = 0;
-//        persons.forEach(function(person){
-//            console.log(person);
-//
-//            person.remove(function(err){
-//                if(err) throw err;
-//                total++;
-//                console.log('callback remove. Total = ' + total);
-//                if(total === persons.length)
-//                    res.status(200).send('Deleted all Persons');
-//            });
-//        });
-//    });
-
-    Person.remove({}, function (err, persons) {
+    Candidate.find(function(err, candidates){
         if (err) return next(err);
+        var total = 0;
+        candidates.forEach(function(candidate){
+            console.log(candidate);
+
+            candidate.remove(function(err){
+                if(err) throw err;
+                total++;
+                console.log('callback remove. Total = ' + total);
+                if(total === candidates.length)
+                    res.status(200).send('Deleted all Candidates');
+            });
+        });
+    });
+
+    Candidate.remove({}, function (err, candidates) {
+        if (err) return next(err);
+        candidates.forEach(function(c){
+            c.video.files.forEach(function(filePath){
+                var path = './public/uploads/'+filePath;
+                fs.stat(path, function(err, stats){
+                    if(stats) {
+                        console.log('Deleting --> ' + filePath);
+                        fs.unlinkSync(path);
+                    }
+                });
+            });
+
+        });
         res.status(200).send('Deleted All');
     });
 
@@ -124,17 +157,33 @@ router.delete('/remove-all-candidates', function (req, res, next) {
 
 router.put('/update-candidate-status', function(req, res, next){
 
-    console.log(req.body);
-    if(req.body) {
-        var user_id = req.body.user_id,
-            status = req.body.status;
+    if (req.user) {
+        if(req.body) {
+            var id = req.body.user_id,
+                status= req.body.status,
+                params = {
+                    status: req.body.status,
+                    set_by: req.user._id
+                };
 
-        Person.findByIdAndUpdate(user_id, { 'meta.status': status, 'meta.date_status_changed': new Date() }, function(err, user){
-            if(err) throw err;
-            res.status(200).send('User ' + user._id + ' --> new status = ' + status);
-        });
+            Candidate.findByIdAndUpdate(id, {
+                'meta.status': status,
+                'meta.date_status_changed': new Date(),
+                'meta.status_changed_by': req.user._id
+            }, function(err, user){
+                if(err)  {
+                    console.log('error in ifnd by id and update');
+                    throw err;
+                }
+                res.status(200).send('User ' + user._id + ' --> new status = ' + status);
+            });
+        }
+        else {
+            res.status(500).send('Missing parameters');
+        }
     }
     else {
-        res.status(500);
+        res.status(401).send('Unauthorized: Access denied');
     }
+
 });

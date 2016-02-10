@@ -13,7 +13,7 @@ html(lang='en')
         //  endbower
 
         block css
-            link(rel='stylesheet', href='/css/mm/main.css')
+            link(rel='stylesheet', href='/css/mm-style.css')
 
         block livereload
             if ENV_DEVELOPMENT
@@ -34,18 +34,36 @@ html(lang='en')
                             div.title:  h3(data-i18n='mgrp-title')=title
                     #mg-navbar-collapse.navbar-collapse.collapse(aria-expanded=true)
                         ul.nav.navbar-nav.navbar-right.menu
-                            block tab-home
-                                li:  a(href='/matchmaking1/home') Home
-                            block tab-registration
-                                li:  a(href='/matchmaking1/registrations') Registrations
-                            block tab-about
-                                li:  a(href='#') About
+                            if(user)
+                                block tab-home
+                                    li:  a(href='/matchmaking1/home') Home
+                                block tab-registration
+                                    li:  a(href='/matchmaking1/registrations') Registrations
+                                block tab-about
+                                    li:  a(href='#') About
+                                block tab-user
+                                    li.dropdown.user
+                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                            span.fa.fa-user
+                                            h5.user-name=user.login.username
+                                            span.caret
+                                        ul.dropdown-menu.nav.navbar-second-level
+                                            li:  a(href='#', data-toggle='modal', data-target='#modal-settings') Settings
+                                            li:  a(href='#', data-toggle='modal', data-target='#modal-change-password') Change Password
+                                            li:  a(href='/matchmaking1/logout') Logout
 
+        if(user)
+            // modal settings
+            include _modal_settings
+            // modal change password
+            include _modal_change_password
+
+        // content
         .content
             .container.container-main
                 block content
 
-        .footer:  .container:  p © MoreGrasp 201
+        .footer:  .container:  p © MoreGrasp 2016
 
         block bower-js
             // bower:js
@@ -63,4 +81,10 @@ html(lang='en')
             script(src='/components/lodash/lodash.js')
             // endbower
 
+        block validation
+            script(src='/js/field-validation.js')
+            script(src='/js/mm/password-and-settings-chage.js')
+
         block custom-js
+
+

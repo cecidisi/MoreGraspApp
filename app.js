@@ -1,7 +1,8 @@
 var express = require('express'),
   config = require('./config/config'),
   glob = require('glob'),
-  mongoose = require('mongoose');
+  mongoose = require('mongoose'),
+  generatePassword = require('password-generator');
 
 mongoose.connect(config.db);
 var db = mongoose.connection;
@@ -14,38 +15,28 @@ models.forEach(function (model) {
     require(model);
 });
 
-// Create  admins if not exist
-var Admin = mongoose.model('Admin');
-
-Admin.findByUsername('gmuellerputz', function (err, admins) {
+var   User = mongoose.model('User');
+// Reset and hash admin passwords if new
+User.find(function (err, users) {
     if (err) throw err;
-    if(admins.length === 0) {
-        var admin = new Admin({
-            personal_data: {
-                first_name: 'Gernot',
-                last_name: 'Mueller-Putz',
-                institution: 'TUG',
-                country: 'Austria',
-                city: 'Graz',
-                email: 'gernot.mueller@tugraz.at'
-            },
-            preferences: {
-                notify_new_registration: false
-            },
-            login: {
-                username: 'gmuellerputz',
-                password: 'ed3p_xz0aVaETez'
-            }
-        });
-
-        admin.save(function(err){
-            if(err) throw err;
-        });
-    }
+    users.forEach(function(user){
+        if(user.login.password === 'default') {
+            var pswd = generatePassword(15, false);
+            user.login.password = pswd;
+            user.save(function(err){
+                if(err) throw err;
+                user.comparePassword(pswd, function(err, callback){
+                    console.log('user password reset and hashed');
+                    console.log('USERNAME = ' + user.login.username);
+                    console.log('PASSWORD = ' + pswd);
+                });
+            });
+        }
+    });
 });
 
-
 var app = express();
+// invokes express
 require('./config/express')(app, config);
 
 app.listen(config.port, function () {

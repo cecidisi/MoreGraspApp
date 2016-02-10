@@ -1,6 +1,5 @@
 var express = require('express');
 var glob = require('glob');
-
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -8,6 +7,11 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 var fsSync = require('fs-sync');
+var session = require('express-session');
+var nodemailer = require('nodemailer');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 //var multer = require('multer');
 
 
@@ -26,7 +30,47 @@ module.exports = function(app, config) {
     extended: true
   }));
   app.use(cookieParser());
+
+    // Session
+  app.use(session({
+        secret: 'session secret key',
+        resave: false,
+        saveUninitialized: false
+  }));
+
   app.use(compress());
+
+    // Passport
+    var User = mongoose.model('User');
+    passport.use(new LocalStrategy(function(username, password, done) {
+        User.findOne({ 'login.username': username }, function(err, user) {
+            if (err) return done(err);
+            if (!user) return done(null, false, { message: 'Incorrect username.' });
+            user.comparePassword(password, function(err, isMatch) {
+                if (isMatch) {
+                    return done(null, user);
+                } else {
+                    return done(null, false, { message: 'Incorrect password.' });
+                }
+            });
+        });
+    }));
+
+    passport.serializeUser(function(user, done) {
+        done(null, user.id);
+    });
+
+    passport.deserializeUser(function(id, done) {
+        User.findById(id, function(err, user) {
+            done(err, user);
+        });
+    });
+
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+    // END Passport
+
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
 

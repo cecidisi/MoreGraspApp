@@ -149,6 +149,8 @@
             $('.input-panel').hide();
             $('.controls-section').hide();
             $('#panel-submitted').show();
+            sessionStorage.removeItem(sessionKey);
+            sessionStorage.removeItem(curPanelKey);
         }
 
     };
@@ -192,6 +194,8 @@
                         delete filesToUpload[fileName];
                         $(this).parent().remove();
                     });
+
+                $('.input-panel[name="review"] #video-paths').append('<li>'+file.name+'</li>');
             }
         }
         $('#file-input').val('');
@@ -440,7 +444,7 @@
         var session = sessionStorage[sessionKey] ? JSON.parse(sessionStorage[sessionKey]) : {};
         sessionStorage[sessionKey] = JSON.stringify(session);
         // fill session data
-        loadSession(session);
+        setTimeout(function(){ loadSession(session); }, 1);
 
         // Redirect to corresponding panel
         var currentPanel = sessionStorage[curPanelKey] || 0;

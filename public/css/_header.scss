@@ -7,7 +7,7 @@ header {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    z-index: 99999;
+    z-index: 999;
     border-bottom: 1px solid #e5e5e5;
     box-shadow: 0px 1px 4px #ddd;
 
@@ -67,6 +67,30 @@ header {
                 background-color: #ed1848;
                 box-shadow: 0px 2px #ed1848;
             }
+            &.user {
+                background-color: rgba(230,230,230,1);
+                & > a {
+                    text-transform: lowercase;
+                    span.fa-user {
+                        position: relative;
+                        top: -1px;
+                        font-size: 0.8em;
+                        color: #ed1848;
+                    }
+                    h5 {
+                        display: inline-block;
+                        position: relative;
+                        top: -2px;
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        font-size: 0.8em;
+                    }
+                    span.caret {
+                        position: relative;
+                        top: -2px;
+                    }
+                }
+            }
 
         }
 
@@ -107,6 +131,17 @@ header {
                 }
             }
 
+        }
+    }
+
+    .nav.navbar-second-level {
+        li {
+            a {
+                font-size: 0.9em;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                text-transform: lowercase;
+            }
         }
     }
 
