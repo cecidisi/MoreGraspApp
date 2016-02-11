@@ -95,7 +95,54 @@ module.exports = function (grunt) {
               src: ['public/css/{,*/}*.{scss,sass}'],
               //  ignorePath: /(\.\.\/){1,2}bower_components\//
           }
+      },
+
+      // to generate dist
+      // Empties folders to start fresh
+      clean: {
+          dist: {
+              files: [{
+                  dot: true,
+                  src: [
+                      '.tmp',
+                      '<%= paths.dist %>/*',
+                      '!<%= paths.dist %>/.git*'
+                  ]
+              }]
+          }
+      },
+      // Reads HTML for usemin blocks to enable smart builds that automatically
+      // concat, minify and revision files. Creates configurations in memory so
+      // additional tasks can operate on them
+      jadeUsemin: {
+          options: {
+              dest: '<%= paths.dist %>'
+          },
+          dist: {
+              files: [{
+                  expand: true,
+                  cwd: '<%= paths.app %>/views/mm',
+                  src: ['*.jade'],
+                  dest: '<%= paths.dist %>/views/mm',
+                  ext: '.jade'
+              },
+              {
+                  expand: true,
+                  cwd: '<%= paths.app %>/views/rp',
+                  src: ['*.jade'],
+                  dest: '<%= paths.dist %>/views/rp',
+                  ext: '.jade'
+              }
+              ]//              files: {
+//                  '<%= paths.dist %>/views/mm/layout.jade': '<%= paths.app %>/views/mm/layout.jade',
+//                  '<%= paths.dist %>/views/mm/index.jade': '<%= paths.app %>/views/mm/index.jade',
+//                  '<%= paths.dist %>/views/mm/registrations.jade': '<%= paths.app %>/views/mm/registrations.jade'
+//              }
+          }
+
+          //html: ['<%= config.dist %>/{,*/}*.html']
       }
+
   });
 
   grunt.config.requires('watch.js.files');
@@ -122,4 +169,12 @@ module.exports = function (grunt) {
     'develop',
     'watch'
   ]);
+
+  grunt.registerTask('build', [
+      'clean:dist',
+      'wiredep',
+      'jadeUsemin'
+  ]);
+
+
 };

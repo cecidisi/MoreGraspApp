@@ -1,0 +1,395 @@
+mixin item_content(label, field)
+    label #{label}:
+    p(name=field)
+
+mixin detail_item(label, field)
+    .detail-item
+        +item_content(label, field)
+
+mixin detail_item_sm(label, field)
+    .detail-item.sm
+        +item_content(label, field)
+
+mixin detail_item_lg(label, field)
+    .detail-item.lg
+        +item_content(label, field)
+
+
+#panel-details.panel.panel-default
+    .panel-heading
+        h3.panel-title Candidate Details
+        span.collapse-icon.pull-right.clickable:    i.glyphicon.glyphicon-chevron-up
+        button#btn-clear-details.btn.btn-default.pull-right.fa.fa-trash(title='Clear Candidate Details')
+    #root-details.panel-body
+
+            ul.nav.nav-tabs(role="tablist")
+                li.active(role="presentation"): a#tab-personal-data(href="#pane-personal-data", aria-controls="personal data", role="tab" data-toggle="tab") Personal Data
+                li(role="presentation"): a#tab-pre-injury(href="#pane-pre-injury", aria-controls="pre-injury conditions", role="tab" data-toggle="tab") Pre-Injury
+                li(role="presentation"): a#tab-injury-conditions(href="#pane-injury-conditions", aria-controls="injury details", role="tab" data-toggle="tab") Injury Details
+                li(role="presentation"): a#tab-current-abilities(href="#pane-current-abilities", aria-controls="current abilities", role="tab" data-toggle="tab") Current Abilities
+                li(role="presentation"): a#tab-video(href="#pane-video", aria-controls="video", role="tab" data-toggle="tab") Video/s
+                li(role="presentation"): a#tab-misc(href="#pane-misc", aria-controls="miscellaneous", role="tab" data-toggle="tab") Miscellaneous
+
+            .tab-content
+                #pane-personal-data.tab-pane.active.in(aria-labelledby='#tab-personal-data')
+                    +detail_item('First Name', 'first_name')
+                    +detail_item('Last Name', 'last_name')
+                    +detail_item('Country', 'country')
+                    +detail_item('City', 'city')
+                    +detail_item('Street', 'street')
+                    +detail_item_sm('Number', 'number')
+                    +detail_item_sm('ZIP', 'zip')
+                    +detail_item('Email', 'email')
+                    +detail_item('Phone', 'phone')
+                #pane-pre-injury.tab-pane.fade(aria-labelledby='#tab-pre-injury')
+                    +detail_item('Metal Implant', 'metal_implant')
+                    +detail_item('Pacemaker', 'pacemaker')
+                    +detail_item('Medication Pump', 'medication_pump')
+                    +detail_item('Stroke', 'stroke')
+                    +detail_item('Epilepsy', 'epilepsy')
+                    +detail_item('Long Term Care', 'long_term_care')
+                #pane-injury-conditions.tab-pane.fade(aria-labelledby='#tab-injury-conditions')
+                    +detail_item('Date of Injury', 'date_injury')
+                    +detail_item('Traumatic Injury', 'accidental_injury')
+                #pane-current-abilities.tab-pane.fade(aria-labelledby='#tab-current-abilities')
+                    +detail_item_lg('Can bring hand to mouth', 'hand_to_mouth')
+                    +detail_item_lg('Can bring glass to mouth', 'glass_to_mouth')
+                    +detail_item_lg('Can extend wrist', 'extend_wrist')
+                    +detail_item_lg('Needs to improve grasp', 'need_improve_grasp')
+                #pane-video.tab-pane.fade(arialabelledby='#tab-video')
+                    p No video uploaded
+
+                #pane-misc.tab-pane.fade(aria-labelledby='#tab-misc')
+
+            .button-group
+                button#btn-accept-candidate.btn.btn-success.disabled Accept
+                button#btn-reject-candidate.btn.btn-danger.disabled Not Accept
+
+
+mixin filter_header(filterTitle, icon, togglePanel)
+    .filter-type-header
+        //.filter-type-line
+        h4.filter-type-title
+            a(href=togglePanel, data-toggle='collapse')
+                i.fa(class='fa-'+icon)
+                label=filterTitle
+                i.collapse-icon
+
+
+
+mixin filter_radiobtn(label, name, category)
+    .filter-item(filter-name=name, filter-category=category, filter-type='bool')
+        label.filter-label=label
+        .filter-element
+            .btn-group.btn-group-small(data-toggle='buttons')
+                label.btn.btn-default.btn-sm
+                    input(type='radio', value='true', autocomplete='off')
+                    |   Yes
+                label.btn.btn-default.btn-sm
+                    input(type='radio', value='false', autocomplete='off')
+                    |   No
+                label.btn.btn-default.btn-sm.active
+                    input(type='radio', value='both', autocomplete='off', checked)
+                    |   Both
+
+mixin filter_datetimepicker(label, name, category)
+    .filter-item(filter-name=name, filter-category=category, filter-type='date')
+        label.filter-label=label
+        .filter-element
+            .form-group
+                .input-group.data.datetimepicker
+                    input/.form-control(type='text')
+                    span.input-group-addon: span.glyphicon.glyphicon-calendar
+
+
+#panel-filters.panel.panel-default
+    .panel-heading
+        h3.panel-title Filters
+        span.collapse-icon.pull-right.clickable:    i.glyphicon.glyphicon-chevron-up
+        button#btn-update.btn.btn-default.pull-right.fa.fa-refresh(title='Update Overview')
+        button#btn-clear-filters.btn.btn-default.pull-right.fa.fa-trash(title='Clear Filters')
+        //button#btn-update.btn.btn-default.pull-right Update
+
+
+    #filters-container.panel-body
+        // Personal Data
+        +filter_header('Personal Data', 'user', '#filter-group-personal-data')
+        #filter-group-personal-data.filter-group.collapse.in
+
+        // Pre-Injury conditions
+        +filter_header('Pre-Injury Conditions', 'hand-o-left', '#filter-group-pre-injury')
+        #filter-group-pre-injury.filter-group.collapse.in
+            +filter_radiobtn('Metal Implant', 'metal_implant', 'pre_injury')
+            +filter_radiobtn('Pacemaker', 'pacemaker', 'pre_injury')
+            +filter_radiobtn('Medication Pump', 'medication_pump', 'pre_injury')
+            +filter_radiobtn('Stroke', 'stroke', 'pre_injury')
+            +filter_radiobtn('Epilepsy', 'epilepsy', 'pre_injury')
+            +filter_radiobtn('Long Term Care', 'long_term_care', 'pre_injury')
+
+        // Injury Details
+        +filter_header('Injury Details', 'wheelchair', '#filter-group-injury')
+        #filter-group-injury.filter-group.collapse.in
+            +filter_datetimepicker('From Date Injury', 'date_injury', 'injury_details')
+            +filter_radiobtn('Traumatic Injury', 'accidental_injury', 'injury_details')
+
+        // Current Abilities
+        +filter_header('Current Abilities', 'hand-paper-o', '#filter-group-abilities')
+        #filter-group-abilities.filter-group.collapse.in
+            +filter_radiobtn('Hand to Mouth', 'hand_to_mouth', 'current_abilities')
+            +filter_radiobtn('Glass to Mouth', 'glass_to_mouth', 'current_abilities')
+            +filter_radiobtn('Wrist Extension', 'extend_wrist', 'current_abilities')
+            +filter_radiobtn('Need to Improve Grasp', 'need_improve_grasp', 'current_abilities')
+
+
+#modal-change-password.modal.fade(tabindex='-1', role='dialog', aria-labelled-by='#modal-change-password-title')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='close', data-dismiss='modal', aria-label='Close'): span(aria-hidden='true') &times;
+                h4#modal-change-password-title.modal-title Change Password
+            .modal-body
+                form#form-change-password
+                    .form-group
+                        label(for='current-password') Current Password
+                        input/.form-control(type='password', name='current_password', autofocus)
+                        span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
+                        span.sr-only (error)
+                    p.bg.bg-info New password should contain letters and numbers and at least 8 characters
+                    .form-group
+                        label(for='new-password') New Password
+                        input/.form-control(type='password', name='new_password')
+                        span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
+                        span.sr-only (error)
+                    .form-group
+                        label(for='repeat-password') Repeat Password
+                        input/.form-control(type='password', name='repeat_password')
+                        span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
+                        span.sr-only (error)
+                    p.bg.error.fade
+            .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+                button#btn-submit-password.btn.btn-primary-mg(type='submit', data-dismiss='submit', for='#form-change-password') Save Changes
+#modal-settings.modal.fade(tabindex='-1', role='dialog', aria-labelled-by='#modal-settings-title')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='close', data-dismiss='modal', aria-label='Close'): span(aria-hidden='true') &times;
+                h4#modal-settings-title.modal-title Settings
+            .modal-body
+                form#form-change-settings
+                    h5 Personal Data
+                    .form-group
+                        label(for='phone') Phone
+                        input/.form-control(type='text', name='phone', value=user.personal_data.phone)
+                        span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
+                        span.sr-only (error)
+                    .form-group
+                        label(for='email') Email
+                        input/.form-control(type='text', name='email', value=user.personal_data.email)
+                        span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
+                        span.sr-only (error)
+                    h5 Preferences
+                    .form-group.row
+                        label.question(for='notify_new_registration') Receive notifications of new registrations
+                        input/.cbx-toggle(name='notify_new_registration', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success",
+                        checked=user.preferences.notify_new_registration)
+                        span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
+                        span.sr-only (error)
+                    p.bg.error.fade
+            .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+                button#btn-submit-settings.btn.btn-primary-mg(type='button', for='#form-change-settings') Save Changes
+mixin table(id)
+    .table-responsive
+        table.table.table-condensed.table-stripped.table-hover(id=id)
+            thead
+                th  #
+                th  Name
+                th  Email
+                th  Phone
+                th  Registered
+                th  Status
+            tbody
+
+#panel-overview.panel.panel-default
+    .panel-heading
+        h3.panel-title Overview
+        span.collapse-icon.pull-right.clickable:    i.glyphicon.glyphicon-chevron-up
+        button#btn-reset.btn.btn-default.pull-right.fa.fa-trash(title='Remove highlights and/or selection')
+        .switch.pull-right
+            input#toggle-show-all.cmn-toggle.cmn-toggle-round(type="checkbox")
+            label(for="toggle-show-all")
+        label.pull-right Show all
+
+
+    .panel-body
+        #overview-table
+            +table('table-overview')
+
+        #overview-vis.fade
+            // here goes svg
+extends layout
+
+mixin table(id)
+    .table-responsive.table-border
+        table.table.table-condensed.table-stripped(id=id)
+            thead
+                th  #
+                th  Name
+                th  Email
+                th  Phone
+                th  Registered
+                th  Status
+            tbody
+
+block tab-home
+    li.active:  a(href='/matchmaking1/home') Home
+
+block content
+    .row
+        .home-col
+            h5 Registered Candidates
+                a(href='/matchmaking1/registrations', title='Go to New Registrations'): i.open-icon
+            +table('table-registered')
+
+        .home-col
+            h5  Accepted Candidates
+            +table('table-accepted')
+
+
+block custom-js
+    script(src='dist/public/js/home.min.js')
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width')
+        title= title
+
+        //  bower:css
+        link(rel='stylesheet', href='/components/bootstrap-toggle/css/bootstrap-toggle.min.css')
+        link(rel='stylesheet', href='/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
+        link(rel='stylesheet', href='/components/jquery-ui/themes/base/jquery-ui.min.css')
+        link(rel='stylesheet', href='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')
+        //  endbower
+
+        block css
+            link(rel='stylesheet', href='/css/mm-style.css')
+
+        block livereload
+            if ENV_DEVELOPMENT
+                script(src='http://localhost:35729/livereload.js')
+
+    body
+        header(data-spy='affix', data-offeset-top='75')
+            nav.navbar
+                div.container-fluid
+                    div.navbar-header
+                        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#mg-navbar-collapse', aria-expanded='false')
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href='#')
+                            img(src='/media/moregrasp-logo.jpg', height='68', width='120')
+                            div.title:  h3(data-i18n='mgrp-title')=title
+                    #mg-navbar-collapse.navbar-collapse.collapse(aria-expanded=true)
+                        ul.nav.navbar-nav.navbar-right.menu
+                            if(user)
+                                block tab-home
+                                    li:  a(href='/matchmaking1/home') Home
+                                block tab-registration
+                                    li:  a(href='/matchmaking1/registrations') Registrations
+                                //block tab-about
+                                    li:  a(href='#') About
+                                block tab-user
+                                    li.dropdown.user
+                                        a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                            span.fa.fa-user
+                                            h5.user-name=user.login.username
+                                            span.caret
+                                        ul.dropdown-menu.nav.navbar-second-level
+                                            li:  a(href='#', data-toggle='modal', data-target='#modal-settings') Settings
+                                            li:  a(href='#', data-toggle='modal', data-target='#modal-change-password') Change Password
+                                            li:  a(href='/matchmaking1/logout') Logout
+
+        if(user)
+            // modal settings
+            include _modal_settings
+            // modal change password
+            include _modal_change_password
+
+        // content
+        .content
+            .container.container-main
+                block content
+
+        .footer:  .container:  p © MoreGrasp 2016
+
+        block bower-js
+            // bower:js
+            script(src='/components/jquery/dist/jquery.js')
+            script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
+            script(src='/components/bootstrap-toggle/js/bootstrap-toggle.min.js')
+            script(src='/components/moment/moment.js')
+            script(src='/components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js')
+            script(src='/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')
+            script(src='/components/jquery-ui/jquery-ui.min.js')
+            script(src='/components/jquery-mousewheel/jquery.mousewheel.js')
+            script(src='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js')
+            script(src='/components/d3/d3.js')
+            script(src='/components/d3pie/d3pie/d3pie.min.js')
+            script(src='/components/lodash/lodash.js')
+            // endbower
+
+        block validation
+            script(src='./dist/public/js/validation.min.js')
+
+        block custom-js
+
+
+extends layout
+
+
+block content
+    .row
+        .col-lg-4.col-lg-offset-4.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2.col-xs-12
+            form(method='POST')
+                legend Login
+                .form-group
+                    label(for='username') Username
+                    input.form-control(type='text', name='username', autofocus)
+                .form-group
+                    label(for='password') Password
+                    input.form-control(type='password', name='password')
+                .div
+                    button.btn.btn-primary-mg(type='submit') Login
+                    a.btn.btn-link(href='/forgot') Forgot Password?
+
+
+
+
+extends layout
+
+
+block tab-registration
+    li.active:  a(href='/matchmaking1/new-registrations') Registrations
+
+
+block content
+    .row
+        .col.col-xs-12.col-sm-12.col-md-4.col-lg-4
+            include _filters
+        .col.col-xs-12.col-sm-12.col-md-8.col-lg-8
+            include _overview
+            include _details
+
+
+
+block custom-js
+    script(src='/js/helper.js')
+    script(src='/js/mm/filter-view.js')
+    script(src='/js/mm/detail-view.js')
+    script(src='/js/mm/overview-vis.js')
+    script(src='/js/mm/overview-table.js')
+    script(src='/js/mm/main.js')
