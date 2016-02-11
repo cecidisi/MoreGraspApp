@@ -8,7 +8,6 @@ var compress = require('compression');
 var methodOverride = require('method-override');
 var fsSync = require('fs-sync');
 var session = require('express-session');
-var nodemailer = require('nodemailer');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;

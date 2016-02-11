@@ -3,11 +3,13 @@ var express = require('express'),
     passport = require('passport');
 
 
+// Set root route
 module.exports = function (app) {
     app.use('/matchmaking1', router);
 };
 
 
+// ROOT ROUTING --> if user logged in, redirects to Home, otherwise to login page
 router.get('/', function(req, res, next){
     console.log(req.user);
     if(req.user)
@@ -16,6 +18,7 @@ router.get('/', function(req, res, next){
         res.redirect('/matchmaking1/login');
 });
 
+// ROUTING TO LOGIN PAGE
 router.get('/login', function(req, res, next){
     res.render('mm/login', {
         title: 'Matchmaking Platform',
@@ -23,20 +26,21 @@ router.get('/login', function(req, res, next){
     });
 });
 
+// AUTHENTICATION AND LOGIN (user stays logged in for the rest of the session)
 router.post('/login', function(req, res, next){
     passport.authenticate('local', function(err, user, info) {
         if (err) return next(err)
-        if (!user) {
-            return res.redirect('/matchmaking1')
-        }
+        if (!user)
+            return res.redirect('/matchmaking1');
+
         req.logIn(user, function(err) {
             if (err) return next(err);
             return res.redirect('/matchmaking1');
         });
     })(req, res, next);
-
 });
 
+// ROUTING TO HOME (checks user is logged in)
 router.get('/home', function(req, res, next){
     if(req.user)
         res.render('mm/index', { title: 'Matchmaking Platform', user: req.user });
@@ -44,6 +48,7 @@ router.get('/home', function(req, res, next){
         res.redirect('/matchmaking1');
 });
 
+// ROUTING TO REGISTRATIONS (checks user is logged in)
 router.get('/registrations', function(req, res, next){
     if(req.user)
         res.render('mm/registrations', { title: 'Matchmaking Platform', user: req.user });
@@ -52,8 +57,9 @@ router.get('/registrations', function(req, res, next){
 });
 
 
+// CHANGE PASSWORD: requirments checked on client.
+// Server only checks that current pasword matches and updates with new password
 router.post('/change-password', function(req, res, next){
-
     if(req.user) {
         if(req.body) {
             var user = req.user;
@@ -78,13 +84,11 @@ router.post('/change-password', function(req, res, next){
     else {
         res.status(401).send('Unauthorized: Access denied')
     }
-
 });
 
 
+// CHANGE SETTINGS --> email, phone and preferences
 router.post('/change-settings', function(req, res, next){
-
-    console.log(req.body);
     if(req.user) {
         if(req.body) {
             var user = req.user;
@@ -100,10 +104,9 @@ router.post('/change-settings', function(req, res, next){
     else {
         res.status(401).send('Unauthorized: Access denied')
     }
-
 });
 
-
+// LOGOUT
 router.get('/logout', function(req, res, next){
     req.logout();
     res.redirect('/matchmaking1');

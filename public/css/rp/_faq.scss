@@ -1,0 +1,38 @@
+/////////////// FAQ
+
+.nav-panel#faq {
+
+    height: 100% !important;
+    .question-container {
+        min-height: 250px;
+        padding: 15px 20px;
+        box-shadow: 2px 2px 5px #888, -2px 2px 5px #888;
+        .question-list {
+            float: left;
+            i.fa {
+                margin-right: 3px;
+                color: #428bca;
+            }
+        }
+        img {
+            float: right;
+        }
+    }
+
+    .answer-container {
+
+        .inner {
+            margin: 25px 15px;
+            border-bottom: 1px solid #ddd;
+
+            i.fa {
+                margin-right: 3px;
+            }
+            h4 {
+                color: #4d9d2a;
+            }
+        }
+
+    }
+
+}

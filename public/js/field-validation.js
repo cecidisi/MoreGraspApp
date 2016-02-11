@@ -30,6 +30,16 @@
         return true;
     };
 
+    window.validateText = function(field, name, onError){
+        var text = $('input[name="' + field + '"]').val(),
+            regExp = /^[a-zA-Z]+$/;
+        if(text === '' || regExp.test(text))
+            return true;
+        onError(field, name + ' contains illegal characters');
+        return false;
+    };
+
+
     window.validateEmail = function(field, onError) {
         var email = $('input[name="' + field + '"]').val(),
             regExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -39,9 +49,14 @@
         return false
     };
 
-    window.validatePhone = function(field, onError) {
 
-        return true;
+    window.validatePhone = function(field, onError) {
+        var phone = $('input[name="' + field + '"]').val(),
+            regExp = /^[0-9\s+-]+$/;
+        if(regExp.test(phone))
+            return true;
+        onError(field, 'Invalid phone number');
+        return false
     };
 
 })(jQuery)

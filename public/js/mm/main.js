@@ -9,7 +9,6 @@
     // METHODS
 
     var getGoodCandidates = function(filters){
-
         var arr = []
         var categories = Object.keys(filters);
         data.forEach(function(d, u){
@@ -64,9 +63,14 @@
             overviewTable.removeHighlight();
         },
         onUserSelected: function(user_id){
-            //console.log('USER SELECTED -->  ' + user_id);
             currentUserId = user_id;
             detailView.showUser(_.find(data, ['_id', user_id]));
+        },
+        onShowAll: function(){
+            overviewTable.showAll();
+        },
+        onShowOnlyRegistered: function(){
+            overviewTable.showOnlyRegistered();
         },
         onUserDeselected: function(){
             overviewTable.deselect();
@@ -106,13 +110,16 @@
         }
     });
 
-    $('#btn-update').on('click', function(evt){ evt.stopPropagation(); mmEVT.onFiltersUpdated(); });
-    $('#btn-clear-filters').on('click', function(evt){ evt.stopPropagation(); mmEVT.onFiltersCleared(); });
-    $('#btn-reset').on('click', function(evt){ evt.stopPropagation(); mmEVT.onEffectsRemoved(); });
-    $('#btn-clear-details').on('click', function(evt){ evt.stopPropagation(); mmEVT.onUserDeselected(); });
-    $('#btn-accept-candidate').on('click', function(evt){ evt.stopPropagation(); mmEVT.onUserAccepted(); });
-    $('#btn-reject-candidate').on('click', function(evt){ evt.stopPropagation(); mmEVT.onUserRejected(); });
-
+    $('#btn-update').click(function(evt){ evt.stopPropagation(); mmEVT.onFiltersUpdated(); });
+    $('#btn-clear-filters').click(function(evt){ evt.stopPropagation(); mmEVT.onFiltersCleared(); });
+    $('#btn-reset').click(function(evt){ evt.stopPropagation(); mmEVT.onEffectsRemoved(); });
+    $('#btn-clear-details').click(function(evt){ evt.stopPropagation(); mmEVT.onUserDeselected(); });
+    $('#btn-accept-candidate').click(function(evt){ evt.stopPropagation(); mmEVT.onUserAccepted(); });
+    $('#btn-reject-candidate').click(function(evt){ evt.stopPropagation(); mmEVT.onUserRejected(); });
+    $('#toggle-show-all').change(function(evt){
+        evt.stopPropagation();
+        if($(this).prop('checked')) return mmEVT.onShowAll(); return mmEVT.onShowOnlyRegistered();
+    });
 
     /**********************************************************************************************/
 
@@ -151,12 +158,13 @@
         detailView.clear();
 
         $.get({
-            "url": "/mg-rest-api/get-registered-candidates",
+            "url": "/mg-rest-api/get-all-candidates",
         }).success(function(_data, textStatus, jqXHR){
             data = JSON.parse(_data);
             console.log(data.length  + ' candidates retrieved');
             // load views
             overviewTable.load(data);
+            $('#toggle-show-all').trigger('change');
 
         }).error(function(jqXHR){
             console.log('Error retrieving candidates');

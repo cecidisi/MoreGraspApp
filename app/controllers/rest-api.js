@@ -2,8 +2,10 @@ var express = require('express'),
     router = express.Router(),
     multer = require('multer'),
     fs = require('fs'),
+    nodemailer = require('nodemailer'),
     mongoose = require('mongoose'),
-    Candidate = mongoose.model('Candidate');
+    Candidate = mongoose.model('Candidate'),
+    User = mongoose.model('User');
 
 
 module.exports = function (app) {
@@ -42,16 +44,66 @@ module.exports = function (app) {
 };
 
 
+
+var emailUsers = function(cb) {
+
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'moregrasp.know.center@gmail.com',
+            pass: 'moregrasp.kc.h2020'
+        }
+    });
+
+    User.find(function(err, users){
+        if(err) return cb(err);
+        users.forEach(function(user){
+           if(user.preferences.notify_new_registration) {
+               console.log('Mail to: ' + user.personal_data.email);
+               var msg = "Dear " + user.personal_data.first_name + ' ' + user.personal_data.last_name + "<br><br>" +
+                   "A new candidate just signed up at the MoreGrasp Registration Platform<br>" +
+                   "Check it at <url>http://moregrasp.know-center.tugraz.at:8080/matchmaking1/</url><br><br>" +
+                   "Best Regards,<br><br>Know-Center - MoreGrasp support<br><br><br>"+
+                   "<small>This message has been automatically sent to you.</small><br>"+
+                   "<small>To disable these notifications, go to @username tab -> Settings -> Receive notifications of new registrations = NO </small>";
+
+               var mailOptions = {
+                   from: 'cecidisi@gmail.com',
+                   to: user.personal_data.email,
+                   subject: 'New registration @ MoreGrasp',
+                   html: msg
+               }
+
+               transporter.sendMail(mailOptions, function(error, info){
+                   if(error) return cb(error);
+               });
+           }
+        });
+        return cb(null);
+    });
+};
+
+
+//router.get('/send-email', function(req, res, next){
+//    emailUsers(function(err){
+//        if(err) return next(err);
+//        res.status(200).send('Users notified successfully');
+//    });
+//})
+
+
 //  ADD candidate
 
 router.post('/save-candidate', function (req, res, next) {
     if(req.body) {
         var candidate = Candidate(req.body);
-        console.log(candidate);
+//        console.log(candidate);
         candidate.save(function(err){
             if(err) throw err;
-            console.log('New registration successful!!');
-            res.status(200).send('New Registration uploaded successfully');
+            emailUsers(function(err){
+                if(err) console.log('Error sending emails', err);
+                res.status(200).send('New Registration uploaded successfully');
+            });
         });
     }
     else {
@@ -67,6 +119,16 @@ router.get('/get-all-candidates', function (req, res, next) {
     if(req.user) {
         Candidate.find(function (err, candidates) {
             if (err) return next(err);
+            candidates = candidates.sort(function(c1, c2){
+                if(c1.meta.status === 'registered' && c2.meta.status !== 'registered') return -1;
+                if(c1.meta.status !== 'registered' && c2.meta.status === 'registered') return 1;
+                if(c1.meta.status === 'accepted' && c2.meta.status !== 'accepted') return -1;
+                if(c1.meta.status !== 'accepted' && c2.meta.status === 'accepted') return 1;
+                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
+                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
+                return 0;
+            });
+
             res.status(200).send(JSON.stringify(candidates));
         });
     }
@@ -80,6 +142,11 @@ router.get('/get-registered-candidates', function (req, res, next) {
     if (req.user) {
         Candidate.findByStatus('registered', function (err, candidates) {
             if (err) return next(err);
+            candidates = candidates.sort(function(c1, c2){
+                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
+                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
+                return 0;
+            });
             res.status(200).send(JSON.stringify(candidates));
         });
     }
@@ -93,6 +160,11 @@ router.get('/get-accepted-candidates', function (req, res, next) {
     if(req.user) {
         Candidate.findByStatus('accepted', function (err, candidates) {
             if (err) return next(err);
+            candidates = candidates.sort(function(c1, c2){
+                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
+                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
+                return 0;
+            });
             res.status(200).send(JSON.stringify(candidates));
         });
     }
@@ -106,6 +178,11 @@ router.get('/get-rejected-candidates', function (req, res, next) {
     if(req.user) {
         Candidate.findByStatus('rejected', function (err, candidates) {
             if (err) return next(err);
+            candidates = candidates.sort(function(c1, c2){
+                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
+                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
+                return 0;
+            });
             res.status(200).send(JSON.stringify(candidates));
         });
     }

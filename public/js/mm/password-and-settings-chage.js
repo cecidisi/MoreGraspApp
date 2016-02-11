@@ -16,7 +16,8 @@
 
     var showError = function(field, msg){
         var bgColor = 'rgba(255,255,204,.7)';
-        $('input[name="' + field + '"]').css('background-color', bgColor);
+        //$('input[name="' + field + '"]').css('background-color', bgColor);
+        $('input[name="' + field + '"]').parent().addClass('has-feedback has-error');
         $('.modal p.error').html(msg).removeClass('fade');
     };
 
@@ -32,16 +33,20 @@
             submitChange({ url: '/matchmaking1/change-settings', data: $form.serialize() });
     });
 
+    // on modal close
     $('.modal').on('hidden.bs.modal', function(evt){
         evt.stopPropagation();
         $('.modal p.error').addClass('fade');
-        $('.modal input.form-control').css('background-color', '');
+        //$('.modal input.form-control').css('background-color', '');
+        $('.modal input.form-control').parent().removeClass('has-feedback').removeClass('has-error');
         $('.modal input.form-control[type="password"]').val('');
     })
 
+    // on input keyup
     $('.modal input.form-control').keyup(function(){
-        $('.modal input.form-control').css('background-color', '');
-        $('.modal .bg-danger').addClass('fade');
+        console.log('keyup');
+        $('.modal input.form-control').parent().removeClass('has-feedback').removeClass('has-error');
+        $('.modal p.error').addClass('fade');
     });
 
 })(jQuery)

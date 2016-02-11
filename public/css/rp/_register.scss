@@ -1,0 +1,290 @@
+/////////////// REGISTRATION FORM
+
+.nav-panel#register {
+    box-shadow: 2px 2px 5px #888, -2px 2px 5px #888;
+
+    .form-section {
+        height: auto;
+        overflow-x: hidden;
+        margin-top: 15px;
+
+        .input-panel {
+            @extend .col-sm-12, .col-md-12, .col-lg-10, .col-lg-offset-1;
+            margin-bottom: 10px;
+            text-align: left;
+
+            h4, h5 {
+                -webkit-margin-before: 0px;
+            }
+
+            h5 {
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+
+            .row {
+                margin-top: 5px;
+                margin: 5px 0px 0px 0px;
+            }
+
+            .form-group {
+                @extend .col-xs-12, .col-sm-6, .col-md-6, .col-lg-6;
+
+                label {
+                    padding-top: 8px;
+                    padding-right: 5px;
+                }
+
+                .form-control {}
+
+                span[aria-hidden='true'] {
+                    @extend .fade;
+                }
+
+                &.sm {
+                    @extend .col-xs-12, .col-sm-3, .col-md-3, .col-lg-3;
+                }
+            }
+
+
+            div.terms-container {
+                float: left;
+                height: calc(100% - 80px);
+                width: 100%;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                overflow-y: auto;
+                margin: 10px 0px;
+                padding: 10px;
+                background-color: #efefef;
+            }
+
+            div.accept-terms-container {
+                float: left;
+                margin: 10px 0px;
+                padding: 5px;
+
+//                input[type="checkbox"] {
+//                    margin: 4px;
+//                }
+
+                .cbx-toggle {
+
+                }
+
+                #lblTermsAccepted {
+                    margin: 10px;
+                    font-weight: normal;
+                }
+            }
+
+            p {
+                text-align: center;
+                &.explanation {
+                    display: inline-block;
+                    text-align: left;
+                    font-size: 0.9em;
+                }
+                &.form-answer {
+                    @extend p.explanation;
+                    display: inline-block;
+                    width: auto;
+                    margin: 0px 5px;
+                }
+            }
+
+            label {
+                &.question {
+                    @extend  .col-lg-offset-2, .col-lg-6, .col-md-offset-1, .col-md-6, .col-sm-offset-0, .col-sm-6, .col-xs-offset-0, .col-xs-10;
+                    text-align: left;
+                    margin-top: 5px;
+                    &.secondary {
+                        font-weight: normal !important;
+                    }
+                }
+                &.answer {
+                    margin: 0px;
+                    font-size: .9em;
+                    &.secondary {
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            i.fa-asterisk {
+                display: inline-block;
+                margin-left: 3px;
+                position: relative;
+                top: -5px;
+                color: #ed1848;
+                font-size: 8px;
+            }
+
+            /* html5 file uploader*/
+            div#file-uploader {
+                width: 80%;
+                margin: auto;
+
+                #file-drop-zone {
+                    border:2px dotted #ddd;
+                    /*color: #DADCE3;*/
+                    color: #bbb;
+                    text-align:left;
+                    vertical-align:middle;
+                    padding: 15px 10px;
+                    border-radius: 4px;
+                    //  margin: @line-height-computed;
+                    @include center-block();
+                }
+
+                div.btn-file-upload {
+                    @extend .btn, .btn-primary-mg;
+                    height: 34px;
+                    position: relative;
+                    margin: 0px 20px 0px 0px;
+                    box-shadow: none;
+                    cursor: pointer;
+
+                    input[type="file"] {
+                        display: inline-block !important;
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0px;
+                        width: 100%;
+                        height: 100%;
+                        left: 0px;
+                        z-index: 100;
+                        opacity: 0;
+                    }
+                }
+            }
+
+            output#file-list {
+                width: 80%;
+                margin: auto;
+
+                li {
+                    display: block;
+                }
+
+                .btn-file-output {
+                    @extend .btn, .btn-xs;
+                    display: inline-block;
+                    position: relative;
+                    margin-left: 7px;
+                    box-shadow: none;
+                    color: #fff;
+
+                    &.red {
+                        @extend .btn-danger;
+                    }
+                }
+            }
+
+
+            #mulitplefileuploader {
+                width: 80%;
+                margin: auto;
+            }
+
+            .btn-group-vertical {
+                @extend  .col-lg-4, .col-md-4, .col-sm-4, .col-xs-12;
+                &.sm { @extend .col-md-2, .col-sm-2, .col-xs-12; }
+            }
+
+            .toggle-on, .toggle-off {
+                text-align: left;
+            }
+
+            .toggle-off {
+                padding-left: 19px !important;
+            }
+
+
+            div.answer-container {
+                @extend .col-xs-12, .col-sm-12, .col-md-4, .col-lg-4;
+                min-height: auto;
+                margin-bottom: 10px;
+
+                h5 {
+                    font-size: 1.1em;
+                    color: rgb(237, 24, 72);
+                    font-weight: bold;
+
+                    i.edit-answer {
+                        @extend .fa, .fa-pencil;
+                        margin-left: 5px;
+                        color: #333;
+                        cursor: pointer;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            p.error {
+                @extend .bg-danger;
+                padding: 5px;
+                border-radius: 5px;
+                display: inline-block;
+                float: left;
+            }
+
+        }
+
+        .input-panel-submitted {
+            @extend .input-panel;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /** control area **/
+    .controls-section {
+        position: relative;
+        //    bottom: -10px;
+        height: 120px;
+        margin-top: 10px;
+        padding: 10px 0px;
+        text-align: center;
+
+        .progress {
+            width: 60%;
+            margin: auto;
+        }
+
+        .progress-steps-container {
+            width: 60%;
+            height: 20px;
+            margin: 5px auto;
+
+            .progress-step {
+                display: inline-block;
+                float: left;
+                height: 100%;
+                text-align: center;
+                a {
+                    color: #555;
+                    font-size: 0.8em;
+                    //                    text-decoration: none;
+                }
+                &.complete a {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

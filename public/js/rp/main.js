@@ -92,6 +92,7 @@
 //            });
 //        }
     };
+
     
 
     /************************************************
@@ -99,7 +100,7 @@
      ************************************************/
     
     var moveToFormPanel = function(currentPanel){
-        
+        clearErrorMsg();
         //console.log('move to --> ' + hash);
         var panelId = '#panel-'+currentPanel;
         console.log(panelId);
@@ -156,19 +157,85 @@
     };
     
     
+    /************************************************
+     * Field validation -> mandatory and format
+     ************************************************/
+    var showError = function(field, msg){
+        $('input[name="' + field + '"]').parent().addClass('has-error');
+        $('p.error').removeClass('fade').html(msg);
+    };
+
+    var clearErrorMsg = function(){
+        $('input').parent().removeClass('has-error');
+        $('p.error').addClass('fade');
+    };
+
+    var validateFields = function(panel){
+        var $panel = $(panel),
+            flagMandatoryEmpty = false;
+
+        // Validate mandatory
+        $('#panel-'+panel + ' input.mandatory').each(function(i, input){
+           if($(input).val() === '') {
+               $(input).parent().addClass('has-error');
+               flagMandatoryEmpty = true;
+           }
+        });
+        if(flagMandatoryEmpty) return false;
+
+        // Validate text fields
+        var textfields = [ 'first_name', 'last_name', 'city', 'street' ];
+        for(var i=0; i<textfields.length; ++i) {
+            var field = textfields[i],
+                name = $('input[name="' + field + '"]').siblings().text();
+
+            if(!window.validateText(field, name, showError))
+                return false;
+        }
+
+        // Validate email
+        var email = $('input[name="email"]').val();
+        if(!window.validateEmail('email', showError))
+            return false;
+
+        // Validate phone
+        var phone = $('input[name="phone"]').val();
+        if(!window.validatePhone('phone', showError))
+            return false;
+
+        return true;
+    };
+
+
+
+
+    $('input').keyup(clearErrorMsg);
+
+
     window.onhashchange = function(){
         var hash = window.location.hash,
             hashPattern = /(#panel-)\d/
         if(hashPattern.test(hash)){
-            var currentPanel = sessionStorage[curPanelKey];
-            if(currentPanel > 0 && currentPanel < numberPanels)
+            // current panel is the previous state before pressing previous/continue
+            var currentPanel = parseInt(sessionStorage[curPanelKey]);
+            currentPanel = isNaN(currentPanel) ? currentPanel : parseInt(currentPanel);
+
+            if(currentPanel > 0 && currentPanel < numberPanels) {
                 updateSession(currentPanel);
-            // Update currentPanel to match number in hash
-            currentPanel = parseInt(hash.replace('#panel-', ''));
-            // Show panel indicated in hash
-            moveToFormPanel(currentPanel);
-            // update panel number in session storage
-            sessionStorage[curPanelKey] = currentPanel;
+            }
+
+            if(currentPanel !== 1 || validateFields(currentPanel)) {
+                // Update currentPanel to match number in hash
+                currentPanel = parseInt(hash.replace('#panel-', ''));
+                // Show panel indicated in hash
+                moveToFormPanel(currentPanel);
+                // update panel number in session storage
+                sessionStorage[curPanelKey] = currentPanel;
+            }
+            else {
+                // stay in current panel
+                window.location.hash = '#panel-1';
+            }
         } 
     }
     
@@ -277,53 +344,28 @@
     });
 
     /************************************************
-     * Event handlers
+     * Terms & conditions
      ************************************************/
     // Uncomment for normal workflow
-/*
-    
-    $('#cbxTermsAccepted').change(function(){
-        //console.log($(this).prop('checked'));
+    $('#toggle-terms-and-conditions').change(function() {
         $('#btn-start').prop('disabled', !$(this).prop('checked'));
     }).change();
 
     $('#lblTermsAccepted').click(function(){
-        $('#cbxTermsAccepted').prop('checked', !$('#cbxTermsAccepted').prop('checked')).change();
+        $('#toggle-terms-and-conditions').prop('checked', !$('#toggle-terms-and-conditions').prop('checked'));
     });
-    
-*/
-    
-    
-    
-    /************************************************
-     *  Update Review Panel
-     ************************************************/    
-    
-//    //  input fields and select
-//    $('input.form-control, select.form-control').change(function(){
-//        var field = $(this).attr('name'),
-//            value = $(this).val();
-//        $('p[field="' + field + '"]').text(value);
-//    }).change();
-//    
-//    // Toggle buttons
-//    $('.cbx-toggle').bootstrapToggle().change(function(){
-//        var field = $(this).attr('id'),
-//            value = $(this).prop('checked') ? cbxValue.yes : cbxValue.no,
-//            i18nKey = $(this).prop('checked') ? 'mgrp-toggle-on' : 'mgrp-toggle-off';
-//
-//        $('p[field="' + field + '"]').attr('data-i18n', i18nKey).text(value);
-//    }).change();
 
     
+
     /************************************************
-     * Data submit
+     * Data submission
      ************************************************/
     var getTimestamp = function(){
         var date = new Date();
         return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDay() + '.' +
             date.getHours() + '.' + date.getMinutes() + '.' +date.getMilliseconds();
     };
+
 
     var submitData = function(){
 
@@ -441,16 +483,23 @@
 
     $(document).ready(function(){
         // Retrieve session or init
-        var session = sessionStorage[sessionKey] ? JSON.parse(sessionStorage[sessionKey]) : {};
-        sessionStorage[sessionKey] = JSON.stringify(session);
+//        var session = sessionStorage[sessionKey] ? JSON.parse(sessionStorage[sessionKey]) : {};
+//        sessionStorage[sessionKey] = JSON.stringify(session);
         // fill session data
-        setTimeout(function(){ loadSession(session); }, 1);
+//        setTimeout(function(){ loadSession(session); }, 1);
 
         // Redirect to corresponding panel
-        var currentPanel = sessionStorage[curPanelKey] || 0;
-        if(currentPanel)
-            moveToFormPanel(currentPanel);
-        window.location.hash = '#panel-'+currentPanel;
+//        var currentPanel = parseInt(sessionStorage[curPanelKey]) || 0;
+//        currentPanel = isNaN(currentPanel) ? currentPanel : parseInt(currentPanel);
+//        if(currentPanel)
+//            moveToFormPanel(currentPanel);
+//        window.location.hash = '#panel-'+currentPanel;
+
+        // Init session
+        sessionStorage[sessionKey] = JSON.stringify({});
+        sessionStorage[curPanelKey] = 0;
+        moveToFormPanel(0);
+        window.location.hash = '#panel-0';
     });
 
 

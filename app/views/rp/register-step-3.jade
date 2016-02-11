@@ -5,12 +5,11 @@
     // 1st row  
     .row
         label.question(for="cbxImplant", data-i18n="mgrp-lbl-date-of-injury") Date of Injury
-        .form-group
-            #dtpDateInjury.input-group.date.datetimepicker
-                input/.form-control(name='date_injury', type='text')
-                span.input-group-addon:  span.glyphicon.glyphicon-calendar
+        #dtpDateInjury.input-group.date.datetimepicker
+            input/.form-control(name='date_injury', type='text')
+            span.input-group-addon:  span.glyphicon.glyphicon-calendar
+
     // 2nd row
     .row
         label.question(for="cbxAccident", data-i18n="mgrp-lbl-dauseb-by-accident") Was the injury caused by an accident?
         input/.cbx-toggle(name='accidental_injury', type="checkbox", data-toggle="toggle", data-on="Yes", data-off="No", data-onstyle="success")
-      

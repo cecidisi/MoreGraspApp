@@ -1710,7 +1710,7 @@ a.bg-warning:focus {
   background-color: #f7ecb5; }
 
 /* line 4, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-.bg-danger {
+.bg-danger, .modal p.bg.error {
   background-color: #f2dede; }
 
 /* line 7, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
@@ -1975,7 +1975,7 @@ pre {
     clear: both; }
 
 /* line 10, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-lg-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-xs-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-sm-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-md-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-lg-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-xs-5, .col-sm-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-md-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-lg-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-xs-6, .col-sm-6, .col-md-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-lg-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, .col-xs-7, .col-sm-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-md-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item label.filter-label, #panel-filters .panel-body .filter-group .filter-item div.filter-element, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-sm-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-md-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, .col-lg-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-lg-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-xs-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-sm-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-md-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-lg-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-xs-5, .col-sm-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-md-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-lg-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-xs-6, .col-sm-6, .col-md-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-lg-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, .col-xs-7, .col-sm-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-md-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .modal label.question, .col-xs-9, .col-sm-9, .col-md-9, .modal label.question, .col-lg-9, .col-xs-10, .col-sm-10, .modal label.question, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item label.filter-label, #panel-filters .panel-body .filter-group .filter-item div.filter-element, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-sm-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-md-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, .col-lg-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2191,7 +2191,7 @@ pre {
 
 @media (min-width: 768px) {
   /* line 26, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-sm-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-sm-6, .col-sm-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-sm-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-sm-6, .col-sm-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-sm-8, .col-sm-9, .col-sm-10, .modal label.question, .col-sm-11, .col-sm-12, .home-col, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg, #panel-details .panel-body .tab-content .tab-pane .video-container {
     float: left; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-1 {
@@ -2221,7 +2221,7 @@ pre {
   .col-sm-9 {
     width: 75%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-10 {
+  .col-sm-10, .modal label.question {
     width: 83.33333%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-11 {
@@ -2349,7 +2349,7 @@ pre {
 
 @media (min-width: 992px) {
   /* line 26, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .col-md-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-md-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-md-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-md-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-md-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
+  .col-md-1, .col-md-2, .col-md-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-md-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, .col-md-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-md-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-md-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-md-8, .col-md-9, .modal label.question, .col-md-10, .col-md-11, .col-md-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
     float: left; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-1 {
@@ -2376,7 +2376,7 @@ pre {
   .col-md-8 {
     width: 66.66667%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-9 {
+  .col-md-9, .modal label.question {
     width: 75%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-md-10 {
@@ -2507,7 +2507,7 @@ pre {
 
 @media (min-width: 1200px) {
   /* line 26, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-lg-1, .col-lg-2, .col-lg-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-lg-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-lg-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-lg-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
+  .col-lg-1, .col-lg-2, .col-lg-3, #panel-details .panel-body .tab-content .tab-pane .detail-item.sm, .col-lg-4, .panel-filters-container, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small label.btn, #panel-details .panel-body .tab-content .tab-pane .video-container, .col-lg-5, #panel-filters .panel-body .filter-group .filter-item div.filter-element, .col-lg-6, .home-col, #panel-details .panel-body .tab-content .tab-pane .detail-item, .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label, .col-lg-8, .modal label.question, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small, #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
     float: left; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-1 {
@@ -2531,7 +2531,7 @@ pre {
   .col-lg-7, #panel-filters .panel-body .filter-group .filter-item label.filter-label {
     width: 58.33333%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-lg-8 {
+  .col-lg-8, .modal label.question {
     width: 66.66667%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-lg-9 {
@@ -10365,9 +10365,22 @@ header {
   color: #777;
   border-top: 1px solid #e5e5e5; }
 
-/* line 2, C:/Ampps/www/MoreGraspApp/public/css/_modal.scss */
+/* line 3, C:/Ampps/www/MoreGraspApp/public/css/_modal.scss */
 .modal p.bg {
-  padding: 10px !important; }
+  padding: 10px !important;
+  border-radius: 5px; }
+
+/* line 12, C:/Ampps/www/MoreGraspApp/public/css/_modal.scss */
+.modal label.question {
+  margin-top: 5px; }
+
+/* line 17, C:/Ampps/www/MoreGraspApp/public/css/_modal.scss */
+.modal .form-control-feedback[aria-hidden="true"] {
+  display: none; }
+
+/* line 21, C:/Ampps/www/MoreGraspApp/public/css/_modal.scss */
+.modal .has-feedback .form-control-feedback[aria-hidden="true"] {
+  display: inline-block; }
 
 /* line 1, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
 .home-col {
@@ -10419,6 +10432,12 @@ h5 {
     background: rgba(92, 184, 92, 0.5);
     background: -webkit-linear-gradient(top, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5));
     background: linear-gradient(180deg, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5)); }
+  /* line 35, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+  #overview-table tbody tr.accepted td[col="status"] {
+    color: #5cb85c; }
+  /* line 41, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+  #overview-table tbody tr.rejected td[col="status"] {
+    color: #d9534f; }
 
 /* line 7, C:/Ampps/www/MoreGraspApp/public/css/mm/_filters.scss */
 #panel-filters {
@@ -10611,79 +10630,132 @@ body {
   width: calc(100% - 8px);
   height: calc(100% - 78px);
   margin: 4px;
+  padding-right: 0px !important;
   overflow: hidden; }
 
-/* line 35, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 36, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .centered {
   display: inline-block;
   text-align: center; }
 
-/* line 41, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 42, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .container {
   height: 100%; }
 
-/* line 45, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 46, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .container-narrow > hr {
   margin: 30px 0; }
 
 /*******************************************************************************************************/
-/* line 57, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 58, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .container-main {
   overflow-y: auto; }
-  /* line 61, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 62, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main .row, .container-main #panel-filters .panel-body .filter-type-header, #panel-filters .panel-body .container-main .filter-type-header, .container-main #panel-filters .panel-body .filter-group .filter-item, #panel-filters .panel-body .filter-group .container-main .filter-item {
     height: auto; }
-    /* line 64, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 65, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .row .col, .container-main #panel-filters .panel-body .filter-type-header .col, #panel-filters .panel-body .container-main .filter-type-header .col, .container-main #panel-filters .panel-body .filter-group .filter-item .col, #panel-filters .panel-body .filter-group .container-main .filter-item .col {
       height: auto;
       padding-bottom: 5px; }
-      /* line 68, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 69, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .row .col.col-70, .container-main #panel-filters .panel-body .filter-type-header .col.col-70, #panel-filters .panel-body .container-main .filter-type-header .col.col-70, .container-main #panel-filters .panel-body .filter-group .filter-item .col.col-70, #panel-filters .panel-body .filter-group .container-main .filter-item .col.col-70, .container-main .row .col.col-30, .container-main #panel-filters .panel-body .filter-type-header .col.col-30, #panel-filters .panel-body .container-main .filter-type-header .col.col-30, .container-main #panel-filters .panel-body .filter-group .filter-item .col.col-30, #panel-filters .panel-body .filter-group .container-main .filter-item .col.col-30 {
         height: auto; }
-  /* line 74, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 75, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main .panel {
     height: 100%;
     float: left;
     display: inline-block;
     width: 100%; }
-    /* line 83, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 84, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading h3.panel-title {
       display: inline-block;
       font-weight: bold;
       color: #ed1848;
       font-size: 1.2em; }
-    /* line 90, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 91, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading button.btn.pull-right {
       position: relative;
       top: -7px; }
-      /* line 94, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 95, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading button.btn.pull-right.fa {
         top: -4px; }
-    /* line 99, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 100, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading .collapse-icon {
       position: relative;
       right: -4px;
       margin-left: 12px;
       font-size: 18px; }
-    /* line 106, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 107, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading .btn-group.pull-right {
       top: -5px;
       margin-left: 5px;
       margin-right: 50px; }
-    /* line 112, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 113, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading > label {
       margin-right: 5px; }
-    /* line 117, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 118, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    .container-main .panel .panel-heading .switch {
+      position: relative;
+      top: -5px;
+      margin: 0px 10px; }
+      /* line 124, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch .cmn-toggle {
+        position: absolute;
+        margin-left: -9999px;
+        visibility: hidden; }
+      /* line 130, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch .cmn-toggle + label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        user-select: none; }
+      /* line 138, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch input.cmn-toggle-round + label {
+        padding: 3px;
+        width: 51px;
+        height: 30px;
+        background-color: #ddd;
+        border-radius: 60px; }
+      /* line 146, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:before,
+      .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:after {
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
+        content: ""; }
+      /* line 154, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:before {
+        right: 1px;
+        background-color: #f1f1f1;
+        border-radius: 60px;
+        transition: background 0.4s; }
+      /* line 160, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:after {
+        width: 28px;
+        background-color: #fff;
+        border-radius: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: margin 0.4s; }
+      /* line 167, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch input.cmn-toggle-round:checked + label:before {
+        background-color: #8ce196; }
+      /* line 170, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      .container-main .panel .panel-heading .switch input.cmn-toggle-round:checked + label:after {
+        margin-left: 21px; }
+    /* line 176, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-body {
       height: calc(100% - 37px);
       padding: 5px; }
-  /* line 125, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 184, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main #panel-overview {
     height: calc(60% - 10px);
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block; }
-    /* line 131, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 190, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main #panel-overview .panel-body {
       padding: 5px;
       width: 100%; }
@@ -10691,76 +10763,76 @@ body {
 /******************************************************************************************/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 156, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 215, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: 100%;
     margin: 0px 0px; }
-    /* line 162, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 221, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container .panel .panel-heading .collapse-icon {
       display: none; }
-    /* line 167, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 226, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container .panel#panel-filters > .panel-body {
       width: calc(100%);
       height: calc(100% - 38px); }
-  /* line 174, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 233, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main {
     overflow-y: hidden !important; }
-    /* line 176, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 235, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main > .row, #panel-filters .panel-body .container-main > .filter-type-header, #panel-filters .panel-body .filter-group .container-main > .filter-item {
       height: 100%; }
-      /* line 178, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 237, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main > .row .col, #panel-filters .panel-body .container-main > .filter-type-header .col, #panel-filters .panel-body .filter-group .container-main > .filter-item .col {
         height: 100%; }
-        /* line 180, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+        /* line 239, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
         .container-main > .row .col.col-70, #panel-filters .panel-body .container-main > .filter-type-header .col.col-70, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-70 {
           height: 65%; }
-        /* line 183, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+        /* line 242, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
         .container-main > .row .col.col-30, #panel-filters .panel-body .container-main > .filter-type-header .col.col-30, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-30 {
           height: 35%; }
-  /* line 192, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 251, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #overview-container {
     height: calc(100% - 38px) !important; } }
 
 @media screen and (min-width: 768px) and (max-width: 1530px) {
-  /* line 200, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 259, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .btn-group-adaptive .btn {
     width: 80%;
     min-width: 100px;
     border-radius: 0px; }
-    /* line 204, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 263, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:first-child {
       border-top-left-radius: 3px !important;
       border-top-right-radius: 3px !important; }
-    /* line 208, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 267, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:last-child {
       border-bottom-left-radius: 3px !important;
       border-bottom-right-radius: 3px !important; }
-    /* line 212, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 271, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:not(:first-child) {
       margin-left: 0px; } }
 
 @media (min-width: 992px) {
-  /* line 224, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 283, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: calc(100% - 10px);
     margin: 0px 5px; }
-  /* line 229, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 288, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 36px !important;
     height: 36px !important; } }
 
 @media (min-width: 1200px) {
-  /* line 238, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 297, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: calc(100% - 20px);
     margin: 0px 10px; }
-  /* line 242, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 301, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 48px !important;
     height: 48px !important; } }
 
 @media (min-width: 1530px) {
-  /* line 254, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 313, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 64px !important;
     height: 64px !important; } }

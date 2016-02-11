@@ -72,7 +72,19 @@ var DetailView = (function(){
                 });
             }
 
-            $(_this.root + ' .btn').removeClass('disabled');
+            if(user.meta.status === 'registered') {
+                $(_this.root + ' .btn').removeClass('disabled');
+            }
+            else {
+                if(user.meta.status === 'accepted') {
+                    $('#btn-accept-candidate').addClass('disabled');
+                    $('#btn-reject-candidate').removeClass('disabled');
+                }
+                else {
+                    $('#btn-accept-candidate').removeClass('disabled');
+                    $('#btn-reject-candidate').addClass('disabled');
+                }
+            }
         },
 
         clear:function(){

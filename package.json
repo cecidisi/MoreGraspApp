@@ -20,6 +20,7 @@
     "fs-sync": "^1.0.1",
     "glob": "^5.0.3",
     "jade": "^1.11.0",
+    "lodash": "^4.3.0",
     "method-override": "^2.3.0",
     "mongoose": "^4.1.2",
     "morgan": "^1.6.1",

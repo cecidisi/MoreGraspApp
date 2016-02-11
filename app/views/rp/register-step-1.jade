@@ -1,12 +1,18 @@
-mixin input_field(field, i18nAttr, isSmall)
-    - var label_class = 'default';
-    - var input_class = 'form-control';
-    - if(isSmall)
-        - label_class += ' sm';
-        - input_class += ' sm';
-    label(class=label_class, for=field, data-i18n=i18nAttr)
-    input(class=input_class, name=field, type='text')
+// Insert form-group: label + input
+mixin input_field(field, i18nAttr, isMandatory, isSmall)
+    - var form_group_class =  (isSmall) ? 'form-group sm' : 'form-group';
+    - var form_control_class = (isMandatory) ? 'form-control mandatory' : 'form-control';
 
+    div(class=form_group_class)
+        label(for=field, data-i18n=i18nAttr, data-i18n-noreplace)
+            if(isMandatory)
+                i.fa.fa-asterisk
+        input(class=form_control_class, name=field, type='text')
+        //span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
+        //span.sr-only error
+
+
+// Insert country option
 mixin country_option(name)
     - var selected = (name === 'Germany') ? true : false;
     option(value=name, selected=selected)=name
@@ -15,25 +21,34 @@ mixin country_option(name)
 // Personal Data
 #panel-1.input-panel.center-aligned(name='personal_data', style={display: 'none'})
     h4(data-i18n='mgrp-header-personal-data') Personal Data
+    p.explanation(data-i18n="mgrp-header-personal-data-explanation", data-i18-noreplace) Mandatory field
+    i.fa.fa-asterisk
     br
-    // 1st row
-    .row
-        +input_field('first_name', 'mgrp-lbl-first-name')
-        +input_field('last_name', 'mgrp-lbl-last-name')
-    // 2nd row  
-    .row
-        label.default(for='selCountry', data-i18n='mgrp-lbl-country') Country
-        select#selCountry.form-control(name='country')
-            each country in countries
-                +country_option(country)
+    .form
+        // 1st row
+        //.row
+        +input_field('first_name', 'mgrp-lbl-first-name', true)
+        +input_field('last_name', 'mgrp-lbl-last-name', true)
+        // 2nd row
+        //.row
+        .form-group
+            label.default(for='selCountry', data-i18n='mgrp-lbl-country', data-i18n-noreplace):  i.fa.fa-asterisk
+            select#selCountry.form-control.mandatory(name='country')
+                each country in countries
+                    +country_option(country)
 
-        +input_field('city', 'mgrp-lbl-city')
-    // 3rd row  
-    .row
-        +input_field('street', 'mgrp-lbl-street')
-        +input_field('number', 'mgrp-lbl-number', true)
-        +input_field('zip', 'mgrp-lbl-zip', true)
-    // 4rd row  
-    .row
-        +input_field('email', 'mgrp-lbl-email')
-        +input_field('phone', 'mgrp-lbl-phone')
+        +input_field('city', 'mgrp-lbl-city', true)
+        // 3rd row
+        //.row
+        +input_field('street', 'mgrp-lbl-street', false)
+        +input_field('number', 'mgrp-lbl-number', false, true)
+        +input_field('zip', 'mgrp-lbl-zip', false, true)
+        // 4rd row
+        //.row
+        +input_field('email', 'mgrp-lbl-email', true)
+        +input_field('phone', 'mgrp-lbl-phone', true)
+
+        p.error.fade
+
+
+

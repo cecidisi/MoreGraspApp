@@ -1,0 +1,21 @@
+/////////////// HOME
+
+.nav-panel#home {
+
+    .video-container-outer {
+        width: 100%;
+        height: 420px;
+        padding: 10px 0px;
+        text-align: center;
+        box-shadow: 2px 2px 5px #888, -2px -2px 5px #888, -2px 2px 5px #888, 2px -2px 5px #888;
+        @include linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,1));
+    }
+
+    .video-container {
+        display: inline-block;
+        height: 400px;
+        width: 448px;
+        margin: auto;
+    }
+
+}

@@ -30,6 +30,20 @@
             //@include linear-gradient(rgba(77, 157, 42, .2), rgba(77, 157, 42, .1), rgba(77, 157, 42, .2));
             @include linear-gradient(rgba(92, 184, 92, .5), rgba(92, 184, 92, .4), rgba(92, 184, 92, .5));
         }
+
+        &.accepted {
+            td[col="status"] {
+                color: #5cb85c;
+            }
+        }
+
+        &.rejected {
+            td[col="status"] {
+                color: #d9534f;
+            }
+        }
     }
 
 }
+
+

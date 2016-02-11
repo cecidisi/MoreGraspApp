@@ -14,8 +14,13 @@
         margin-top: 5px;
     }
 
-    .toggle {
-        //@extend .col-sm-12, .col-md-2, .col-lg-3;
+    .form-control-feedback[aria-hidden="true"] {
+        display: none;
     }
+
+    .has-feedback .form-control-feedback[aria-hidden="true"] {
+        display: inline-block;
+    }
+
 }
 

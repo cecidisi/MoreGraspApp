@@ -7,6 +7,6 @@
         div.alert.alert-danger.sizable
             p#pDisclaimer(data-i18n='mgrp-disclaimer'):  strong Disclaimer: Participation in our trials does not entail the loss of ellegilibilty for economical support
         div.accept-terms-container
-            input/#cbxTermsAccepted(type='checkbox')
             label#lblTermsAccepted(data-i18n='mgrp-accept-terms-and-conditions') I have read and accept the terms and conditions
+            input/#toggle-terms-and-conditions.cbx-toggle(type="checkbox", data-toggle="toggle", data-on="Yes", data-off="no", data-onstyle="success")
 
