@@ -77,14 +77,13 @@ module.exports = function (app) {
 var emailUsers = function(cb) {
 
     var transporter = nodemailer.createTransport({
-        service: 'Gmail',
+        service: 'gmail',
         auth: {
-//            user: 'moregrasp.know.center@gmail.com',
-//            pass: 'moregrasp.kc.h2020'
             user: 'moregrasp.know.center@gmail.com',
-            pass: 'moregrasp.kc.h2020'
+            pass: 'moregrasph2020'
         }
     });
+
 
     User.find(function(err, users){
         if(err) return cb(err);
@@ -127,14 +126,14 @@ var emailUsers = function(cb) {
 };
 
 
-router.get('/send-email', function(req, res, next){
-    emailUsers(function(err){
-        if(err)
-            throw err;
-            //res.status(err.responseCode).send(err);
-        res.status(200).send('Users notified successfully');
-    });
-})
+//router.get('/send-email', function(req, res, next){
+//    emailUsers(function(err){
+//        if(err)
+//            throw err;
+//            //res.status(err.responseCode).send(err);
+//        res.status(200).send('Users notified successfully');
+//    });
+//})
 
 
 //  ADD candidate
