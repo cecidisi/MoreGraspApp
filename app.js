@@ -1,6 +1,7 @@
 var express = require('express'),
     config = require('./config/config'),
     mkdirp = require('mkdirp'),
+    fileSave = require('file-save'),
     glob = require('glob'),
     mongoose = require('mongoose'),
     generatePassword = require('password-generator');
@@ -20,7 +21,8 @@ var   User = mongoose.model('User');
 // Reset and hash admin passwords if new
 User.find(function (err, users) {
     if (err) throw err;
-    users.forEach(function(user){
+    var txt = '', count = 0;
+    users.forEach(function(user, i){
         if(user.login.password === 'default') {
             var pswd = generatePassword(15, false);
             user.login.password = pswd;
@@ -28,12 +30,15 @@ User.find(function (err, users) {
                 if(err) throw err;
                 user.comparePassword(pswd, function(err, callback){
                     console.log('user password reset and hashed');
-                    console.log('USERNAME = ' + user.login.username);
-                    console.log('PASSWORD = ' + pswd);
+                    txt += ('USERNAME = ' + user.login.username + '\n PASSWORD = ' + pswd + '\n');
+                    count++;
+                    if(count === users.length && txt !== '')
+                        fileSave('users.txt').write(txt, 'utf8').end().error(function(){ console.log('Error saving users file'); });
                 });
             });
         }
     });
+
 });
 
 // Create uploads fodler if not exist
