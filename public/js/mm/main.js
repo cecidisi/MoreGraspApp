@@ -3,6 +3,7 @@
     var _this = this;
     var overviewVis, overviewTable, filterView, detailView;
     var data = [], currentUserId;
+    var serverPath = 'http://localhost:3000';
 
 
     /**********************************************************************************************/
@@ -38,7 +39,7 @@
 
     var changeCandidateStatus = function(user_id, status, onSuccess){
         $.ajax({
-            url: 'http://localhost:3000/mg-rest-api/update-candidate-status',
+            url: serverPath + '/mg-rest-api/update-candidate-status',
             method: 'PUT',
             data: { user_id: user_id, status: status },
             headers: { 'content-type': 'application/x-www-form-urlencoded' }
