@@ -1,6 +1,6 @@
 var express = require('express'),
     config = require('./config/config'),
-    fsSync = require('fs-sync'),
+    mkdirp = require('mkdirp'),
     glob = require('glob'),
     mongoose = require('mongoose'),
     generatePassword = require('password-generator');
@@ -37,9 +37,8 @@ User.find(function (err, users) {
 });
 
 // Create uploads fodler if not exist
-fsSync.mkdir('/public/uploads', function(err){
+mkdirp('/public/uploads', function(err){
     if(err) console.log('Cannot create folder --> ', err);
-    else console.log('Folder uploads created');
 });
 
 var app = express();
