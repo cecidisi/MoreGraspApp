@@ -37,9 +37,9 @@ User.find(function (err, users) {
 });
 
 // Create uploads fodler if not exist
-//mkdirp('/public/uploads', function(err){
-//    if(err) console.log('Cannot create folder --> ', err);
-//});
+mkdirp('/public/uploads', function(err){
+    if(err) console.log('Cannot create folder --> ', err);
+});
 
 var app = express();
 // invokes express
