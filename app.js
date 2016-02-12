@@ -1,8 +1,9 @@
 var express = require('express'),
-  config = require('./config/config'),
-  glob = require('glob'),
-  mongoose = require('mongoose'),
-  generatePassword = require('password-generator');
+    config = require('./config/config'),
+    fsSync = require('fs-sync'),
+    glob = require('glob'),
+    mongoose = require('mongoose'),
+    generatePassword = require('password-generator');
 
 mongoose.connect(config.db);
 var db = mongoose.connection;
@@ -33,6 +34,12 @@ User.find(function (err, users) {
             });
         }
     });
+});
+
+// Create uploads fodler if not exist
+fsSync.mkdir('/public/uploads', function(err){
+    if(err) console.log('Cannot create folder --> ', err);
+    else console.log('Folder uploads created');
 });
 
 var app = express();

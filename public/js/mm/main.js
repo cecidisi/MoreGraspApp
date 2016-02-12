@@ -43,7 +43,7 @@
             data: { user_id: user_id, status: status },
             headers: { 'content-type': 'application/x-www-form-urlencoded' }
         }).success(function(data, textStatus, jqXHR){
-            console.log(textStatus);
+            //console.log(textStatus);
             onSuccess.call(this);
         }).error(function(jqXHR){
             console.log('Error');
@@ -161,7 +161,7 @@
             "url": "/mg-rest-api/get-all-candidates",
         }).success(function(_data, textStatus, jqXHR){
             data = JSON.parse(_data);
-            console.log(data.length  + ' candidates retrieved');
+            //console.log(data.length  + ' candidates retrieved');
             // load views
             overviewTable.load(data);
             $('#toggle-show-all').trigger('change');

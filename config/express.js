@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-var fsSync = require('fs-sync');
 var session = require('express-session');
 var mongoose = require('mongoose');
 var passport = require('passport');

@@ -17,7 +17,8 @@ module.exports = function (app) {
 
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
-            cb(null, './public/uploads/')
+
+            cb(null, './public/uploads/');
         },
         filename: function (req, file, cb) {
             cb(null, req.body.filename || file.originalname);
@@ -30,8 +31,36 @@ module.exports = function (app) {
     });
 
     router.post('/upload-video', upload.single('video'), function(req, res, next){
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        console.log(req.file);
+
         if (req.file) {
             res.status(200).send('File "' + req.file.originalname + '" uploaded');
+        }
+        else {
+            res.status(500).send('No files');
+        }
+    });
+
+    var upload = multer({
+        storage: storage,
+        limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 }
+    }).single('video');
+
+    router.post('/upload-video', function(req, res, next){
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        console.log(req.file);
+
+        if (req.file) {
+            upload(req, res, function(err){
+                if(err) {
+                    console.log('Error on video upload', err);
+                    return next(err);
+                }
+                res.status(200).send('File "' + req.file.originalname + '" uploaded');
+            });
         }
         else {
             res.status(500).send('No files');
@@ -50,6 +79,8 @@ var emailUsers = function(cb) {
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
+//            user: 'moregrasp.know.center@gmail.com',
+//            pass: 'moregrasp.kc.h2020'
             user: 'moregrasp.know.center@gmail.com',
             pass: 'moregrasp.kc.h2020'
         }
@@ -57,39 +88,53 @@ var emailUsers = function(cb) {
 
     User.find(function(err, users){
         if(err) return cb(err);
-        users.forEach(function(user){
-           if(user.preferences.notify_new_registration) {
-               console.log('Mail to: ' + user.personal_data.email);
-               var msg = "Dear " + user.personal_data.first_name + ' ' + user.personal_data.last_name + "<br><br>" +
-                   "A new candidate just signed up at the MoreGrasp Registration Platform<br>" +
-                   "Check it at <url>http://moregrasp.know-center.tugraz.at:8080/matchmaking1/</url><br><br>" +
-                   "Best Regards,<br><br>Know-Center - MoreGrasp support<br><br><br>"+
-                   "<small>This message has been automatically sent to you.</small><br>"+
-                   "<small>To disable these notifications, go to @username tab -> Settings -> Receive notifications of new registrations = NO </small>";
+        var done = 0;
+        for(var i = 0; i < users.length; ++i) {
+            var user = users[i];
+            console.log(user.login.username);
+            if(user.preferences.notify_new_registration) {
+                console.log('Mail to: ' + user.personal_data.email);
+                var msg = "Dear " + user.personal_data.first_name + ' ' + user.personal_data.last_name + "<br><br>" +
+                    "A new candidate just signed up at the MoreGrasp Registration Platform<br>" +
+                    "Check it at <url>http://moregrasp.know-center.tugraz.at:8080/matchmaking1/</url><br><br>" +
+                    "Best Regards,<br><br>Know-Center - MoreGrasp support<br><br><br>"+
+                    "<small>This message has been automatically sent to you.</small><br>"+
+                    "<small>To disable these notifications, go to @username tab -> Settings -> Receive notifications of new registrations = NO </small>";
 
-               var mailOptions = {
-                   from: 'cecidisi@gmail.com',
-                   to: user.personal_data.email,
-                   subject: 'New registration @ MoreGrasp',
-                   html: msg
-               }
+                var mailOptions = {
+                    //                   from: 'moregrasp.know.center@gmail.com',
+                    from: 'moregrasp.know.center@gmail.com',
+                    to: user.personal_data.email,
+                    subject: 'New registration @ MoreGrasp',
+                    html: msg
+                }
 
-               transporter.sendMail(mailOptions, function(error, info){
-                   if(error) return cb(error);
-               });
-           }
-        });
-        return cb(null);
+                transporter.sendMail(mailOptions, function(error, info){
+                    if(error){
+                        console.log('Should return here --> ', error);
+                        return cb(error);
+                    }
+                });
+            }
+            done++;
+            console.log('done = ' + done);
+            if(done == users.length) {
+                console.log('About to return');
+                return cb(null);
+            }
+        }
     });
 };
 
 
-//router.get('/send-email', function(req, res, next){
-//    emailUsers(function(err){
-//        if(err) return next(err);
-//        res.status(200).send('Users notified successfully');
-//    });
-//})
+router.get('/send-email', function(req, res, next){
+    emailUsers(function(err){
+        if(err)
+            throw err;
+            //res.status(err.responseCode).send(err);
+        res.status(200).send('Users notified successfully');
+    });
+})
 
 
 //  ADD candidate

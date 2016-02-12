@@ -103,7 +103,6 @@
         clearErrorMsg();
         //console.log('move to --> ' + hash);
         var panelId = '#panel-'+currentPanel;
-        console.log(panelId);
         // show current panel and hide others
         $('.input-panel:not(' + panelId+ ')').hide();
         $(panelId).slideDown('slow');
@@ -400,14 +399,14 @@
         });
         data.misc = [];
         Object.keys(misc).forEach(function(qNum){
-            console.log(misc[qNum].values.join(', '));
+            //console.log(misc[qNum].values.join(', '));
             data.misc.push({ question: misc[qNum].question, answer: misc[qNum].values.join(', ') });
         });
 
 //        console.log('retrieved session');
 //        console.log(session);
-        console.log('data to submit');
-        console.log(data);
+//        console.log('data to submit');
+//        console.log(data);
         
         // TODO submit data to server
         var $bgProcessing = $('<div/>', { class: 'bg-processing' }).appendTo($('body'));
@@ -438,7 +437,7 @@
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === 4) {
                     if (xhr.status === 200) {
-                        console.log(xhr.responseText);
+//                        console.log(xhr.responseText);
                         totalUploads++;
                         if(totalUploads === Object.keys(filesToUpload).length)
                             onAllUploaded.call(this);
@@ -460,7 +459,7 @@
             "headers": { "content-type": "application/x-www-form-urlencoded" },
             "data": data
         }).success(function(data, textStatus, jqXHR){
-            console.log(textStatus);
+            //console.log(textStatus);
             if(videosToUpload.length > 0)
                 videosToUpload.forEach(function(video){ uploadVideoFile(video) });
             else
