@@ -8,6 +8,12 @@
 * Open a terminal/console, cd to MoreGraspApp/ and execute:
   * ```[sudo] npm install -g bower grunt-cli```
   * ```[sudo] npm install```
-  * ```[sudo] bower install```
+  * ```bower install```
   * ```[sudo] grunt``` (to launch livereload) or ```npm start```
+  * There are 3 possible configurations: development (default), test and production. E.g. ```export NODE_ENV=test && npm start```
+
+
+## Project Structure
+
+ * /root
 
