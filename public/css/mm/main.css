@@ -10344,13 +10344,6 @@ header {
   .btn-primary-mg:hover {
     background-color: #459522;
     color: #eee; }
-  /* line 19, C:/Ampps/www/MoreGraspApp/public/css/_content.scss */
-  .btn-primary-mg a {
-    color: inherit;
-    text-decoration: none; }
-    /* line 22, C:/Ampps/www/MoreGraspApp/public/css/_content.scss */
-    .btn-primary-mg a:hover {
-      color: inherit; }
 
 /* line 1, C:/Ampps/www/MoreGraspApp/public/css/_footer.scss */
 .footer {

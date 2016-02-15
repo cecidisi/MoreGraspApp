@@ -8015,11 +8015,6 @@ header {
   .btn-primary-mg:hover {
     background-color: #459522;
     color: #eee; }
-  .btn-primary-mg a {
-    color: inherit;
-    text-decoration: none; }
-    .btn-primary-mg a:hover {
-      color: inherit; }
 
 .footer {
   position: absolute;

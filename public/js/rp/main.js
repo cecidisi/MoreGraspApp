@@ -347,7 +347,11 @@
      ************************************************/
     // Uncomment for normal workflow
     $('#toggle-terms-and-conditions').change(function() {
-        $('#btn-start').prop('disabled', !$(this).prop('checked'));
+        if($(this).prop('checked'))
+            $('#btn-start').removeClass('disabled');//.attr('href', '#panel-1');
+        else
+            $('#btn-start').addClass('disabled');//.attr('href', '#');
+        //$('#btn-start').prop('disabled', !$(this).prop('checked'));
     }).change();
 
     $('#lblTermsAccepted').click(function(){

@@ -10419,13 +10419,6 @@ header {
   .btn-primary-mg:hover, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload:hover, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload:hover {
     background-color: #459522;
     color: #eee; }
-  /* line 19, C:/Ampps/www/MoreGraspApp/public/css/_content.scss */
-  .btn-primary-mg a, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload a, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload a {
-    color: inherit;
-    text-decoration: none; }
-    /* line 22, C:/Ampps/www/MoreGraspApp/public/css/_content.scss */
-    .btn-primary-mg a:hover, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload a:hover, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload a:hover {
-      color: inherit; }
 
 /* line 1, C:/Ampps/www/MoreGraspApp/public/css/_footer.scss */
 .footer {
