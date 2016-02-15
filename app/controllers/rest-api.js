@@ -156,6 +156,8 @@ router.post('/save-candidate', function (req, res, next) {
 //  GET candidates
 
 router.get('/get-all-candidates', function (req, res, next) {
+
+    console.log(req.user);
     if(req.user) {
         Candidate.find(function (err, candidates) {
             if (err) return next(err);
@@ -179,6 +181,7 @@ router.get('/get-all-candidates', function (req, res, next) {
 
 
 router.get('/get-registered-candidates', function (req, res, next) {
+    console.log(req.user);
     if (req.user) {
         Candidate.findByStatus('registered', function (err, candidates) {
             if (err) return next(err);
@@ -197,6 +200,7 @@ router.get('/get-registered-candidates', function (req, res, next) {
 
 
 router.get('/get-accepted-candidates', function (req, res, next) {
+    console.log(req.user);
     if(req.user) {
         Candidate.findByStatus('accepted', function (err, candidates) {
             if (err) return next(err);
@@ -215,6 +219,7 @@ router.get('/get-accepted-candidates', function (req, res, next) {
 
 
 router.get('/get-rejected-candidates', function (req, res, next) {
+    console.log(req.user);
     if(req.user) {
         Candidate.findByStatus('rejected', function (err, candidates) {
             if (err) return next(err);
@@ -273,7 +278,7 @@ router.delete('/remove-all-candidates', function (req, res, next) {
 
 
 router.put('/update-candidate-status', function(req, res, next){
-
+    console.log(req.user);
     if (req.user) {
         if(req.body) {
             var id = req.body.user_id,
