@@ -39,7 +39,8 @@
 
     var changeCandidateStatus = function(user_id, status, onSuccess){
         $.ajax({
-            url: serverPath + '/mg-rest-api/update-candidate-status',
+            //url: serverPath + '/mg-rest-api/update-candidate-status',
+            url: '/mg-rest-api/update-candidate-status',
             method: 'PUT',
             data: { user_id: user_id, status: status },
             headers: { 'content-type': 'application/x-www-form-urlencoded' }

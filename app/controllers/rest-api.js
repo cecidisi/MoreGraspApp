@@ -17,7 +17,6 @@ module.exports = function (app) {
 
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
-
             cb(null, './public/uploads/');
         },
         filename: function (req, file, cb) {
@@ -25,47 +24,47 @@ module.exports = function (app) {
         }
     })
 
-//    var upload = multer({
-//        storage: storage,
-//        limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 }
-//    });
-//
-//    router.post('/upload-video', upload.single('video'), function(req, res, next){
-//        res.header("Access-Control-Allow-Origin", "*");
-//        res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//        console.log(req.file);
-//
-//        if (req.file) {
-//            res.status(200).send('File "' + req.file.originalname + '" uploaded');
-//        }
-//        else {
-//            res.status(500).send('No files');
-//        }
-//    });
-
     var upload = multer({
         storage: storage,
         limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 }
-    }).single('video');
+    });
 
-    router.post('/upload-video', function(req, res, next){
+    router.post('/upload-video', upload.single('video'), function(req, res, next){
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "X-Requested-With");
         console.log(req.file);
 
         if (req.file) {
-            upload(req, res, function(err){
-                if(err) {
-                    console.log('Error on video upload', err);
-                    return next(err);
-                }
-                res.status(200).send('File "' + req.file.originalname + '" uploaded');
-            });
+            res.status(200).send('File "' + req.file.originalname + '" uploaded');
         }
         else {
             res.status(500).send('No files');
         }
     });
+
+//    var upload = multer({
+//        storage: storage,
+//        limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 }
+//    }).single('video');
+//
+//    router.post('/upload-video', function(req, res, next){
+//        res.header("Access-Control-Allow-Origin", "*");
+//        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//        console.log(req.file);
+//
+//        if (req.file) {
+//            upload(req, res, function(err){
+//                if(err) {
+//                    console.log('Error on video upload', err);
+//                    return next(err);
+//                }
+//                res.status(200).send('File "' + req.file.originalname + '" uploaded');
+//            });
+//        }
+//        else {
+//            res.status(500).send('No files');
+//        }
+//    });
 
     /************************************
      *  End Video Storage
