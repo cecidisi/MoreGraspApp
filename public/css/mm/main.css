@@ -10419,25 +10419,29 @@ h5 {
   #overview-vis g.user-glyph {
     cursor: pointer; }
 
-/* line 20, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
-#overview-table tbody tr {
-  cursor: pointer;
-  color: #666; }
-  /* line 24, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
-  #overview-table tbody tr.selected {
-    text-decoration: underline;
-    color: #337ab7; }
-  /* line 29, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
-  #overview-table tbody tr.highlighted {
-    background: rgba(92, 184, 92, 0.5);
-    background: -webkit-linear-gradient(top, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5));
-    background: linear-gradient(180deg, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5)); }
-  /* line 35, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
-  #overview-table tbody tr.accepted td[col="status"] {
-    color: #5cb85c; }
-  /* line 41, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
-  #overview-table tbody tr.rejected td[col="status"] {
-    color: #d9534f; }
+/* line 18, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+#overview-table {
+  height: 100%;
+  overflow: hidden; }
+  /* line 23, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+  #overview-table tbody tr {
+    cursor: pointer;
+    color: #666; }
+    /* line 27, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+    #overview-table tbody tr.selected {
+      text-decoration: underline;
+      color: #337ab7; }
+    /* line 32, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+    #overview-table tbody tr.highlighted {
+      background: rgba(92, 184, 92, 0.5);
+      background: -webkit-linear-gradient(top, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5));
+      background: linear-gradient(180deg, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5)); }
+    /* line 38, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+    #overview-table tbody tr.accepted td[col="status"] {
+      color: #5cb85c; }
+    /* line 44, C:/Ampps/www/MoreGraspApp/public/css/mm/_overview.scss */
+    #overview-table tbody tr.rejected td[col="status"] {
+      color: #d9534f; }
 
 /* line 7, C:/Ampps/www/MoreGraspApp/public/css/mm/_filters.scss */
 #panel-filters {
@@ -10758,81 +10762,84 @@ body {
     /* line 190, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main #panel-overview .panel-body {
       padding: 5px;
-      width: 100%; }
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      top: -5px; }
 
 /******************************************************************************************/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 215, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 217, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: 100%;
     margin: 0px 0px; }
-    /* line 221, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 223, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container .panel .panel-heading .collapse-icon {
       display: none; }
-    /* line 226, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 228, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container .panel#panel-filters > .panel-body {
       width: calc(100%);
       height: calc(100% - 38px); }
-  /* line 233, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 235, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main {
     overflow-y: hidden !important; }
-    /* line 235, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 237, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main > .row, #panel-filters .panel-body .container-main > .filter-type-header, #panel-filters .panel-body .filter-group .container-main > .filter-item {
       height: 100%; }
-      /* line 237, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 239, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main > .row .col, #panel-filters .panel-body .container-main > .filter-type-header .col, #panel-filters .panel-body .filter-group .container-main > .filter-item .col {
         height: 100%; }
-        /* line 239, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+        /* line 241, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
         .container-main > .row .col.col-70, #panel-filters .panel-body .container-main > .filter-type-header .col.col-70, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-70 {
           height: 65%; }
-        /* line 242, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+        /* line 244, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
         .container-main > .row .col.col-30, #panel-filters .panel-body .container-main > .filter-type-header .col.col-30, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-30 {
           height: 35%; }
-  /* line 251, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 253, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #overview-container {
     height: calc(100% - 38px) !important; } }
 
 @media screen and (min-width: 768px) and (max-width: 1530px) {
-  /* line 259, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 261, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .btn-group-adaptive .btn {
     width: 80%;
     min-width: 100px;
     border-radius: 0px; }
-    /* line 263, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 265, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:first-child {
       border-top-left-radius: 3px !important;
       border-top-right-radius: 3px !important; }
-    /* line 267, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 269, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:last-child {
       border-bottom-left-radius: 3px !important;
       border-bottom-right-radius: 3px !important; }
-    /* line 271, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 273, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:not(:first-child) {
       margin-left: 0px; } }
 
 @media (min-width: 992px) {
-  /* line 283, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 285, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: calc(100% - 10px);
     margin: 0px 5px; }
-  /* line 288, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 290, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 36px !important;
     height: 36px !important; } }
 
 @media (min-width: 1200px) {
-  /* line 297, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 299, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: calc(100% - 20px);
     margin: 0px 10px; }
-  /* line 301, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 303, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 48px !important;
     height: 48px !important; } }
 
 @media (min-width: 1530px) {
-  /* line 313, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 315, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 64px !important;
     height: 64px !important; } }

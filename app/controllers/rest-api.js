@@ -25,23 +25,23 @@ module.exports = function (app) {
         }
     })
 
-    var upload = multer({
-        storage: storage,
-        limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 }
-    });
-
-    router.post('/upload-video', upload.single('video'), function(req, res, next){
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "X-Requested-With");
-        console.log(req.file);
-
-        if (req.file) {
-            res.status(200).send('File "' + req.file.originalname + '" uploaded');
-        }
-        else {
-            res.status(500).send('No files');
-        }
-    });
+//    var upload = multer({
+//        storage: storage,
+//        limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 }
+//    });
+//
+//    router.post('/upload-video', upload.single('video'), function(req, res, next){
+//        res.header("Access-Control-Allow-Origin", "*");
+//        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//        console.log(req.file);
+//
+//        if (req.file) {
+//            res.status(200).send('File "' + req.file.originalname + '" uploaded');
+//        }
+//        else {
+//            res.status(500).send('No files');
+//        }
+//    });
 
     var upload = multer({
         storage: storage,
@@ -101,7 +101,6 @@ var emailUsers = function(cb) {
                     "<small>To disable these notifications, go to @username tab -> Settings -> Receive notifications of new registrations = NO </small>";
 
                 var mailOptions = {
-                    //                   from: 'moregrasp.know.center@gmail.com',
                     from: 'moregrasp.know.center@gmail.com',
                     to: user.personal_data.email,
                     subject: 'New registration @ MoreGrasp',
@@ -116,9 +115,7 @@ var emailUsers = function(cb) {
                 });
             }
             done++;
-            console.log('done = ' + done);
             if(done == users.length) {
-                console.log('About to return');
                 return cb(null);
             }
         }
@@ -293,7 +290,7 @@ router.put('/update-candidate-status', function(req, res, next){
                 'meta.status_changed_by': req.user._id
             }, function(err, user){
                 if(err)  {
-                    console.log('error in ifnd by id and update');
+                    console.log('error in find by id and update');
                     throw err;
                 }
                 res.status(200).send('User ' + user._id + ' --> new status = ' + status);

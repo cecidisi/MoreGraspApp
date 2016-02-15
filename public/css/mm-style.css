@@ -8075,20 +8075,23 @@ h5 {
   #overview-vis g.user-glyph {
     cursor: pointer; }
 
-#overview-table tbody tr {
-  cursor: pointer;
-  color: #666; }
-  #overview-table tbody tr.selected {
-    text-decoration: underline;
-    color: #337ab7; }
-  #overview-table tbody tr.highlighted {
-    background: rgba(92, 184, 92, 0.5);
-    background: -webkit-linear-gradient(top, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5));
-    background: linear-gradient(180deg, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5)); }
-  #overview-table tbody tr.accepted td[col="status"] {
-    color: #5cb85c; }
-  #overview-table tbody tr.rejected td[col="status"] {
-    color: #d9534f; }
+#overview-table {
+  height: 100%;
+  overflow: hidden; }
+  #overview-table tbody tr {
+    cursor: pointer;
+    color: #666; }
+    #overview-table tbody tr.selected {
+      text-decoration: underline;
+      color: #337ab7; }
+    #overview-table tbody tr.highlighted {
+      background: rgba(92, 184, 92, 0.5);
+      background: -webkit-linear-gradient(top, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5));
+      background: linear-gradient(180deg, rgba(92, 184, 92, 0.5), rgba(92, 184, 92, 0.4), rgba(92, 184, 92, 0.5)); }
+    #overview-table tbody tr.accepted td[col="status"] {
+      color: #5cb85c; }
+    #overview-table tbody tr.rejected td[col="status"] {
+      color: #d9534f; }
 
 #panel-filters {
   display: block;
@@ -8342,7 +8345,10 @@ body {
     display: inline-block; }
     .container-main #panel-overview .panel-body {
       padding: 5px;
-      width: 100%; }
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      top: -5px; }
 
 /******************************************************************************************/
 /* Responsive: Portrait tablets and up */

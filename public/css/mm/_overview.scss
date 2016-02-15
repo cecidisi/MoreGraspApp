@@ -17,6 +17,9 @@
 
 #overview-table {
 
+    height: 100%;
+    overflow: hidden;
+
     tbody tr {
         cursor: pointer;
         color: #666;
