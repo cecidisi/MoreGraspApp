@@ -1,0 +1,16 @@
+// Video
+#panel-5.input-panel.center-aligned(name='video', style={display: 'none'})
+    h4 #{__('mgrp-header-video')}
+    p.explanation #{__('mgrp-header-video-explanation')}
+    p.explanation #{__('mgrp-header-video-guidelines')}
+    br
+
+    #file-uploader
+        #file-drop-zone.ajax-upload-dragdrop
+            div.btn-file-upload
+                span #{__("mgrp-video-upload-btn-select")}
+                form#form-video-upload(enctype="multipart/form-data")
+                    input#file-input.btn.btn-primary-mg(type="file", name="files[]", accept="video/*", multiple)
+            label #{__("mgrp-video-upload-drag-and-drop-msg")}
+
+    output#file-list:  ul

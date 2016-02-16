@@ -4,7 +4,7 @@ mixin input_field(field, i18nAttr, isMandatory, isSmall)
     - var form_control_class = (isMandatory) ? 'form-control mandatory' : 'form-control';
 
     div(class=form_group_class)
-        label(for=field, data-i18n=i18nAttr, data-i18n-noreplace)
+        label(for=field) #{__(i18nAttr)}
             if(isMandatory)
                 i.fa.fa-asterisk
         input(class=form_control_class, name=field, type='text')
@@ -20,9 +20,10 @@ mixin country_option(name)
 
 // Personal Data
 #panel-1.input-panel.center-aligned(name='personal_data', style={display: 'none'})
-    h4(data-i18n='mgrp-header-personal-data') Personal Data
-    p.explanation(data-i18n="mgrp-header-personal-data-explanation", data-i18-noreplace) Mandatory field
-    i.fa.fa-asterisk
+    //h4(data-i18n='mgrp-header-personal-data') Personal Data
+    h4 #{__('mgrp-header-personal-data')}
+    p.explanation #{__('mgrp-header-personal-data-explanation')}
+        i.fa.fa-asterisk
     br
     .form
         // 1st row
@@ -32,7 +33,8 @@ mixin country_option(name)
         // 2nd row
         //.row
         .form-group
-            label.default(for='selCountry', data-i18n='mgrp-lbl-country', data-i18n-noreplace):  i.fa.fa-asterisk
+            label.default(for='selCountry') #{__('mgrp-lbl-country')}
+                i.fa.fa-asterisk
             select#selCountry.form-control.mandatory(name='country')
                 each country in countries
                     +country_option(country)

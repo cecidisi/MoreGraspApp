@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang=locale)
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width')
@@ -25,16 +25,16 @@ html(lang='en')
               img(src='/media/moregrasp-logo.jpg', height='68', width='120')
               div.title:  h3(data-i18n='mgrp-title')=title
           #mg-navbar-collapse.navbar-collapse.collapse(aria-expanded=true)
-            ul.nav.navbar-nav.navbar-right.flag-container
-              li.active:  a.flag.flag-en.active(name='en', href='/registration-platform/lang=en', hreflang='en')
-              li:  a.flag.flag-de(name='de', href='/registration-platform/lang=de', hreflang='de')
             ul.nav.navbar-nav.navbar-right.menu
-              block tab-home
-                li:  a(href='/registration-platform/home', data-i18n='mgrp-nav-home') Home
-              block tab-register
-                li:  a(href='/registration-platform/register', data-i18n='mgrp-nav-register') Register
-              block tab-faq 
-                li:  a(href='/registration-platform/faq', data-i18n='mgrp-nav-faq') FAQ
+                block tab-home
+                    li:  a(href='/registration-platform/home') #{__('mgrp-nav-home')}
+                block tab-register
+                    li:  a(href='/registration-platform/register') #{__('mgrp-nav-register')}
+                block tab-faq
+                    li:  a(href='/registration-platform/faq') #{__('mgrp-nav-faq')}
+                block flags
+                    li.flag-container:  a.flag(class='flag-en', href='/registration-platform/?lang=en', hreflang='en')
+                    li.flag-container:  a.flag(class='flag-de', href='/registration-platform/?lang=de', hreflang='de')
     
     .content
       .container
@@ -57,9 +57,9 @@ html(lang='en')
       script(src='/components/d3/d3.js')
       script(src='/components/d3pie/d3pie/d3pie.min.js')
       script(src='/components/lodash/lodash.js')
+      script(src='/components/jquery.cookie/jquery.cookie.js')
       // endbower
-      script(src='/js/helper.js')
-      script(src='/js/i18n-handler.js')
-      script(src='/js/rp-main.js')
-      
+
+    script(src='/js/rp/lang-cookie.js')
+
     block custom-js

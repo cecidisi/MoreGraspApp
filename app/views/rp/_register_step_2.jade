@@ -1,0 +1,17 @@
+mixin toggle(name, i18n)
+    .row
+        label.question(for=name) #{__(i18n)}
+        input/.cbx-toggle(name=name, type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+
+
+// Pre-Injury
+#panel-2.input-panel.center-aligned(name='pre_injury', style={display: 'none'})
+    h4 #{__('mgrp-header-pre-injury')}
+    p.explanation #{__('mgrp-header-pre-injury-explanation')}
+    br
+    +toggle('metal_implant', 'mgrp-lbl-metal-implant')
+    +toggle('pacemaker', 'mgrp-lbl-pacemaker')
+    +toggle('medication_pump', 'mgrp-lbl-medication-pump')
+    +toggle('stroke', 'mgrp-lbl-stroke')
+    +toggle('epilepsy', 'mgrp-lbl-epilepsy')
+    +toggle('long_term_care', 'mgrp-lbl-long-term-care')

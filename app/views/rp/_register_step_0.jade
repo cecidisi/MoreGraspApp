@@ -1,0 +1,14 @@
+// Terms and Conditions
+#panel-0.input-panel.center-aligned(style={display: 'none'})
+    .row
+        h4#titleTermsAndConditions #{__('mgrp-terms-and-conditions-title')}
+        div.terms-container
+            p#listTermsAndConditions.explanation #{__('mgrp-terms-and-conditions-list')}
+        div.alert.alert-danger.sizable
+            p#pDisclaimer
+                strong #{__('mgrp-disclaimer') + ': '}
+                | #{__('mgrp-disclaimer-text')}
+        div.accept-terms-container
+            label#lblTermsAccepted #{__('mgrp-accept-terms-and-conditions')}
+            input/#toggle-terms-and-conditions.cbx-toggle(type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+

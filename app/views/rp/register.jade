@@ -1,5 +1,13 @@
 extends layout
 
+
+mixin flag(loc)
+    if(loc === locale)
+        li.flag-container.active:  a.flag(class='flag-'+loc+' active', href='/registration-platform/register/?lang='+loc, hreflang=loc)
+    else
+        li.flag-container:  a.flag(class='flag-'+loc, href='/registration-platform/register/?lang='+loc, hreflang=loc)
+
+
 block css
   link(rel='stylesheet', href='/css/rp-style.css')
   // bower:css
@@ -11,20 +19,29 @@ block css
 
 
 block tab-register
-    li.active:  a(href='/registration-platform/register', data-i18n='mgrp-nav-register') Register
+    li.active:  a(href='/registration-platform/register') #{__('mgrp-nav-register')}
+
+
+block flags
+    +flag('en')
+    +flag('de')
+//block i18n
+    ul.nav.navbar-nav.navbar-right.flag-container
+        li.active:  a.flag.flag-en.active(name='en', href='/registration-platform/register/?lang=en', hreflang='en')
+        li:  a.flag.flag-de(name='de', href='/registration-platform/register/?lang=de', hreflang='de')
 
 block content
   #register.nav-panel
     .panel-container.form-section
-      include register-step-0
-      include register-step-1
-      include register-step-2
-      include register-step-3
-      include register-step-4
-      include register-step-5
-      include register-step-6
-      include register-step-7
-      include register-submitted
+      include _register_step_0
+      include _register_step_1
+      include _register_step_2
+      include _register_step_3
+      include _register_step_4
+      include _register_step_5
+      include _register_step_6
+      include _register_step_7
+      include _register_submitted
       
     .panel-container.controls-section
         // hide when currentPanel = 0
@@ -32,33 +49,23 @@ block content
           #form-progress-bar.progress-bar.progress-bar-success(role='progressbar', aria-valuenow=progress, aria-valuemin='0', aria-valuemax='100', style={ width: progress+'%' })
             span.sr-only
         .progress-steps-container
+            - var headers = ['personal-data', 'pre-injury', 'injury', 'abilities', 'video', 'misc'];
+            - var stepWidth = parseFloat(100 / (headers.length));
+            each header, i in headers
+                - var header_title = 'mgrp-header-'+header+'-short'
+                .progress-step(id='progress-step-'+(i+1), style={width: stepWidth+'%'})
+                    a.step-label(href='#panel-'+(i+1)) #{__(header_title)}
+
         .button-area
-            a#btn-start.btn.btn-primary-mg(href='#panel-1', data-i18n='mgrp-btn-start-registration') Start Registration
-            a#btn-previous.btn.btn-default(href='#', data-i18n='mgrp-btn-previous') Previous
-            a#btn-continue.btn.btn-default(href='#', data-i18n='mgrp-btn-continue') Continue
-            a#btn-submit.btn.btn-primary-mg(data-i18n='mgrp-btn-submit') Submit
+            a#btn-start.btn.btn-primary-mg(href='#panel-1') #{__('mgrp-btn-start-registration')}
+            a#btn-previous.btn.btn-default(href='#') #{__('mgrp-btn-previous')}
+            a#btn-continue.btn.btn-default(href='#') #{__('mgrp-btn-continue')}
+            a#btn-submit.btn.btn-primary-mg #{__('mgrp-btn-submit')}
     
-            
-block js
-  // bower:js
-  script(src='/components/jquery/dist/jquery.js')
-  script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
-  script(src='/components/bootstrap-toggle/js/bootstrap-toggle.min.js')
-  script(src='/components/moment/moment.js')
-  script(src='/components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js')
-  script(src='/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')
-  script(src='/components/jquery-ui/jquery-ui.min.js')
-  script(src='/components/jquery-mousewheel/jquery.mousewheel.js')
-  script(src='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js')
-  script(src='/components/d3/d3.js')
-  script(src='/components/d3pie/d3pie/d3pie.min.js')
-  script(src='/components/lodash/lodash.js')
-  // endbower
-  script(src='/js/helper.js')
-  script(src='/js/field-validation.js')
-  script(src='/js/i18n-handler.js')
-  //script(src='/js/scrollto.js')
-  script(src='/js/rp/main.js')
+
   
 block custom-js
-
+    script(src='/js/helper.js')
+    script(src='/js/field-validation.js')
+    script(src='/js/i18n-handler.js')
+    script(src='/js/rp/main.js')

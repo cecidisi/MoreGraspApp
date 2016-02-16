@@ -1,44 +1,66 @@
-var express = require('express');
-var glob = require('glob');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var compress = require('compression');
-var methodOverride = require('method-override');
-var session = require('express-session');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+var express = require('express'),
+    i18n = require('i18n-2'),
+    glob = require('glob'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    compress = require('compression'),
+    methodOverride = require('method-override'),
+    session = require('express-session'),
+    mongoose = require('mongoose'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy,
+    locale = require('locale');
 //var multer = require('multer');
 
 
 module.exports = function(app, config) {
-  var env = process.env.NODE_ENV || 'development';
-  app.locals.ENV = env;
-  app.locals.ENV_DEVELOPMENT = env == 'development';
-  
-  app.set('views', config.root + '/app/views');
-  app.set('view engine', 'jade');
+    var env = process.env.NODE_ENV || 'development';
+    app.locals.ENV = env;
+    app.locals.ENV_DEVELOPMENT = env == 'development';
 
-  // app.use(favicon(config.root + '/public/img/favicon.ico'));
-  app.use(logger('dev'));
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({
+    app.set('views', config.root + '/app/views');
+    app.set('view engine', 'jade');
+
+    // app.use(favicon(config.root + '/public/img/favicon.ico'));
+    app.use(logger('dev'));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({
     extended: true
-  }));
-  app.use(cookieParser());
+    }));
+    app.use(cookieParser());
+
+    // config supported locales
+    var supportedLocales = new locale.Locales(['en', 'de']);
+    app.use(locale(supportedLocales));
+
+    // config i18n
+    i18n.expressBind(app, {
+        locales: ['en', 'de'],
+        //defaultLocale: 'en',
+        directory: './public/i18n',
+        cookieName: 'lang'
+    });
+
+    app.use(function(req, res, next){
+        req.i18n.setLocaleFromSubdomain();
+        req.i18n.setLocaleFromCookie();
+        req.i18n.setLocaleFromQuery(req);
+        next();
+    });
 
     // Session
-  app.use(session({
+    app.use(session({
         secret: 'session secret key',
         resave: false,
         saveUninitialized: false
-  }));
+    }));
 
-  app.use(compress());
+    app.use(compress());
 
     // Passport
+    // Change for HTTP basic strategy
     var User = mongoose.model('User');
     passport.use(new LocalStrategy(function(username, password, done) {
         User.findOne({ 'login.username': username }, function(err, user) {

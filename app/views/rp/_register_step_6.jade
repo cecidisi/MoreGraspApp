@@ -1,0 +1,22 @@
+mixin secondary_toggle(name, i18n)
+    .row
+        label.question.secondary #{__(i18n)}
+        input/.cbx-toggle.misc(name=name, type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+
+// Miscellaneous
+#panel-6.input-panel.center-aligned(name='misc', style={display: 'none'})
+    h4 #{__('mgrp-header-misc')}
+    br
+    .misc-list-container
+        h5 #{__('mgrp-misc-q1')}
+        +secondary_toggle('q1_doctor', 'mgrp-misc-q1-opt-doctor')
+        +secondary_toggle('q1_caregiver', 'mgrp-misc-q1-opt-caregiver')
+        +secondary_toggle('q1_relative', 'mgrp-misc-q1-opt-relative')
+        +secondary_toggle('q1_internet', 'mgrp-misc-q1-opt-internet')
+        +secondary_toggle('q1_tv', 'mgrp-misc-q1-opt-tv')
+        +secondary_toggle('q1_other', 'mgrp-misc-q1-opt-other')
+        br
+        h5 #{__('mgrp-misc-q2')}
+        +secondary_toggle('q2_self', 'mgrp-misc-q2-opt-myself')
+        +secondary_toggle('q2_relative', 'mgrp-misc-q2-opt-relative')
+        +secondary_toggle('q2_caregiver', 'mgrp-misc-q2-opt-caregiver')

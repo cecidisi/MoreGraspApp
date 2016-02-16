@@ -29,22 +29,38 @@ header {
                 }
 
                 .title {
-                    display: inline-block;
+                    display: none;
                     float: left;
                     height: 68px;
                     margin: 0px 16px;
                     color: #ed1848;
                     h3 {
                         font-weight: 800;
+                        font-size: 1.4;
                     }
+                }
+            }
+
+            button.navbar-toggle {
+                margin-top: 14px;
+                border-color: #ed1848;
+
+                &:hover {
+                    background: #eee;
+                }
+                .icon-bar {
+                    background: #ed1848;
+                    height: 3px;
                 }
             }
         }
     }
 
-    .nav.menu {
-        height: 68px;
-        float: right;
+    ul.nav.menu {
+//        height: 68px;
+//        float: right;
+        height: auto;
+        background: white;
 
         li {
             height: 100%;
@@ -92,6 +108,52 @@ header {
                 }
             }
 
+            &.flag-container {
+                display: inline-block !important;
+                background: transparent;
+
+                &:hover {
+                    background-color: transparent !important;
+                }
+                &.active {
+                    background: transparent;
+                }
+
+                a.flag {
+                    display: inline-block;
+                    margin: 0px;
+                    padding: 15px 30px;
+                    text-decoration: none;
+                    cursor: pointer;
+
+                    &.active {
+                        background: transparent;
+                        box-shadow: none;
+                    }
+
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        background-repeat: no-repeat;
+                        width: 16px;
+                        height: 11px;
+                    }
+                    &.flag-de:before { background-image: url(/media/de.png); }
+                    &.flag-en:before { background-image: url(/media/gb.png); }
+                    &.active:before {
+                        box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888;
+                    }
+                    &:hover {
+                        background-color: transparent;
+                        &:before { transform: scale(1.1); }
+                    }
+                    &.active:hover {
+                        &:before { transform: none; }
+                    }
+                }
+
+            }
+
         }
 
         & > li + li {
@@ -108,11 +170,15 @@ header {
             &:hover {
                 background-color: transparent;
             }
+            &.active {
+                //background: #ddd;
+            }
 
             a.flag {
                 display: inline-block;
                 margin: 0px 3px;
                 text-decoration: none;
+                cursor: pointer;
                 &:before {
                     content: '';
                     display: inline-block;
@@ -123,11 +189,14 @@ header {
                 &.flag-de:before { background-image: url(/media/de.png); }
                 &.flag-en:before { background-image: url(/media/gb.png); }
                 &.active:before {
-                    box-shadow: 1px 1px 4px #555, -1px -1px 4px #555;
+                    box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888;
                 }
                 &:hover {
                     background-color: transparent;
                     &:before { transform: scale(1.1); }
+                }
+                &.active:hover {
+                    &:before { transform: none; }
                 }
             }
 
@@ -146,3 +215,40 @@ header {
     }
 
 }
+
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1530px;
+
+
+
+@media (min-width: $screen-md-min) {
+    .navbar-header {
+        .title {
+            display: inline-block !important;
+        }
+    }
+    ul.nav.menu {
+        height: 68px !important;
+
+        a.flag {
+            padding: 15px 20px !important;
+        }
+    }
+}
+
+//
+//@media (min-width: $screen-lg-min) {
+//    ul.nav.menu {
+//        height: 68px !important;
+//
+//        a.flag {
+//            padding: 15px 20px !important;
+//        }
+//    }
+//}
+
+
+

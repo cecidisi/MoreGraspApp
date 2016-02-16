@@ -25,6 +25,7 @@ body {
     width: 100%;
     height: calc(100% - 80px);
     margin-bottom: 70px;
+    font-size: 1em;
 }
 
 .container {
@@ -149,6 +150,8 @@ $screen-xl-min: 1530px;
 
 
 @media (min-width: $screen-sm-min) {
+    body { font-size: 1.1em; }
+
     .form-section {
         height: calc(100% - 150px) !important;
 
@@ -156,4 +159,12 @@ $screen-xl-min: 1530px;
             min-height: 256px !important;
         }
     }
+}
+
+@media (min-width: $screen-md-min) {
+    body { font-size: 1.2em; }
+}
+
+@media (min-width: $screen-md-min) {
+    body { font-size: 1.3em; }
 }

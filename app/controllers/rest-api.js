@@ -133,7 +133,6 @@ var emailUsers = function(cb) {
 
 
 //  ADD candidate
-
 router.post('/save-candidate', function (req, res, next) {
     if(req.body) {
         var candidate = Candidate(req.body);
@@ -153,8 +152,9 @@ router.post('/save-candidate', function (req, res, next) {
 
 
 
-//  GET candidates
+//// REQUIRE AUTH
 
+//  GET candidates
 router.get('/get-all-candidates', function (req, res, next) {
 
     if(req.user) {

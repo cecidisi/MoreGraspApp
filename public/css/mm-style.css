@@ -7920,19 +7920,28 @@ header {
           display: inline-block;
           float: left; }
         header .navbar .navbar-header .navbar-brand .title {
-          display: inline-block;
+          display: none;
           float: left;
           height: 68px;
           margin: 0px 16px;
           color: #ed1848; }
           header .navbar .navbar-header .navbar-brand .title h3 {
-            font-weight: 800; }
-  header .nav.menu {
-    height: 68px;
-    float: right; }
-    header .nav.menu li {
+            font-weight: 800;
+            font-size: 1.4; }
+      header .navbar .navbar-header button.navbar-toggle {
+        margin-top: 14px;
+        border-color: #ed1848; }
+        header .navbar .navbar-header button.navbar-toggle:hover {
+          background: #eee; }
+        header .navbar .navbar-header button.navbar-toggle .icon-bar {
+          background: #ed1848;
+          height: 3px; }
+  header ul.nav.menu {
+    height: auto;
+    background: white; }
+    header ul.nav.menu li {
       height: 100%; }
-      header .nav.menu li > a {
+      header ul.nav.menu li > a {
         height: 100%;
         border-radius: 0px;
         padding: 15px 30px;
@@ -7941,33 +7950,67 @@ header {
         text-transform: capitalize;
         background-color: transparent;
         color: #000; }
-      header .nav.menu li:hover > a {
+      header ul.nav.menu li:hover > a {
         color: #fff;
         background-color: #4d9d2a; }
-      header .nav.menu li.active > a {
+      header ul.nav.menu li.active > a {
         color: #fff;
         background-color: #ed1848;
         box-shadow: 0px 2px #ed1848; }
-      header .nav.menu li.user {
+      header ul.nav.menu li.user {
         background-color: #e6e6e6; }
-        header .nav.menu li.user > a {
+        header ul.nav.menu li.user > a {
           text-transform: lowercase; }
-          header .nav.menu li.user > a span.fa-user {
+          header ul.nav.menu li.user > a span.fa-user {
             position: relative;
             top: -1px;
             font-size: 0.8em;
             color: #ed1848; }
-          header .nav.menu li.user > a h5 {
+          header ul.nav.menu li.user > a h5 {
             display: inline-block;
             position: relative;
             top: -2px;
             margin-left: 5px;
             margin-right: 5px;
             font-size: 0.8em; }
-          header .nav.menu li.user > a span.caret {
+          header ul.nav.menu li.user > a span.caret {
             position: relative;
             top: -2px; }
-    header .nav.menu > li + li {
+      header ul.nav.menu li.flag-container {
+        display: inline-block !important;
+        background: transparent; }
+        header ul.nav.menu li.flag-container:hover {
+          background-color: transparent !important; }
+        header ul.nav.menu li.flag-container.active {
+          background: transparent; }
+        header ul.nav.menu li.flag-container a.flag {
+          display: inline-block;
+          margin: 0px;
+          padding: 15px 30px;
+          text-decoration: none;
+          cursor: pointer; }
+          header ul.nav.menu li.flag-container a.flag.active {
+            background: transparent;
+            box-shadow: none; }
+          header ul.nav.menu li.flag-container a.flag:before {
+            content: '';
+            display: inline-block;
+            background-repeat: no-repeat;
+            width: 16px;
+            height: 11px; }
+          header ul.nav.menu li.flag-container a.flag.flag-de:before {
+            background-image: url(/media/de.png); }
+          header ul.nav.menu li.flag-container a.flag.flag-en:before {
+            background-image: url(/media/gb.png); }
+          header ul.nav.menu li.flag-container a.flag.active:before {
+            box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888; }
+          header ul.nav.menu li.flag-container a.flag:hover {
+            background-color: transparent; }
+            header ul.nav.menu li.flag-container a.flag:hover:before {
+              transform: scale(1.1); }
+          header ul.nav.menu li.flag-container a.flag.active:hover:before {
+            transform: none; }
+    header ul.nav.menu > li + li {
       margin-left: 0px; }
   header .nav.flag-container {
     display: inline-block;
@@ -7978,7 +8021,8 @@ header {
     header .nav.flag-container li a.flag {
       display: inline-block;
       margin: 0px 3px;
-      text-decoration: none; }
+      text-decoration: none;
+      cursor: pointer; }
       header .nav.flag-container li a.flag:before {
         content: '';
         display: inline-block;
@@ -7990,16 +8034,26 @@ header {
       header .nav.flag-container li a.flag.flag-en:before {
         background-image: url(/media/gb.png); }
       header .nav.flag-container li a.flag.active:before {
-        box-shadow: 1px 1px 4px #555, -1px -1px 4px #555; }
+        box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888; }
       header .nav.flag-container li a.flag:hover {
         background-color: transparent; }
         header .nav.flag-container li a.flag:hover:before {
           transform: scale(1.1); }
+      header .nav.flag-container li a.flag.active:hover:before {
+        transform: none; }
   header .nav.navbar-second-level li a {
     font-size: 0.9em;
     padding-top: 5px;
     padding-bottom: 5px;
     text-transform: lowercase; }
+
+@media (min-width: 992px) {
+  .navbar-header .title {
+    display: inline-block !important; }
+  ul.nav.menu {
+    height: 68px !important; }
+    ul.nav.menu a.flag {
+      padding: 15px 20px !important; } }
 
 .content {
   height: calc(100% - 75px);

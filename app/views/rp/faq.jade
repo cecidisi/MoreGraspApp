@@ -1,24 +1,43 @@
 extends layout
 
+//// mixins
+
+mixin flag(loc)
+    if(loc === locale)
+        li.flag-container.active:  a.flag(class='flag-'+loc+' active', href='/registration-platform/faq/?lang='+loc, hreflang=loc)
+    else
+        li.flag-container:  a.flag(class='flag-'+loc, href='/registration-platform/faq/?lang='+loc, hreflang=loc)
+
 mixin question(n)
+    - var question_title = "mgrp-faq-question"+n
     i.fa.fa-question-circle
-    //  a(href="/registration-platform/faq#q"+n, data-i18n="mgrp-faq-question"+n)
-    a(href="#q"+n, data-i18n="mgrp-faq-question"+n)
+    a(href="#q"+n) #{__(question_title)}
     br
 
 
 mixin answer(n)
     //a(name='q'+n)
+    - var question = 'mgrp-faq-question'+n;
+    - var answer = 'mgrp-faq-answer'+n;
     .inner
         h4        
             a(name='q'+n)
             i.fa.fa-check
-            label(data-i18n='mgrp-faq-question'+n)
-        p(data-i18n='mgrp-faq-answer'+n)
-        a.up(href='#questions', data-i18n='mgrp-faqs-back-up')
+            label #{__(question)}
+        //p #{__(answer)}
+        p(data-i18n=answer)
+        a.up(href='#questions') #{__('mgrp-faqs-back-up')}
+
+
+//// blocks
 
 block tab-faq
-    li.active:  a(href='/registration-platform/faq', data-i18n='mgrp-nav-faq') FAQ
+    li.active:  a(href='/registration-platform/faq') #{__('mgrp-nav-faq')}
+
+block flags
+    +flag('en')
+    +flag('de')
+
 
 block content
     #faq.nav-panel
@@ -37,36 +56,20 @@ block content
     
     
     
-block js
-    // bower:js
-    script(src='/components/jquery/dist/jquery.js')
-    script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
-    script(src='/components/bootstrap-toggle/js/bootstrap-toggle.min.js')
-    script(src='/components/moment/moment.js')
-    script(src='/components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js')
-    script(src='/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')
-    script(src='/components/jquery-ui/jquery-ui.min.js')
-    script(src='/components/jquery-mousewheel/jquery.mousewheel.js')
-    script(src='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js')
-    script(src='/components/d3/d3.js')
-    script(src='/components/d3pie/d3pie/d3pie.min.js')
-    script(src='/components/lodash/lodash.js')
-    // endbower
+block custom-js
     script(src='/js/i18n-handler.js')
     script(src='/js/scrollto.js')
-    
-    
-block custom-js
+
     script.
         (function($){
-            $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], });
+            $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], locale: $.cookie('lang') });
 
             var navigateTo = function(hash) {
                 var hashPattern = /(#q)\d/;
-                console.log(hash);
+                //console.log(hash);
                 if(hashPattern.test(hash) || hash === '#questions'){
-                    console.log('Entra --> ' + '[name="' + hash.replace('#', '') + '"]');
-                    console.log($('[name="' + hash.replace('#', '') + '"]'));
+                    //console.log('Entra --> ' + '[name="' + hash.replace('#', '') + '"]');
+                    //console.log($('[name="' + hash.replace('#', '') + '"]'));
                     $('#faq').scrollTo('[name="' + hash.replace('#', '') + '"]');
                 }
             };

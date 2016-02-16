@@ -1,7 +1,15 @@
 extends layout
 
+
+mixin flag(loc)
+    if(loc === locale)
+        li.flag-container.active:  a.flag(class='flag-'+loc+' active', href='/registration-platform/home/?lang='+loc, hreflang=loc)
+    else
+        li.flag-container:  a.flag(class='flag-'+loc, href='/registration-platform/home/?lang='+loc, hreflang=loc)
+
 block tab-home
-    li.active:  a(href='/registration-platform/home', data-i18n='mgrp-nav-home') Home
+    //li.active:  a(href='/registration-platform/home', data-i18n='mgrp-nav-home') #{mgrp-nav-home}
+    li.active:  a(href='/registration-platform/home') #{__('mgrp-nav-home')}
 
 block content
   #home.nav-panel
@@ -11,9 +19,4 @@ block content
           video.demo(width='100%', height='100%', controls, autoplay, loop)
             source(type='video/mp4', src='http://urank.know-center.tugraz.at/demo/demo.mp4')
       .button-area
-        a#btn-go-to-registration.btn.btn-primary-mg.btn-lg.reg-navigation(data-i18n='mgrp-btn-go-to-registration', href='/registration-platform/register') Go to Registration
-
-
-block js
-//  h1= title
-//  p Welcome to #{title}
+        a#btn-go-to-registration.btn.btn-primary-mg.btn-lg.reg-navigation(href='/registration-platform/register') #{__('mgrp-btn-go-to-registration')}

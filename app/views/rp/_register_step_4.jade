@@ -1,0 +1,14 @@
+mixin toggle(name, i18n)
+    .row
+        label.question(for=name) #{__(i18n)}
+        input/.cbx-toggle(name=name, type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+
+
+// Current Abilities
+#panel-4.input-panel.center-aligned(name='current_abilities', style={display: 'none'})
+    h4 #{__('mgrp-header-abilities')}
+    br
+    +toggle('hand_to_mouth', 'mgrp-lbl-hand-to-mouth')
+    +toggle('glass_to_mouth', 'mgrp-lbl-glass-to-mouth')
+    +toggle('extend_wrist', 'mgrp-lbl-extend-wrist')
+    +toggle('need_improve_grasp', 'mgrp-lbl-improve-grasp')

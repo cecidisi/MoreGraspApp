@@ -42,3 +42,18 @@ String.prototype.MMYYYYtoDate = function(sep){
 String.prototype.toBool = function() {
     return (this == "true");
 };
+
+Date.prototype.toMMYYYY = function(){
+    var date = this;
+    var month = (date.getMonth() + 1).toString().length === 1 ? '0'+(date.getMonth()+1) : date.getMonth()+1,
+        year = date.getFullYear();
+    return month + '/' + year;
+};
+
+Date.prototype.toDDMMYYYY = function(){
+    var date = this;
+    var day = date.getDay().toString().length === 1 ? '0'+date.getDay() : date.getDay(),
+        month = (date.getMonth() + 1).toString().length === 1 ? '0'+(date.getMonth()+1) : date.getMonth()+1,
+        year = date.getFullYear();
+    return day + '/' + month + '/' + year;
+};

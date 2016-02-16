@@ -40,10 +40,11 @@
         $(panelId + ' .cbx-toggle').each(function(i, toggle){
             var field = $(toggle).attr('name'),
                 boolVal = $(toggle).prop('checked'),
-                value = boolVal ? cbxValue.yes : cbxValue.no;
+                //value = boolVal ? cbxValue.yes : cbxValue.no,
+                value = $('.cbx-toggle[name="' + field + '"]').parent().find('.active').text();
             
             // Save field values in session object
-            session[panelName][field] =  boolVal; 
+            session[panelName][field] =  boolVal;
             // Update fields in review panel
             $('.input-panel[name="review"] p[field="' + field + '"]').html(value);
         });
@@ -173,6 +174,9 @@
         var $panel = $(panel),
             flagMandatoryEmpty = false;
 
+        // UNCOMMENT FOR EASY FLOW
+        //return true;
+
         // Validate mandatory
         $('#panel-'+panel + ' input.mandatory').each(function(i, input){
            if($(input).val() === '') {
@@ -297,24 +301,9 @@
     var buildDynamicDOM = function(){
         /* checkboxes */
         cbxValue = { yes: $.i18nCustom.val("mgrp-toggle-on") || cbxValue.yes, no: $.i18nCustom.val("mgrp-toggle-off") || cbxValue.no };
-        $('.cbx-toggle').each(function(i, cbx){
-            $(cbx).attr('data-on', cbxValue.yes).attr('data-off', cbxValue.no);
-        });
-        $('label.toggle-on').each(function(i, lblYes){
-            $(lblYes).html(cbxValue.yes);
-        });
-        $('label.toggle-off').each(function(i, lblNo){
-            $(lblNo).html(cbxValue.no);
-        });
 
-        /* progress step labels */
-        var stepWidth = parseFloat(100 / (numberPanels-1));
-        for(var i=1; i<=numberPanels-1; ++i) {
-            var key = $('#panel-' + i).find('h4').attr('data-i18n');
-            var stepName = $.i18nCustom.val(key+'-short');
-            var $step = $('<div/>', { class: 'progress-step', id: 'progress-step-'+i, style: 'width:'+stepWidth+'%;'}).appendTo($('.progress-steps-container'));
-            $('<a/>', { href: '#panel-'+i, class: 'step-label', html: stepName }).appendTo($step);
-        }
+
+
 
     };
 
@@ -329,12 +318,11 @@
     /************************************************
      * Datetime picker
      ************************************************/
-    
     $('#dtpDateInjury').datetimepicker({
         widgetPositioning: { vertical: 'bottom', horizontal: 'right' },
         viewMode: 'years',
         format: 'MM/YYYY',
-        maxDate: '11/01/2015',
+        maxDate: (new Date()).toDDMMYYYY(),
         keepOpen: true
     }).on('dp.change', function(e){
         var field = $(this).attr('id'),
