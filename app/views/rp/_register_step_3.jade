@@ -1,4 +1,6 @@
-// Injury
+////////////////////////////////////////
+//          INJURY
+////////////////////////////////////////
 #panel-3.input-panel.center-aligned(name='injury_details', style={display: 'none'})
     h4 #{__('mgrp-header-injury')}
     br
@@ -12,4 +14,4 @@
     // 2nd row
     .row
         label.question(for="accidental_injury") #{__("mgrp-lbl-caused-by-accident")}
-        input/.cbx-toggle(name='accidental_injury', type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+        input/.cbx-toggle.main(name='accidental_injury', type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")

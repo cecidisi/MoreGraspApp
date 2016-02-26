@@ -72,7 +72,6 @@ module.exports = function (app) {
 };
 
 
-
 var emailUsers = function(cb) {
 
     var transporter = nodemailer.createTransport({
@@ -83,13 +82,12 @@ var emailUsers = function(cb) {
         }
     });
 
-
     User.find(function(err, users){
         if(err) return cb(err);
         var done = 0;
         for(var i = 0; i < users.length; ++i) {
             var user = users[i];
-            console.log(user.login.username);
+            //console.log(user.login.username);
             if(user.preferences.notify_new_registration) {
                 console.log('Mail to: ' + user.personal_data.email);
                 var msg = "Dear " + user.personal_data.first_name + ' ' + user.personal_data.last_name + "<br><br>" +
@@ -136,7 +134,7 @@ var emailUsers = function(cb) {
 router.post('/save-candidate', function (req, res, next) {
     if(req.body) {
         var candidate = Candidate(req.body);
-//        console.log(candidate);
+        console.log(candidate);
         candidate.save(function(err){
             if(err) throw err;
             emailUsers(function(err){

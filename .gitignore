@@ -3,5 +3,5 @@
 /public/uploads/
 /dist/
 npm-debug.log
-/users
-/users.txt
+/.users
+/.users.txt

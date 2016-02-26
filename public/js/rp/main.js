@@ -3,7 +3,6 @@
     'use strict';
 
     var numberPanels = $('.input-panel').length;
-//        currentPanel = 0;
 
     var $btnStart = $('#btn-start'),
         $btnPrevious =  $('#btn-previous'),
@@ -17,6 +16,9 @@
     var curPanelKey = 'mgrp-current-panel',
         sessionKey = 'mgrp-session';
     
+    var filesToUpload = {},
+        videosToUpload = [];
+
 
     /************************************************
      * Handle session data
@@ -37,11 +39,12 @@
             $('.input-panel[name="review"] p[field="' + field + '"]').html(value);
         });
         
-        $(panelId + ' .cbx-toggle').each(function(i, toggle){
+        $(panelId + ' .cbx-toggle.main').each(function(i, toggle){
             var field = $(toggle).attr('name'),
                 boolVal = $(toggle).prop('checked'),
                 //value = boolVal ? cbxValue.yes : cbxValue.no,
-                value = $('.cbx-toggle[name="' + field + '"]').parent().find('.active').text();
+                toggleClass = boolVal ? 'toggle-on' : 'toggle-off',
+                value = $('.cbx-toggle[name="' + field + '"]').parent().find('.'+toggleClass).text();
             
             // Save field values in session object
             session[panelName][field] =  boolVal;
@@ -49,6 +52,55 @@
             $('.input-panel[name="review"] p[field="' + field + '"]').html(value);
         });
         
+        // Injury
+        if(panelName == 'injury_details') {
+            // Set injury date
+            var dateParts = session.injury_details.date_injury.split('/');  // set along with all inputs
+            session.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1);
+        }
+
+        // Video/s
+        if(panelName === 'video') {
+            // Set video paths
+            session.video.files = [];
+            // Store filestoUpload in array specifying new filename
+            // used on submit to iterate and send videos one by one
+            videosToUpload = [];
+            // Clear file list in review panel
+            $('.input-panel[name="review"] #video-paths').empty();
+            Object.keys(filesToUpload).forEach(function(originalFileName, i){
+                var newFileName = session.personal_data.last_name.toLowerCase().replace(' ', '_') + '-video-' + i + '_' + (new Date()).getTimestamp() +         filesToUpload[originalFileName].type.replace('video/', '.');
+                videosToUpload.push({ filename: newFileName, file: filesToUpload[originalFileName], originalname: originalFileName });
+                // session keeps new filenames
+                session.video.files.push(newFileName);
+                $('.input-panel[name="review"] #video-paths').append('<li>'+originalFileName+'</li>');
+            });
+        }
+
+        // Misc
+        if(panelName == 'misc') {
+            var questions = {
+                q1: { question: 'How s/he found MoreGrasp', answer: '' },
+                q2: {question: 'Who filled the form', answer: '' }
+            };
+
+            $(panelId + ' .cbx-toggle.misc').each(function(i, toggle){
+                var $toggle = $(toggle),
+                    field = $toggle.attr('name'),
+                    boolVal = $toggle.prop('checked');
+
+                if(boolVal) {
+                    var q = $toggle.attr('question'), option = $toggle.attr('option');
+                    questions[q].answer = questions[q].answer === '' ? option : questions[q].answer + ', ' + option;
+                }
+            });
+            // Save question answers in session object and update fields in review panel
+            session.misc = [];
+            Object.keys(questions).forEach(function(q){
+                session.misc.push(questions[q]);
+                $('.input-panel[name="review"] p[field="' + q + '"]').html(questions[q].answer);
+            });
+        }
         //console.log('session updated');
         //console.log(session);
         // Save session in storage
@@ -94,12 +146,71 @@
 //        }
     };
 
+    /************************************************
+     * Field validation -> mandatory and format
+     ************************************************/
+
+    var clearErrorMsg = function(){
+        $('input').parent().removeClass('has-error');
+        $('p.error').hide();
+    };
+
+    var showError = function(fields, errorToShow){
+        clearErrorMsg();
+        fields = Array.isArray(fields) ? fields : [fields];
+        fields.forEach(function(field){
+            $('input[name="' + field + '"]').parent().addClass('has-error');
+        });
+        $('p#error-'+errorToShow).fadeIn();
+        return false;
+    };
+
+    var validateFields = function(panel){
+        var $panel = $(panel);
+
+        // UNCOMMENT FOR EASY FLOW
+        //return true;
+
+        // Validate mandatory fields
+        var emptyFields = [];2
+        $('#panel-'+panel + ' input.mandatory').each(function(i, input){
+            if($(input).val() === '')
+                emptyFields.push($(input).attr('name'))
+                });
+        if(emptyFields.length)
+            return showError(emptyFields, 'mandatory-fields');
+
+        // Validate text fields
+        var textfields = [ 'first_name', 'last_name', 'city', 'street' ];
+        for(var i=0; i<textfields.length; ++i) {
+            var field = textfields[i],
+                name = $('input[name="' + field + '"]').siblings().text();
+
+            if(!window.validateText(field, name, showError))
+                return false;
+        }
+
+        // Validate email
+        var email = $('input[name="email"]').val();
+        if(!window.validateEmail('email', showError))
+            return false;
+
+        // Validate phone
+        var phone = $('input[name="phone"]').val();
+        if(!window.validatePhone('phone', showError))
+            return false;
+
+        return true;
+    };
+
+    // Clear error message on input keyup
+    $('input').keyup(clearErrorMsg);
+
     
 
     /************************************************
-     * Navigation (#)
+     * Panel / Progress Setup
      ************************************************/
-    
     var moveToFormPanel = function(currentPanel){
         clearErrorMsg();
         //console.log('move to --> ' + hash);
@@ -155,66 +266,11 @@
         }
 
     };
-    
-    
+
+
     /************************************************
-     * Field validation -> mandatory and format
+     * Hash Navigation
      ************************************************/
-    var showError = function(field, msg){
-        $('input[name="' + field + '"]').parent().addClass('has-error');
-        $('p.error').removeClass('fade').html(msg);
-    };
-
-    var clearErrorMsg = function(){
-        $('input').parent().removeClass('has-error');
-        $('p.error').addClass('fade');
-    };
-
-    var validateFields = function(panel){
-        var $panel = $(panel),
-            flagMandatoryEmpty = false;
-
-        // UNCOMMENT FOR EASY FLOW
-        //return true;
-
-        // Validate mandatory
-        $('#panel-'+panel + ' input.mandatory').each(function(i, input){
-           if($(input).val() === '') {
-               $(input).parent().addClass('has-error');
-               flagMandatoryEmpty = true;
-           }
-        });
-        if(flagMandatoryEmpty) return false;
-
-        // Validate text fields
-        var textfields = [ 'first_name', 'last_name', 'city', 'street' ];
-        for(var i=0; i<textfields.length; ++i) {
-            var field = textfields[i],
-                name = $('input[name="' + field + '"]').siblings().text();
-
-            if(!window.validateText(field, name, showError))
-                return false;
-        }
-
-        // Validate email
-        var email = $('input[name="email"]').val();
-        if(!window.validateEmail('email', showError))
-            return false;
-
-        // Validate phone
-        var phone = $('input[name="phone"]').val();
-        if(!window.validatePhone('phone', showError))
-            return false;
-
-        return true;
-    };
-
-
-
-
-    $('input').keyup(clearErrorMsg);
-
-
     window.onhashchange = function(){
         var hash = window.location.hash,
             hashPattern = /(#panel-)\d/
@@ -246,8 +302,6 @@
     /************************************************
      * HTML5 File uploader
      ************************************************/
-
-    var filesToUpload = {};
     var $fileList = $('#file-list').find('ul');
     var addSelectedFiles = function(files){
         
@@ -257,15 +311,13 @@
                 filesToUpload[file.name] = file;
                 var $li = $('<li/>', { class: 'video-item', name: file.name, html: '<strong>'+escape(file.name)+'</strong> ('+(file.type || 'n/a')+') - '+bytesToSize(file.size) })                 .appendTo($fileList);
                 
-                $('<button/>', { class: 'btn-file-output red', 'data-i18n': 'mgrp-video-upload-btn-delete', html: $.i18nCustom.val('mgrp-video-upload-btn-delete') })
+                $('<button/>', { class: 'btn-file-output red', html: 'X' })
                     .appendTo($li).click(function(evt){
                         evt.stopPropagation();
                         var fileName = $(this).parent().attr('name');
                         delete filesToUpload[fileName];
                         $(this).parent().remove();
                     });
-
-                $('.input-panel[name="review"] #video-paths').append('<li>'+file.name+'</li>');
             }
         }
         $('#file-input').val('');
@@ -292,29 +344,6 @@
         }});
 
 
-    
-    /************************************************
-     * i18n init function and handler
-     ************************************************/
-    
-    /***  Create dynamic elements after i18n locales are loaded  ***/
-    var buildDynamicDOM = function(){
-        /* checkboxes */
-        cbxValue = { yes: $.i18nCustom.val("mgrp-toggle-on") || cbxValue.yes, no: $.i18nCustom.val("mgrp-toggle-off") || cbxValue.no };
-
-
-
-
-    };
-
-    $.i18nCustom({
-        path: '/i18n/',
-        languages: ['en', 'de'],
-//        locale: 'de',
-        callback: buildDynamicDOM
-    });
-
-
     /************************************************
      * Datetime picker
      ************************************************/
@@ -331,74 +360,30 @@
     });
 
     /************************************************
-     * Terms & conditions
+     * Check Terms & conditions accepted
      ************************************************/
     // Uncomment for normal workflow
     $('#toggle-terms-and-conditions').change(function() {
         if($(this).prop('checked'))
-            $('#btn-start').removeClass('disabled');//.attr('href', '#panel-1');
+            $('#btn-start').removeClass('disabled');
         else
-            $('#btn-start').addClass('disabled');//.attr('href', '#');
-        //$('#btn-start').prop('disabled', !$(this).prop('checked'));
+            $('#btn-start').addClass('disabled');
     }).change();
 
     $('#lblTermsAccepted').click(function(){
         $('#toggle-terms-and-conditions').prop('checked', !$('#toggle-terms-and-conditions').prop('checked'));
     });
 
-    
 
     /************************************************
      * Data submission
      ************************************************/
-    var getTimestamp = function(){
-        var date = new Date();
-        return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDay() + '.' +
-            date.getHours() + '.' + date.getMinutes() + '.' +date.getMilliseconds();
-    };
-
 
     var submitData = function(){
 
         // Prepare user data
         var session = JSON.parse(sessionStorage[sessionKey]);
         var data = $.extend(true, {}, session);
-
-        // Set injury date
-        var dateParts = data.injury_details.date_injury.split('/');
-        data.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1);
-
-        // Set video paths
-        data.video.files = [];
-        // Store filestoUpload in array specifying new filename
-        var videosToUpload = [];
-        Object.keys(filesToUpload).forEach(function(videoKey, i){
-            var videoName = data.personal_data.last_name.toLowerCase().replace(' ', '_') + '-video-' + i + '_' + getTimestamp() + filesToUpload[videoKey].type.replace('video/', '.');
-            videosToUpload.push({ filename: videoName, file: filesToUpload[videoKey], originalname: videoKey });
-            data.video.files.push(videoName);
-        });
-
-        //Misc Questions
-        var misc = {
-            q1: { question: $.i18nCustom.val('mgrp-misc-q1'), values: [] },
-            q2: { question: $.i18nCustom.val('mgrp-misc-q2'), values: [] }
-        };
-        Object.keys(session.misc).forEach(function(question){
-            var questionParts = question.split('_');
-            var qNum = questionParts[0], qValue = questionParts[1];
-            if(session.misc[question])
-                misc[qNum].values.push(qValue);
-        });
-        data.misc = [];
-        Object.keys(misc).forEach(function(qNum){
-            //console.log(misc[qNum].values.join(', '));
-            data.misc.push({ question: misc[qNum].question, answer: misc[qNum].values.join(', ') });
-        });
-
-//        console.log('retrieved session');
-//        console.log(session);
-//        console.log('data to submit');
-//        console.log(data);
         
         // TODO submit data to server
         var $bgProcessing = $('<div/>', { class: 'bg-processing' }).appendTo($('body'));
@@ -429,7 +414,6 @@
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === 4) {
                     if (xhr.status === 200) {
-//                        console.log(xhr.responseText);
                         totalUploads++;
                         if(totalUploads === Object.keys(filesToUpload).length)
                             onAllUploaded.call(this);
@@ -456,9 +440,11 @@
                 videosToUpload.forEach(function(video){ uploadVideoFile(video) });
             else
                 onAllUploaded.call(this);
-        }).error(function(jqXHR){
-            console.log('Error');
+        }).error(function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus);
             console.log(jqXHR);
+            $bgProcessing.remove();
+            alert(textStatus);
         });
 
     };
@@ -468,10 +454,10 @@
         submitData();
     });
     
+
     /************************************************
      * Entry Point
      ************************************************/
-
     $(document).ready(function(){
         // Retrieve session or init
 //        var session = sessionStorage[sessionKey] ? JSON.parse(sessionStorage[sessionKey]) : {};
@@ -492,7 +478,6 @@
         moveToFormPanel(0);
         window.location.hash = '#panel-0';
     });
-
 
 })();
 

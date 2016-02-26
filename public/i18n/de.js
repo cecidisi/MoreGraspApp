@@ -30,9 +30,9 @@
 	"mgrp-lbl-zip": "PLZ",
 	"mgrp-lbl-email": "E-mail",
 	"mgrp-lbl-phone": "Telefon",
-	"mgrp-header-pre-injury": "Pre-Injury Conditions",
-	"mgrp-header-pre-injury-short": "Pre-Injury",
-	"mgrp-header-pre-injury-explanation": "Please indicate if any of the following conditions apply in the present or the past",
+	"mgrp-header-medical-conditions": "Medical Conditions",
+	"mgrp-header-medical-conditions-short": "Medical Conditions",
+	"mgrp-header-medical-conditions-explanation": "Please indicate if any of the following conditions apply in the present or the past",
 	"mgrp-lbl-metal-implant": "Metal Implant in Forearm",
 	"mgrp-lbl-pacemaker": "Pacemaker",
 	"mgrp-lbl-medication-pump": "Medication Pump",
@@ -52,7 +52,7 @@
 	"mgrp-header-video": "Video",
 	"mgrp-header-video-short": "Video",
 	"mgrp-header-video-explanation": "Please upload a demo video. This will give us a better idea of your condition.",
-	"mgrp-header-video-guidelines": "[Guidelines go here]",
+    "mgrp-header-video-guidelines": "Das Video dient dazu, um einem MoreGrasp-Experte einen besseren Eindruck des Funktionsumfangs der oberen Extremität eines potentiellen MoreGrasp-Nutzers zu verschaffen. Das Video sollte hierzu in einer hellen Umgebung mit genügend Umgebungslicht aufgenommen werden und den möglichen Nutzer von vorne zeigen. Der Zoom der Kamera sollte so eingestellt sein, dass Details der Arm und Handfunktion während der Ausführung von Alltagsaktivitäten gut erkennbar sind. Diese Alltagsaufgaben können – sind aber nicht begrenzt auf – Essen mit einem Löffel oder einer Gabel, Eingießen von Wasser aus einer Flasche oder etwas Vergleichbarem in ein Glas oder einen Becher, Kämmen, Zähneputzen und jegliche andere Form des Greifens und Bewegens von Gegenständen sein. Für den Upload werden alle Videodateiformate akzeptiert.",
 	"mgrp-video-upload-btn-select": "Auswählen",
 	"mgrp-video-upload-drag-and-drop-msg": "Drag & Drop Datei",
 	"mgrp-video-upload-btn-delete": "Löschen",
@@ -93,6 +93,9 @@
 	"mgrp-faq-answer4": "• Bei der oberfl&#xE4;chlichen Ableitung der elektrischen Gehirnaktivit&#xE4;ten zur Steuerung des BCI existieren keine Risiken. <br>• Alle verwendeten Ger&#xE4;te entsprechen den aktuellen gesetzlichen Vorschriften, so dass keine spezielle Gefahr von diesen ausgeht.<br>• Bei der FES kann es gelegentlich zu einer Erh&#xF6;hung der Spastik kommen. In diesem Falle m&#xFC;ssen die Stimulationsparameter angepasst und die Trainings-intensit&#xE4;t langsamer gesteigert werden. Ein genereller Anstieg der Spastik kann vielf&#xE4;ltige Gr&#xFC;nde (Blaseninfekt, sonst. Ent-z&#xFC;ndungen) haben, so dass in diesem Fall eine klinische Abkl&#xE4;rung angestrebt werden sollte.<br>• Die Hauptbelastung f&#xFC;r Sie als m&#xF6;glicher Studienteil-nehmer besteht im Zeitaufwand f&#xFC;r die unterschiedlichen Trainingsphasen und f&#xFC;r die ambulanten Kontroll- und Untersuchungstermine.<br><br>Selbstverst&#xE4;ndlich k&#xF6;nnen Sie die Studienteilnahme jederzeit ohne Nachteile f&#xFC;r Ihre medizinische Versorgung widerrufen. Ebenso werden Ihre Daten absolut vertraulich behandelt und nur verschl&#xFC;sselt, ohne Hinweise auf Ihre Identit&#xE4;t weitergegeben.<br>",
 	"mgrp-faq-question5": "Welche Teilnahmekriterien muss ich erfüllen?",
 	"mgrp-faq-answer5": "<strong>Einschlusskriterien</strong><br>Sie d&#xFC;rfen an der Studie teilnehmen, wenn <br><br>• bei Ihnen seit mindestens 9 Monaten eine unfallbedingte Querschnittl&#xE4;hmung vorliegt. Sie haben eine Tetraplegie in H&#xF6;he von C3-C5 und sind nicht extern beatmet.<br>• sie Ihre Finger und Ihre Hand nicht bewegen k&#xF6;nnen.<br>• sie idealerweise ihren Oberarm bewegen k&#xF6;nnen.<br>• sie &#xE4;lter als 18 Jahre sind.<br>• sie haben eine gute soziale Betreuung, die bereit ist, aktiv unter Anleitung die Studie zu begleiten.<br><br><strong>Ausschlusskriterien</strong><br>Sie d&#xFC;rfen nicht an der Studie teilnehmen, wenn<br>• aktive Implantate bei Ihnen vorhanden sind (Herzschrittmacher, Atemschrittmacher, Blasenschrittmacher, Medikamentenpumpen).<br>• eine bekannte aktive Epilepsie vorliegt.<br>• sich in dem zu stimulierenden Arm Metallteile befinden.<br>• sie schwanger sind.<br><br>Wenn Sie die oben genannten Voraussetzungen erf&#xFC;llen und im Raum Heidelberg (Umkreis 100 km) wohnen oder mobil sind sowie Interesse an der Studienteilnahme haben, dann m&#xF6;chten wir Sie um Kontaktaufnahme zur Abkl&#xE4;rung der Details bitten.<br><br>Vor Beginn der Studie ist die Einwilligung der Ethikkommission der Universit&#xE4;t Heidelberg schriftlich erfolgt.<br><br>Weitere Informationen zum Projekt sind unter http://moregrasp.dev.webtourismus.at/ zu finden.<br>",
-	"mgrp-yes": "mgrp-yes",
-	"mgrp-no": "mgrp-no"
+	"mgrp-error-mandatory-fields": "Mandatory field/s empty",
+	"mgrp-error-illegal-characters": "Illegal character/s",
+	"mgrp-error-not-capitalized": "Not capitalized",
+	"mgrp-error-invalid-email": "Invalid Email",
+	"mgrp-error-invalid-phone": "Invalid Phone"
 }

@@ -33,7 +33,7 @@ User.find(function (err, users) {
                     txt += ('USERNAME = ' + user.login.username + '\n PASSWORD = ' + pswd + '\n');
                     count++;
                     if(count === users.length && txt !== '')
-                        fileSave('users.txt').write(txt, 'utf8').end().error(function(){ console.log('Error saving users file'); });
+                        fileSave('.users.txt').write(txt, 'utf8').end().error(function(){ console.log('Error saving users file'); });
                 });
             });
         }

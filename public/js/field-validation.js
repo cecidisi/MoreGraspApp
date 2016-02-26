@@ -32,11 +32,21 @@
 
     window.validateText = function(field, name, onError){
         var text = $('input[name="' + field + '"]').val(),
-            regExp = /^[a-zA-Z]+$/;
-        if(text === '' || regExp.test(text))
-            return true;
-        onError(field, name + ' contains illegal characters');
-        return false;
+            regExp = /^[\D^!@#$%^&*()\+\=\[\]\\\';,.\/{}|\":<>?]+$/;
+
+        if(text !== '') {
+            if(!regExp.test(text)) {
+                onError(field, 'illegal-characters');
+                return false;
+            }
+
+            regExp = /\b[A-Z]/;     // Capitalized words
+            if(!regExp.test(text)) {
+                onError(field, 'not-capitalized');
+                return false;
+            }
+        }
+        return true;
     };
 
 
@@ -45,7 +55,7 @@
             regExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(regExp.test(email))
             return true;
-        onError(field, 'Invalid Email');
+        onError(field, 'invalid-email');
         return false
     };
 
@@ -55,7 +65,7 @@
             regExp = /^[0-9\s+-]+$/;
         if(regExp.test(phone))
             return true;
-        onError(field, 'Invalid phone number');
+        onError(field, 'invalid-phone');
         return false
     };
 

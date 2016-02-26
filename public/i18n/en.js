@@ -30,9 +30,9 @@
 	"mgrp-lbl-zip": "ZIP",
 	"mgrp-lbl-email": "Email",
 	"mgrp-lbl-phone": "Phone",
-	"mgrp-header-pre-injury": "Pre-Injury Conditions",
-	"mgrp-header-pre-injury-short": "Pre-Injury",
-	"mgrp-header-pre-injury-explanation": "Please indicate if any of the following conditions apply in the present or the past",
+	"mgrp-header-medical-conditions": "Medical Conditions",
+	"mgrp-header-medical-conditions-short": "Medical Conditions",
+	"mgrp-header-medical-conditions-explanation": "Please indicate if any of the following conditions apply in the present or the past",
 	"mgrp-lbl-metal-implant": "Metal Implant in Forearm",
 	"mgrp-lbl-pacemaker": "Pacemaker",
 	"mgrp-lbl-medication-pump": "Medication Pump",
@@ -52,7 +52,7 @@
 	"mgrp-header-video": "Video",
 	"mgrp-header-video-short": "Video",
 	"mgrp-header-video-explanation": "Please upload a demo video. This will give us a better idea of your condition.",
-	"mgrp-header-video-guidelines": "[Guidelines go here]",
+    "mgrp-header-video-guidelines": "The aim of the video is allowing MoreGrasp experts to get an idea about the functional capabilities of a potential end user of the MoreGrasp system. The video should be made in a bright environment with enough light showing the potential end user in a frontal view. The zoom of the camera should be set accordingly, so that details of the arm and hand function of the end user during activities of daily living can be seen.  The activities of everyday living may contain – but are not restricted to – eating with a spoon or a fork, pouring water into a glas or cup from a bottle or something equivalent, combing, brushing teeth and manipulating any kind of objects. All video file formats are accepted for upload.",
 	"mgrp-video-upload-btn-select": "Select",
 	"mgrp-video-upload-drag-and-drop-msg": "Drag & Drop Files",
 	"mgrp-video-upload-btn-delete": "Delete",
@@ -93,6 +93,9 @@
 	"mgrp-faq-answer4": "• Surface EEG recordings for BCI control do not bear any risks.<br>• All devices are compliant to the current regulatory requirements.<br>• Occasionally, during FES application, spasticity can increase during triggering of tetanic contractions. This issue can be solved by altering parameters and a slower increase of stimulation frequency. A general increase in spasticity can be caused by various reasons, e.g. an infection, so this issue is subject to a clinical examination.<br>• The main burdens for you as a potential study participant are the time efforts for training and the examinations (at your home and in the clinic).<br><br>It goes without saying that you can quit your study participation without any disadvantages for your medical care. Your data will be treated confidentially and only processed without making reference to your identity.<br>",
 	"mgrp-faq-question5": "What are the inclusion / exclusion criteria for the study?",
 	"mgrp-faq-answer5": "<strong>Inclusion criteria</strong><br>You can participate, if<br><br>• you acquired a traumatic spinal cord injury at least 9 months ago. The lesion height is C4-C5 and you are not artificially ventilated.<br>• you cannot move your hand and fingers<br>• you still can move your elbow and shoulder.<br>• you are older than 18 years.<br>• you have a supportive environment that is willing to support you actively during the study (under expert supervision)<br><br><strong>Exclusion criteria</strong><br>You cannot participate, if<br>• you have active medical implants (cardiac pacemaker, breath pacemaker, bladder pacemaker, medication pump)<br>• you have a known history of epilepsy<br>• you have metal implants in the arm that is to be electrically stimulated<br>• you are pregnant.<br><br>If you are eligible according to these criteria and you are interested in participating in the study, please sign up on this website.<br>Prior to begin of the study, consent from the ethical committee of Heidelberg University is given.<br>",
-	"mgrp-yes": "mgrp-yes",
-	"mgrp-no": "mgrp-no"
+    "mgrp-error-mandatory-fields": "Mandatory field/s empty",
+    "mgrp-error-illegal-characters": "Illegal character/s",
+    "mgrp-error-not-capitalized": "Not capitalized",
+    "mgrp-error-invalid-email": "Invalid Email",
+    "mgrp-error-invalid-phone": "Invalid Phone"
 }

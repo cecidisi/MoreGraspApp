@@ -16,7 +16,7 @@ var candidateSchema = new Schema({
         email: { type: String, required: true },
         phone: { type: String, required: true }
     },
-    pre_injury: {
+    medical_conditions: {
         metal_implant: { type: Boolean, required: true },
         pacemaker:  { type: Boolean, required: true },
         medication_pump:  { type: Boolean, required: true },

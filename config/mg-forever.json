@@ -1,0 +1,6 @@
+{
+    "uid": "mg-app",
+    "append": true,
+    "watch": true,
+    "script": "./app.js"
+}

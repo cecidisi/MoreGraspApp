@@ -1,10 +1,15 @@
+////////////////////////////////////////
+//          CURRENT ABILITIES
+////////////////////////////////////////
+
+// Mixin
 mixin toggle(name, i18n)
     .row
         label.question(for=name) #{__(i18n)}
-        input/.cbx-toggle(name=name, type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+        input/.cbx-toggle.main(name=name, type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
 
 
-// Current Abilities
+// Panel
 #panel-4.input-panel.center-aligned(name='current_abilities', style={display: 'none'})
     h4 #{__('mgrp-header-abilities')}
     br

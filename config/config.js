@@ -17,7 +17,7 @@ var config = {
     app: {
       name: 'moregraspapp'
     },
-    port: 8080,
+    port: 3000,
     db: 'mongodb://localhost/mg-registration-test'
   },
 
@@ -26,7 +26,7 @@ var config = {
     app: {
       name: 'moregraspapp'
     },
-    port: 8080,
+    port: 3000,
     db: 'mongodb://localhost/mg-registration-production'
   }
 };

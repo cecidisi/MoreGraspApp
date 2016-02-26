@@ -57,3 +57,9 @@ Date.prototype.toDDMMYYYY = function(){
         year = date.getFullYear();
     return day + '/' + month + '/' + year;
 };
+
+
+Date.prototype.getTimestamp = function(){
+    var date = this;
+    return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDay() + '.' + date.getHours() + '.' + date.getMinutes() + '.' +date.getMilliseconds();
+};

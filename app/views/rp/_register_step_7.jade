@@ -1,4 +1,8 @@
+////////////////////////////////////////
+//          REVIEW
+////////////////////////////////////////
 
+//  Mixins
 mixin section_title(i18n, href)
     h5 #{__(i18n)}
         a(href=href): i.edit-answer
@@ -17,7 +21,8 @@ mixin get_answer_no_dots(i18n, field)
         label.answer #{__(i18n)}
         p.form-answer(field=field)
 
-// Review
+
+// Panel
 #panel-7.input-panel.center-aligned(name='review', style={display: 'none'})
     h4 #{__('mgrp-header-review')}
     p.explanation #{__("mgrp-header-review-explanation")}
@@ -34,9 +39,9 @@ mixin get_answer_no_dots(i18n, field)
         +get_answer('mgrp-lbl-zip', 'zip')
         +get_answer('mgrp-lbl-email', 'email')
         +get_answer('mgrp-lbl-phone', 'phone')
-    // Pre-Injury
+    // Medical Conditions
     .answer-container.large
-        +section_title('mgrp-header-pre-injury', '#panel-2')
+        +section_title('mgrp-header-medical-conditions', '#panel-2')
         +get_answer('mgrp-lbl-metal-implant', 'metal_implant')
         +get_answer('mgrp-lbl-pacemaker', 'pacemaker')
         +get_answer('mgrp-lbl-medication-pump', 'medication_pump')
@@ -63,18 +68,21 @@ mixin get_answer_no_dots(i18n, field)
     // Misc
     .answer-container.large
         +section_title('mgrp-header-misc', '#panel-6')
-        label.answer #{__('mgrp-misc-q1')}
-        +get_answer('mgrp-misc-q1-opt-doctor', 'q1_doctor', true)
-        +get_answer('mgrp-misc-q1-opt-caregiver', 'q1_caregiver', true)
-        +get_answer('mgrp-misc-q1-opt-relative', 'q1_relative', true)
-        +get_answer('mgrp-misc-q1-opt-internet', 'q1_internet', true)
-        +get_answer('mgrp-misc-q1-opt-tv', 'q1_tv', true)
-        +get_answer('mgrp-misc-q1-opt-other', 'q1_other', true)
-        br
-        label.answer #{__('mgrp-misc-q2')}
-        +get_answer('mgrp-misc-q2-opt-myself', 'q2_self', true)
-        +get_answer('mgrp-misc-q2-opt-relative', 'q2_relative', true)
-        +get_answer('mgrp-misc-q2-opt-caregiver', 'q2_caregiver', true)
+        +get_answer_no_dots('mgrp-misc-q1', 'q1')
+        +get_answer_no_dots('mgrp-misc-q2', 'q2')
+
+//        label.answer #{__('mgrp-misc-q1')}
+//        +get_answer('mgrp-misc-q1-opt-doctor', 'q1_doctor', true)
+//        +get_answer('mgrp-misc-q1-opt-caregiver', 'q1_caregiver', true)
+//        +get_answer('mgrp-misc-q1-opt-relative', 'q1_relative', true)
+//        +get_answer('mgrp-misc-q1-opt-internet', 'q1_internet', true)
+//        +get_answer('mgrp-misc-q1-opt-tv', 'q1_tv', true)
+//        +get_answer('mgrp-misc-q1-opt-other', 'q1_other', true)
+//        br
+//        label.answer #{__('mgrp-misc-q2')}
+//        +get_answer('mgrp-misc-q2-opt-myself', 'q2_self', true)
+//        +get_answer('mgrp-misc-q2-opt-relative', 'q2_relative', true)
+//        +get_answer('mgrp-misc-q2-opt-caregiver', 'q2_caregiver', true)
 
 
 
