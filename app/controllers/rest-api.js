@@ -92,7 +92,7 @@ var emailUsers = function(cb) {
                 console.log('Mail to: ' + user.personal_data.email);
                 var msg = "Dear " + user.personal_data.first_name + ' ' + user.personal_data.last_name + "<br><br>" +
                     "A new candidate just signed up at the MoreGrasp Registration Platform<br>" +
-                    "Check it at <url>http://moregrasp.know-center.tugraz.at:8080/matchmaking1/</url><br><br>" +
+                    "Check it at <url>http://moregrasp.know-center.tugraz.at/matchmaking1/</url><br><br>" +
                     "Best Regards,<br><br>Know-Center - MoreGrasp support<br><br><br>"+
                     "<small>This message has been automatically sent to you.</small><br>"+
                     "<small>To disable these notifications, go to @username tab -> Settings -> Receive notifications of new registrations = NO </small>";
