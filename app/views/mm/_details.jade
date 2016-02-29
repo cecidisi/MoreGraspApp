@@ -24,8 +24,8 @@ mixin detail_item_lg(label, field)
 
             ul.nav.nav-tabs(role="tablist")
                 li.active(role="presentation"): a#tab-personal-data(href="#pane-personal-data", aria-controls="personal data", role="tab" data-toggle="tab") Personal Data
-                li(role="presentation"): a#tab-pre-injury(href="#pane-pre-injury", aria-controls="pre-injury conditions", role="tab" data-toggle="tab") Pre-Injury
-                li(role="presentation"): a#tab-injury-conditions(href="#pane-injury-conditions", aria-controls="injury details", role="tab" data-toggle="tab") Injury Details
+                li(role="presentation"): a#tab-medical-conditions(href="#pane-medical-conditions", aria-controls="medical conditions", role="tab" data-toggle="tab") Medical Conditions
+                li(role="presentation"): a#tab-injury-details(href="#pane-injury-details", aria-controls="injury details", role="tab" data-toggle="tab") Injury Details
                 li(role="presentation"): a#tab-current-abilities(href="#pane-current-abilities", aria-controls="current abilities", role="tab" data-toggle="tab") Current Abilities
                 li(role="presentation"): a#tab-video(href="#pane-video", aria-controls="video", role="tab" data-toggle="tab") Video/s
                 li(role="presentation"): a#tab-misc(href="#pane-misc", aria-controls="miscellaneous", role="tab" data-toggle="tab") Miscellaneous
@@ -41,14 +41,14 @@ mixin detail_item_lg(label, field)
                     +detail_item_sm('ZIP', 'zip')
                     +detail_item('Email', 'email')
                     +detail_item('Phone', 'phone')
-                #pane-pre-injury.tab-pane.fade(aria-labelledby='#tab-pre-injury')
+                #pane-medical-conditions.tab-pane.fade(aria-labelledby='#tab-medical-conditions')
                     +detail_item('Metal Implant', 'metal_implant')
                     +detail_item('Pacemaker', 'pacemaker')
                     +detail_item('Medication Pump', 'medication_pump')
                     +detail_item('Stroke', 'stroke')
                     +detail_item('Epilepsy', 'epilepsy')
                     +detail_item('Long Term Care', 'long_term_care')
-                #pane-injury-conditions.tab-pane.fade(aria-labelledby='#tab-injury-conditions')
+                #pane-injury-details.tab-pane.fade(aria-labelledby='#tab-injury-details')
                     +detail_item('Date of Injury', 'date_injury')
                     +detail_item('Traumatic Injury', 'accidental_injury')
                 #pane-current-abilities.tab-pane.fade(aria-labelledby='#tab-current-abilities')
@@ -58,7 +58,6 @@ mixin detail_item_lg(label, field)
                     +detail_item_lg('Needs to improve grasp', 'need_improve_grasp')
                 #pane-video.tab-pane.fade(arialabelledby='#tab-video')
                     p No video uploaded
-
                 #pane-misc.tab-pane.fade(aria-labelledby='#tab-misc')
 
             .button-group
