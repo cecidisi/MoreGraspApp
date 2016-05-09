@@ -10,7 +10,7 @@ module.exports = function (app) {
 };
 
 var changeLangCookie = function(req, res, next){
-    console.log(req.cookies.lang);
+//    console.log(req.cookies.lang);
     req.i18n.setLocale(req.params.lang);
     res.cookie('lang', req.params.lang);
 };
@@ -36,7 +36,6 @@ router.get('/register', function(req, res, next){
 
 router.get('/faq', function(req, res, next){
     var locale = req.cookies.lang || 'en';
-    console.log('locale in faq = ' + locale);
     res.render('rp/faq', { title: 'Registration Platform', locale: locale });
 });
 

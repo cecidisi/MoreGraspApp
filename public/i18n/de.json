@@ -1,7 +1,10 @@
 {
     "@metadata": {
-        "authors": ["Cecilia di Sciascio"],
-        "last-updated": "2015-12-03",
+        "authors": [
+            "Cecilia di Sciascio",
+            "Angela Fessl"
+        ],
+        "last-updated": "2016-05-09",
         "locale": "de",
         "copyright": "MoreGrasp"
     },

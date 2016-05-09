@@ -41,6 +41,7 @@ block content
       include _register_step_5
       include _register_step_6
       include _register_step_7
+      include _register_step_8
       include _register_submitted
       
     .panel-container.controls-section
@@ -49,7 +50,7 @@ block content
           #form-progress-bar.progress-bar.progress-bar-success(role='progressbar', aria-valuenow=progress, aria-valuemin='0', aria-valuemax='100', style={ width: progress+'%' })
             span.sr-only
         .progress-steps-container
-            - var headers = ['personal-data', 'medical-conditions', 'injury', 'abilities', 'video', 'misc'];
+            - var headers = ['personal-data', 'medical-conditions', 'injury', 'abilities', 'video', 'needs', 'misc'];
             - var stepWidth = parseFloat(100 / (headers.length));
             each header, i in headers
                 - var header_title = 'mgrp-header-'+header+'-short'

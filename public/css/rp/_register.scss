@@ -14,6 +14,7 @@
             text-align: left;
 
             h4, h5 {
+                font-weight: bold;
                 -webkit-margin-before: 0px;
             }
 
@@ -82,7 +83,7 @@
                 &.explanation {
                     display: inline-block;
                     text-align: left;
-                    font-size: 0.9em;
+//                    font-size: 0.9em;
                 }
                 &.form-answer {
                     @extend p.explanation;
@@ -108,6 +109,10 @@
                         font-weight: normal;
                     }
                 }
+            }
+
+            .form-control.for-question {
+                @extend .col-lg-offset-2, .col-lg-8, .col-md-offset-1, .col-md-10, .col-sm-12;
             }
 
             i.fa-asterisk {

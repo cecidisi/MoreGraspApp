@@ -12,7 +12,6 @@ var express = require('express'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     locale = require('locale');
-//var multer = require('multer');
 
 
 module.exports = function(app, config) {
@@ -88,8 +87,7 @@ module.exports = function(app, config) {
 
   app.use(passport.initialize());
   app.use(passport.session());
-
-    // END Passport
+  // END Passport
 
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());

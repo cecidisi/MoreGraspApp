@@ -1,0 +1,78 @@
+////////////////////////////////////////
+//          REVIEW
+////////////////////////////////////////
+
+//  Mixins
+mixin section_title(i18n, href)
+    h5 #{__(i18n)}
+        a(href=href): i.edit-answer
+
+
+mixin get_answer(i18n, field, isSecondary)
+    .row
+        if(isSecondary)
+            label.answer.secondary #{__(i18n)}:
+        else
+            label.answer #{__(i18n)}:
+        p.form-answer(field=field)
+
+mixin get_answer_no_dots(i18n, field)
+    .row
+        label.answer #{__(i18n)}
+        p.form-answer(field=field)
+
+
+// Panel
+#panel-8.input-panel.center-aligned(name='review', style={display: 'none'})
+    h4 #{__('mgrp-header-review')}
+    p.explanation #{__("mgrp-header-review-explanation")}
+    br
+    // Personal Data
+    .answer-container.large
+        +section_title('mgrp-header-personal-data', '#panel-1')
+        +get_answer('mgrp-lbl-first-name', 'first_name')
+        +get_answer('mgrp-lbl-last-name', 'last_name')
+        +get_answer('mgrp-lbl-country', 'country')
+        +get_answer('mgrp-lbl-city', 'city')
+        +get_answer('mgrp-lbl-street', 'street')
+        +get_answer('mgrp-lbl-number', 'number')
+        +get_answer('mgrp-lbl-zip', 'zip')
+        +get_answer('mgrp-lbl-email', 'email')
+        +get_answer('mgrp-lbl-phone', 'phone')
+    // Medical Conditions
+    .answer-container.large
+        +section_title('mgrp-header-medical-conditions', '#panel-2')
+        +get_answer('mgrp-lbl-metal-implant', 'metal_implant')
+        +get_answer('mgrp-lbl-pacemaker', 'pacemaker')
+        +get_answer('mgrp-lbl-medication-pump', 'medication_pump')
+        +get_answer('mgrp-lbl-stroke', 'stroke')
+        +get_answer('mgrp-lbl-epilepsy', 'epilepsy')
+        +get_answer('mgrp-lbl-long-term-care', 'long_term_care')
+    // Injury Details
+    .answer-container.large
+        +section_title('mgrp-header-injury', '#panel-3')
+        +get_answer('mgrp-lbl-date-of-injury', 'date_injury')
+        +get_answer('mgrp-lbl-caused-by-accident', 'accidental_injury')
+    // Current Abilities
+    .answer-container.large
+        +section_title('mgrp-header-abilities', '#panel-4')
+        +get_answer_no_dots('mgrp-lbl-hand-to-mouth', 'hand_to_mouth')
+        +get_answer_no_dots('mgrp-lbl-glass-to-mouth', 'glass_to_mouth')
+        +get_answer_no_dots('mgrp-lbl-extend-wrist', 'extend_wrist')
+        +get_answer_no_dots('mgrp-lbl-improve-grasp', 'need_improve_grasp')
+    // Video
+    .answer-container.large
+        +section_title('mgrp-header-video', '#panel-5')
+        .row
+            ul#video-paths
+    .answer-container.large
+        +section_title('mgrp-header-needs', '#panel-6')
+    // Misc
+    .answer-container.large
+        +section_title('mgrp-header-misc', '#panel-7')
+        +get_answer_no_dots('mgrp-misc-q1', 'q1')
+        +get_answer_no_dots('mgrp-misc-q2', 'q2')
+
+
+
+

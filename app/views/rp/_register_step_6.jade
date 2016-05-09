@@ -1,27 +1,41 @@
 ////////////////////////////////////////
-//          MISCELLANEOUS
+//          PRIORITIES AND NEEDS
 ////////////////////////////////////////
 
 // Mixins
-mixin secondary_toggle(question, name, i18n)
+mixin radio_btn(name, i18n)
     .row
-        label.question.secondary #{__(i18n)}
-        input/.cbx-toggle.misc(question=question, option=name, type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+        label.question(for=name) #{__(i18n)}
+        .rd-priority.btn-group.btn-group-small(data-toggle='buttons')
+            label.btn.btn-default.btn-lg
+                input(type='radio', value='1', autocomplete='off')
+                |   1
+            label.btn.btn-default.btn-lg
+                input(type='radio', value='2', autocomplete='off')
+                |   2
+            label.btn.btn-default.btn-lg
+                input(type='radio', value='3', autocomplete='off')
+                |   3
+
 
 // Panel
-#panel-6.input-panel.center-aligned(name='misc', style={display: 'none'})
-    h4 #{__('mgrp-header-misc')}
+#panel-6.input-panel.center-aligned(name='needs', style={display: 'none'})
+    h4 #{__('mgrp-header-needs')}
+    p.explanation #{__('mgrp-header-needs-explanation-p1')}
     br
-    .misc-list-container
-        h5 #{__('mgrp-misc-q1')}
-        +secondary_toggle('q1', 'doctor', 'mgrp-misc-q1-opt-doctor')
-        +secondary_toggle('q1', 'caregiver', 'mgrp-misc-q1-opt-caregiver')
-        +secondary_toggle('q1', 'relative', 'mgrp-misc-q1-opt-relative')
-        +secondary_toggle('q1', 'internet', 'mgrp-misc-q1-opt-internet')
-        +secondary_toggle('q1', 'tv', 'mgrp-misc-q1-opt-tv')
-        +secondary_toggle('q1', 'other', 'mgrp-misc-q1-opt-other')
-        br
-        h5 #{__('mgrp-misc-q2')}
-        +secondary_toggle('q2', 'self', 'mgrp-misc-q2-opt-myself')
-        +secondary_toggle('q2', 'relative', 'mgrp-misc-q2-opt-relative')
-        +secondary_toggle('q2', 'caregiver', 'mgrp-misc-q2-opt-caregiver')
+    p.explanation #{__('mgrp-header-needs-explanation-p2')}
+    br
+    +radio_btn('eat_and_drink', 'mgrp-needs-eat-and-drink')
+    +radio_btn('body_hygiene', 'mgrp-needs-body-hygiene')
+    +radio_btn('move_wheelchair', 'mgrp-needs-move-wheelchair')
+    +radio_btn('get_dressed', 'mgrp-needs-get-dressed')
+    +radio_btn('transfer_from_bed_to_wheelchair', 'mgrp-needs-transfer-from-bed-to-wheelchair')
+    +radio_btn('use_gadget', 'mgrp-needs-use-gadget')
+    +radio_btn('catheterisation', 'mgrp-needs-catheterisation')
+    +radio_btn('drive_car', 'mgrp-needs-drive-car')
+    +radio_btn('write', 'mgrp-needs-write')
+    +radio_btn('open_door', 'mgrp-needs-open-door')
+    br
+    .row
+        label.question(for='new_adl_task') #{__('mgrp-needs-new-adl-task')}
+        input.form-control.for-question(type='text' name='new_adl_task')

@@ -30,6 +30,7 @@
             session = JSON.parse(sessionStorage[sessionKey]);
         
         session[panelName] = {};
+        // text inputs
         $(panelId + ' .form-control').each(function(i, input){
             var field = $(input).attr('name'),
                 value = $(input).val() ||'';
@@ -38,7 +39,7 @@
             // Update fields in review panel
             $('.input-panel[name="review"] p[field="' + field + '"]').html(value);
         });
-        
+        // checkboxes
         $(panelId + ' .cbx-toggle.main').each(function(i, toggle){
             var field = $(toggle).attr('name'),
                 boolVal = $(toggle).prop('checked'),
@@ -51,6 +52,12 @@
             // Update fields in review panel
             $('.input-panel[name="review"] p[field="' + field + '"]').html(value);
         });
+        // radio buttons
+//        for(var p=1; p<=3; ++p) {
+//            var $(panelId + ' rd-priority label.active input[value="'+p+'"]')
+//        }
+//
+
         
         // Injury
         if(panelName == 'injury_details') {
@@ -79,27 +86,45 @@
 
         // Misc
         if(panelName == 'misc') {
+            session.misc = [];
+
             var questions = {
                 q1: { question: 'How s/he found MoreGrasp', answer: '' },
-                q2: {question: 'Who filled the form', answer: '' }
+                q2: { question: 'Who filled the form', answer: '' }
             };
-
-            $(panelId + ' .cbx-toggle.misc').each(function(i, toggle){
-                var $toggle = $(toggle),
-                    field = $toggle.attr('name'),
-                    boolVal = $toggle.prop('checked');
-
-                if(boolVal) {
-                    var q = $toggle.attr('question'), option = $toggle.attr('option');
-                    questions[q].answer = questions[q].answer === '' ? option : questions[q].answer + ', ' + option;
-                }
-            });
-            // Save question answers in session object and update fields in review panel
-            session.misc = [];
             Object.keys(questions).forEach(function(q){
-                session.misc.push(questions[q]);
-                $('.input-panel[name="review"] p[field="' + q + '"]').html(questions[q].answer);
+                var ansOnReview = '';
+                $(panelId + ' input.cbx-toggle.misc[question="'+q+'"]').each(function(i, toggle){
+                    var $toggle = $(toggle);
+                    if($toggle.prop('checked')) {
+                        var opt = $toggle.attr('option'), optShow = $toggle.attr('option-show');
+                        // to be saved in session
+                        questions[q].answer = questions[q].answer === '' ? opt : questions[q].answer+', '+opt;
+                        // to appear on Review
+                        ansOnReview = ansOnReview === '' ? optShow : ansOnReview+', '+optShow;
+                    }
+                })
+                session.misc.push(questions[q])
+                $('.input-panel[name="review"] p[field="' + q + '"]').html(ansOnReview);
             });
+
+//
+//            $(panelId + ' .cbx-toggle.misc').each(function(i, toggle){
+//                var $toggle = $(toggle),
+//                    field = $toggle.attr('name'),
+//                    boolVal = $toggle.prop('checked');
+//
+//                if(boolVal) {
+//                    var q = $toggle.attr('question'), option = $toggle.attr('option');
+//                    questions[q].answer = questions[q].answer === '' ? option : questions[q].answer + ', ' + option;
+//                }
+//            });
+//            // Save question answers in session object and update fields in review panel
+//            session.misc = [];
+//            Object.keys(questions).forEach(function(q){
+//                session.misc.push(questions[q]);
+//                $('.input-panel[name="review"] p[field="' + q + '"]').html(questions[q].answer);
+//            });
         }
         //console.log('session updated');
         //console.log(session);
@@ -169,14 +194,14 @@
         var $panel = $(panel);
 
         // UNCOMMENT FOR EASY FLOW
-        //return true;
+        return true;
 
         // Validate mandatory fields
-        var emptyFields = [];2
+        var emptyFields = [];
         $('#panel-'+panel + ' input.mandatory').each(function(i, input){
             if($(input).val() === '')
                 emptyFields.push($(input).attr('name'))
-                });
+        });
         if(emptyFields.length)
             return showError(emptyFields, 'mandatory-fields');
 
@@ -298,6 +323,21 @@
         } 
     }
     
+    /************************************************
+     * Check Terms & conditions accepted
+     ************************************************/
+    // Uncomment for normal workflow
+    $('#toggle-terms-and-conditions').change(function() {
+        if($(this).prop('checked'))
+            $('#btn-start').removeClass('disabled');
+        else
+            $('#btn-start').addClass('disabled');
+    }).change();
+
+    $('#lblTermsAccepted').click(function(){
+        $('#toggle-terms-and-conditions').prop('checked', !$('#toggle-terms-and-conditions').prop('checked'));
+    });
+
     
     /************************************************
      * HTML5 File uploader
@@ -359,19 +399,23 @@
         $('p[field="' + field + '"]').text(value);
     });
 
-    /************************************************
-     * Check Terms & conditions accepted
-     ************************************************/
-    // Uncomment for normal workflow
-    $('#toggle-terms-and-conditions').change(function() {
-        if($(this).prop('checked'))
-            $('#btn-start').removeClass('disabled');
-        else
-            $('#btn-start').addClass('disabled');
-    }).change();
 
-    $('#lblTermsAccepted').click(function(){
-        $('#toggle-terms-and-conditions').prop('checked', !$('#toggle-terms-and-conditions').prop('checked'));
+    /************************************************
+     * Priority/needs radio buttons
+     ************************************************/
+    $('.rd-priority input[type="radio"]').change(function(evt){
+        evt.stopPropagation();
+        var $elem = $(this),
+            val = $elem.val(),
+            $row = $elem.parent().parent().parent();
+
+        $row.siblings().each(function(i, siblingRow){
+            var $sibling = $(siblingRow),
+                $rdInput = $sibling.find('input[value="'+val+'"]'),
+                $parent = $rdInput.parent();
+            $rdInput.prop('checked', false);
+            $parent.removeClass('active');
+        });
     });
 
 

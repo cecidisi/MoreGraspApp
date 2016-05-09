@@ -94,8 +94,8 @@ var emailUsers = function(cb) {
                     "A new candidate just signed up at the MoreGrasp Registration Platform<br>" +
                     "Check it at <url>http://moregrasp.know-center.tugraz.at/matchmaking1/</url><br><br>" +
                     "Best Regards,<br><br>Know-Center - MoreGrasp support<br><br><br>"+
-                    "<small>This message has been automatically sent to you.</small><br>"+
-                    "<small>To disable these notifications, go to @username tab -> Settings -> Receive notifications of new registrations = NO </small>";
+                    "<small>This message has been automatically generated.</small><br>"+
+                    "<small>To disable these notifications, go to @username tab --> Settings --> Receive notifications of new registrations = NO </small>";
 
                 var mailOptions = {
                     from: 'moregrasp.know.center@gmail.com',
@@ -120,15 +120,6 @@ var emailUsers = function(cb) {
 };
 
 
-//router.get('/send-email', function(req, res, next){
-//    emailUsers(function(err){
-//        if(err)
-//            throw err;
-//            //res.status(err.responseCode).send(err);
-//        res.status(200).send('Users notified successfully');
-//    });
-//})
-
 
 //  ADD candidate
 router.post('/save-candidate', function (req, res, next) {
@@ -150,7 +141,7 @@ router.post('/save-candidate', function (req, res, next) {
 
 
 
-//// REQUIRE AUTH
+//// REQUIRES AUTH
 
 //  GET candidates
 router.get('/get-all-candidates', function (req, res, next) {
@@ -167,7 +158,6 @@ router.get('/get-all-candidates', function (req, res, next) {
                 if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
                 return 0;
             });
-
             res.status(200).send(JSON.stringify(candidates));
         });
     }
