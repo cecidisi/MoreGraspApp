@@ -90,6 +90,10 @@
                     display: inline-block;
                     width: auto;
                     margin: 0px 5px;
+
+                    &.block {
+                        display: block;
+                    }
                 }
             }
 

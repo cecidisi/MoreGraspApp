@@ -8356,6 +8356,8 @@ header {
           display: inline-block;
           width: auto;
           margin: 0px 5px; }
+          .nav-panel#register .form-section .input-panel p.form-answer.block, .nav-panel#register .form-section .input-panel-submitted p.form-answer.block {
+            display: block; }
       .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
         text-align: left;
         margin-top: 5px; }

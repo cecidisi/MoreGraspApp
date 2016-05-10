@@ -56,7 +56,7 @@
 //        for(var p=1; p<=3; ++p) {
 //            var $(panelId + ' rd-priority label.active input[value="'+p+'"]')
 //        }
-//
+
 
         
         // Injury
