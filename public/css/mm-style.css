@@ -7899,7 +7899,8 @@ button.close {
 header {
   display: block;
   top: 0px;
-  height: 70px;
+  height: 50px;
+  height: 50px;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -7908,9 +7909,11 @@ header {
   box-shadow: 0px 1px 4px #ddd; }
   header .navbar {
     position: fixed;
-    height: 70px;
+    height: 50px;
     width: 100%;
     margin: 0px; }
+    header .navbar .container-fluid {
+      height: 100%; }
     header .navbar .navbar-header {
       height: 100%; }
       header .navbar .navbar-header .navbar-brand {
@@ -7918,27 +7921,34 @@ header {
         height: 100%; }
         header .navbar .navbar-header .navbar-brand img {
           display: inline-block;
-          float: left; }
+          float: left;
+          height: 100%;
+          width: 70px; }
         header .navbar .navbar-header .navbar-brand .title {
           display: none;
           float: left;
-          height: 68px;
+          height: calc(100% - 2px);
           margin: 0px 16px;
           color: #ed1848; }
           header .navbar .navbar-header .navbar-brand .title h3 {
             font-weight: 800;
             font-size: 1.4; }
       header .navbar .navbar-header button.navbar-toggle {
-        margin-top: 14px;
+        margin-top: 5px;
         border-color: #ed1848; }
         header .navbar .navbar-header button.navbar-toggle:hover {
           background: #eee; }
         header .navbar .navbar-header button.navbar-toggle .icon-bar {
           background: #ed1848;
           height: 3px; }
+  header .navbar-collapse {
+    width: 100%;
+    margin-left: 0px !important;
+    margin-right: 0px !important; }
   header ul.nav.menu {
     height: auto;
-    background: white; }
+    background: #fafafa;
+    box-shadow: 2px 2px 3px #ddd; }
     header ul.nav.menu li {
       height: 100%; }
       header ul.nav.menu li > a {
@@ -8048,12 +8058,18 @@ header {
     text-transform: lowercase; }
 
 @media (min-width: 992px) {
-  .navbar-header .title {
-    display: inline-block !important; }
-  ul.nav.menu {
-    height: 68px !important; }
-    ul.nav.menu a.flag {
-      padding: 15px 20px !important; } }
+  header {
+    height: 70px; }
+    header .navbar {
+      height: 70px; }
+    header .navbar-header img {
+      width: 120px !important; }
+    header .navbar-header .title {
+      display: inline-block !important; }
+    header ul.nav.menu {
+      height: 68px !important; }
+      header ul.nav.menu a.flag {
+        padding: 15px 20px !important; } }
 
 .content {
   height: calc(100% - 75px);
@@ -8254,10 +8270,12 @@ h5 {
           #panel-details .panel-body .tab-content .tab-pane .detail-item.lg {
             padding: 2px 4px; }
           #panel-details .panel-body .tab-content .tab-pane .detail-item label {
-            margin-right: 3px;
+            float: left;
+            margin-right: 5px;
             margin-bottom: 10px; }
           #panel-details .panel-body .tab-content .tab-pane .detail-item p {
-            display: inline-block; }
+            display: inline-block;
+            float: left; }
           #panel-details .panel-body .tab-content .tab-pane .detail-item .media-left {
             display: table-cell;
             vertical-align: top;

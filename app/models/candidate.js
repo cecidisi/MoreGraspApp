@@ -37,6 +37,10 @@ var candidateSchema = new Schema({
     video: {
         files: Array
     },
+    needs: {
+        priorities: Array,
+        new_adl_task: String
+    },
     misc: [{
         question:  { type: String},
         answer:  { type: String}
@@ -77,8 +81,34 @@ candidateSchema.pre('remove', true, function(next, done){
 })
 
 // Schema static methods
-candidateSchema.static('findByStatus', function(status, callback){
-    return this.find({'meta.status': status}, callback);
+candidateSchema.static('findByStatus', function(status, cb){
+    this.find({'meta.status': status}, function(err, candidates){
+        if (err) return cb(err);
+        candidates = candidates.sort(function(c1, c2){
+            if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
+            if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
+            return 0;
+        });
+        return cb(null, candidates);
+    });
+});
+
+
+
+candidateSchema.static('getAllSorted', function(cb){
+    this.find(function(err, candidates){
+        if(err) return cb(err);
+        candidates = candidates.sort(function(c1, c2){
+            if(c1.meta.status === 'registered' && c2.meta.status !== 'registered') return -1;
+            if(c1.meta.status !== 'registered' && c2.meta.status === 'registered') return 1;
+            if(c1.meta.status === 'accepted' && c2.meta.status !== 'accepted') return -1;
+            if(c1.meta.status !== 'accepted' && c2.meta.status === 'accepted') return 1;
+            if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
+            if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
+            return 0;
+        });
+        return cb(null, candidates);
+    });
 });
 
 

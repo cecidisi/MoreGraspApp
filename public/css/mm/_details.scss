@@ -52,13 +52,14 @@
                     }
 
                     label {
-                        //@extend .col-lg-6;
-                        margin-right: 3px;
+                        float: left;
+                        margin-right: 5px;
                         margin-bottom: 10px;
                     }
 
                     p {
                         display: inline-block;
+                        float: left;
                     }
 
                     .media-left {

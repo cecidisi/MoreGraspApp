@@ -102,6 +102,8 @@
                     @extend  .col-lg-offset-2, .col-lg-6, .col-md-offset-1, .col-md-6, .col-sm-offset-0, .col-sm-6, .col-xs-offset-0, .col-xs-10;
                     text-align: left;
                     margin-top: 5px;
+                    padding-left: 0px;
+                    padding-right: 0px;
                     &.secondary {
                         font-weight: normal !important;
                     }
@@ -252,14 +254,6 @@
 
 
 
-
-
-
-
-
-
-
-
     /** control area **/
     .controls-section {
         position: relative;
@@ -296,3 +290,10 @@
         }
     }
 }
+
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1530px;
+

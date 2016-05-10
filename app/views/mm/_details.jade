@@ -27,6 +27,7 @@ mixin detail_item_lg(label, field)
                 li(role="presentation"): a#tab-medical-conditions(href="#pane-medical-conditions", aria-controls="medical conditions", role="tab" data-toggle="tab") Medical Conditions
                 li(role="presentation"): a#tab-injury-details(href="#pane-injury-details", aria-controls="injury details", role="tab" data-toggle="tab") Injury Details
                 li(role="presentation"): a#tab-current-abilities(href="#pane-current-abilities", aria-controls="current abilities", role="tab" data-toggle="tab") Current Abilities
+                li(role="presentation"): a#tab-needs(href="#pane-needs", aria-controls="needs and priorities", role="tab" data-toggle="tab") Needs
                 li(role="presentation"): a#tab-video(href="#pane-video", aria-controls="video", role="tab" data-toggle="tab") Video/s
                 li(role="presentation"): a#tab-misc(href="#pane-misc", aria-controls="miscellaneous", role="tab" data-toggle="tab") Miscellaneous
 
@@ -56,6 +57,9 @@ mixin detail_item_lg(label, field)
                     +detail_item_lg('Can bring glass to mouth', 'glass_to_mouth')
                     +detail_item_lg('Can extend wrist', 'extend_wrist')
                     +detail_item_lg('Needs to improve grasp', 'need_improve_grasp')
+                #pane-needs.tab-pane.fade(arialabelledby='#tab-needs')
+                    +detail_item('Priorities', 'priorities')
+                    +detail_item('Additional ADL Task', 'new_adl_task')
                 #pane-video.tab-pane.fade(arialabelledby='#tab-video')
                     p No video uploaded
                 #pane-misc.tab-pane.fade(aria-labelledby='#tab-misc')

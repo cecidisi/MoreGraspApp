@@ -2,6 +2,7 @@ var express = require('express'),
     router = express.Router(),
     multer = require('multer'),
     fs = require('fs'),
+    passport = require('passport'),
     nodemailer = require('nodemailer'),
     mongoose = require('mongoose'),
     Candidate = mongoose.model('Candidate'),
@@ -9,7 +10,14 @@ var express = require('express'),
 
 
 module.exports = function (app) {
+
     app.use('/mg-rest-api', router);
+
+    app.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+    });
 
     /************************************
      *  Video Storage
@@ -30,8 +38,6 @@ module.exports = function (app) {
     });
 
     router.post('/upload-video', upload.single('video'), function(req, res, next){
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "X-Requested-With");
         console.log(req.file);
 
         if (req.file) {
@@ -42,34 +48,27 @@ module.exports = function (app) {
         }
     });
 
-//    var upload = multer({
-//        storage: storage,
-//        limits: { fieldSize: 52428800, fileSize: 52428800, files: 3 }
-//    }).single('video');
-//
-//    router.post('/upload-video', function(req, res, next){
-//        res.header("Access-Control-Allow-Origin", "*");
-//        res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//        console.log(req.file);
-//
-//        if (req.file) {
-//            upload(req, res, function(err){
-//                if(err) {
-//                    console.log('Error on video upload', err);
-//                    return next(err);
-//                }
-//                res.status(200).send('File "' + req.file.originalname + '" uploaded');
-//            });
-//        }
-//        else {
-//            res.status(500).send('No files');
-//        }
-//    });
-
     /************************************
      *  End Video Storage
      ************************************/
 };
+
+
+router.post('/login', function(req, res, next){
+    passport.authenticate('local', function(err, user, info) {
+        if (err) return next(err)
+        if (!user)
+            res.status(401).send('Login Failed');
+
+        req.logIn(user, function(err) {
+            if (err) return next(err);
+            res.status(200).send('Successful login');
+        });
+    })(req, res, next);
+});
+
+
+
 
 
 var emailUsers = function(cb) {
@@ -147,17 +146,8 @@ router.post('/save-candidate', function (req, res, next) {
 router.get('/get-all-candidates', function (req, res, next) {
 
     if(req.user) {
-        Candidate.find(function (err, candidates) {
+        Candidate.getAllSorted(function (err, candidates) {
             if (err) return next(err);
-            candidates = candidates.sort(function(c1, c2){
-                if(c1.meta.status === 'registered' && c2.meta.status !== 'registered') return -1;
-                if(c1.meta.status !== 'registered' && c2.meta.status === 'registered') return 1;
-                if(c1.meta.status === 'accepted' && c2.meta.status !== 'accepted') return -1;
-                if(c1.meta.status !== 'accepted' && c2.meta.status === 'accepted') return 1;
-                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
-                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
-                return 0;
-            });
             res.status(200).send(JSON.stringify(candidates));
         });
     }
@@ -172,11 +162,6 @@ router.get('/get-registered-candidates', function (req, res, next) {
     if (req.user) {
         Candidate.findByStatus('registered', function (err, candidates) {
             if (err) return next(err);
-            candidates = candidates.sort(function(c1, c2){
-                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
-                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
-                return 0;
-            });
             res.status(200).send(JSON.stringify(candidates));
         });
     }
@@ -191,11 +176,6 @@ router.get('/get-accepted-candidates', function (req, res, next) {
     if(req.user) {
         Candidate.findByStatus('accepted', function (err, candidates) {
             if (err) return next(err);
-            candidates = candidates.sort(function(c1, c2){
-                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
-                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
-                return 0;
-            });
             res.status(200).send(JSON.stringify(candidates));
         });
     }
@@ -210,11 +190,6 @@ router.get('/get-rejected-candidates', function (req, res, next) {
     if(req.user) {
         Candidate.findByStatus('rejected', function (err, candidates) {
             if (err) return next(err);
-            candidates = candidates.sort(function(c1, c2){
-                if(c1.meta.date_registered.getTime() < c2.meta.date_registered.getTime()) return -1;
-                if(c1.meta.date_registered.getTime() > c2.meta.date_registered.getTime()) return 1;
-                return 0;
-            });
             res.status(200).send(JSON.stringify(candidates));
         });
     }
@@ -222,6 +197,37 @@ router.get('/get-rejected-candidates', function (req, res, next) {
         res.status(401).send('Unauthorized: Access denied');
     }
 });
+
+
+
+//  UPDATE candidate status
+
+router.put('/update-candidate-status', function(req, res, next){
+    if (req.user) {
+        if(req.body) {
+            var id = req.body.user_id,
+                status= req.body.status,
+                params = { status: req.body.status, set_by: req.user._id };
+
+            Candidate.findByIdAndUpdate(id, {
+                'meta.status': status,
+                'meta.date_status_changed': new Date(),
+                'meta.status_changed_by': req.user._id
+            }, function(err, user){
+                if(err) throw err;
+                res.status(200).send('User ' + user._id + ' --> new status = ' + status);
+            });
+        }
+        else {
+            res.status(500).send('Missing parameters');
+        }
+    }
+    else {
+        res.status(401).send('Unauthorized: Access denied');
+    }
+
+});
+
 
 
 //  DELETE candidates
@@ -263,35 +269,3 @@ router.delete('/remove-all-candidates', function (req, res, next) {
 
 });
 
-
-router.put('/update-candidate-status', function(req, res, next){
-    if (req.user) {
-        if(req.body) {
-            var id = req.body.user_id,
-                status= req.body.status,
-                params = {
-                    status: req.body.status,
-                    set_by: req.user._id
-                };
-
-            Candidate.findByIdAndUpdate(id, {
-                'meta.status': status,
-                'meta.date_status_changed': new Date(),
-                'meta.status_changed_by': req.user._id
-            }, function(err, user){
-                if(err)  {
-                    console.log('error in find by id and update');
-                    throw err;
-                }
-                res.status(200).send('User ' + user._id + ' --> new status = ' + status);
-            });
-        }
-        else {
-            res.status(500).send('Missing parameters');
-        }
-    }
-    else {
-        res.status(401).send('Unauthorized: Access denied');
-    }
-
-});

@@ -6,7 +6,7 @@
 mixin radio_btn(name, i18n)
     .row
         label.question(for=name) #{__(i18n)}
-        .rd-priority.btn-group.btn-group-small(data-toggle='buttons')
+        .rd-priority.btn-group.btn-group-small(name=name, opt-show='#{__(i18n)}', data-toggle='buttons')
             label.btn.btn-default.btn-lg
                 input(type='radio', value='1', autocomplete='off')
                 |   1

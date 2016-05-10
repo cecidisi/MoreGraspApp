@@ -13,6 +13,8 @@
 @import "register";
 @import "faq";
 
+$header-height-lg: 70px;
+$header-height-sm: 50px;
 
 html {
     position: relative;
@@ -24,8 +26,9 @@ html {
 body {
     width: 100%;
     height: calc(100% - 80px);
-    margin-bottom: 70px;
-    font-size: 1em;
+//    margin-bottom: 70px;
+    margin-bottom: $header-height-sm;
+    font-size: 1.05em;
 }
 
 .container {
@@ -63,7 +66,8 @@ body {
 div.bg-processing {
     display: block;
     position: absolute;
-    top: 70px;
+//    top: 70px;
+    top: $header-height-sm;
     left: 0px;
     width: 100%;
     height: calc(100% - 70px);
@@ -140,6 +144,7 @@ $screen-xl-min: 1530px;
 
     /* Space out the masthead */
     header {
+        height: $header-height-sm;
         margin-bottom: 30px;
     }
 
@@ -150,7 +155,18 @@ $screen-xl-min: 1530px;
 
 
 @media (min-width: $screen-sm-min) {
-    body { font-size: 1.1em; }
+    body {
+        margin-bottom: $header-height-lg;
+        font-size: 1.1em;
+    }
+
+    header {
+        height: $header-height-lg;
+    }
+
+    div.bg-processing {
+        top: $header-height-lg;
+    }
 
     .form-section {
         height: calc(100% - 150px) !important;

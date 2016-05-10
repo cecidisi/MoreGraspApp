@@ -1,9 +1,13 @@
+$header-height-lg: 70px;
+$header-height-sm: 50px;
 
 header {
     @extend .affix-top;
     display: block;
     top: 0px;
-    height: 70px;
+//    height: 70px;
+    height: $header-height-sm;
+    height: 50px;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
@@ -13,9 +17,13 @@ header {
 
     .navbar {
         position: fixed;
-        height: 70px;
+        height: $header-height-sm;
         width: 100%;
         margin: 0px;
+
+        .container-fluid {
+            height: 100%;
+        }
 
         .navbar-header {
             height: 100%;
@@ -26,12 +34,14 @@ header {
                 img {
                     display: inline-block;
                     float: left;
+                    height: 100%;
+                    width: 70px;
                 }
 
                 .title {
                     display: none;
                     float: left;
-                    height: 68px;
+                    height: calc(100% - 2px);
                     margin: 0px 16px;
                     color: #ed1848;
                     h3 {
@@ -42,7 +52,7 @@ header {
             }
 
             button.navbar-toggle {
-                margin-top: 14px;
+                margin-top: 5px;
                 border-color: #ed1848;
 
                 &:hover {
@@ -56,11 +66,18 @@ header {
         }
     }
 
+    .navbar-collapse {
+        width: 100%;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
     ul.nav.menu {
 //        height: 68px;
 //        float: right;
         height: auto;
-        background: white;
+        background: rgba(250,250,250,1);
+        box-shadow: 2px 2px 3px #ddd;
 
         li {
             height: 100%;
@@ -225,30 +242,36 @@ $screen-xl-min: 1530px;
 
 
 @media (min-width: $screen-md-min) {
-    .navbar-header {
-        .title {
-            display: inline-block !important;
-        }
-    }
-    ul.nav.menu {
-        height: 68px !important;
 
-        a.flag {
-            padding: 15px 20px !important;
+    header {
+        height: $header-height-lg;
+
+        .navbar {
+            height: $header-height-lg;
+        }
+
+        .navbar-header {
+
+            img {
+                width: 120px !important;
+            }
+
+            .title {
+                display: inline-block !important;
+            }
+        }
+        ul.nav.menu {
+            height: 68px !important;
+
+            a.flag {
+                padding: 15px 20px !important;
+            }
         }
     }
+
 }
 
-//
-//@media (min-width: $screen-lg-min) {
-//    ul.nav.menu {
-//        height: 68px !important;
-//
-//        a.flag {
-//            padding: 15px 20px !important;
-//        }
-//    }
-//}
+
 
 
 

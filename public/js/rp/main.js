@@ -19,6 +19,19 @@
     var filesToUpload = {},
         videosToUpload = [];
 
+    var mapNeedStr = {
+        eat_and_drink: 'Eating and drinking',
+        body_hygiene: 'Body hygiene',
+        move_wheelchair: 'Moving Wheelchair',
+        get_dressed: 'Getting dressed',
+        transfer_from_bed_to_wheelchair: 'Transferring from bed to chair',
+        use_gadget: 'Using a Pc / mobile phone / tablet',
+        catheterisation: 'Catheterisation',
+        drive_car: 'Driving a car',
+        write: 'Writing with a pencil',
+        open_door: 'Open door'
+    };
+
 
     /************************************************
      * Handle session data
@@ -52,15 +65,20 @@
             // Update fields in review panel
             $('.input-panel[name="review"] p[field="' + field + '"]').html(value);
         });
-        // radio buttons
-//        for(var p=1; p<=3; ++p) {
-//            var $(panelId + ' rd-priority label.active input[value="'+p+'"]')
-//        }
 
-
+        // Needs / Priorities
+        if(panelName === 'needs') {
+            session.needs.priorities = [];
+            // radio buttons
+            for(var p=1; p<=3; ++p) {
+                var $el =  $(panelId + ' .rd-priority label.active input[value="'+p+'"]');
+                $('.input-panel[name="review"] p[field="need-'+p+'"]').html(p+'. '+$el.parent().parent().attr('opt-show'));
+                session.needs.priorities.push(mapNeedStr[$el.parent().parent().attr('name')]);
+            }
+        }
         
         // Injury
-        if(panelName == 'injury_details') {
+        if(panelName === 'injury_details') {
             // Set injury date
             var dateParts = session.injury_details.date_injury.split('/');  // set along with all inputs
             session.injury_details.date_injury = new Date(parseInt(dateParts[1]), parseInt(dateParts[0]) - 1);
@@ -75,12 +93,14 @@
             videosToUpload = [];
             // Clear file list in review panel
             $('.input-panel[name="review"] #video-paths').empty();
+            console.log(filesToUpload);
             Object.keys(filesToUpload).forEach(function(originalFileName, i){
-                var newFileName = session.personal_data.last_name.toLowerCase().replace(' ', '_') + '-video-' + i + '_' + (new Date()).getTimestamp() +         filesToUpload[originalFileName].type.replace('video/', '.');
-                videosToUpload.push({ filename: newFileName, file: filesToUpload[originalFileName], originalname: originalFileName });
+                var f = filesToUpload[originalFileName],
+                    newFileName = session.personal_data.last_name.toLowerCase().replace(' ', '_') + '-video-' + i + '_' + (new Date()).getTimestamp() + f.type.replace('video/', '.');
+                videosToUpload.push({ filename: newFileName, file: f, originalname: originalFileName });
                 // session keeps new filenames
                 session.video.files.push(newFileName);
-                $('.input-panel[name="review"] #video-paths').append('<li>'+originalFileName+'</li>');
+                $('.input-panel[name="review"] #video-paths').append('<li>'+originalFileName+' ('+(f.type || 'n/a')+') - '+bytesToSize(f.size)+'</li>');
             });
         }
 
@@ -108,35 +128,14 @@
                 $('.input-panel[name="review"] p[field="' + q + '"]').html(ansOnReview);
             });
 
-//
-//            $(panelId + ' .cbx-toggle.misc').each(function(i, toggle){
-//                var $toggle = $(toggle),
-//                    field = $toggle.attr('name'),
-//                    boolVal = $toggle.prop('checked');
-//
-//                if(boolVal) {
-//                    var q = $toggle.attr('question'), option = $toggle.attr('option');
-//                    questions[q].answer = questions[q].answer === '' ? option : questions[q].answer + ', ' + option;
-//                }
-//            });
-//            // Save question answers in session object and update fields in review panel
-//            session.misc = [];
-//            Object.keys(questions).forEach(function(q){
-//                session.misc.push(questions[q]);
-//                $('.input-panel[name="review"] p[field="' + q + '"]').html(questions[q].answer);
-//            });
         }
-        //console.log('session updated');
-        //console.log(session);
         // Save session in storage
         sessionStorage[sessionKey] = JSON.stringify(session);
-    }
+    };
     
     
     // on document ready
     var loadSession = function(session){
-        //console.log('load session');
-        //console.log(session);
         
         Object.keys(session).forEach(function(panelName) {
             var panelId = '#'+ $('.input-panel[name="' + panelName + '"]').attr('id');
@@ -349,7 +348,7 @@
             var file = files[i];
             if(!filesToUpload[file.name] && /^video\/\w+/.test(file.type)) {
                 filesToUpload[file.name] = file;
-                var $li = $('<li/>', { class: 'video-item', name: file.name, html: '<strong>'+escape(file.name)+'</strong> ('+(file.type || 'n/a')+') - '+bytesToSize(file.size) })                 .appendTo($fileList);
+                var $li = $('<li/>', { class: 'video-item', name: file.name, html: '<strong>'+file.name+'</strong> ('+(file.type || 'n/a')+') - '+bytesToSize(file.size) })                 .appendTo($fileList);
                 
                 $('<button/>', { class: 'btn-file-output red', html: 'X' })
                     .appendTo($li).click(function(evt){

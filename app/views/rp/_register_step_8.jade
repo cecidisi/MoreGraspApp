@@ -70,6 +70,8 @@ mixin get_answer_no_dots(i18n, field)
         p.form-answer.block(field='need-1') 1.
         p.form-answer.block(field='need-2') 2.
         p.form-answer.block(field='need-3') 3.
+        br
+        +get_answer_no_dots('mgrp-needs-new-adl-task', 'new_adl_task')
     // Misc
     .answer-container.large
         +section_title('mgrp-header-misc', '#panel-7')

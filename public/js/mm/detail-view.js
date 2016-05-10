@@ -44,8 +44,10 @@ var DetailView = (function(){
                     var value = user[category][field];
                     if(typeof value === 'boolean')
                         value = value ? 'Yes' : 'No';
-                    if(field == 'date_injury')
+                    if(field === 'date_injury')
                         value = value.getMMYYYY();
+                    if(field === 'priorities')
+                        value = value.map(function(p, i){ return (i+1)+'. '+p }).join('<br>');
                     $('p[name="' + field + '"]').html(value);
                 });
             });
@@ -67,7 +69,7 @@ var DetailView = (function(){
             if(user.misc && user.misc.length) {
                 user.misc.forEach(function(misc){
                     var $row = $('<div/>', { class: 'detail-item lg' }).appendTo($paneMisc);
-                    $('<label/>').appendTo($row).html(misc.question);
+                    $('<label/>').appendTo($row).html(misc.question+':');
                     $('<p/>').appendTo($row).html(misc.answer);
                 });
             }

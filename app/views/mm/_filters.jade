@@ -49,14 +49,14 @@ mixin filter_datetimepicker(label, name, category)
         #filter-group-personal-data.filter-group.collapse.in
 
         // Pre-Injury conditions
-        +filter_header('Pre-Injury Conditions', 'hand-o-left', '#filter-group-pre-injury')
+        +filter_header('Medical Conditions', 'hand-o-left', '#filter-group-medical-conditions')
         #filter-group-pre-injury.filter-group.collapse.in
-            +filter_radiobtn('Metal Implant', 'metal_implant', 'pre_injury')
-            +filter_radiobtn('Pacemaker', 'pacemaker', 'pre_injury')
-            +filter_radiobtn('Medication Pump', 'medication_pump', 'pre_injury')
-            +filter_radiobtn('Stroke', 'stroke', 'pre_injury')
-            +filter_radiobtn('Epilepsy', 'epilepsy', 'pre_injury')
-            +filter_radiobtn('Long Term Care', 'long_term_care', 'pre_injury')
+            +filter_radiobtn('Metal Implant', 'metal_implant', 'medical_conditions')
+            +filter_radiobtn('Pacemaker', 'pacemaker', 'medical_conditions')
+            +filter_radiobtn('Medication Pump', 'medication_pump', 'medical_conditions')
+            +filter_radiobtn('Stroke', 'stroke', 'medical_conditions')
+            +filter_radiobtn('Epilepsy', 'epilepsy', 'medical_conditions')
+            +filter_radiobtn('Long Term Care', 'long_term_care', 'medical_conditions')
 
         // Injury Details
         +filter_header('Injury Details', 'wheelchair', '#filter-group-injury')

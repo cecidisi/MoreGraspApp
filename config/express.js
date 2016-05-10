@@ -64,7 +64,7 @@ module.exports = function(app, config) {
     passport.use(new LocalStrategy(function(username, password, done) {
         User.findOne({ 'login.username': username }, function(err, user) {
             if (err) return done(err);
-            if (!user) return done(null, false, { message: 'Incorrect username.' });
+            if (!user) return done(null, false, { message: 'Unknown username.' });
             user.comparePassword(password, function(err, isMatch) {
                 if (isMatch) {
                     return done(null, user);
@@ -89,11 +89,6 @@ module.exports = function(app, config) {
   app.use(passport.session());
   // END Passport
 
-    app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        next();
-    });
 
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());

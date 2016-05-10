@@ -8109,7 +8109,8 @@ button.close {
 header {
   display: block;
   top: 0px;
-  height: 70px;
+  height: 50px;
+  height: 50px;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -8118,9 +8119,11 @@ header {
   box-shadow: 0px 1px 4px #ddd; }
   header .navbar {
     position: fixed;
-    height: 70px;
+    height: 50px;
     width: 100%;
     margin: 0px; }
+    header .navbar .container-fluid {
+      height: 100%; }
     header .navbar .navbar-header {
       height: 100%; }
       header .navbar .navbar-header .navbar-brand {
@@ -8128,27 +8131,34 @@ header {
         height: 100%; }
         header .navbar .navbar-header .navbar-brand img {
           display: inline-block;
-          float: left; }
+          float: left;
+          height: 100%;
+          width: 70px; }
         header .navbar .navbar-header .navbar-brand .title {
           display: none;
           float: left;
-          height: 68px;
+          height: calc(100% - 2px);
           margin: 0px 16px;
           color: #ed1848; }
           header .navbar .navbar-header .navbar-brand .title h3 {
             font-weight: 800;
             font-size: 1.4; }
       header .navbar .navbar-header button.navbar-toggle {
-        margin-top: 14px;
+        margin-top: 5px;
         border-color: #ed1848; }
         header .navbar .navbar-header button.navbar-toggle:hover {
           background: #eee; }
         header .navbar .navbar-header button.navbar-toggle .icon-bar {
           background: #ed1848;
           height: 3px; }
+  header .navbar-collapse {
+    width: 100%;
+    margin-left: 0px !important;
+    margin-right: 0px !important; }
   header ul.nav.menu {
     height: auto;
-    background: white; }
+    background: #fafafa;
+    box-shadow: 2px 2px 3px #ddd; }
     header ul.nav.menu li {
       height: 100%; }
       header ul.nav.menu li > a {
@@ -8258,12 +8268,18 @@ header {
     text-transform: lowercase; }
 
 @media (min-width: 992px) {
-  .navbar-header .title {
-    display: inline-block !important; }
-  ul.nav.menu {
-    height: 68px !important; }
-    ul.nav.menu a.flag {
-      padding: 15px 20px !important; } }
+  header {
+    height: 70px; }
+    header .navbar {
+      height: 70px; }
+    header .navbar-header img {
+      width: 120px !important; }
+    header .navbar-header .title {
+      display: inline-block !important; }
+    header ul.nav.menu {
+      height: 68px !important; }
+      header ul.nav.menu a.flag {
+        padding: 15px 20px !important; } }
 
 .content {
   height: calc(100% - 75px);
@@ -8360,7 +8376,9 @@ header {
             display: block; }
       .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
         text-align: left;
-        margin-top: 5px; }
+        margin-top: 5px;
+        padding-left: 0px;
+        padding-right: 0px; }
         .nav-panel#register .form-section .input-panel label.question.secondary, .nav-panel#register .form-section .input-panel-submitted label.question.secondary {
           font-weight: normal !important; }
       .nav-panel#register .form-section .input-panel label.answer, .nav-panel#register .form-section .input-panel-submitted label.answer {
@@ -8514,8 +8532,8 @@ html {
 body {
   width: 100%;
   height: calc(100% - 80px);
-  margin-bottom: 70px;
-  font-size: 1em; }
+  margin-bottom: 50px;
+  font-size: 1.05em; }
 
 .container {
   height: 100%; }
@@ -8543,7 +8561,7 @@ body {
 div.bg-processing {
   display: block;
   position: absolute;
-  top: 70px;
+  top: 50px;
   left: 0px;
   width: 100%;
   height: calc(100% - 70px);
@@ -8588,13 +8606,19 @@ div.bg-processing {
     padding-right: 0; }
   /* Space out the masthead */
   header {
+    height: 50px;
     margin-bottom: 30px; }
   div.progress-steps-container {
     display: none !important; } }
 
 @media (min-width: 768px) {
   body {
+    margin-bottom: 70px;
     font-size: 1.1em; }
+  header {
+    height: 70px; }
+  div.bg-processing {
+    top: 70px; }
   .form-section {
     height: calc(100% - 150px) !important; }
     .form-section div.answer-container.large {
