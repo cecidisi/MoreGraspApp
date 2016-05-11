@@ -28,7 +28,7 @@ mixin get_answer_no_dots(i18n, field)
     p.explanation #{__("mgrp-header-review-explanation")}
     br
     // Personal Data
-    .answer-container.large
+    .answer-container.lg.mobile-lg
         +section_title('mgrp-header-personal-data', '#panel-1')
         +get_answer('mgrp-lbl-first-name', 'first_name')
         +get_answer('mgrp-lbl-last-name', 'last_name')
@@ -40,7 +40,7 @@ mixin get_answer_no_dots(i18n, field)
         +get_answer('mgrp-lbl-email', 'email')
         +get_answer('mgrp-lbl-phone', 'phone')
     // Medical Conditions
-    .answer-container.large
+    .answer-container.lg.mobile.lg
         +section_title('mgrp-header-medical-conditions', '#panel-2')
         +get_answer('mgrp-lbl-metal-implant', 'metal_implant')
         +get_answer('mgrp-lbl-pacemaker', 'pacemaker')
@@ -49,23 +49,24 @@ mixin get_answer_no_dots(i18n, field)
         +get_answer('mgrp-lbl-epilepsy', 'epilepsy')
         +get_answer('mgrp-lbl-long-term-care', 'long_term_care')
     // Injury Details
-    .answer-container.large
+    .answer-container.lg.mobile-sm
         +section_title('mgrp-header-injury', '#panel-3')
         +get_answer('mgrp-lbl-date-of-injury', 'date_injury')
         +get_answer('mgrp-lbl-caused-by-accident', 'accidental_injury')
     // Current Abilities
-    .answer-container.large
+    .answer-container.sm.mobile.sm
         +section_title('mgrp-header-abilities', '#panel-4')
         +get_answer_no_dots('mgrp-lbl-hand-to-mouth', 'hand_to_mouth')
         +get_answer_no_dots('mgrp-lbl-glass-to-mouth', 'glass_to_mouth')
         +get_answer_no_dots('mgrp-lbl-extend-wrist', 'extend_wrist')
         +get_answer_no_dots('mgrp-lbl-improve-grasp', 'need_improve_grasp')
     // Video
-    .answer-container.large
+    .answer-container.sm.mobile.sm
         +section_title('mgrp-header-video', '#panel-5')
         .row
             ul#video-paths
-    .answer-container.large
+    // Needs and Priorities
+    .answer-container.sm.mobile.sm
         +section_title('mgrp-header-needs', '#panel-6')
         p.form-answer.block(field='need-1') 1.
         p.form-answer.block(field='need-2') 2.
@@ -73,7 +74,7 @@ mixin get_answer_no_dots(i18n, field)
         br
         +get_answer_no_dots('mgrp-needs-new-adl-task', 'new_adl_task')
     // Misc
-    .answer-container.large
+    .answer-container
         +section_title('mgrp-header-misc', '#panel-7')
         +get_answer_no_dots('mgrp-misc-q1', 'q1')
         +get_answer_no_dots('mgrp-misc-q2', 'q2')

@@ -16,7 +16,7 @@ mixin secondary_toggle(question, opt)
     h4 #{__('mgrp-header-misc')}
     br
     .misc-list-container
-        h5 #{__('mgrp-misc-q1')}
+        h5.misc-question #{__('mgrp-misc-q1')}
         +secondary_toggle('q1', 'doctor', 'mgrp-misc-q1-opt-doctor')
         +secondary_toggle('q1', 'caregiver', 'mgrp-misc-q1-opt-caregiver')
         +secondary_toggle('q1', 'relative', 'mgrp-misc-q1-opt-relative')
@@ -24,7 +24,7 @@ mixin secondary_toggle(question, opt)
         +secondary_toggle('q1', 'tv', 'mgrp-misc-q1-opt-tv')
         +secondary_toggle('q1', 'other', 'mgrp-misc-q1-opt-other')
         br
-        h5 #{__('mgrp-misc-q2')}
+        h5.misc-question #{__('mgrp-misc-q2')}
         +secondary_toggle('q2', 'self', 'mgrp-misc-q2-opt-myself')
         +secondary_toggle('q2', 'relative', 'mgrp-misc-q2-opt-relative')
         +secondary_toggle('q2', 'caregiver', 'mgrp-misc-q2-opt-caregiver')

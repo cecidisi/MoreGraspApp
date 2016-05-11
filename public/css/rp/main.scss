@@ -25,10 +25,10 @@ html {
 /* Space out content a bit */
 body {
     width: 100%;
-    height: calc(100% - 80px);
+    height: auto;
 //    margin-bottom: 70px;
     margin-bottom: $header-height-sm;
-    font-size: 1.05em;
+    font-size: 1.1em;
 }
 
 .container {
@@ -126,13 +126,13 @@ $screen-xl-min: 1530px;
     }
     .container {
         max-width: 750px;
-//        max-height: 100%;
         overflow-y: hidden !important;
+        padding-bottom: 5px;
 
-        .form-section {
-        //.panel-container {
-            height: 335px !important;
-        }
+//        .form-section {
+//        //.panel-container {
+//            height: 335px !important;
+//        }
     }
 
     /* Remove the padding we set earlier */
@@ -142,39 +142,20 @@ $screen-xl-min: 1530px;
         padding-right: 0;
     }
 
-    /* Space out the masthead */
-    header {
-        height: $header-height-sm;
-        margin-bottom: 30px;
-    }
-
-    div.progress-steps-container {
-        display: none !important;
-    }
 }
 
 
 @media (min-width: $screen-sm-min) {
     body {
-        margin-bottom: $header-height-lg;
+        height: calc(100% - 60px);
+        margin-bottom: 60px;
         font-size: 1.1em;
-    }
-
-    header {
-        height: $header-height-lg;
     }
 
     div.bg-processing {
         top: $header-height-lg;
     }
 
-    .form-section {
-        height: calc(100% - 150px) !important;
-
-        div.answer-container.large {
-            min-height: 256px !important;
-        }
-    }
 }
 
 @media (min-width: $screen-md-min) {
