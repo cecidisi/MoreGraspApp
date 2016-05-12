@@ -1,8 +1,10 @@
 .home-col {
     @extend .col-lg-6, .col-md-6, .col-sm-12, .col-xs-12;
-    height: 100%;
+    display: inline-block;
+//    height: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
+//    clear: both;
 
 
     .table-border {

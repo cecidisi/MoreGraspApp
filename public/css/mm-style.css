@@ -8050,15 +8050,18 @@ header {
           transform: scale(1.1); }
       header .nav.flag-container li a.flag.active:hover:before {
         transform: none; }
-  header .nav.navbar-second-level li a {
-    font-size: 0.9em;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-transform: lowercase; }
+  header ul.nav.navbar-second-level {
+    float: right;
+    z-index: 9999; }
+    header ul.nav.navbar-second-level li a {
+      font-size: 0.9em;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-transform: lowercase; }
 
 @media (min-width: 768px) {
   header ul.nav.menu {
-    height: calc(50px - 2px); }
+    height: calc(50px - 1px); }
     header ul.nav.menu li > a {
       padding: 10px 20px; } }
 
@@ -8072,7 +8075,7 @@ header {
     header .navbar-header .title {
       display: inline-block !important; }
     header ul.nav.menu {
-      height: calc(70px - 2px); }
+      height: calc(70px - 1px); }
       header ul.nav.menu li > a {
         padding: 15px 30px; }
       header ul.nav.menu a.flag {
@@ -8122,7 +8125,7 @@ header {
   display: inline-block; }
 
 .home-col {
-  height: 100%;
+  display: inline-block;
   padding-top: 15px;
   padding-bottom: 15px; }
   .home-col .table-border {
@@ -8317,9 +8320,10 @@ html {
 
 /* Space out content a bit */
 body {
-  width: calc(100% - 8px);
-  height: calc(100% - 78px);
-  margin: 4px;
+  width: calc(100% - 4px);
+  height: calc(100% - 60px);
+  margin: 0px 2px;
+  margin-bottom: 60px;
   padding-right: 0px !important;
   overflow: hidden; }
 

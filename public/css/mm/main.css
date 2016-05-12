@@ -10393,41 +10393,45 @@ header {
       /* line 216, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
       header .nav.flag-container li a.flag.active:hover:before {
         transform: none; }
-  /* line 225, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
-  header .nav.navbar-second-level li a {
-    font-size: 0.9em;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-transform: lowercase; }
+  /* line 223, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+  header ul.nav.navbar-second-level {
+    float: right;
+    z-index: 9999; }
+    /* line 228, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    header ul.nav.navbar-second-level li a {
+      font-size: 0.9em;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-transform: lowercase; }
 
 @media (min-width: 768px) {
-  /* line 246, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+  /* line 249, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
   header ul.nav.menu {
-    height: calc(50px - 2px); }
-    /* line 250, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    height: calc(50px - 1px); }
+    /* line 253, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header ul.nav.menu li > a {
       padding: 10px 20px; } }
 
 @media (min-width: 992px) {
-  /* line 261, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+  /* line 264, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
   header {
     height: 70px; }
-    /* line 264, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 267, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header .navbar {
       height: 70px; }
-    /* line 270, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 273, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header .navbar-header img {
       width: 120px !important; }
-    /* line 274, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 277, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header .navbar-header .title {
       display: inline-block !important; }
-    /* line 278, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 281, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header ul.nav.menu {
-      height: calc(70px - 2px); }
-      /* line 282, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+      height: calc(70px - 1px); }
+      /* line 285, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
       header ul.nav.menu li > a {
         padding: 15px 30px; }
-      /* line 287, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+      /* line 290, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
       header ul.nav.menu a.flag {
         padding: 15px 20px !important; } }
 
@@ -10485,24 +10489,24 @@ header {
 
 /* line 1, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
 .home-col {
-  height: 100%;
+  display: inline-block;
   padding-top: 15px;
   padding-bottom: 15px; }
-  /* line 8, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
+  /* line 10, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
   .home-col .table-border {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px; }
 
-/* line 15, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
+/* line 17, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
 h5 {
   font-size: 1.1em;
   color: #ed1848;
   font-weight: bold; }
-  /* line 20, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
+  /* line 22, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
   h5 a {
     margin-left: 9px; }
-    /* line 23, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
+    /* line 25, C:/Ampps/www/MoreGraspApp/public/css/mm/_home.scss */
     h5 a i.open-icon {
       color: #555; }
 
@@ -10734,97 +10738,98 @@ html {
 /* Space out content a bit */
 /* line 27, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 body {
-  width: calc(100% - 8px);
-  height: calc(100% - 78px);
-  margin: 4px;
+  width: calc(100% - 4px);
+  height: calc(100% - 60px);
+  margin: 0px 2px;
+  margin-bottom: 60px;
   padding-right: 0px !important;
   overflow: hidden; }
 
-/* line 36, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 37, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .centered {
   display: inline-block;
   text-align: center; }
 
-/* line 42, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 43, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .container {
   height: 100%; }
 
-/* line 46, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 47, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .container-narrow > hr {
   margin: 30px 0; }
 
 /*******************************************************************************************************/
-/* line 58, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+/* line 59, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
 .container-main {
   overflow-y: auto; }
-  /* line 62, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 63, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main .row, .container-main #panel-filters .panel-body .filter-type-header, #panel-filters .panel-body .container-main .filter-type-header, .container-main #panel-filters .panel-body .filter-group .filter-item, #panel-filters .panel-body .filter-group .container-main .filter-item {
     height: auto; }
-    /* line 65, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 66, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .row .col, .container-main #panel-filters .panel-body .filter-type-header .col, #panel-filters .panel-body .container-main .filter-type-header .col, .container-main #panel-filters .panel-body .filter-group .filter-item .col, #panel-filters .panel-body .filter-group .container-main .filter-item .col {
       height: auto;
       padding-bottom: 5px; }
-      /* line 69, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 70, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .row .col.col-70, .container-main #panel-filters .panel-body .filter-type-header .col.col-70, #panel-filters .panel-body .container-main .filter-type-header .col.col-70, .container-main #panel-filters .panel-body .filter-group .filter-item .col.col-70, #panel-filters .panel-body .filter-group .container-main .filter-item .col.col-70, .container-main .row .col.col-30, .container-main #panel-filters .panel-body .filter-type-header .col.col-30, #panel-filters .panel-body .container-main .filter-type-header .col.col-30, .container-main #panel-filters .panel-body .filter-group .filter-item .col.col-30, #panel-filters .panel-body .filter-group .container-main .filter-item .col.col-30 {
         height: auto; }
-  /* line 75, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 76, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main .panel {
     height: 100%;
     float: left;
     display: inline-block;
     width: 100%; }
-    /* line 84, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 85, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading h3.panel-title {
       display: inline-block;
       font-weight: bold;
       color: #ed1848;
       font-size: 1.2em; }
-    /* line 91, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 92, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading button.btn.pull-right {
       position: relative;
       top: -7px; }
-      /* line 95, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 96, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading button.btn.pull-right.fa {
         top: -4px; }
-    /* line 100, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 101, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading .collapse-icon {
       position: relative;
       right: -4px;
       margin-left: 12px;
       font-size: 18px; }
-    /* line 107, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 108, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading .btn-group.pull-right {
       top: -5px;
       margin-left: 5px;
       margin-right: 50px; }
-    /* line 113, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 114, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading > label {
       margin-right: 5px; }
-    /* line 118, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 119, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-heading .switch {
       position: relative;
       top: -5px;
       margin: 0px 10px; }
-      /* line 124, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 125, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch .cmn-toggle {
         position: absolute;
         margin-left: -9999px;
         visibility: hidden; }
-      /* line 130, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 131, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch .cmn-toggle + label {
         display: block;
         position: relative;
         cursor: pointer;
         outline: none;
         user-select: none; }
-      /* line 138, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 139, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch input.cmn-toggle-round + label {
         padding: 3px;
         width: 51px;
         height: 30px;
         background-color: #ddd;
         border-radius: 60px; }
-      /* line 146, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 147, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:before,
       .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:after {
         display: block;
@@ -10833,36 +10838,36 @@ body {
         left: 1px;
         bottom: 1px;
         content: ""; }
-      /* line 154, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 155, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:before {
         right: 1px;
         background-color: #f1f1f1;
         border-radius: 60px;
         transition: background 0.4s; }
-      /* line 160, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 161, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch input.cmn-toggle-round + label:after {
         width: 28px;
         background-color: #fff;
         border-radius: 100%;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         transition: margin 0.4s; }
-      /* line 167, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 168, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch input.cmn-toggle-round:checked + label:before {
         background-color: #8ce196; }
-      /* line 170, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 171, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main .panel .panel-heading .switch input.cmn-toggle-round:checked + label:after {
         margin-left: 21px; }
-    /* line 176, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 177, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main .panel .panel-body {
       height: calc(100% - 37px);
       padding: 5px; }
-  /* line 184, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 185, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main #panel-overview {
     height: calc(60% - 10px);
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block; }
-    /* line 190, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 191, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main #panel-overview .panel-body {
       padding: 5px;
       width: 100%;
@@ -10873,76 +10878,76 @@ body {
 /******************************************************************************************/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 217, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 218, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: 100%;
     margin: 0px 0px; }
-    /* line 223, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 224, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container .panel .panel-heading .collapse-icon {
       display: none; }
-    /* line 228, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 229, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container .panel#panel-filters > .panel-body {
       width: calc(100%);
       height: calc(100% - 38px); }
-  /* line 235, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 236, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container-main {
     overflow-y: hidden !important; }
-    /* line 237, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 238, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .container-main > .row, #panel-filters .panel-body .container-main > .filter-type-header, #panel-filters .panel-body .filter-group .container-main > .filter-item {
       height: 100%; }
-      /* line 239, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+      /* line 240, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
       .container-main > .row .col, #panel-filters .panel-body .container-main > .filter-type-header .col, #panel-filters .panel-body .filter-group .container-main > .filter-item .col {
         height: 100%; }
-        /* line 241, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+        /* line 242, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
         .container-main > .row .col.col-70, #panel-filters .panel-body .container-main > .filter-type-header .col.col-70, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-70 {
           height: 65%; }
-        /* line 244, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+        /* line 245, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
         .container-main > .row .col.col-30, #panel-filters .panel-body .container-main > .filter-type-header .col.col-30, #panel-filters .panel-body .filter-group .container-main > .filter-item .col.col-30 {
           height: 35%; }
-  /* line 253, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 254, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #overview-container {
     height: calc(100% - 38px) !important; } }
 
 @media screen and (min-width: 768px) and (max-width: 1530px) {
-  /* line 261, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 262, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .btn-group-adaptive .btn {
     width: 80%;
     min-width: 100px;
     border-radius: 0px; }
-    /* line 265, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 266, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:first-child {
       border-top-left-radius: 3px !important;
       border-top-right-radius: 3px !important; }
-    /* line 269, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 270, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:last-child {
       border-bottom-left-radius: 3px !important;
       border-bottom-right-radius: 3px !important; }
-    /* line 273, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+    /* line 274, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
     .btn-group-adaptive .btn:not(:first-child) {
       margin-left: 0px; } }
 
 @media (min-width: 992px) {
-  /* line 285, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 286, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: calc(100% - 10px);
     margin: 0px 5px; }
-  /* line 290, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 291, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 36px !important;
     height: 36px !important; } }
 
 @media (min-width: 1200px) {
-  /* line 299, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 300, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   .container {
     width: calc(100% - 20px);
     margin: 0px 10px; }
-  /* line 303, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 304, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 48px !important;
     height: 48px !important; } }
 
 @media (min-width: 1530px) {
-  /* line 315, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
+  /* line 316, C:/Ampps/www/MoreGraspApp/public/css/mm/main.scss */
   #user-photo {
     width: 64px !important;
     height: 64px !important; } }

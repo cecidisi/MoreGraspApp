@@ -220,7 +220,10 @@ header {
         }
     }
 
-    .nav.navbar-second-level {
+    ul.nav.navbar-second-level {
+        float: right;
+        z-index: 9999;
+
         li {
             a {
                 font-size: 0.9em;
@@ -244,7 +247,7 @@ $screen-xl-min: 1530px;
 
     header {
         ul.nav.menu {
-            height: calc(#{$header-height-sm} - 2px);
+            height: calc(#{$header-height-sm} - 1px);
 
             li {
                 & > a {
@@ -276,7 +279,7 @@ $screen-xl-min: 1530px;
             }
         }
         ul.nav.menu {
-            height: calc(#{$header-height-lg} - 2px);
+            height: calc(#{$header-height-lg} - 1px);
 
             li {
                 & > a {

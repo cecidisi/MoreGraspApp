@@ -25,9 +25,10 @@ html {
 
 /* Space out content a bit */
 body {
-    width: calc(100% - 8px);
-    height: calc(100% - 78px);
-    margin: 4px;
+    width: calc(100% - 4px);
+    height: calc(100% - 60px);
+    margin: 0px 2px;
+    margin-bottom: 60px;
     padding-right: 0px !important;
     overflow: hidden;
 }
