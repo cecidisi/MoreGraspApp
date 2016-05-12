@@ -85,8 +85,8 @@ header {
                 height: 100%;
                 border-radius: 0px;
                 padding: 15px 30px;
-                font-size: 1.4em;
-                line-height: 1.7em;
+                font-size: 1.5em;
+                line-height: 1.8em;
                 text-transform: capitalize;
                 background-color: transparent;
                 color: #000;
@@ -139,7 +139,7 @@ header {
                 a.flag {
                     display: inline-block;
                     margin: 0px;
-                    padding: 15px 30px;
+//                    padding: 15px 30px;
                     text-decoration: none;
                     cursor: pointer;
 
@@ -240,7 +240,21 @@ $screen-lg-min: 1200px;
 $screen-xl-min: 1530px;
 
 
+@media (min-width: $screen-sm-min) {
 
+    header {
+        ul.nav.menu {
+            height: calc(#{$header-height-sm} - 2px);
+
+            li {
+                & > a {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+
+}
 
 @media (min-width: $screen-md-min) {
 
@@ -262,7 +276,13 @@ $screen-xl-min: 1530px;
             }
         }
         ul.nav.menu {
-            height: calc(#{$header-height-lg} - 2px) !important;
+            height: calc(#{$header-height-lg} - 2px);
+
+            li {
+                & > a {
+                    padding: 15px 30px;
+                }
+            }
 
             a.flag {
                 padding: 15px 20px !important;
@@ -273,15 +293,7 @@ $screen-xl-min: 1530px;
 }
 
 
-@media (min-width: $screen-sm-min) {
 
-    header {
-        ul.nav.menu {
-            height: calc(#{$header-height-sm} - 2px) !important;
-        }
-    }
-
-}
 
 
 

@@ -19,30 +19,26 @@ block css
 
 
 block tab-register
-    li.active:  a(href='/registration-platform/register') #{__('mgrp-nav-register')}
+    li.active:  a(href='#') #{__('mgrp-nav-register')}
 
 
 block flags
     +flag('en')
     +flag('de')
-//block i18n
-    ul.nav.navbar-nav.navbar-right.flag-container
-        li.active:  a.flag.flag-en.active(name='en', href='/registration-platform/register/?lang=en', hreflang='en')
-        li:  a.flag.flag-de(name='de', href='/registration-platform/register/?lang=de', hreflang='de')
 
 block content
   #register.nav-panel
     .panel-container.form-section
-      include _register_step_0
-      include _register_step_1
-      include _register_step_2
-      include _register_step_3
-      include _register_step_4
-      include _register_step_5
-      include _register_step_6
-      include _register_step_7
-      include _register_step_8
-      include _register_submitted
+        include _register_step_0
+        include _register_step_1
+        include _register_step_2
+        include _register_step_3
+        include _register_step_4
+        include _register_step_5
+        include _register_step_6
+        include _register_step_7
+        include _register_step_8
+        include _register_submitted
       
     .panel-container.controls-section
         // hide when currentPanel = 0
@@ -55,7 +51,7 @@ block content
             each header, i in headers
                 - var header_title = 'mgrp-header-'+header+'-short'
                 .progress-step(id='progress-step-'+(i+1), style={width: stepWidth+'%'})
-                    a.step-label(href='#panel-'+(i+1)) #{__(header_title)}
+                    a.step-label(href='#', hhref='#panel-'+(i+1)) #{__(header_title)}
 
         .button-area
             a#btn-start.btn.btn-primary-mg(href='#panel-1') #{__('mgrp-btn-start-registration')}

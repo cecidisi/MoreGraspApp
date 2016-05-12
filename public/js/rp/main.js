@@ -31,6 +31,7 @@
         write: 'Writing with a pencil',
         open_door: 'Open door'
     };
+    var needsClicked = {};
 
 
     /************************************************
@@ -69,12 +70,10 @@
         // Needs / Priorities
         if(panelName === 'needs') {
             session.needs.priorities = [];
-            // radio buttons
-            for(var p=1; p<=3; ++p) {
-                var $el =  $(panelId + ' .rd-priority label.active input[value="'+p+'"]');
-                $('.input-panel[name="review"] p[field="need-'+p+'"]').html(p+'. '+$el.parent().parent().attr('opt-show'));
-                session.needs.priorities.push(mapNeedStr[$el.parent().parent().attr('name')]);
-            }
+            Object.keys(needsClicked).forEach(function(p){
+                $('.input-panel[name="review"] p[field="need-'+p+'"]').html(needsClicked[p].opt_show);
+                session.needs.priorities.push(needsClicked[p].opt);
+            });
         }
         
         // Injury
@@ -93,7 +92,6 @@
             videosToUpload = [];
             // Clear file list in review panel
             $('.input-panel[name="review"] #video-paths').empty();
-            console.log(filesToUpload);
             Object.keys(filesToUpload).forEach(function(originalFileName, i){
                 var f = filesToUpload[originalFileName],
                     newFileName = session.personal_data.last_name.toLowerCase().replace(' ', '_') + '-video-' + i + '_' + (new Date()).getTimestamp() + f.type.replace('video/', '.');
@@ -180,7 +178,7 @@
     };
 
     var showError = function(fields, errorToShow){
-        clearErrorMsg();
+        //clearErrorMsg();
         fields = Array.isArray(fields) ? fields : [fields];
         fields.forEach(function(field){
             $('input[name="' + field + '"]').parent().addClass('has-error');
@@ -189,42 +187,56 @@
         return false;
     };
 
-    var validateFields = function(panel){
-        var $panel = $(panel);
+    var validateFields = function(curPanel){
+        var $panel = $('#panel-'+curPanel),
+            panelName = $panel.attr('name');
 
         // UNCOMMENT FOR EASY FLOW
-        return true;
+        //return true;
 
-        // Validate mandatory fields
-        var emptyFields = [];
-        $('#panel-'+panel + ' input.mandatory').each(function(i, input){
-            if($(input).val() === '')
-                emptyFields.push($(input).attr('name'))
-        });
-        if(emptyFields.length)
-            return showError(emptyFields, 'mandatory-fields');
+        if(panelName !== 'personal_data' && panelName !== 'needs')
+            return true;
 
-        // Validate text fields
-        var textfields = [ 'first_name', 'last_name', 'city', 'street' ];
-        for(var i=0; i<textfields.length; ++i) {
-            var field = textfields[i],
-                name = $('input[name="' + field + '"]').siblings().text();
+        if(panelName === 'personal_data') {
+            // Validate mandatory fields
+            var emptyFields = [];
+            //        $('#panel-'+curPanel + ' input.mandatory').each(function(i, input){
 
-            if(!window.validateText(field, name, showError))
+            $panel.find('input.mandatory').each(function(i, input){
+                if($(input).val() === '')
+                    emptyFields.push($(input).attr('name'))
+                    });
+            if(emptyFields.length)
+                return showError(emptyFields, 'mandatory-fields');
+
+            // Validate text fields
+            var textfields = [ 'first_name', 'last_name', 'city', 'street' ];
+            for(var i=0; i<textfields.length; ++i) {
+                var field = textfields[i],
+                    name = $('input[name="' + field + '"]').siblings().text();
+
+                if(!window.validateText(field, name, showError))
+                    return false;
+            }
+
+            // Validate email
+            var email = $('input[name="email"]').val();
+            if(!window.validateEmail('email', showError))
                 return false;
+
+            // Validate phone
+            var phone = $('input[name="phone"]').val();
+            if(!window.validatePhone('phone', showError))
+                return false;
+
+            return true;
         }
-
-        // Validate email
-        var email = $('input[name="email"]').val();
-        if(!window.validateEmail('email', showError))
-            return false;
-
-        // Validate phone
-        var phone = $('input[name="phone"]').val();
-        if(!window.validatePhone('phone', showError))
-            return false;
+        // panel needs
+        if(Object.keys(needsClicked) < 3)
+            return showError(null, 'did-not-select-3-options');
 
         return true;
+
     };
 
     // Clear error message on input keyup
@@ -248,10 +260,17 @@
         // Update steps' style
         //console.log('current panel = ' + currentPanel + '; num panel = ' + numberPanels);
         for(var i=1; i<=numberPanels; ++i) {
-            if(i <= currentPanel)
-                $('#progress-step-'+i).addClass('complete');
-            else
-                $('#progress-step-'+i).removeClass('complete');
+            var $ps = $('#progress-step-'+i),
+                $a = $ps.find('a.step-label');
+            if(i <= currentPanel) {
+                $ps.addClass('complete');
+                $a.attr('href', $a.attr('hhref'));
+            }
+            else {
+                $ps.removeClass('complete');
+                $a.attr('href', '#');
+            }
+
         }
         // enable/disable buttons
         if(!isNaN(currentPanel)) {
@@ -307,7 +326,7 @@
                 updateSession(currentPanel);
             }
 
-            if(currentPanel !== 1 || validateFields(currentPanel)) {
+            if(validateFields(currentPanel)) {
                 // Update currentPanel to match number in hash
                 currentPanel = parseInt(hash.replace('#panel-', ''));
                 // Show panel indicated in hash
@@ -406,7 +425,10 @@
         evt.stopPropagation();
         var $elem = $(this),
             val = $elem.val(),
+            opt = $elem.parent().parent().attr('name'),
+            optShow = $elem.parent().parent().attr('opt-show'),
             $row = $elem.parent().parent().parent();
+        needsClicked[val] = { opt: opt, opt_show: optShow };
 
         $row.siblings().each(function(i, siblingRow){
             var $sibling = $(siblingRow),

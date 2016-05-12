@@ -24,6 +24,7 @@ mixin radio_btn(name, i18n)
     p.explanation #{__('mgrp-header-needs-explanation-p1')}
     br
     p.explanation #{__('mgrp-header-needs-explanation-p2')}
+    p#error-did-not-select-3-options.error.pull-right(style={ display: 'block' }) #{__('mgrp-error-did-not-select-3-options')}
     br
     +radio_btn('eat_and_drink', 'mgrp-needs-eat-and-drink')
     +radio_btn('body_hygiene', 'mgrp-needs-body-hygiene')
@@ -35,6 +36,7 @@ mixin radio_btn(name, i18n)
     +radio_btn('drive_car', 'mgrp-needs-drive-car')
     +radio_btn('write', 'mgrp-needs-write')
     +radio_btn('open_door', 'mgrp-needs-open-door')
+
     br
     .row
         label.question(for='new_adl_task') #{__('mgrp-needs-new-adl-task')}

@@ -1975,14 +1975,14 @@ pre {
     clear: both; }
 
 /* line 10, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-lg-2, .col-xs-3, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-xs-4, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-md-8, .col-lg-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .col-lg-12, .nav-panel, .sizable {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-lg-2, .col-xs-3, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-xs-4, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-md-8, .col-lg-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .col-md-10, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .col-lg-12, .nav-panel, .sizable {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
 /* line 26, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-10, .col-xs-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-10, .col-xs-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
   float: left; }
 
 /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2030,7 +2030,7 @@ pre {
   width: 91.66667%; }
 
 /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
+.col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
   width: 100%; }
 
 /* line 54, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
@@ -2191,7 +2191,7 @@ pre {
 
 @media (min-width: 768px) {
   /* line 26, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-sm-5, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-7, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable {
+  .col-sm-1, .col-sm-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-sm-5, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-7, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-9, .col-sm-10, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .col-sm-11, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable {
     float: left; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-1 {
@@ -2221,7 +2221,7 @@ pre {
   .col-sm-9 {
     width: 75%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-10 {
+  .col-sm-10, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader {
     width: 83.33333%; }
   /* line 34, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-11 {
@@ -2311,7 +2311,7 @@ pre {
   .col-sm-offset-0 {
     margin-left: 0%; }
   /* line 59, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-offset-1, .nav-panel#register .form-section .input-panel h5.misc-question, .nav-panel#register .form-section .input-panel-submitted h5.misc-question {
+  .col-sm-offset-1, .nav-panel#register .form-section .input-panel h5.misc-question, .nav-panel#register .form-section .input-panel-submitted h5.misc-question, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader {
     margin-left: 8.33333%; }
   /* line 59, C:/Ampps/www/MoreGraspApp/public/components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
   .col-sm-offset-2, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
@@ -10343,8 +10343,8 @@ header {
         height: 100%;
         border-radius: 0px;
         padding: 15px 30px;
-        font-size: 1.4em;
-        line-height: 1.7em;
+        font-size: 1.5em;
+        line-height: 1.8em;
         text-transform: capitalize;
         background-color: transparent;
         color: #000; }
@@ -10395,7 +10395,6 @@ header {
         header ul.nav.menu li.flag-container a.flag {
           display: inline-block;
           margin: 0px;
-          padding: 15px 30px;
           text-decoration: none;
           cursor: pointer; }
           /* line 146, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
@@ -10476,30 +10475,36 @@ header {
     padding-bottom: 5px;
     text-transform: lowercase; }
 
+@media (min-width: 768px) {
+  /* line 246, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+  header ul.nav.menu {
+    height: calc(50px - 2px); }
+    /* line 250, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    header ul.nav.menu li > a {
+      padding: 10px 20px; } }
+
 @media (min-width: 992px) {
-  /* line 247, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+  /* line 261, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
   header {
     height: 70px; }
-    /* line 250, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 264, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header .navbar {
       height: 70px; }
-    /* line 256, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 270, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header .navbar-header img {
       width: 120px !important; }
-    /* line 260, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 274, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header .navbar-header .title {
       display: inline-block !important; }
-    /* line 264, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+    /* line 278, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
     header ul.nav.menu {
-      height: calc(70px - 2px) !important; }
-      /* line 267, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+      height: calc(70px - 2px); }
+      /* line 282, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
+      header ul.nav.menu li > a {
+        padding: 15px 30px; }
+      /* line 287, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
       header ul.nav.menu a.flag {
         padding: 15px 20px !important; } }
-
-@media (min-width: 768px) {
-  /* line 279, C:/Ampps/www/MoreGraspApp/public/css/_header.scss */
-  header ul.nav.menu {
-    height: calc(50px - 2px) !important; } }
 
 /* line 4, C:/Ampps/www/MoreGraspApp/public/css/_content.scss */
 .content {
@@ -10527,8 +10532,8 @@ header {
 .footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
   height: 60px;
+  width: 100%;
   background-color: #f5f5f5;
   padding-left: 15px;
   padding-right: 15px;
@@ -10623,30 +10628,31 @@ header {
         .nav-panel#register .form-section .input-panel p.form-answer, .nav-panel#register .form-section .input-panel-submitted p.form-answer {
           display: inline-block;
           width: auto;
-          margin: 0px 5px; }
-          /* line 110, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+          margin: 0px;
+          padding: 0px 15px; }
+          /* line 111, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
           .nav-panel#register .form-section .input-panel p.form-answer.block, .nav-panel#register .form-section .input-panel-submitted p.form-answer.block {
             display: block; }
-      /* line 116, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 117, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel label, .nav-panel#register .form-section .input-panel-submitted label {
         font-size: 1.1em; }
-        /* line 118, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 119, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
           text-align: left;
           margin-top: 5px;
           padding-left: 0px;
           padding-right: 0px; }
-          /* line 124, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+          /* line 125, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
           .nav-panel#register .form-section .input-panel label.question.secondary, .nav-panel#register .form-section .input-panel-submitted label.question.secondary {
             font-weight: normal !important; }
-        /* line 128, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 129, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel label.answer, .nav-panel#register .form-section .input-panel-submitted label.answer {
           margin: 0px;
-          font-size: .9em; }
-          /* line 131, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+          font-size: .95em; }
+          /* line 132, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
           .nav-panel#register .form-section .input-panel label.answer.secondary, .nav-panel#register .form-section .input-panel-submitted label.answer.secondary {
             font-weight: normal; }
-      /* line 141, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 142, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel i.fa-asterisk, .nav-panel#register .form-section .input-panel-submitted i.fa-asterisk {
         display: inline-block;
         margin-left: 3px;
@@ -10654,11 +10660,10 @@ header {
         top: -5px;
         color: #ed1848;
         font-size: 8px; }
-      /* line 151, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 152, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader {
-        width: 100%;
-        margin: 15px auto; }
-        /* line 155, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        margin-top: 15px; }
+        /* line 156, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel div#file-uploader #file-drop-zone, .nav-panel#register .form-section .input-panel-submitted div#file-uploader #file-drop-zone {
           border: 2px dotted #ddd;
           /*color: #DADCE3;*/
@@ -10670,14 +10675,14 @@ header {
           display: block;
           margin-left: auto;
           margin-right: auto; }
-        /* line 167, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 168, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload {
           height: 34px;
           position: relative;
           margin: 0px 20px 0px 0px;
           box-shadow: none;
           cursor: pointer; }
-          /* line 175, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+          /* line 176, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
           .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload input[type="file"], .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload input[type="file"] {
             display: inline-block !important;
             position: absolute;
@@ -10688,78 +10693,83 @@ header {
             left: 0px;
             z-index: 100;
             opacity: 0; }
-      /* line 189, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 190, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel output#file-list, .nav-panel#register .form-section .input-panel-submitted output#file-list {
         width: 80%;
         margin: auto; }
-        /* line 193, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 194, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel output#file-list li, .nav-panel#register .form-section .input-panel-submitted output#file-list li {
           display: block; }
-        /* line 197, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 198, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-file-output {
           display: inline-block;
           position: relative;
           margin-left: 7px;
           box-shadow: none;
           color: #fff; }
-      /* line 212, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 213, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel #mulitplefileuploader, .nav-panel#register .form-section .input-panel-submitted #mulitplefileuploader {
         width: 80%;
         margin: auto; }
-      /* line 222, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 223, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel .toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle-on, .nav-panel#register .form-section .input-panel .toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle-off {
         text-align: left; }
-      /* line 226, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 227, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel .toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle-off {
         padding-left: 19px !important; }
-      /* line 231, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 232, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
         min-height: auto;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        padding: 0px 10px;
         float: left; }
-        /* line 237, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 239, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel div.answer-container.sm, .nav-panel#register .form-section .input-panel-submitted div.answer-container.sm, .nav-panel#register .form-section .input-panel div.answer-container.lg, .nav-panel#register .form-section .input-panel-submitted div.answer-container.lg {
           height: auto; }
-        /* line 241, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 243, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        .nav-panel#register .form-section .input-panel div.answer-container.no-marign-bottom, .nav-panel#register .form-section .input-panel-submitted div.answer-container.no-marign-bottom {
+          margin-bottom: 0px; }
+        /* line 247, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .form-section .input-panel div.answer-container h5, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 {
           font-size: 1.1em;
           color: #ed1848;
           font-weight: bold; }
-          /* line 246, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+          /* line 252, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
           .nav-panel#register .form-section .input-panel div.answer-container h5 i.edit-answer, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 i.edit-answer {
             margin-left: 5px;
+            font-size: 1.2em;
             color: #333;
             cursor: pointer; }
-            /* line 251, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+            /* line 258, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
             .nav-panel#register .form-section .input-panel div.answer-container h5 i.edit-answer:hover, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 i.edit-answer:hover {
               transform: scale(1.1); }
-            /* line 254, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+            /* line 261, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
             .nav-panel#register .form-section .input-panel div.answer-container h5 i.edit-answer a, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 i.edit-answer a {
               text-decoration: none; }
-      /* line 261, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 268, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .form-section .input-panel p.error, .nav-panel#register .form-section .input-panel-submitted p.error {
         padding: 5px;
         border-radius: 5px;
         display: inline-block;
         float: left; }
-  /* line 280, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+  /* line 287, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
   .nav-panel#register .controls-section {
     position: relative;
     height: 120px;
     margin-top: 10px;
     padding: 10px 0px;
     text-align: center; }
-    /* line 288, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+    /* line 295, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
     .nav-panel#register .controls-section .progress {
       width: 70%;
       margin: auto; }
-    /* line 293, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+    /* line 300, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
     .nav-panel#register .controls-section .progress-steps-container {
       display: none;
       width: 70%;
       height: 20px;
       margin: 5px auto; }
-      /* line 299, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+      /* line 306, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
       .nav-panel#register .controls-section .progress-steps-container .progress-step {
         display: inline-block;
         float: left;
@@ -10767,79 +10777,88 @@ header {
         text-align: center;
         padding-left: 3px;
         padding-right: 3px; }
-        /* line 306, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+        /* line 313, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .controls-section .progress-steps-container .progress-step a {
           color: #555;
-          font-size: 0.8em; }
-        /* line 311, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+          font-size: 0.8em;
+          text-decoration: none;
+          cursor: text; }
+        /* line 319, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
         .nav-panel#register .controls-section .progress-steps-container .progress-step.complete a {
           font-weight: bold; }
+          /* line 321, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+          .nav-panel#register .controls-section .progress-steps-container .progress-step.complete a:hover {
+            text-decoration: underline;
+            cursor: pointer; }
 
 @media (min-width: 768px) {
-  /* line 328, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+  /* line 340, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
   .form-section {
     height: calc(100% - 150px) !important; }
-  /* line 332, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+  /* line 344, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
   div.progress-steps-container {
     display: block !important; }
-  /* line 336, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+  /* line 348, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
   div#file-uploader {
     width: 80%; } }
 
 @media (min-width: 992px) {
-  /* line 345, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+  /* line 357, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
   div.answer-container.sm {
-    height: 185px !important; }
-  /* line 348, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
+    height: 230px !important; }
+  /* line 360, C:/Ampps/www/MoreGraspApp/public/css/rp/_register.scss */
   div.answer-container.lg {
-    height: 230px !important; } }
+    height: 245px !important; } }
 
 /* line 3, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
 .nav-panel#faq {
-  height: 100% !important; }
-  /* line 6, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+  height: 100% !important;
+  overflow-y: auto; }
+  /* line 8, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
   .nav-panel#faq .question-container {
     min-height: 170px;
     padding: 15px 20px;
+    margin: 3px;
+    border: 1px solid transparent;
     box-shadow: 2px 2px 5px #888, -2px 2px 5px #888; }
-    /* line 10, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+    /* line 14, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
     .nav-panel#faq .question-container .question-list {
       float: left;
-      font-size: 1.1em; }
-      /* line 13, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+      font-size: 1.2em; }
+      /* line 17, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
       .nav-panel#faq .question-container .question-list i.fa, .nav-panel#faq .question-container .question-list .nav-panel#register .form-section .input-panel div.answer-container h5 i.edit-answer, .nav-panel#register .form-section .input-panel div.answer-container h5 .nav-panel#faq .question-container .question-list i.edit-answer, .nav-panel#faq .question-container .question-list .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 i.edit-answer, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 .nav-panel#faq .question-container .question-list i.edit-answer {
         margin-right: 3px;
         color: #428bca; }
-    /* line 18, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+    /* line 22, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
     .nav-panel#faq .question-container img {
       display: none;
       float: right; }
-  /* line 26, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+  /* line 30, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
   .nav-panel#faq .answer-container .inner {
     margin: 25px 15px;
     border-bottom: 1px solid #ddd; }
-    /* line 30, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+    /* line 34, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
     .nav-panel#faq .answer-container .inner i.fa, .nav-panel#faq .nav-panel#register .form-section .input-panel div.answer-container .inner h5 i.edit-answer, .nav-panel#register .form-section .input-panel .nav-panel#faq div.answer-container .inner h5 i.edit-answer, .nav-panel#faq .nav-panel#register .form-section .input-panel div.answer-container h5 .inner i.edit-answer, .nav-panel#register .form-section .input-panel .nav-panel#faq div.answer-container h5 .inner i.edit-answer, .nav-panel#faq .nav-panel#register .form-section .input-panel-submitted div.answer-container .inner h5 i.edit-answer, .nav-panel#register .form-section .input-panel-submitted .nav-panel#faq div.answer-container .inner h5 i.edit-answer, .nav-panel#faq .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 .inner i.edit-answer, .nav-panel#register .form-section .input-panel-submitted .nav-panel#faq div.answer-container h5 .inner i.edit-answer {
-      margin-right: 3px; }
-    /* line 33, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+      margin-right: 5px; }
+    /* line 37, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
     .nav-panel#faq .answer-container .inner h4 {
       font-size: 1.4em;
       color: #4d9d2a; }
-    /* line 37, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+    /* line 41, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
     .nav-panel#faq .answer-container .inner p {
-      font-size: 1.1em; }
+      font-size: 1.2em; }
 
 @media (min-width: 768px) {
-  /* line 54, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+  /* line 58, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
   .question-container img {
     display: inline-block !important;
     width: 220px; } }
 
 @media (min-width: 992px) {
-  /* line 62, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+  /* line 67, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
   .question-container {
     min-height: 218px !important; }
-    /* line 64, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
+    /* line 69, C:/Ampps/www/MoreGraspApp/public/css/rp/_faq.scss */
     .question-container img {
       display: inline-block !important;
       width: 300px; } }

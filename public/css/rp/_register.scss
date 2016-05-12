@@ -105,7 +105,8 @@
                     @extend p.explanation;
                     display: inline-block;
                     width: auto;
-                    margin: 0px 5px;
+                    margin: 0px;
+                    padding: 0px 15px;
 
                     &.block {
                         display: block;
@@ -127,7 +128,7 @@
                 }
                 &.answer {
                     margin: 0px;
-                    font-size: .9em;
+                    font-size: .95em;
                     &.secondary {
                         font-weight: normal;
                     }
@@ -149,8 +150,8 @@
 
             /* html5 file uploader*/
             div#file-uploader {
-                width: 100%;
-                margin: 15px auto;
+                @extend .col-xs-12, .col-sm-10, .col-sm-offset-1;
+                margin-top: 15px;
 
                 #file-drop-zone {
                     border:2px dotted #ddd;
@@ -231,11 +232,16 @@
             div.answer-container {
                 @extend .col-xs-12, .col-sm-8, .col-sm-offset-2, .col-md-4, .col-md-offset-0;
                 min-height: auto;
-                margin-bottom: 15px;
+                margin-bottom: 20px;
+                padding: 0px 10px;
                 float: left;
 
                 &.sm, &.lg {
                     height: auto;
+                }
+
+                &.no-marign-bottom {
+                    margin-bottom: 0px;
                 }
 
                 h5 {
@@ -246,6 +252,7 @@
                     i.edit-answer {
                         @extend .fa, .fa-pencil;
                         margin-left: 5px;
+                        font-size: 1.2em;
                         color: #333;
                         cursor: pointer;
                         &:hover {
@@ -306,10 +313,15 @@
                 a {
                     color: #555;
                     font-size: 0.8em;
-                    //                    text-decoration: none;
+                    text-decoration: none;
+                    cursor: text;
                 }
                 &.complete a {
                     font-weight: bold;
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -343,10 +355,10 @@ $screen-xl-min: 1530px;
 
     div.answer-container {
         &.sm {
-            height: 185px !important;
+            height: 230px !important;
         }
         &.lg {
-            height: 230px !important;
+            height: 245px !important;
         }
     }
 

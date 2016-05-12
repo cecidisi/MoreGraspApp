@@ -3,13 +3,17 @@
 .nav-panel#faq {
 
     height: 100% !important;
+    overflow-y: auto;
+
     .question-container {
         min-height: 170px;
         padding: 15px 20px;
+        margin: 3px;
+        border: 1px solid transparent;
         box-shadow: 2px 2px 5px #888, -2px 2px 5px #888;
         .question-list {
             float: left;
-            font-size: 1.1em;
+            font-size: 1.2em;
             i.fa {
                 margin-right: 3px;
                 color: #428bca;
@@ -28,14 +32,14 @@
             border-bottom: 1px solid #ddd;
 
             i.fa {
-                margin-right: 3px;
+                margin-right: 5px;
             }
             h4 {
                 font-size: 1.4em;
                 color: #4d9d2a;
             }
             p {
-                font-size: 1.1em;
+                font-size: 1.2em;
             }
         }
 
@@ -59,6 +63,7 @@ $screen-xl-min: 1530px;
 }
 
 @media (min-width: $screen-md-min) {
+
     .question-container {
         min-height: 218px !important;
         img {

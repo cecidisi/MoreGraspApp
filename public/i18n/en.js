@@ -133,5 +133,6 @@
 	"mgrp-error-illegal-characters": "Illegal character/s",
 	"mgrp-error-not-capitalized": "Not capitalized",
 	"mgrp-error-invalid-email": "Invalid Email",
-	"mgrp-error-invalid-phone": "Invalid Phone"
+	"mgrp-error-invalid-phone": "Invalid Phone",
+    "mgrp-error-did-not-select-3-options": "You must select 3 options"
 }
