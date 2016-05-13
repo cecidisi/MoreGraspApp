@@ -7,7 +7,6 @@ header {
     top: 0px;
 //    height: 70px;
     height: $header-height-sm;
-    height: 50px;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
@@ -86,7 +85,7 @@ header {
                 border-radius: 0px;
                 padding: 15px 30px;
                 font-size: 1.5em;
-                line-height: 1.8em;
+                line-height: 1.7em;
                 text-transform: capitalize;
                 background-color: transparent;
                 color: #000;
@@ -284,6 +283,8 @@ $screen-xl-min: 1530px;
             li {
                 & > a {
                     padding: 15px 30px;
+                    font-size: 1.7em;
+                    line-height: 2em;
                 }
             }
 

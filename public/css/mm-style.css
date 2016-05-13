@@ -7900,7 +7900,6 @@ header {
   display: block;
   top: 0px;
   height: 50px;
-  height: 50px;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -7956,7 +7955,7 @@ header {
         border-radius: 0px;
         padding: 15px 30px;
         font-size: 1.5em;
-        line-height: 1.8em;
+        line-height: 1.7em;
         text-transform: capitalize;
         background-color: transparent;
         color: #000; }
@@ -8077,14 +8076,17 @@ header {
     header ul.nav.menu {
       height: calc(70px - 1px); }
       header ul.nav.menu li > a {
-        padding: 15px 30px; }
+        padding: 15px 30px;
+        font-size: 1.7em;
+        line-height: 2em; }
       header ul.nav.menu a.flag {
         padding: 15px 20px !important; } }
 
 .content {
   display: block;
-  height: calc(100% - 65px);
-  margin-top: 10px; }
+  position: relative;
+  top: 10px;
+  height: calc(100% - 65px); }
 
 .btn-primary-mg {
   color: #fff;
@@ -8096,7 +8098,7 @@ header {
 
 @media (min-width: 992px) {
   .content {
-    height: calc(100% - 90px) !important;
+    height: calc(100% - 85px) !important;
     overflow-y: auto; } }
 
 .footer {
@@ -8211,6 +8213,7 @@ h5 {
         font-weight: normal;
         color: #666; }
       #panel-filters .panel-body .filter-group .filter-item div.filter-element {
+        height: 32px;
         padding: 0px 5px; }
         #panel-filters .panel-body .filter-group .filter-item div.filter-element .btn-group-small {
           padding: 0px;
@@ -8221,7 +8224,12 @@ h5 {
             text-align: center; }
         #panel-filters .panel-body .filter-group .filter-item div.filter-element .form-group {
           width: 100%;
-          margin-bottom: 0px; }
+          height: calc(100% - 2px);
+          margin: 1px 0px; }
+          #panel-filters .panel-body .filter-group .filter-item div.filter-element .form-group .input-group.datetimepicker {
+            height: 100%; }
+            #panel-filters .panel-body .filter-group .filter-item div.filter-element .form-group .input-group.datetimepicker input.form-control {
+              height: 100%; }
         #panel-filters .panel-body .filter-group .filter-item div.filter-element .input-group-addon {
           cursor: pointer; }
         #panel-filters .panel-body .filter-group .filter-item div.filter-element div.slider {

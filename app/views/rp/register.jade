@@ -42,7 +42,7 @@ block content
       
     .panel-container.controls-section
         // hide when currentPanel = 0
-        #form-progress.progress 
+        #form-progress.progress(style={visibility: 'hidden'})
           #form-progress-bar.progress-bar.progress-bar-success(role='progressbar', aria-valuenow=progress, aria-valuemin='0', aria-valuemax='100', style={ width: progress+'%' })
             span.sr-only
         .progress-steps-container
@@ -54,11 +54,10 @@ block content
                     a.step-label(href='#', hhref='#panel-'+(i+1)) #{__(header_title)}
 
         .button-area
-            a#btn-start.btn.btn-primary-mg(href='#panel-1') #{__('mgrp-btn-start-registration')}
-            a#btn-previous.btn.btn-default(href='#') #{__('mgrp-btn-previous')}
-            a#btn-continue.btn.btn-default(href='#') #{__('mgrp-btn-continue')}
-            a#btn-submit.btn.btn-primary-mg #{__('mgrp-btn-submit')}
-    
+            a#btn-start.btn.btn-lg.btn-primary-mg(href='#panel-1', style={display: 'none'}) #{__('mgrp-btn-start-registration')}
+            a#btn-previous.btn.btn-lg.btn-default(href='#', style={display: 'none'}) #{__('mgrp-btn-previous')}
+            a#btn-continue.btn.btn-lg.btn-default(href='#', style={display: 'none'}) #{__('mgrp-btn-continue')}
+            a#btn-submit.btn.btn-lg.btn-primary-mg(, style={display: 'none'}) #{__('mgrp-btn-submit')}
 
   
 block custom-js

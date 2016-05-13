@@ -1543,13 +1543,13 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-lg-2, .col-xs-3, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-xs-4, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-md-8, .col-lg-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .col-md-10, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .col-lg-12, .nav-panel, .sizable {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-lg-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .col-xs-3, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-xs-4, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-xs-5, .col-sm-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-md-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-lg-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-xs-6, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-10, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .col-md-10, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer, .col-lg-12, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-10, .col-xs-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-11, .col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
   float: left; }
 
 .col-xs-1 {
@@ -1576,16 +1576,16 @@ pre {
 .col-xs-8 {
   width: 66.6666666667%; }
 
-.col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
+.col-xs-9 {
   width: 75%; }
 
-.col-xs-10 {
+.col-xs-10, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
   width: 83.3333333333%; }
 
 .col-xs-11 {
   width: 91.6666666667%; }
 
-.col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
+.col-xs-12, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -1706,17 +1706,17 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-sm-5, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-7, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-9, .col-sm-10, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .col-sm-11, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable {
+  .col-sm-1, .col-sm-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-sm-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-7, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-sm-9, .col-sm-10, .nav-panel#register .form-section .input-panel div#file-uploader, .nav-panel#register .form-section .input-panel-submitted div#file-uploader, .col-sm-11, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
     float: left; }
   .col-sm-1 {
     width: 8.3333333333%; }
-  .col-sm-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm {
+  .col-sm-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm {
     width: 16.6666666667%; }
   .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker {
     width: 25%; }
   .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical {
     width: 33.3333333333%; }
-  .col-sm-5 {
+  .col-sm-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter {
     width: 41.6666666667%; }
   .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
     width: 50%; }
@@ -1730,7 +1730,7 @@ pre {
     width: 83.3333333333%; }
   .col-sm-11 {
     width: 91.6666666667%; }
-  .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable {
+  .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
     width: 100%; }
   .col-sm-pull-0 {
     right: auto; }
@@ -1812,17 +1812,17 @@ pre {
     margin-left: 100%; } }
 
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-md-5, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable {
+  .col-md-1, .col-md-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container, .col-md-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
     float: left; }
   .col-md-1 {
     width: 8.3333333333%; }
-  .col-md-2, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm {
+  .col-md-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm {
     width: 16.6666666667%; }
   .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker {
     width: 25%; }
   .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
     width: 33.3333333333%; }
-  .col-md-5 {
+  .col-md-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter {
     width: 41.6666666667%; }
   .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
     width: 50%; }
@@ -1836,7 +1836,7 @@ pre {
     width: 83.3333333333%; }
   .col-md-11 {
     width: 91.6666666667%; }
-  .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable {
+  .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
     width: 100%; }
   .col-md-pull-0 {
     right: auto; }
@@ -1892,9 +1892,9 @@ pre {
     left: 100%; }
   .col-md-offset-0, .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
     margin-left: 0%; }
-  .col-md-offset-1, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
+  .col-md-offset-1 {
     margin-left: 8.3333333333%; }
-  .col-md-offset-2 {
+  .col-md-offset-2, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
     margin-left: 16.6666666667%; }
   .col-md-offset-3 {
     margin-left: 25%; }
@@ -1918,17 +1918,17 @@ pre {
     margin-left: 100%; } }
 
 @media (min-width: 1200px) {
-  .col-lg-1, .col-lg-2, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-lg-5, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-lg-11, .col-lg-12, .nav-panel, .sizable {
+  .col-lg-1, .col-lg-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-lg-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-lg-11, .col-lg-12, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
     float: left; }
   .col-lg-1 {
     width: 8.3333333333%; }
-  .col-lg-2 {
+  .col-lg-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper {
     width: 16.6666666667%; }
   .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker {
     width: 25%; }
   .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical {
     width: 33.3333333333%; }
-  .col-lg-5 {
+  .col-lg-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter {
     width: 41.6666666667%; }
   .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
     width: 50%; }
@@ -1942,7 +1942,7 @@ pre {
     width: 83.3333333333%; }
   .col-lg-11 {
     width: 91.6666666667%; }
-  .col-lg-12, .nav-panel, .sizable {
+  .col-lg-12, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
     width: 100%; }
   .col-lg-pull-0 {
     right: auto; }
@@ -3178,7 +3178,7 @@ fieldset[disabled] a.btn-file-output {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, .nav-panel#register .form-section .input-panel div#file-uploader .btn-group-lg > div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-group-lg > div.btn-file-upload, .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg > .btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg > .btn-file-output {
+.btn-lg, .btn-group-lg > .btn, .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg > .btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg > .btn-file-output, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
@@ -3480,7 +3480,7 @@ tbody.collapse.in {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .nav-panel#register .form-section .input-panel div#file-uploader .btn-group-lg.btn-group > div.btn-file-upload + .dropdown-toggle, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-group-lg.btn-group > div.btn-file-upload + .dropdown-toggle, .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg.btn-group > .btn-file-output + .dropdown-toggle, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg.btn-group > .btn-file-output + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg.btn-group > .btn-file-output + .dropdown-toggle, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg.btn-group > .btn-file-output + .dropdown-toggle, .nav-panel#register .form-section .input-panel div#file-uploader .btn-group > div.btn-file-upload + .dropdown-toggle, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-group > div.btn-file-upload + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3494,11 +3494,11 @@ tbody.collapse.in {
 .btn .caret, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel output#file-list .btn-file-output .caret, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-file-output .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, .nav-panel#register .form-section .input-panel div#file-uploader .btn-group-lg > div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-group-lg > div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg > .btn-file-output .caret, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg > .btn-file-output .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg > .btn-file-output .caret, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg > .btn-file-output .caret, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .nav-panel#register .form-section .input-panel div#file-uploader .btn-group-lg > div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel div#file-uploader .dropup .btn-group-lg > div.btn-file-upload .caret, .dropup .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-group-lg > div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .dropup .btn-group-lg > div.btn-file-upload .caret, .dropup .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg > .btn-file-output .caret, .nav-panel#register .form-section .input-panel output#file-list .dropup .btn-group-lg > .btn-file-output .caret, .dropup .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg > .btn-file-output .caret, .nav-panel#register .form-section .input-panel-submitted output#file-list .dropup .btn-group-lg > .btn-file-output .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .nav-panel#register .form-section .input-panel output#file-list .btn-group-lg > .btn-file-output .caret, .nav-panel#register .form-section .input-panel output#file-list .dropup .btn-group-lg > .btn-file-output .caret, .dropup .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-lg > .btn-file-output .caret, .nav-panel#register .form-section .input-panel-submitted output#file-list .dropup .btn-group-lg > .btn-file-output .caret, .dropup .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel div#file-uploader .dropup div.btn-file-upload .caret, .dropup .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload .caret, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .dropup div.btn-file-upload .caret {
   border-width: 0 5px 5px; }
 
 .btn-group-vertical > .btn, .nav-panel#register .form-section .input-panel div#file-uploader .btn-group-vertical > div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-group-vertical > div.btn-file-upload, .nav-panel#register .form-section .input-panel output#file-list .btn-group-vertical > .btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-group-vertical > .btn-file-output,
@@ -4554,20 +4554,20 @@ a.thumbnail:focus,
 a.thumbnail.active {
   border-color: #337ab7; }
 
-.alert {
+.alert, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px; }
-  .alert h4 {
+  .alert h4, .nav-panel#register .form-section .input-panel div.disclaimer h4, .nav-panel#register .form-section .input-panel-submitted div.disclaimer h4 {
     margin-top: 0;
     color: inherit; }
-  .alert .alert-link {
+  .alert .alert-link, .nav-panel#register .form-section .input-panel div.disclaimer .alert-link, .nav-panel#register .form-section .input-panel-submitted div.disclaimer .alert-link {
     font-weight: bold; }
-  .alert > p,
-  .alert > ul {
+  .alert > p, .nav-panel#register .form-section .input-panel div.disclaimer > p, .nav-panel#register .form-section .input-panel-submitted div.disclaimer > p,
+  .alert > ul, .nav-panel#register .form-section .input-panel div.disclaimer > ul, .nav-panel#register .form-section .input-panel-submitted div.disclaimer > ul {
     margin-bottom: 0; }
-  .alert > p + p {
+  .alert > p + p, .nav-panel#register .form-section .input-panel div.disclaimer > p + p, .nav-panel#register .form-section .input-panel-submitted div.disclaimer > p + p {
     margin-top: 5px; }
 
 .alert-dismissable,
@@ -4607,13 +4607,13 @@ a.thumbnail.active {
   .alert-warning .alert-link {
     color: #66512c; }
 
-.alert-danger {
+.alert-danger, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442; }
-  .alert-danger hr {
+  .alert-danger hr, .nav-panel#register .form-section .input-panel div.disclaimer hr, .nav-panel#register .form-section .input-panel-submitted div.disclaimer hr {
     border-top-color: #e4b9c0; }
-  .alert-danger .alert-link {
+  .alert-danger .alert-link, .nav-panel#register .form-section .input-panel div.disclaimer .alert-link, .nav-panel#register .form-section .input-panel-submitted div.disclaimer .alert-link {
     color: #843534; }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -8110,7 +8110,6 @@ header {
   display: block;
   top: 0px;
   height: 50px;
-  height: 50px;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -8166,7 +8165,7 @@ header {
         border-radius: 0px;
         padding: 15px 30px;
         font-size: 1.5em;
-        line-height: 1.8em;
+        line-height: 1.7em;
         text-transform: capitalize;
         background-color: transparent;
         color: #000; }
@@ -8287,26 +8286,29 @@ header {
     header ul.nav.menu {
       height: calc(70px - 1px); }
       header ul.nav.menu li > a {
-        padding: 15px 30px; }
+        padding: 15px 30px;
+        font-size: 1.7em;
+        line-height: 2em; }
       header ul.nav.menu a.flag {
         padding: 15px 20px !important; } }
 
 .content {
   display: block;
-  height: calc(100% - 65px);
-  margin-top: 10px; }
+  position: relative;
+  top: 10px;
+  height: calc(100% - 65px); }
 
-.btn-primary-mg, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload {
+.btn-primary-mg, .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label.toggle-on, .nav-panel#register .form-section .input-panel .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload {
   color: #fff;
   background-color: #4d9d2a;
   border: 1px solid #4a9a27; }
-  .btn-primary-mg:hover, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload:hover, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload:hover {
+  .btn-primary-mg:hover, .nav-panel#register .form-section .input-panel .toggle label.toggle-on:hover, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on:hover, .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload:hover, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload:hover {
     background-color: #459522;
     color: #eee; }
 
 @media (min-width: 992px) {
   .content {
-    height: calc(100% - 90px) !important;
+    height: calc(100% - 85px) !important;
     overflow-y: auto; } }
 
 .footer {
@@ -8351,15 +8353,38 @@ header {
       .nav-panel#register .form-section .input-panel h4, .nav-panel#register .form-section .input-panel-submitted h4, .nav-panel#register .form-section .input-panel h5, .nav-panel#register .form-section .input-panel-submitted h5 {
         font-weight: bold;
         -webkit-margin-before: 0px; }
+      .nav-panel#register .form-section .input-panel h4, .nav-panel#register .form-section .input-panel-submitted h4 {
+        font-size: 1.7em; }
       .nav-panel#register .form-section .input-panel h5, .nav-panel#register .form-section .input-panel-submitted h5 {
         font-weight: bold;
-        font-size: 1.1em; }
+        font-size: 1.5em; }
       .nav-panel#register .form-section .input-panel .row, .nav-panel#register .form-section .input-panel-submitted .row {
-        margin-top: 5px;
-        margin: 5px 0px 0px 0px; }
-      .nav-panel#register .form-section .input-panel .form-group label, .nav-panel#register .form-section .input-panel-submitted .form-group label {
-        padding-top: 8px;
-        padding-right: 5px; }
+        margin: 24px 0px 0px; }
+      .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group {
+        margin-bottom: 25px; }
+        .nav-panel#register .form-section .input-panel .form-group label, .nav-panel#register .form-section .input-panel-submitted .form-group label {
+          font-size: 1.5em;
+          padding-top: 8px;
+          padding-right: 5px; }
+      .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper {
+        padding-left: 0px;
+        padding-right: 0px; }
+        .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle {
+          float: left; }
+          .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label {
+            font-size: 1.0em; }
+            .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label.toggle-on {
+              text-align: left; }
+            .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label.toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label.toggle-off {
+              padding-left: 26px;
+              text-align: left; }
+      .nav-panel#register .form-section .input-panel .toggle label, .nav-panel#register .form-section .input-panel-submitted .toggle label {
+        font-size: 1.0em; }
+        .nav-panel#register .form-section .input-panel .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on {
+          text-align: left; }
+        .nav-panel#register .form-section .input-panel .toggle label.toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-off {
+          padding-left: 26px;
+          text-align: left; }
       .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker {
         padding-left: 0px;
         padding-right: 0px; }
@@ -8371,44 +8396,59 @@ header {
         overflow-y: auto;
         margin: 10px 0px;
         padding: 10px;
-        background-color: #efefef; }
+        background-color: #efefef;
+        font-size: 1.2em; }
         .nav-panel#register .form-section .input-panel div.terms-container p, .nav-panel#register .form-section .input-panel-submitted div.terms-container p {
-          text-align: justify; }
+          text-align: justify;
+          line-height: 1.2em;
+          font-size: 1em; }
+        .nav-panel#register .form-section .input-panel div.terms-container ul > li, .nav-panel#register .form-section .input-panel-submitted div.terms-container ul > li {
+          font-size: 1em;
+          line-height: 1.2em; }
+          .nav-panel#register .form-section .input-panel div.terms-container ul > li ~ li, .nav-panel#register .form-section .input-panel-submitted div.terms-container ul > li ~ li {
+            margin-top: 5px; }
+      .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
+        font-size: 1.2em; }
       .nav-panel#register .form-section .input-panel div.accept-terms-container, .nav-panel#register .form-section .input-panel-submitted div.accept-terms-container {
         float: left;
         margin: 10px 0px;
         padding: 5px; }
         .nav-panel#register .form-section .input-panel div.accept-terms-container #lblTermsAccepted, .nav-panel#register .form-section .input-panel-submitted div.accept-terms-container #lblTermsAccepted {
           margin: 10px;
-          font-weight: normal; }
+          font-size: 1.3em;
+          font-weight: bold; }
       .nav-panel#register .form-section .input-panel p, .nav-panel#register .form-section .input-panel-submitted p {
         text-align: center; }
         .nav-panel#register .form-section .input-panel p.explanation, .nav-panel#register .form-section .input-panel-submitted p.explanation, .nav-panel#register .form-section .input-panel p.form-answer, .nav-panel#register .form-section .input-panel-submitted p.form-answer {
           display: inline-block;
           text-align: left;
           padding: 5px 15px;
-          font-size: 1.1em; }
+          font-size: 1.3em; }
         .nav-panel#register .form-section .input-panel p.form-answer, .nav-panel#register .form-section .input-panel-submitted p.form-answer {
           display: inline-block;
           width: auto;
           margin: 0px;
-          padding: 0px 15px; }
+          padding: 0px 15px;
+          font-size: 18px;
+          font-weight: normal; }
           .nav-panel#register .form-section .input-panel p.form-answer.block, .nav-panel#register .form-section .input-panel-submitted p.form-answer.block {
             display: block; }
-      .nav-panel#register .form-section .input-panel label, .nav-panel#register .form-section .input-panel-submitted label {
-        font-size: 1.1em; }
-        .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
-          text-align: left;
-          margin-top: 5px;
-          padding-left: 0px;
-          padding-right: 0px; }
-          .nav-panel#register .form-section .input-panel label.question.secondary, .nav-panel#register .form-section .input-panel-submitted label.question.secondary {
-            font-weight: normal !important; }
-        .nav-panel#register .form-section .input-panel label.answer, .nav-panel#register .form-section .input-panel-submitted label.answer {
-          margin: 0px;
-          font-size: .95em; }
-          .nav-panel#register .form-section .input-panel label.answer.secondary, .nav-panel#register .form-section .input-panel-submitted label.answer.secondary {
-            font-weight: normal; }
+      .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
+        text-align: left;
+        margin-top: 8px;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        font-size: 1.5em;
+        line-height: 1.5em; }
+        .nav-panel#register .form-section .input-panel label.question.secondary, .nav-panel#register .form-section .input-panel-submitted label.question.secondary {
+          font-weight: normal !important; }
+      .nav-panel#register .form-section .input-panel label.answer, .nav-panel#register .form-section .input-panel-submitted label.answer {
+        margin: 0px;
+        font-size: 1.4em; }
+        .nav-panel#register .form-section .input-panel label.answer.secondary, .nav-panel#register .form-section .input-panel-submitted label.answer.secondary {
+          font-weight: normal; }
+      .nav-panel#register .form-section .input-panel .rd-priority label, .nav-panel#register .form-section .input-panel-submitted .rd-priority label {
+        padding: 14px 20px; }
       .nav-panel#register .form-section .input-panel i.fa-asterisk, .nav-panel#register .form-section .input-panel-submitted i.fa-asterisk {
         display: inline-block;
         margin-left: 3px;
@@ -8430,7 +8470,7 @@ header {
           margin-left: auto;
           margin-right: auto; }
         .nav-panel#register .form-section .input-panel div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload {
-          height: 34px;
+          height: 46px;
           position: relative;
           margin: 0px 20px 0px 0px;
           box-shadow: none;
@@ -8459,21 +8499,17 @@ header {
       .nav-panel#register .form-section .input-panel #mulitplefileuploader, .nav-panel#register .form-section .input-panel-submitted #mulitplefileuploader {
         width: 80%;
         margin: auto; }
-      .nav-panel#register .form-section .input-panel .toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle-on, .nav-panel#register .form-section .input-panel .toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle-off {
-        text-align: left; }
-      .nav-panel#register .form-section .input-panel .toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle-off {
-        padding-left: 19px !important; }
       .nav-panel#register .form-section .input-panel div.answer-container, .nav-panel#register .form-section .input-panel-submitted div.answer-container {
         min-height: auto;
         margin-bottom: 20px;
-        padding: 0px 10px;
+        padding: 10px;
         float: left; }
         .nav-panel#register .form-section .input-panel div.answer-container.sm, .nav-panel#register .form-section .input-panel-submitted div.answer-container.sm, .nav-panel#register .form-section .input-panel div.answer-container.lg, .nav-panel#register .form-section .input-panel-submitted div.answer-container.lg {
           height: auto; }
         .nav-panel#register .form-section .input-panel div.answer-container.no-marign-bottom, .nav-panel#register .form-section .input-panel-submitted div.answer-container.no-marign-bottom {
           margin-bottom: 0px; }
         .nav-panel#register .form-section .input-panel div.answer-container h5, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 {
-          font-size: 1.1em;
+          font-size: 1.5em;
           color: #ed1848;
           font-weight: bold; }
           .nav-panel#register .form-section .input-panel div.answer-container h5 i.edit-answer, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 i.edit-answer {
@@ -8485,14 +8521,17 @@ header {
               transform: scale(1.1); }
             .nav-panel#register .form-section .input-panel div.answer-container h5 i.edit-answer a, .nav-panel#register .form-section .input-panel-submitted div.answer-container h5 i.edit-answer a {
               text-decoration: none; }
+        .nav-panel#register .form-section .input-panel div.answer-container .row, .nav-panel#register .form-section .input-panel-submitted div.answer-container .row {
+          margin: 7px 0px; }
       .nav-panel#register .form-section .input-panel p.error, .nav-panel#register .form-section .input-panel-submitted p.error {
+        display: inline-block;
+        float: left;
         padding: 5px;
         border-radius: 5px;
-        display: inline-block;
-        float: left; }
+        font-size: 1.2em; }
   .nav-panel#register .controls-section {
     position: relative;
-    height: 120px;
+    height: 135px;
     margin-top: 10px;
     padding: 10px 0px;
     text-align: center; }
@@ -8524,17 +8563,65 @@ header {
 
 @media (min-width: 768px) {
   .form-section {
-    height: calc(100% - 150px) !important; }
-  div.progress-steps-container {
-    display: block !important; }
+    height: calc(100% - 140px) !important; }
+  div.terms-container {
+    height: 225px !important; }
   div#file-uploader {
-    width: 80%; } }
+    width: 80%; }
+  .toggle-wrapper .toggle {
+    float: right !important; } }
 
 @media (min-width: 992px) {
   div.answer-container.sm {
-    height: 230px !important; }
+    height: 260px !important; }
   div.answer-container.lg {
-    height: 245px !important; } }
+    height: 320px !important; }
+  div.answer-container .row {
+    margin: 7px 0px 0px  !important; } }
+
+@media (min-width: 1281px) {
+  .input-panel row, .nav-panel#register .form-section .input-panel-submitted row {
+    margin: 15px 0px; }
+  .input-panel h4, .nav-panel#register .form-section .input-panel-submitted h4 {
+    font-size: 1.5em; }
+  .input-panel h5, .nav-panel#register .form-section .input-panel-submitted h5 {
+    font-size: 1.2em; }
+  .input-panel .row, .nav-panel#register .form-section .input-panel-submitted .row {
+    margin: 15px 0px 0px !important; }
+  .input-panel .form-group label, .nav-panel#register .form-section .input-panel-submitted .form-group label, .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .input-panel p.explanation, .nav-panel#register .form-section .input-panel-submitted p.explanation, .nav-panel#register .form-section .input-panel p.form-answer, .nav-panel#register .form-section .input-panel-submitted p.form-answer {
+    font-size: 1.2em !important; }
+  .input-panel label.answer, .nav-panel#register .form-section .input-panel-submitted label.answer {
+    font-size: 1em !important; }
+  .input-panel .controls-section .btn, .nav-panel#register .form-section .input-panel-submitted .controls-section .btn, .nav-panel#register .form-section .input-panel .controls-section div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel div#file-uploader .controls-section div.btn-file-upload, .input-panel .controls-section .nav-panel#register .form-section .input-panel-submitted div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted .controls-section div#file-uploader div.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .controls-section div.btn-file-upload, .nav-panel#register .form-section .input-panel .controls-section output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel output#file-list .controls-section .btn-file-output, .input-panel .controls-section .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel-submitted .controls-section output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .controls-section .btn-file-output, .input-panel .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted .btn-file-upload {
+    font-size: 15px !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important; }
+  .input-panel .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted .btn-file-upload {
+    height: 37px !important; }
+  .input-panel .toggle, .nav-panel#register .form-section .input-panel-submitted .toggle {
+    min-width: 59px !important;
+    min-height: 34px !important;
+    border-radius: 4px; }
+    .input-panel .toggle label, .nav-panel#register .form-section .input-panel-submitted .toggle label {
+      font-size: 15px !important;
+      padding: 6px 12px; }
+      .input-panel .toggle label.toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-off {
+        padding-left: 19px !important; }
+    .input-panel .toggle span.toggle-handle, .nav-panel#register .form-section .input-panel-submitted .toggle span.toggle-handle {
+      width: 0 !important;
+      padding: 6px 12px;
+      border-radius: 4px; }
+  .input-panel .rd-priority label, .nav-panel#register .form-section .input-panel-submitted .rd-priority label {
+    padding: 8px 14px !important;
+    font-size: 15px !important; }
+  .input-panel div.progress-steps-container, .nav-panel#register .form-section .input-panel-submitted div.progress-steps-container {
+    display: block !important; }
+  .input-panel div.answer-container.sm, .nav-panel#register .form-section .input-panel-submitted div.answer-container.sm {
+    height: 200px !important; }
+  .input-panel div.answer-container.lg, .nav-panel#register .form-section .input-panel-submitted div.answer-container.lg {
+    height: 265px !important; }
+  .input-panel div.answer-container .row, .nav-panel#register .form-section .input-panel-submitted div.answer-container .row {
+    margin: 7px 0px 0px  !important; } }
 
 .nav-panel#faq {
   height: 100% !important;
@@ -8587,10 +8674,19 @@ body {
   width: 100%;
   height: auto;
   margin-bottom: 50px;
-  font-size: 1.1em; }
+  font-size: 1.3em;
+  overflow-y: hidden; }
+
+p {
+  font-size: 1em; }
+
+label {
+  font-size: 1.3em; }
 
 .container {
-  height: 100%; }
+  height: 100%;
+  overflow-y: hidden !important;
+  padding-bottom: 5px; }
 
 .bg-mg {
   background-image: url(/media/moregrasp-logo.jpg);
@@ -8599,7 +8695,8 @@ body {
   height: 100%; }
 
 .nav-panel {
-  height: calc(100% - 5px); }
+  height: 100%;
+  position: relative; }
   .nav-panel.fade, .nav-panel#register .form-section .input-panel .form-group span.nav-panel[aria-hidden='true'], .nav-panel#register .form-section .input-panel-submitted .form-group span.nav-panel[aria-hidden='true'] {
     display: none !important; }
 
@@ -8637,21 +8734,15 @@ div.bg-processing {
 .margin-l {
   margin: 50px; }
 
-.sizable {
+.sizable, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
   /*@extend .col-lg-offset-1, .col-lg-10, .col-md-offset-1, .col-md-10, .col-sm-offset-0, .col-sm-12;*/ }
 
-.alert {
+.alert, .nav-panel#register .form-section .input-panel div.disclaimer, .nav-panel#register .form-section .input-panel-submitted div.disclaimer {
   margin-bottom: 0px; }
 
 /******************************************************************************************/
 /* Responsive: Portrait tablets and up */
 @media screen and (max-width: 768px) {
-  body {
-    overflow-y: hidden; }
-  .container {
-    max-width: 750px;
-    overflow-y: hidden !important;
-    padding-bottom: 5px; }
   /* Remove the padding we set earlier */
   header,
   .footer {
@@ -8661,15 +8752,14 @@ div.bg-processing {
 @media (min-width: 768px) {
   body {
     height: calc(100% - 60px);
-    margin-bottom: 60px;
-    font-size: 1.1em; }
+    margin-bottom: 60px; }
+  .container {
+    width: calc(100% - 30px); }
   div.bg-processing {
     top: 70px; } }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   body {
-    font-size: 1.2em; } }
-
-@media (min-width: 992px) {
-  body {
-    font-size: 1.3em; } }
+    font-size: 1.2em; }
+  .container {
+    width: 1170px; } }

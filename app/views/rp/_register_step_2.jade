@@ -5,7 +5,9 @@
 mixin toggle(name, i18n)
     .row
         label.question(for=name) #{__(i18n)}
-        input/.cbx-toggle.main(name=name, type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+        .toggle-wrapper
+            input/.cbx-toggle.main(name=name, type="checkbox", data-toggle="toggle",  data-size="large", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+
 
 
 // Panel

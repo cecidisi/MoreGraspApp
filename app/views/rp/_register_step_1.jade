@@ -11,7 +11,7 @@ mixin input_field(field, i18nAttr, isMandatory, isSmall)
         label(for=field) #{__(i18nAttr)}
             if(isMandatory)
                 i.fa.fa-asterisk
-        input(class=form_control_class, name=field, type='text')
+        input.input-lg(class=form_control_class, name=field, type='text')
         //span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden="true")
         //span.sr-only error
 
@@ -39,7 +39,7 @@ mixin country_option(name)
         .form-group
             label.default(for='selCountry') #{__('mgrp-lbl-country')}
                 i.fa.fa-asterisk
-            select#selCountry.form-control.mandatory(name='country')
+            select#selCountry.form-control.input-lg.mandatory(name='country')
                 each country in countries
                     +country_option(country)
 

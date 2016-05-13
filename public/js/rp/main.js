@@ -192,7 +192,7 @@
             panelName = $panel.attr('name');
 
         // UNCOMMENT FOR EASY FLOW
-        //return true;
+//        return true;
 
         if(panelName !== 'personal_data' && panelName !== 'needs')
             return true;
@@ -292,7 +292,7 @@
             }
             else {
                 $btnStart.hide();
-                $btnPrevious.hide();
+                $btnPrevious.attr('href', '#panel-' + (currentPanel-1)).show();
                 $btnContinue.hide();
                 $btnSubmit.show();
                 $progress.css('visibility', 'visible');
@@ -345,7 +345,7 @@
      * Check Terms & conditions accepted
      ************************************************/
     // Uncomment for normal workflow
-    $('#toggle-terms-and-conditions').change(function() {
+    $('input.toggle-terms-and-conditions').change(function() {
         if($(this).prop('checked'))
             $('#btn-start').removeClass('disabled');
         else
@@ -428,7 +428,7 @@
             opt = $elem.parent().parent().attr('name'),
             optShow = $elem.parent().parent().attr('opt-show'),
             $row = $elem.parent().parent().parent();
-        needsClicked[val] = { opt: opt, opt_show: optShow };
+        needsClicked[val] = { opt: mapNeedStr[opt], opt_show: (parseInt(val)+1)+'. '+optShow };
 
         $row.siblings().each(function(i, siblingRow){
             var $sibling = $(siblingRow),
@@ -536,6 +536,7 @@
 //        if(currentPanel)
 //            moveToFormPanel(currentPanel);
 //        window.location.hash = '#panel-'+currentPanel;
+
 
         // Init session
         sessionStorage[sessionKey] = JSON.stringify({});

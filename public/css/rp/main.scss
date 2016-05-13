@@ -26,13 +26,26 @@ html {
 body {
     width: 100%;
     height: auto;
-//    margin-bottom: 70px;
     margin-bottom: $header-height-sm;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    overflow-y: hidden;
+}
+
+p {
+//    font-size: 1.1em;
+    font-size: 1em;
+}
+
+label {
+    font-size: 1.3em;
 }
 
 .container {
     height: 100%;
+//    width: calc(100% - 20px);
+    overflow-y: hidden !important;
+    padding-bottom: 5px;
+//    padding-top: 15px;
 }
 
 .bg-mg {
@@ -44,7 +57,10 @@ body {
 
 .nav-panel {
     @extend .col-sm-12, .col-md-12, .col-lg-12;
-    height: calc(100% - 5px);
+    height: 100%;
+//    margin-top: 15px;
+    position: relative;
+//    top: 15px;
     &.fade { display: none !important; }
 }
 
@@ -121,19 +137,19 @@ $screen-xl-min: 1530px;
 /* Responsive: Portrait tablets and up */
 @media screen and (max-width: $screen-sm-min) {
 
-    body {
-        overflow-y: hidden;
-    }
-    .container {
-        max-width: 750px;
-        overflow-y: hidden !important;
-        padding-bottom: 5px;
+//    body {
+//        overflow-y: hidden;
+//    }
+//    .container {
+//        max-width: 760px;
+//        overflow-y: hidden !important;
+//        padding-bottom: 5px;
 
 //        .form-section {
 //        //.panel-container {
 //            height: 335px !important;
 //        }
-    }
+ //   }
 
     /* Remove the padding we set earlier */
     header,
@@ -149,19 +165,27 @@ $screen-xl-min: 1530px;
     body {
         height: calc(100% - 60px);
         margin-bottom: 60px;
-        font-size: 1.1em;
+//        font-size: 1.1em;
+    }
+
+    .container {
+        width: calc(100% - 30px);
     }
 
     div.bg-processing {
         top: $header-height-lg;
     }
-
 }
 
+
 @media (min-width: $screen-md-min) {
+//    body { font-size: 1.2em; }
+}
+
+
+@media (min-width: $screen-lg-min) {
     body { font-size: 1.2em; }
-}
-
-@media (min-width: $screen-md-min) {
-    body { font-size: 1.3em; }
+    .container {
+        width: 1170px;
+    }
 }

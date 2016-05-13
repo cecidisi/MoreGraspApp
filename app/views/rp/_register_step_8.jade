@@ -18,8 +18,9 @@ mixin get_answer(i18n, field, isSecondary)
 
 mixin get_answer_no_dots(i18n, field)
     .row
-        label.answer #{__(i18n)}
-        p.form-answer(field=field)
+        label.answer
+            |   #{__(i18n)}
+            p.form-answer(field=field)
 
 
 // Panel
@@ -52,7 +53,7 @@ mixin get_answer_no_dots(i18n, field)
     .answer-container.lg.mobile-sm
         +section_title('mgrp-header-injury', '#panel-3')
         +get_answer('mgrp-lbl-date-of-injury', 'date_injury')
-        +get_answer('mgrp-lbl-caused-by-accident', 'accidental_injury')
+        +get_answer_no_dots('mgrp-lbl-caused-by-accident', 'accidental_injury')
     // Current Abilities
     .answer-container.sm.mobile.sm
         +section_title('mgrp-header-abilities', '#panel-4')

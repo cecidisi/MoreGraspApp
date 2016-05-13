@@ -6,12 +6,13 @@
     br
     // 1st row
     .row
-        label.question(for="date_injury") #{__("mgrp-lbl-date-of-injury")}
+        label.question.shorter(for="date_injury") #{__("mgrp-lbl-date-of-injury")}
         #dtpDateInjury.input-group.date.datetimepicker
-            input/.form-control(name='date_injury', type='text')
+            input/.form-control.input-lg(name='date_injury', type='text')
             span.input-group-addon:  span.glyphicon.glyphicon-calendar
 
     // 2nd row
     .row
         label.question(for="accidental_injury") #{__("mgrp-lbl-caused-by-accident")}
-        input/.cbx-toggle.main(name='accidental_injury', type="checkbox", data-toggle="toggle", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")
+        .toggle-wrapper
+            input/.cbx-toggle.main(name='accidental_injury', type="checkbox", data-toggle="toggle",  data-size="large", data-on="#{__('mgrp-toggle-on')}", data-off="#{__('mgrp-toggle-off')}", data-onstyle="success")

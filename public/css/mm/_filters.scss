@@ -78,6 +78,7 @@
 
                 div.filter-element {
                     @extend .col-xs-12, .col-sm-5, .col-md-5, .col-lg-5;
+                    height: 32px;
                     padding: 0px 5px;
                     //                padding: 1px 2px;
 
@@ -96,7 +97,16 @@
 
                     .form-group {
                         width: 100%;
-                        margin-bottom: 0px;
+                        height: calc(100% - 2px);
+                        margin: 1px 0px;
+
+                        .input-group.datetimepicker {
+                            height: 100%;
+
+                            input.form-control {
+                                height: 100%;
+                            }
+                        }
                     }
 
                     .input-group-addon {
