@@ -192,7 +192,7 @@
             panelName = $panel.attr('name');
 
         // UNCOMMENT FOR EASY FLOW
-//        return true;
+        //return true;
 
         if(panelName !== 'personal_data' && panelName !== 'needs')
             return true;
@@ -367,7 +367,7 @@
             var file = files[i];
             if(!filesToUpload[file.name] && /^video\/\w+/.test(file.type)) {
                 filesToUpload[file.name] = file;
-                var $li = $('<li/>', { class: 'video-item', name: file.name, html: '<strong>'+file.name+'</strong> ('+(file.type || 'n/a')+') - '+bytesToSize(file.size) })                 .appendTo($fileList);
+                var $li = $('<li/>', { class: 'video-item', name: file.name, html: '<strong>'+file.name+'</strong> ('+(file.type || 'n/a')+') - '+bytesToSize(file.size) }).appendTo($fileList);
                 
                 $('<button/>', { class: 'btn-file-output red', html: 'X' })
                     .appendTo($li).click(function(evt){
@@ -376,6 +376,8 @@
                         delete filesToUpload[fileName];
                         $(this).parent().remove();
                     });
+            } else {
+                var $li = $('<li/>', { class: 'video-item', name: file.name, html: '<strong>'+file.name+'</strong> wrong file type ('+(file.type || 'n/a')+') - ' }).appendTo($fileList);
             }
         }
         $('#file-input').val('');
@@ -520,6 +522,46 @@
     });
     
 
+    var handleScreenSize = function(){
+        console.log(window.screen.availWidth);
+
+        if(window.screen.availWidth <= 1024) {
+            // input fields
+            $('.form-control').addClass('input-lg');
+            // toggles
+            $('.toggle.btn').addClass('btn-lg');
+            $('.toggle-on.btn').addClass('btn-lg');
+            $('.toggle-off.btn').addClass('btn-lg');
+            $('.toggle-handle.btn').addClass('btn-lg');
+            // buttons
+            $('.btn-move').addClass('btn-lg');
+            $('.btn-file-upload').addClass('btn-lg');
+            // radio buttons
+            $('.rd-priority').addClass('btn-group-lg');
+            $('.rd-priority label').addClass('btn-lg');
+        }
+        else{
+            // input fields
+            $('.form-control').removeClass('input-lg');
+            // toggles
+            $('.toggle.btn').removeClass('btn-lg');
+            $('.toggle-on.btn').removeClass('btn-lg');
+            $('.toggle-off.btn').removeClass('btn-lg');
+            $('.toggle-handle.btn').removeClass('btn-lg');
+            // buttons
+            $('.btn-move').removeClass('btn-lg');
+            $('.btn-file-upload').removeClass('btn-lg');
+            // radio buttons
+            $('.rd-priority').removeClass('btn-group-lg');
+            $('.rd-priority label').removeClass('btn-lg');
+        }
+    }
+
+    window.addEventListener('resize', function(evt){
+        handleScreenSize();
+    });
+
+
     /************************************************
      * Entry Point
      ************************************************/
@@ -543,6 +585,7 @@
         sessionStorage[curPanelKey] = 0;
         moveToFormPanel(0);
         window.location.hash = '#panel-0';
+        handleScreenSize();
     });
 
 })();

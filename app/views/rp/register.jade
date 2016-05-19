@@ -9,14 +9,17 @@ mixin flag(loc)
 
 
 block css
-  link(rel='stylesheet', href='/css/rp-style.css')
-  // bower:css
-  link(rel='stylesheet', href='/components/bootstrap-toggle/css/bootstrap-toggle.min.css')
-  link(rel='stylesheet', href='/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
-  link(rel='stylesheet', href='/components/jquery-ui/themes/base/jquery-ui.min.css')
-  link(rel='stylesheet', href='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')
-  // endbower
-
+    //-<!-- build:css (./public) /css/rp-style.min.css -->
+    link(rel='stylesheet', href='/css/rp-style.css')
+    //-<!-- endbuild -->
+    //-<!-- build:css (./public) /css/vendor.min.css -->
+    // bower:css
+    link(rel='stylesheet', href='/components/bootstrap-toggle/css/bootstrap-toggle.min.css')
+    link(rel='stylesheet', href='/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
+    link(rel='stylesheet', href='/components/jquery-ui/themes/base/jquery-ui.min.css')
+    link(rel='stylesheet', href='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')
+    // endbower
+    //-<!-- endbuild -->
 
 block tab-register
     li.active:  a(href='#') #{__('mgrp-nav-register')}
@@ -54,14 +57,16 @@ block content
                     a.step-label(href='#', hhref='#panel-'+(i+1)) #{__(header_title)}
 
         .button-area
-            a#btn-start.btn.btn-lg.btn-primary-mg(href='#panel-1', style={display: 'none'}) #{__('mgrp-btn-start-registration')}
-            a#btn-previous.btn.btn-lg.btn-default(href='#', style={display: 'none'}) #{__('mgrp-btn-previous')}
-            a#btn-continue.btn.btn-lg.btn-default(href='#', style={display: 'none'}) #{__('mgrp-btn-continue')}
-            a#btn-submit.btn.btn-lg.btn-primary-mg(, style={display: 'none'}) #{__('mgrp-btn-submit')}
+            a#btn-start.btn.btn-move.btn-lg.btn-primary-mg(href='#panel-1', style={display: 'none'}) #{__('mgrp-btn-start-registration')}
+            a#btn-previous.btn.btn-move.btn-lg.btn-default(href='#', style={display: 'none'}) #{__('mgrp-btn-previous')}
+            a#btn-continue.btn.btn-move.btn-lg.btn-default(href='#', style={display: 'none'}) #{__('mgrp-btn-continue')}
+            a#btn-submit.btn.btn-move.btn-lg.btn-primary-mg(, style={display: 'none'}) #{__('mgrp-btn-submit')}
 
   
 block custom-js
+    //-<!-- build:js (./public) /js/rp-register.min.js -->
     script(src='/js/helper.js')
     script(src='/js/field-validation.js')
     script(src='/js/i18n-handler.js')
     script(src='/js/rp/main.js')
+    //-<!-- endbuild -->

@@ -41,7 +41,8 @@ module.exports = function (grunt) {
         files: [
           'app.js',
           'app/**/*.js',
-          'config/*.js'
+          'config/*.js',
+          'public/js/*.js'
         ],
         tasks: ['develop', 'delayed-livereload']
       },
@@ -106,7 +107,8 @@ module.exports = function (grunt) {
                   src: [
                       '.tmp',
                       '<%= paths.dist %>/*',
-                      '!<%= paths.dist %>/.git*'
+                      '!<%= paths.dist %>/.git*',
+                      '<%= paths.app %>/views_dist',
                   ]
               }]
           }
@@ -116,31 +118,121 @@ module.exports = function (grunt) {
       // additional tasks can operate on them
       jadeUsemin: {
           options: {
-              dest: '<%= paths.dist %>'
+              tasks: {
+                  js: ['concat', 'uglify'],
+                  css: ['concat', 'autoprefixer', 'cssmin']
+              },//dirTasks: ['filerev']
+              targetPrefix: '<%= paths.dist %>'
           },
           dist: {
               files: [{
                   expand: true,
                   cwd: '<%= paths.app %>/views/mm',
                   src: ['*.jade'],
-                  dest: '<%= paths.dist %>/views/mm',
+                  dest: '<%= paths.app %>/views_dist/mm',
                   ext: '.jade'
               },
               {
                   expand: true,
                   cwd: '<%= paths.app %>/views/rp',
                   src: ['*.jade'],
-                  dest: '<%= paths.dist %>/views/rp',
+                  dest: '<%= paths.app %>/views_dist/rp',
                   ext: '.jade'
-              }
-              ]//              files: {
-//                  '<%= paths.dist %>/views/mm/layout.jade': '<%= paths.app %>/views/mm/layout.jade',
-//                  '<%= paths.dist %>/views/mm/index.jade': '<%= paths.app %>/views/mm/index.jade',
-//                  '<%= paths.dist %>/views/mm/registrations.jade': '<%= paths.app %>/views/mm/registrations.jade'
-//              }
+              },{
+                  src: '<%= paths.app %>/views/error.jade',
+                  dest: '<%= paths.app %>/views_dist/error.jade'
+              }]
           }
-
-          //html: ['<%= config.dist %>/{,*/}*.html']
+      },
+      copy: {
+        dist: {
+          files:[{
+            expand: true,
+            dot: true,
+            cwd: '.',
+            flatten: true,
+            src: 'public/fonts/{,*/}*.*',
+            dest: '<%= paths.dist %>/fonts/'
+          }, {
+            expand: true,
+            dot: true,
+            cwd: 'public/',
+            dest: '<%= paths.dist %>',
+            src: [
+              '*.ico',
+              'media/{,*/}*.{png,jpg,gif}'
+            ]
+          },{
+            expand: true,
+            dot: true,
+            cwd: '.',
+            flatten: true,
+            src: 'public/i18n/{,*/}*.{js,json}',
+            dest: '<%= paths.dist %>/i18n/'
+          }]
+        }
+      },
+      'json-minify': {
+        dist: {
+          files: '<%= paths.dist %>/i18n/*.json'
+        }
+      },
+      replace: {
+        dist: {
+          src: ['<%= paths.dist %>/css/{,*/}*.css'],
+            overwrite: true,                 // overwrite matched source files
+            replacements: [{
+              from: '../fonts/bootstrap/',
+              to: '../fonts/'
+            }]
+          }
+      },
+      rev: {
+        dist: {
+          files: {
+            src: [
+              '<%= paths.dist %>/js/{,*/}*.js',
+              '<%= paths.dist %>/css/{,*/}*.css',
+              '<%= paths.dist %>/media/{,*/}*.*',
+              '<%= paths.dist %>/fonts/{,*/}*.*',
+              '<%= paths.dist %>/*.{ico,png}'
+            ]
+          }
+        }
+      },
+      useminPrepare: {
+        options: {
+          dest: '<%= paths.dist %>'
+        },
+        html: '<%= .app %>/index.html'
+        //html: ['<%= config.dist %>/{,*/}*.html']
+      },
+      usemin: {
+        css: ['<%= paths.dist %>/css/{,*/}*.css'],
+        jade: ['<%= paths.app %>/views_dist/rp/{,*/}*.jade', '<%= paths.app %>/views_dist/mm/{,*/}*.jade'],
+        options: {
+          assetsDirs: [
+            '<%= paths.dist %>',
+            '<%= paths.dist %>/fonts'
+            //'<%= paths.dist %>/media',
+            //'<%= paths.dist %>/css',
+            //'<%= paths.dist %>/js'
+          ],
+          patterns: {
+            jade: require('usemin-patterns').jade
+          }
+        }
+      },
+      mkdir: {
+        public: {
+          create: ['./public/uploads']
+        },
+        dist: {
+          options: {
+            //mode: 0755,
+            create: ['<%= paths.dist %>/uploads']
+          }
+        }
       }
 
   });
@@ -166,6 +258,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'wiredep',
     'sass',
+    'mkdir:public',
     'develop',
     'watch'
   ]);
@@ -173,7 +266,14 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
       'clean:dist',
       'wiredep',
-      'jadeUsemin'
+      'sass',
+      'jadeUsemin',
+      'copy:dist',
+      'json-minify',
+      'replace:dist',
+      'rev',
+      'usemin',
+      'mkdir:dist'
   ]);
 
 

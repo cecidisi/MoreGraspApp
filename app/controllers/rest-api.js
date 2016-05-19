@@ -8,6 +8,8 @@ var express = require('express'),
     Candidate = mongoose.model('Candidate'),
     User = mongoose.model('User');
 
+var env = process.env.NODE_ENV || 'development',
+    uploadsFolder = env === 'development' ? './public/uploads/' : './dist/uploads/';
 
 module.exports = function (app) {
 
@@ -25,7 +27,8 @@ module.exports = function (app) {
 
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
-            cb(null, './public/uploads/');
+            //cb(null, './public/uploads/');
+            cb(null, uploadsFolder);
         },
         filename: function (req, file, cb) {
             cb(null, req.body.filename || file.originalname);

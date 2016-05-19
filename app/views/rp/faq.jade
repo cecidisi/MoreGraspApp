@@ -57,19 +57,17 @@ block content
     
     
 block custom-js
+    //-<!-- build:js (./public) /js/rp-faq.min.js -->
     script(src='/js/i18n-handler.js')
     script(src='/js/scrollto.js')
-
+    //-<!-- endbuild -->
     script.
         (function($){
             $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], locale: $.cookie('lang') });
 
             var navigateTo = function(hash) {
                 var hashPattern = /(#q)\d/;
-                //console.log(hash);
                 if(hashPattern.test(hash) || hash === '#questions'){
-                    //console.log('Entra --> ' + '[name="' + hash.replace('#', '') + '"]');
-                    //console.log($('[name="' + hash.replace('#', '') + '"]'));
                     $('#faq').scrollTo('[name="' + hash.replace('#', '') + '"]');
                 }
             };

@@ -19,7 +19,12 @@ module.exports = function(app, config) {
     app.locals.ENV = env;
     app.locals.ENV_DEVELOPMENT = env == 'development';
 
-    app.set('views', config.root + '/app/views');
+    var viewFolder = env === 'development' ? '/views' : '/views_dist',
+        publicFolder = env === 'development' ? './public' : './dist';
+
+
+    //app.set('views', config.root + '/app/views');
+    app.set('views', config.root + '/app'+ viewFolder);
     app.set('view engine', 'jade');
 
     // app.use(favicon(config.root + '/public/img/favicon.ico'));
@@ -38,7 +43,8 @@ module.exports = function(app, config) {
     i18n.expressBind(app, {
         locales: ['en', 'de'],
         //defaultLocale: 'en',
-        directory: './public/i18n',
+//        directory: './public/i18n',
+        directory: publicFolder+'/i18n',
         cookieName: 'lang'
     });
 
@@ -89,8 +95,12 @@ module.exports = function(app, config) {
   app.use(passport.session());
   // END Passport
 
+  if(env ==='development') {
+    app.use(express.static(config.root + '/public'));
+  } else {
+    app.use(express.static(config.root + '/dist'));
+  }
 
-  app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');

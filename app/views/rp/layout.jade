@@ -5,7 +5,9 @@ html(lang=locale)
     meta(name='viewport', content='width=device-width')
     title= title
     block css
+      //-<!-- build:css (./public) /css/rp-style.min.css -->
       link(rel='stylesheet', href='/css/rp-style.css')
+      //-<!-- endbuild -->
       
     block livereload
       if ENV_DEVELOPMENT
@@ -44,6 +46,7 @@ html(lang=locale)
       .container:  p © MoreGrasp 2016
       
     block js
+      //-<!-- build:js (./public) /js/vendor.min.js -->
       // bower:js
       script(src='/components/jquery/dist/jquery.js')
       script(src='/components/bootstrap-sass/assets/javascripts/bootstrap.js')
@@ -59,7 +62,10 @@ html(lang=locale)
       script(src='/components/lodash/lodash.js')
       script(src='/components/jquery.cookie/jquery.cookie.js')
       // endbower
+      //-<!-- endbuild -->
 
+    //-<!-- build:js (./public) /js/lang-cookie.min.js -->
     script(src='/js/rp/lang-cookie.js')
+    //-<!-- endbuild -->
 
     block custom-js

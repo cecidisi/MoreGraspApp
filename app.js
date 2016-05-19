@@ -21,7 +21,7 @@ var   User = mongoose.model('User');
 // Reset and hash admin passwords if new
 User.find(function (err, users) {
     if (err) throw err;
-    var txt = '', count = 0;
+    var env = process.env.NODE_ENV || 'development', txt = '', count = 0;
     users.forEach(function(user, i){
         if(user.login.password === 'default') {
             var pswd = generatePassword(15, false);
@@ -33,7 +33,7 @@ User.find(function (err, users) {
                     txt += ('USERNAME = ' + user.login.username + '\n PASSWORD = ' + pswd + '\n');
                     count++;
                     if(count === users.length && txt !== '')
-                        fileSave('.users.txt').write(txt, 'utf8').end().error(function(){ console.log('Error saving users file'); });
+                        fileSave('.users-'+env+'.txt').write(txt, 'utf8').end().error(function(){ console.log('Error saving users file'); });
                 });
             });
         }
