@@ -62,25 +62,10 @@
                 @extend .col-xs-12, .col-sm-2, .col-md-2, .col-lg-2;
                 padding-left: 0px;
                 padding-right: 0px;
-
-                .toggle {
-                    float: left;
-
-                    label {
-                        font-size: 1.0em;
-                        &.toggle-on {
-                            @extend .btn-primary-mg;
-                            text-align: left;
-                        }
-                        &.toggle-off {
-                            padding-left: 26px;
-                            text-align: left;
-                        }
-                    }
-                }
             }
 
-            .toggle {
+             .toggle {
+                float: left;
 
                 label {
                     font-size: 1.0em;
@@ -91,6 +76,9 @@
                     &.toggle-off {
                         padding-left: 26px;
                         text-align: left;
+                        &.btn-lg {
+                            padding-left: 30px !important;
+                        }
                     }
                 }
             }
@@ -145,8 +133,10 @@
 
                 #lblTermsAccepted {
                     margin: 10px;
-                    font-size: 1.3em;
+                    margin-right: 20px;
+                    font-size: 1.2em;
                     font-weight: bold;
+                    float: left;
                 }
             }
 
@@ -506,6 +496,10 @@ $desktop: "(min-width: 1025px)";
 
         .form-group label, label.question, p.explanation {
             font-size: 1.2em !important;
+        }
+
+        .toggle-off {
+            padding-left: 21px !important;
         }
 
         label.answer {

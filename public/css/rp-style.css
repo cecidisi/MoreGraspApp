@@ -8346,7 +8346,7 @@ header {
   top: 10px;
   height: calc(100% - 65px); }
 
-.btn-primary-mg, .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label.toggle-on, .nav-panel#register .form-section .input-panel .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on, .nav-panel#register .form-section .input-panel div#file-uploader .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-file-upload {
+.btn-primary-mg, .nav-panel#register .form-section .input-panel .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on, .nav-panel#register .form-section .input-panel div#file-uploader .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-file-upload {
   color: #fff;
   background-color: #4d9d2a;
   border: 1px solid #4a9a27; }
@@ -8417,22 +8417,17 @@ header {
       .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper {
         padding-left: 0px;
         padding-right: 0px; }
-        .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle {
-          float: left; }
-          .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label {
-            font-size: 1.0em; }
-            .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label.toggle-on {
-              text-align: left; }
-            .nav-panel#register .form-section .input-panel .toggle-wrapper .toggle label.toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper .toggle label.toggle-off {
-              padding-left: 26px;
-              text-align: left; }
-      .nav-panel#register .form-section .input-panel .toggle label, .nav-panel#register .form-section .input-panel-submitted .toggle label {
-        font-size: 1.0em; }
-        .nav-panel#register .form-section .input-panel .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on {
-          text-align: left; }
-        .nav-panel#register .form-section .input-panel .toggle label.toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-off {
-          padding-left: 26px;
-          text-align: left; }
+      .nav-panel#register .form-section .input-panel .toggle, .nav-panel#register .form-section .input-panel-submitted .toggle {
+        float: left; }
+        .nav-panel#register .form-section .input-panel .toggle label, .nav-panel#register .form-section .input-panel-submitted .toggle label {
+          font-size: 1.0em; }
+          .nav-panel#register .form-section .input-panel .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on {
+            text-align: left; }
+          .nav-panel#register .form-section .input-panel .toggle label.toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-off {
+            padding-left: 26px;
+            text-align: left; }
+            .nav-panel#register .form-section .input-panel .toggle label.toggle-off.btn-lg, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-off.btn-lg, .nav-panel#register .form-section .input-panel .toggle .btn-group-lg > label.toggle-off.btn, .nav-panel#register .form-section .input-panel-submitted .toggle .btn-group-lg > label.toggle-off.btn, .nav-panel#register .form-section .input-panel .toggle div#file-uploader .btn-group-lg > label.toggle-off.btn-file-upload, .nav-panel#register .form-section .input-panel div#file-uploader .toggle .btn-group-lg > label.toggle-off.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted .toggle div#file-uploader .btn-group-lg > label.toggle-off.btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .toggle .btn-group-lg > label.toggle-off.btn-file-upload, .nav-panel#register .form-section .input-panel .toggle output#file-list .btn-group-lg > label.toggle-off.btn-file-output, .nav-panel#register .form-section .input-panel output#file-list .toggle .btn-group-lg > label.toggle-off.btn-file-output, .nav-panel#register .form-section .input-panel-submitted .toggle output#file-list .btn-group-lg > label.toggle-off.btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .toggle .btn-group-lg > label.toggle-off.btn-file-output {
+              padding-left: 30px !important; }
       .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker {
         padding-left: 0px;
         padding-right: 0px; }
@@ -8463,8 +8458,10 @@ header {
         padding: 5px; }
         .nav-panel#register .form-section .input-panel div.accept-terms-container #lblTermsAccepted, .nav-panel#register .form-section .input-panel-submitted div.accept-terms-container #lblTermsAccepted {
           margin: 10px;
-          font-size: 1.3em;
-          font-weight: bold; }
+          margin-right: 20px;
+          font-size: 1.2em;
+          font-weight: bold;
+          float: left; }
       .nav-panel#register .form-section .input-panel p, .nav-panel#register .form-section .input-panel-submitted p {
         text-align: center; }
         .nav-panel#register .form-section .input-panel p.explanation, .nav-panel#register .form-section .input-panel-submitted p.explanation, .nav-panel#register .form-section .input-panel p.form-answer, .nav-panel#register .form-section .input-panel-submitted p.form-answer {
@@ -8644,6 +8641,8 @@ header {
     margin: 15px 0px 0px !important; }
   .input-panel .form-group label, .nav-panel#register .form-section .input-panel-submitted .form-group label, .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .input-panel p.explanation, .nav-panel#register .form-section .input-panel-submitted p.explanation, .nav-panel#register .form-section .input-panel p.form-answer, .nav-panel#register .form-section .input-panel-submitted p.form-answer {
     font-size: 1.2em !important; }
+  .input-panel .toggle-off, .nav-panel#register .form-section .input-panel-submitted .toggle-off {
+    padding-left: 21px !important; }
   .input-panel label.answer, .nav-panel#register .form-section .input-panel-submitted label.answer {
     font-size: 1em !important; }
   .input-panel .controls-section .btn, .nav-panel#register .form-section .input-panel-submitted .controls-section .btn, .nav-panel#register .form-section .input-panel .controls-section div#file-uploader .btn-file-upload, .nav-panel#register .form-section .input-panel div#file-uploader .controls-section .btn-file-upload, .input-panel .controls-section .nav-panel#register .form-section .input-panel-submitted div#file-uploader .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted .controls-section div#file-uploader .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted div#file-uploader .controls-section .btn-file-upload, .nav-panel#register .form-section .input-panel .controls-section output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel output#file-list .controls-section .btn-file-output, .input-panel .controls-section .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel-submitted .controls-section output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .controls-section .btn-file-output, .input-panel .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted .btn-file-upload {
