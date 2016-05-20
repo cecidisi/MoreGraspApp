@@ -225,9 +225,9 @@ header {
 
         li {
             a {
-                font-size: 0.9em;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                font-size: 1em !important;
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
                 text-transform: lowercase;
             }
         }
@@ -283,13 +283,13 @@ $screen-xl-min: 1530px;
             li {
                 & > a {
                     padding: 15px 30px;
-                    font-size: 1.7em;
-                    line-height: 2em;
+                    font-size: 22px;
+                    line-height: 39px;
                 }
             }
 
             a.flag {
-                padding: 15px 20px !important;
+                padding: 14px 20px !important;
             }
         }
     }

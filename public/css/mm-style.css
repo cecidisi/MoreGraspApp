@@ -8053,9 +8053,9 @@ header {
     float: right;
     z-index: 9999; }
     header ul.nav.navbar-second-level li a {
-      font-size: 0.9em;
-      padding-top: 5px;
-      padding-bottom: 5px;
+      font-size: 1em !important;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
       text-transform: lowercase; }
 
 @media (min-width: 768px) {
@@ -8077,10 +8077,10 @@ header {
       height: calc(70px - 1px); }
       header ul.nav.menu li > a {
         padding: 15px 30px;
-        font-size: 1.7em;
-        line-height: 2em; }
+        font-size: 22px;
+        line-height: 39px; }
       header ul.nav.menu a.flag {
-        padding: 15px 20px !important; } }
+        padding: 14px 20px !important; } }
 
 .content {
   display: block;

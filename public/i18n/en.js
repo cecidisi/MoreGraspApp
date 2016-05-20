@@ -79,7 +79,7 @@
 	"mgrp-needs-move-wheelchair": "Moving my wheelchair",
 	"mgrp-needs-get-dressed": "Getting dressed",
 	"mgrp-needs-transfer-from-bed-to-wheelchair": "Tranferring form bed to wheelchair",
-	"mgrp-needs-use-gadget": "using a PC / mobile phone/ tablet",
+	"mgrp-needs-use-gadget": "Using a PC / mobile phone/ tablet",
 	"mgrp-needs-catheterisation": "Catheterisation",
 	"mgrp-needs-drive-car": "Driving a car",
 	"mgrp-needs-write": "Writing with a pencil",
