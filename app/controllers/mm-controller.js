@@ -18,27 +18,29 @@ router.get('/', function(req, res, next){
         res.redirect('/matchmaking1/login');
 });
 
-// ROUTING TO LOGIN PAGE
-router.get('/login', function(req, res, next){
-    res.render('mm/login', {
-        title: 'Matchmaking Platform',
-        user: req.user
-    });
-});
 
-// AUTHENTICATION AND LOGIN (user stays logged in for the rest of the session)
-router.post('/login', function(req, res, next){
-    passport.authenticate('local', function(err, user, info) {
-        if (err) return next(err)
-        if (!user)
-            return res.redirect('/matchmaking1');
-
-        req.logIn(user, function(err) {
-            if (err) return next(err);
-            return res.redirect('/matchmaking1');
+router.route('/login')
+    // ROUTING TO LOGIN PAGE
+    .get(function(req, res, next){
+        res.render('mm/login', {
+            title: 'Matchmaking Platform',
+            user: req.user
         });
-    })(req, res, next);
-});
+    })
+    // AUTHENTICATION AND LOGIN (user stays logged in for the rest of the session)
+    .post(function(req, res, next){
+        passport.authenticate('local', function(err, user, info) {
+            if (err) return next(err)
+            if (!user)
+                return res.redirect('/matchmaking1');
+
+            req.logIn(user, function(err) {
+                if (err) return next(err);
+                return res.redirect('/matchmaking1');
+            });
+        })(req, res, next);
+    });
+
 
 // ROUTING TO HOME (checks user is logged in)
 router.get('/home', function(req, res, next){

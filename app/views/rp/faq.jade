@@ -1,13 +1,6 @@
 extends layout
 
-//// mixins
-
-mixin flag(loc)
-    if(loc === locale)
-        li.flag-container.active:  a.flag(class='flag-'+loc+' active', href='/registration-platform/faq/?lang='+loc, hreflang=loc)
-    else
-        li.flag-container:  a.flag(class='flag-'+loc, href='/registration-platform/faq/?lang='+loc, hreflang=loc)
-
+//- mixins
 mixin question(n)
     - var question_title = "mgrp-faq-question"+n
     i.fa.fa-question-circle
@@ -16,7 +9,6 @@ mixin question(n)
 
 
 mixin answer(n)
-    //a(name='q'+n)
     - var question = 'mgrp-faq-question'+n;
     - var answer = 'mgrp-faq-answer'+n;
     .inner
@@ -24,20 +16,11 @@ mixin answer(n)
             a(name='q'+n)
             i.fa.fa-check
             label #{__(question)}
-        //p #{__(answer)}
         p(data-i18n=answer)
         a.up(href='#questions') #{__('mgrp-faqs-back-up')}
 
 
-//// blocks
-
-block tab-faq
-    li.active:  a(href='#') #{__('mgrp-nav-faq')}
-
-block flags
-    +flag('en')
-    +flag('de')
-
+//- blocks
 
 block content
     #faq.nav-panel
@@ -63,7 +46,7 @@ block custom-js
     //-<!-- endbuild -->
     script.
         (function($){
-            $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], locale: $.cookie('lang') });
+            $.i18nCustom({ path: '/i18n/', languages: ['en', 'de'], locale: $.cookie('LANG') });
 
             var navigateTo = function(hash) {
                 var hashPattern = /(#q)\d/;

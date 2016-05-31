@@ -1,4 +1,7 @@
 var express = require('express'),
+    http = require('http'),
+    https = require('https'),
+    fs = require('fs'),
     config = require('./config/config'),
     mkdirp = require('mkdirp'),
     fileSave = require('file-save'),
@@ -33,7 +36,7 @@ User.find(function (err, users) {
                     txt += ('USERNAME = ' + user.login.username + '\n PASSWORD = ' + pswd + '\n');
                     count++;
                     if(count === users.length && txt !== '')
-                        fileSave('.users-'+env+'.txt').write(txt, 'utf8').end().error(function(){ console.log('Error saving users file'); });
+                        fileSave('.users-'+env).write(txt, 'utf8').end().error(function(){ console.log('Error saving users file'); });
                 });
             });
         }
@@ -50,6 +53,17 @@ var app = express();
 // invokes express
 require('./config/express')(app, config);
 
+/*
+// Load over https WARNING: needs CA-signed certificate
+var options = { key: fs.readFileSync('./.cert/key.pem'), cert: fs.readFileSync('./.cert/cert.pem') };
+https.createServer(options, app).listen(3000).listen(config.port, function(){
+    //console.log(config);
+    console.log('MoreGrasp server listening on port ' + config.port);
+});
+*/
+
+
+// Uncomment to load over HTTP and allow livereload
 app.listen(config.port, function () {
     console.log(config);
     console.log('Express server listening on port ' + config.port);

@@ -9,33 +9,35 @@ module.exports = function (app) {
     app.use('/registration-platform', router);
 };
 
-var changeLangCookie = function(req, res, next){
-//    console.log(req.cookies.lang);
-    req.i18n.setLocale(req.params.lang);
-    res.cookie('lang', req.params.lang);
-};
-
 
 router.get('/', function(req, res, next){
     res.redirect('/registration-platform/home');
 });
 
-router.get('/home', function(req, res, next){
-    var locale = req.cookies.lang || 'en';
-    res.render('rp/index', { title: 'Registration Platform', locale: locale });
+router.param('lang', function(req, res, next, locale){
+    console.log('ENTRAAAAAAA lang query = '+ locale);
+    req.i18n.setLocale(locale);
+    res.cookie('LANG', locale);
+    next();
 });
 
+
+router.get('/home', function(req, res, next){
+    var locale = req.cookies.LANG || 'en';
+    console.log('Home lang = '+locale);
+    res.render('rp/index', { title: 'Registration Platform', locale: locale, current_tab: 'home' });
+});
 
 
 router.get('/register', function(req, res, next){
-    var locale = req.cookies.lang || 'en';
-    res.render('rp/register',  { title: 'Registration Platform', countries: countries, locale: locale });
+    var locale = req.cookies.LANG || 'en';
+    console.log('Register lang = '+locale);
+    res.render('rp/register',  { title: 'Registration Platform', locale: locale, current_tab: 'register', countries: countries });
 });
-
 
 
 router.get('/faq', function(req, res, next){
-    var locale = req.cookies.lang || 'en';
-    res.render('rp/faq', { title: 'Registration Platform', locale: locale });
+    var locale = req.cookies.LANG || 'en';
+    console.log('FAQ lang = '+locale);
+    res.render('rp/faq', { title: 'Registration Platform', locale: locale, current_tab: 'faq' });
 });
-

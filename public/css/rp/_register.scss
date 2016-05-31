@@ -90,7 +90,7 @@
             }
 
 
-            div.terms-container {
+            .terms-container {
                 height: 400px;
                 width: 100%;
                 border-radius: 4px;
@@ -117,12 +117,12 @@
 
             }
 
-            div.disclaimer {
+            .disclaimer {
                 @extend .alert, .alert-danger, .sizable;
                 font-size: 1.2em;
             }
 
-            div.accept-terms-container {
+            .accept-terms-container {
                 float: left;
                 margin: 10px 0px;
                 padding: 5px;
@@ -214,7 +214,7 @@
             }
 
             /* html5 file uploader*/
-            div#file-uploader {
+            #file-uploader {
                 @extend .col-xs-12, .col-sm-10, .col-sm-offset-1;
                 margin-top: 15px;
 
@@ -295,7 +295,7 @@
 
 
 
-            div.answer-container {
+            .answer-container {
                 @extend .col-xs-12, .col-sm-8, .col-sm-offset-2, .col-md-4, .col-md-offset-0;
                 min-height: auto;
                 margin-bottom: 20px;
@@ -417,11 +417,12 @@ $desktop: "(min-width: 1025px)";
         height: calc(100% - 140px) !important;
     }
 
-    div.terms-container {
-        height: 225px !important;
+    .terms-container {
+        //height: 225px !important;
+        height: 250px !important;
     }
 
-    div#file-uploader {
+    #file-uploader {
         width: 80%;
     }
 
@@ -461,7 +462,7 @@ $desktop: "(min-width: 1025px)";
     }
 
 
-    div.answer-container {
+    .answer-container {
         &.sm {
             height: 260px !important;
         }
@@ -494,6 +495,10 @@ $desktop: "(min-width: 1025px)";
             margin: 15px 0px 0px !important;
         }
 
+        .terms-container {
+            height: 350px !important;
+        }
+
         .form-group label, label.question, p.explanation {
             font-size: 1.2em !important;
         }
@@ -517,7 +522,7 @@ $desktop: "(min-width: 1025px)";
             height: 34px !important;
         }
 
-        div.answer-container {
+        .answer-container {
             &.sm {
                 height: 200px !important;
             }
@@ -532,7 +537,7 @@ $desktop: "(min-width: 1025px)";
 
     }
 
-    div.progress-steps-container {
+    .progress-steps-container {
         display: block !important;
     }
 

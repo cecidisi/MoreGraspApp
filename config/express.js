@@ -1,5 +1,4 @@
 var express = require('express'),
-    i18n = require('i18n-2'),
     glob = require('glob'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
@@ -9,6 +8,8 @@ var express = require('express'),
     methodOverride = require('method-override'),
     session = require('express-session'),
     mongoose = require('mongoose'),
+    helmet = require('helmet'),
+    i18n = require('i18n-2'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     locale = require('locale');
@@ -22,12 +23,11 @@ module.exports = function(app, config) {
     var viewFolder = env === 'development' ? '/views' : '/views_dist',
         publicFolder = env === 'development' ? './public' : './dist';
 
-
     //app.set('views', config.root + '/app/views');
     app.set('views', config.root + '/app'+ viewFolder);
     app.set('view engine', 'jade');
 
-    // app.use(favicon(config.root + '/public/img/favicon.ico'));
+    app.use(favicon(config.root + '/public/media/moregrasp-logo.jpg'));
     app.use(logger('dev'));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
@@ -42,14 +42,12 @@ module.exports = function(app, config) {
     // config i18n
     i18n.expressBind(app, {
         locales: ['en', 'de'],
-        //defaultLocale: 'en',
 //        directory: './public/i18n',
-        directory: publicFolder+'/i18n',
-        cookieName: 'lang'
+        directory: publicFolder + '/i18n',
+        cookieName: 'LANG'
     });
 
     app.use(function(req, res, next){
-        req.i18n.setLocaleFromSubdomain();
         req.i18n.setLocaleFromCookie();
         req.i18n.setLocaleFromQuery(req);
         next();
@@ -62,6 +60,11 @@ module.exports = function(app, config) {
         saveUninitialized: false
     }));
 
+    // Security
+    app.use(helmet());
+    app.use(helmet.contentSecurityPolicy());
+
+    // Compress
     app.use(compress());
 
     // Passport
@@ -107,8 +110,8 @@ module.exports = function(app, config) {
   controllers.forEach(function (controller) {
       require(controller)(app);
   });
-    
-    
+
+
 
   app.use(function (req, res, next) {
     var err = new Error('Not Found');

@@ -1,50 +1,21 @@
 extends layout
 
-
-mixin flag(loc)
-    if(loc === locale)
-        li.flag-container.active:  a.flag(class='flag-'+loc+' active', href='/registration-platform/register/?lang='+loc, hreflang=loc)
-    else
-        li.flag-container:  a.flag(class='flag-'+loc, href='/registration-platform/register/?lang='+loc, hreflang=loc)
-
-
-block css
-    //-<!-- build:css (./public) /css/rp-style.min.css -->
-    link(rel='stylesheet', href='/css/rp-style.css')
-    //-<!-- endbuild -->
-    //-<!-- build:css (./public) /css/vendor.min.css -->
-    // bower:css
-    link(rel='stylesheet', href='/components/bootstrap-toggle/css/bootstrap-toggle.min.css')
-    link(rel='stylesheet', href='/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
-    link(rel='stylesheet', href='/components/jquery-ui/themes/base/jquery-ui.min.css')
-    link(rel='stylesheet', href='/components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')
-    // endbower
-    //-<!-- endbuild -->
-
-block tab-register
-    li.active:  a(href='#') #{__('mgrp-nav-register')}
-
-
-block flags
-    +flag('en')
-    +flag('de')
-
 block content
   #register.nav-panel
     .panel-container.form-section
-        include _register_step_0
-        include _register_step_1
-        include _register_step_2
-        include _register_step_3
-        include _register_step_4
-        include _register_step_5
-        include _register_step_6
-        include _register_step_7
-        include _register_step_8
+        include _register_0_terms_and_conditions
+        include _register_1_personal_data
+        include _register_2_medical_conditions
+        include _register_3_injury_details
+        include _register_4_current_abilities
+        include _register_5_video_upload
+        include _register_6_priorities_and_needs
+        include _register_7_miscellaneous
+        include _register_8_review
         include _register_submitted
       
     .panel-container.controls-section
-        // hide when currentPanel = 0
+        //- hide when currentPanel = 0
         #form-progress.progress(style={visibility: 'hidden'})
           #form-progress-bar.progress-bar.progress-bar-success(role='progressbar', aria-valuenow=progress, aria-valuemin='0', aria-valuemax='100', style={ width: progress+'%' })
             span.sr-only

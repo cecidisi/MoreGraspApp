@@ -523,8 +523,6 @@
     
 
     var handleScreenSize = function(){
-        console.log(window.screen.availWidth);
-
         if(window.screen.availWidth <= 1024) {
             // input fields
             $('.form-control').addClass('input-lg');

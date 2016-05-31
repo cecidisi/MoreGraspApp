@@ -1,0 +1,25 @@
+
+.cookie-wrapper {
+    @extend .affix-bottom, .col-xs-12;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    height: 60px;
+    background: rgba(50,50,50,.9);
+    font-size: 1.3em;
+
+    p {
+        display: inline-block;
+        color: white;
+    }
+
+    a {
+        margin-left: 20px;
+
+        &.btn {
+            float: right;
+            position: relative;
+            top: -6px;
+        }
+    }
+}
