@@ -10,7 +10,7 @@
 * Clone or copy the repository
 * Open a terminal/console, cd to MoreGraspApp/ and execute:
   * ```[sudo] npm install```
-  * ```[sudo ]bower install --allow-root```
+  * ```bower install --allow-root```
   * ```[sudo] grunt``` (to launch livereload) or ```npm start```
 * Start app (there are 3 possible configurations: development (default), test and production):  
   * Set NODE_ENV variable ```[export NODE_ENV=test ]npm start``` in Linux or ```$env:NODE_ENV="test"``` in Windows
