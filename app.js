@@ -53,7 +53,7 @@ var app = express();
 // invokes express
 require('./config/express')(app, config);
 
-
+/*
 // Load over https WARNING: needs CA-signed certificate
 var options = { key: fs.readFileSync('./.cert/key.pem'), cert: fs.readFileSync('./.cert/cert.pem') };
 https.createServer(options, app).listen(config.port, function(){
@@ -61,13 +61,13 @@ https.createServer(options, app).listen(config.port, function(){
     console.log('NODE_ENV='+process.env.NODE_ENV);
     console.log('MoreGrasp https server listening on port ' + config.port);
 });
+*/
 
 
-/*
 // Uncomment to load over HTTP and allow livereload
 app.listen(config.port, function () {
     console.log(config);
     console.log('NODE_ENV='+process.env.NODE_ENV);
     console.log('MoreGrasp http server listening on port ' + config.port);
 });
-*/
+
