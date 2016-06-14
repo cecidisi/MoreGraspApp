@@ -39,6 +39,10 @@ router.route('/login')
                 return res.redirect('/matchmaking1');
             });
         })(req, res, next);
+/*
+        passport.authenticate('local', { successRedirect: 'matchmaking1/home',
+                                         failureRedirect: 'matchmaking1/login',
+                                         failureflash: true });*/
     });
 
 
