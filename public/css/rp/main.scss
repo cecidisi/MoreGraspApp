@@ -4,18 +4,49 @@
 @import "../../components/font-awesome/scss/font-awesome.scss";
 // endbower
 
-//@import "file-upload";
+@import "../mixins/custom-mixins";
 @import "../header";
 @import "../content";
 @import "../footer";
 @import "../cookie_consent";
-@import "../mixins/custom-mixins";
 @import "home";
 @import "register";
 @import "faq";
 
 $header-height-lg: 70px;
 $header-height-sm: 50px;
+
+
+@include keyframes(move-left) {
+  0%   { left: 1000px; }
+  80%  { left: -100px; }
+  100% { left: 0px; }
+}
+
+@include keyframes(move-right) {
+  0%   { left: -1000px; }
+  80%  { left: 100px; }
+  100% { left: 0px; }
+}
+
+.red-bg {
+    background: #ED184A;
+}
+.green-bg {
+    background: #4d9d2a;
+}
+
+.animate.active {
+    &.translate-left {
+        @include animation('move-left .8s 1');
+        left: 0px !important;
+    }
+    &.translate-right {
+        @include animation('move-right .8s 1');
+        left: 0px !important;
+    }
+}
+
 
 html {
     position: relative;
@@ -34,12 +65,42 @@ body {
 
 p {
 //    font-size: 1.1em;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 label {
     font-size: 1.3em;
 }
+
+.title-wrapper {
+    display: none;
+    border-bottom: 1px dashed #323232;
+
+    @include tablet-portrait {
+        display: inline-block;
+        margin: 10px 0px 20px;
+    }
+
+    @include desktop {
+        margin: 30px 0px;
+    }
+
+    .title {
+        color: #4d9d2a;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+       @include tablet-strict {
+            font-size: 32px;
+       }
+
+       @include desktop {
+            font-size: 36px;
+       }
+    }
+}
+
+
 
 .container {
     height: 100%;
@@ -102,6 +163,10 @@ div.bg-processing {
     }
 }
 
+
+.text-center-aligned {
+    text-align: center;
+}
 
 /*******************************************************************************************************/
 

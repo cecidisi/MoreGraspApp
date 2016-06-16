@@ -2,12 +2,17 @@ $height-sm: 50px;
 $height-lg: 70px;
 
 .content {
-//    height: $height-sm;
-//    overflow-y: auto;
     display: block;
     position: relative;
-    top: 10px;
     height: calc(100% - 65px);
+
+    @include tablet-portrait {
+        top: 10px;
+    }
+    @include tablet-landscape {
+        height: calc(100% - 85px) !important;
+        overflow-y: auto;
+    }
 }
 
 .btn-primary-mg {
@@ -19,16 +24,4 @@ $height-lg: 70px;
         background-color: #459522;
         color: #eee;
     }
-}
-
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-
-@media (min-width: $screen-md-min) {
-
-    .content {
-        height: calc(100% - 85px) !important;
-        overflow-y: auto;
-    }
-
 }

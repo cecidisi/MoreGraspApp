@@ -22,6 +22,7 @@
 
             h4 {
                 font-size: 1.7em;
+                color: #4d9d2a;
             }
 
             h5 {
@@ -102,9 +103,14 @@
                 font-size: 1.2em;
 
                 p {
-                    text-align: justify;
-                    line-height: 1.2em;
-                    font-size: 1em;
+                    text-align: left;
+                    line-height: 15px;
+                    font-size: 13px;
+
+                    @include tablet-portrait {
+                        line-height: 1.2em;
+                        font-size: 1em;
+                    }
                 }
                 ul > li {
                     font-size: 1em;

@@ -3,12 +3,32 @@ extends layout
 block content
 	#home.nav-panel
 		.row
-			.video-container-outer
+			.title-wrapper
+				h1.title Welcome to the MoreGrasp Registration Platform
+		.row
+			.intro.red-bg.animate.translate-left
+				p.white-msg
+					i.fa.fa-quote-left &nbsp;
+					|	The aim of the MoreGrasp project is to develop a non-invasive, multi-adaptive, multimodal user interface including a brain-computer interface (BCI) for intuitive control of a semi-autonomous motor and sensory grasp neuroprosthesis supporting individuals with high spinal cord injury in everyday activities.
+					|	&nbsp;
+					i.fa.fa-quote-right
+				p.white-msg: i &nbsp;&nbsp; The MoreGrasp Team
+
+		.message.green-bg.animate.translate-left
+			p.white-msg Want to know more? Visit us at &nbsp;
+				a(href='http://moregrasp.eu', target='_blank') moregrasp.eu
+		.row
+			.video-container-outer.animate.translate-right
 				.video-container
 					video.demo(width='100%', height='100%', controls, autoplay, loop)
 						source(type='video/mp4', src='http://urank.know-center.tugraz.at/demo/demo.mp4')
 
+
 			//-.info-area
 				a(href='www.moregrasp.eu') moregrasp.eu
 			.button-area
-				a#btn-go-to-registration.btn.btn-primary-mg.btn-lg.reg-navigation(href='/registration-platform/register') #{__('mgrp-btn-go-to-registration')}
+				a#btn-go-to-registration.btn.btn-primary-mg.btn-sizable.reg-navigation(href='/registration-platform/register') #{__('mgrp-btn-go-to-registration')}
+
+block custom-js
+	script.
+		$('.animate').addClass('active');

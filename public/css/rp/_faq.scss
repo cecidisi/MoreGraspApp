@@ -6,14 +6,31 @@
     overflow-y: auto;
 
     .question-container {
-        min-height: 170px;
-        padding: 15px 20px;
+        /*min-height: 170px;*/
+        padding: 10px;
         margin: 3px;
         border: 1px solid transparent;
         box-shadow: 2px 2px 5px #888, -2px 2px 5px #888;
+
+        @include tablet-portrait {
+            padding: 15px 20px;
+        }
+
+        @include tablet-landscape {
+            min-height: 218px !important;
+        }
+
         .question-list {
-            float: left;
-            font-size: 1.2em;
+            clear: both;
+            font-size: 1.1em;
+
+            @include tablet-portrait {
+                font-size: 18px;
+            }
+            @include tablet-landscape {
+                float: left;
+            }
+
             i.fa {
                 margin-right: 3px;
                 color: #428bca;
@@ -22,6 +39,10 @@
         img {
             display: none;
             float: right;
+            @include tablet-landscape {
+                display: inline-block !important;
+                width: 220px;
+            }
         }
     }
 
@@ -45,30 +66,4 @@
 
     }
 
-}
-
-
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-$screen-lg-min: 1200px;
-$screen-xl-min: 1530px;
-
-@media (min-width: $screen-sm-min) {
-    .question-container {
-        img {
-            display: inline-block !important;
-            width: 220px;
-        }
-    }
-}
-
-@media (min-width: $screen-md-min) {
-
-    .question-container {
-        min-height: 218px !important;
-        img {
-            display: inline-block !important;
-            width: 300px;
-        }
-    }
 }
