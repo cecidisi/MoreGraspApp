@@ -92,18 +92,17 @@ var emailUsers = function(cb) {
             //console.log(user.login.username);
             if(user.preferences.notify_new_registration) {
                 console.log('Mail to: ' + user.personal_data.email);
-                var msg = "Dear " + user.personal_data.first_name + ' ' + user.personal_data.last_name + "<br><br>" +
-                    "A new candidate just signed up at the MoreGrasp Registration Platform<br>" +
-                    "Check it at <url>http://moregrasp.know-center.tugraz.at/matchmaking1/</url><br><br>" +
-                    "Best Regards,<br><br>Know-Center - MoreGrasp support<br><br><br>"+
-                    "<small>This message has been automatically generated.</small><br>"+
-                    "<small>To disable these notifications, go to @username tab --> Settings --> Receive notifications of new registrations = NO </small>";
 
                 var mailOptions = {
                     from: 'moregrasp.know.center@gmail.com',
                     to: user.personal_data.email,
                     subject: 'New registration @ MoreGrasp',
-                    html: msg
+                    html: "Dear " + user.personal_data.first_name + ' ' + user.personal_data.last_name + "<br><br>" +
+                    "A new candidate just signed up at the MoreGrasp Registration Platform<br>" +
+                    "Check it at <a href='http://moregrasp.know-center.tugraz.at/matchmaking1'>MoreGrasp Matchmaking1/</a><br><br>" +
+                    "Best Regards,<br><br>Know-Center - MoreGrasp support<br><br><br>"+
+                    "<small>This message has been automatically generated.</small><br><br>"+
+                    "<small>To disable these notifications, go to @username tab --> Settings --> Receive notifications of new registrations = NO </small>"
                 }
 
                 transporter.sendMail(mailOptions, function(error, info){
