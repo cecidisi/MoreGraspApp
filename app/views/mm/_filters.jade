@@ -48,7 +48,7 @@ mixin filter_datetimepicker(label, name, category)
         +filter_header('Personal Data', 'user', '#filter-group-personal-data')
         #filter-group-personal-data.filter-group.collapse.in
 
-        // Mecical conditions
+        // Medical conditions
         +filter_header('Medical Conditions', 'hand-o-left', '#filter-group-medical-conditions')
         #filter-group-medical-conditions.filter-group.collapse.in
             +filter_radiobtn('Metal Implant', 'metal_implant', 'medical_conditions')
@@ -72,3 +72,16 @@ mixin filter_datetimepicker(label, name, category)
             +filter_radiobtn('Wrist Extension', 'extend_wrist', 'current_abilities')
             +filter_radiobtn('Need to Improve Grasp', 'need_improve_grasp', 'current_abilities')
 
+            
+        //- +filter_header('Priorities and Needs', 'list-ol', '#filter-group-needs')
+        //- #filter-group-needs.filter-group.collapse.in
+        //-     +filter_radiobtn('Eat and Drink', 'eat_and_drink', 'needs')
+        //-     +filter_radiobtn('Body Hygiene', 'body_hygiene', 'needs')
+        //-     +filter_radiobtn('Move Wheelchair', 'move_wheelchair', 'needs')
+        //-     +filter_radiobtn('Get Dressed', 'get_dressed', 'needs')
+        //-     +filter_radiobtn('Transfer form Bed to Wheelchair', 'transfer_from_bed_to_wheelchair', 'needs')
+        //-     +filter_radiobtn('Use Gadget', 'use_gadget', 'needs')
+        //-     +filter_radiobtn('Catheterisation', 'catheterisation', 'needs')
+        //-     +filter_radiobtn('Drive a Car', 'drive_car', 'needs')
+        //-     +filter_radiobtn('Write', 'write', 'needs')
+        //-     +filter_radiobtn('Open a Door', 'open_door', 'needs')

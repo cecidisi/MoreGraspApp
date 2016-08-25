@@ -1543,13 +1543,13 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-lg-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .col-xs-3, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-xs-4, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-xs-5, .col-sm-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-md-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-lg-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-xs-6, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-10, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .col-md-10, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .cookie-wrapper, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel .disclaimer, .nav-panel#register .form-section .input-panel-submitted .disclaimer, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel .disclaimer, .nav-panel#register .form-section .input-panel-submitted .disclaimer, .col-lg-12, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel .disclaimer, .nav-panel#register .form-section .input-panel-submitted .disclaimer {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-md-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .col-lg-2, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .col-xs-3, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .col-sm-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-md-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-lg-3, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .col-xs-4, .col-sm-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-md-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container, .col-lg-4, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .col-xs-5, .col-sm-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-md-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-lg-5, .nav-panel#register .form-section .input-panel label.question.shorter, .nav-panel#register .form-section .input-panel-submitted label.question.shorter, .col-xs-6, .col-sm-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-md-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-lg-6, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .nav-panel#register .form-section .input-panel .form-control.for-question, .nav-panel#register .form-section .input-panel-submitted .form-control.for-question, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container, .col-md-8, .col-lg-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .col-md-10, .col-lg-10, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .cookie-wrapper, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container, .col-sm-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel .disclaimer, .nav-panel#register .form-section .input-panel-submitted .disclaimer, .col-md-12, .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel .disclaimer, .nav-panel#register .form-section .input-panel-submitted .disclaimer, .col-lg-12, .nav-panel, .sizable, .nav-panel#register .form-section .input-panel .disclaimer, .nav-panel#register .form-section .input-panel-submitted .disclaimer {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-11, .col-xs-12, .cookie-wrapper, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container {
+.col-xs-1, .col-xs-2, .col-xs-3, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question, .col-xs-10, .col-xs-11, .col-xs-12, .cookie-wrapper, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container {
   float: left; }
 
 .col-xs-1 {
@@ -1558,7 +1558,7 @@ pre {
 .col-xs-2 {
   width: 16.6666666667%; }
 
-.col-xs-3 {
+.col-xs-3, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper {
   width: 25%; }
 
 .col-xs-4 {
@@ -1576,16 +1576,16 @@ pre {
 .col-xs-8 {
   width: 66.6666666667%; }
 
-.col-xs-9 {
+.col-xs-9, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
   width: 75%; }
 
-.col-xs-10, .nav-panel#register .form-section .input-panel label.question, .nav-panel#register .form-section .input-panel-submitted label.question {
+.col-xs-10 {
   width: 83.3333333333%; }
 
 .col-xs-11 {
   width: 91.6666666667%; }
 
-.col-xs-12, .cookie-wrapper, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .toggle-wrapper, .nav-panel#register .form-section .input-panel-submitted .toggle-wrapper, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container {
+.col-xs-12, .cookie-wrapper, .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group, .nav-panel#register .form-section .input-panel .form-group.sm, .nav-panel#register .form-section .input-panel-submitted .form-group.sm, .nav-panel#register .form-section .input-panel .datetimepicker, .nav-panel#register .form-section .input-panel-submitted .datetimepicker, .nav-panel#register .form-section .input-panel #file-uploader, .nav-panel#register .form-section .input-panel-submitted #file-uploader, .nav-panel#register .form-section .input-panel .btn-group-vertical, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical, .nav-panel#register .form-section .input-panel .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel-submitted .btn-group-vertical.sm, .nav-panel#register .form-section .input-panel .answer-container, .nav-panel#register .form-section .input-panel-submitted .answer-container {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -8164,11 +8164,17 @@ header {
   z-index: 999;
   border-bottom: 1px solid #e5e5e5;
   box-shadow: 0px 1px 4px #ddd; }
+  @media (min-width: 992px) {
+    header {
+      height: 70px; } }
   header .navbar {
     position: fixed;
     height: 50px;
     width: 100%;
     margin: 0px; }
+    @media (min-width: 992px) {
+      header .navbar {
+        height: 70px; } }
     header .navbar .container-fluid {
       height: 100%; }
     header .navbar .navbar-header {
@@ -8181,12 +8187,18 @@ header {
           float: left;
           height: 100%;
           width: 70px; }
+          @media (min-width: 992px) {
+            header .navbar .navbar-header .navbar-brand img {
+              width: 120px !important; } }
         header .navbar .navbar-header .navbar-brand .title {
           display: none;
           float: left;
           height: calc(100% - 2px);
           margin: 0px 16px;
           color: #ed1848; }
+          @media (min-width: 992px) {
+            header .navbar .navbar-header .navbar-brand .title {
+              display: inline-block !important; } }
           header .navbar .navbar-header .navbar-brand .title h3 {
             font-weight: 800;
             font-size: 1.4; }
@@ -8212,8 +8224,12 @@ header {
     margin-top: 1px !important; }
     @media (min-width: 768px) {
       header ul.nav.menu {
+        height: calc(50px - 1px);
         margin-top: 0px !important;
         margin-right: 15px !important; } }
+    @media (min-width: 992px) {
+      header ul.nav.menu {
+        height: calc(70px - 1px); } }
     header ul.nav.menu li {
       height: 100%; }
       header ul.nav.menu li > a {
@@ -8225,6 +8241,19 @@ header {
         text-transform: capitalize;
         background-color: transparent;
         color: #000; }
+        @media (min-width: 768px) {
+          header ul.nav.menu li > a {
+            padding: 10px 20px; } }
+        @media (min-width: 992px) {
+          header ul.nav.menu li > a {
+            padding: 15px 25px;
+            font-size: 22px;
+            line-height: 39px; } }
+        @media (min-width: 1025px) {
+          header ul.nav.menu li > a {
+            padding: 15px 30px;
+            font-size: 24px;
+            line-height: 39px; } }
       header ul.nav.menu li:hover > a {
         color: #fff;
         background-color: #4d9d2a; }
@@ -8253,7 +8282,15 @@ header {
             top: -2px; }
       header ul.nav.menu li.flag-container {
         display: inline-block !important;
-        background: transparent; }
+        background: transparent;
+        height: 50px; }
+        @media (min-width: 768px) {
+          header ul.nav.menu li.flag-container {
+            height: 100%; } }
+        header ul.nav.menu li.flag-container:first-child {
+          margin-left: 5px !important; }
+        header ul.nav.menu li.flag-container:last-child {
+          margin-right: 5px !important; }
         header ul.nav.menu li.flag-container:hover {
           background-color: transparent !important; }
         header ul.nav.menu li.flag-container.active {
@@ -8263,21 +8300,26 @@ header {
           margin: 0px;
           text-decoration: none;
           cursor: pointer; }
+
+@inlcude tablet-portrait {
+  header ul.nav.menu li.flag-container a.flag {
+    padding: 13px 20px; } }
+          @media (min-width: 992px) {
+            header ul.nav.menu li.flag-container a.flag {
+              padding: 20px 20px !important; } }
           header ul.nav.menu li.flag-container a.flag.active {
-            background: transparent;
-            box-shadow: none; }
+            background-color: #fdfdfd;
+            box-shadow: inset 1px 1px 2px #ddd, inset -1px -1px 2px #ddd; }
           header ul.nav.menu li.flag-container a.flag:before {
             content: '';
             display: inline-block;
             background-repeat: no-repeat;
-            width: 16px;
-            height: 11px; }
+            width: 24px;
+            height: 24px; }
           header ul.nav.menu li.flag-container a.flag.flag-de:before {
             background-image: url(/media/de.png); }
           header ul.nav.menu li.flag-container a.flag.flag-en:before {
             background-image: url(/media/gb.png); }
-          header ul.nav.menu li.flag-container a.flag.active:before {
-            box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888; }
           header ul.nav.menu li.flag-container a.flag:hover {
             background-color: transparent; }
             header ul.nav.menu li.flag-container a.flag:hover:before {
@@ -8286,35 +8328,17 @@ header {
             transform: none; }
     header ul.nav.menu > li + li {
       margin-left: 0px; }
-  header .nav.flag-container {
-    display: inline-block;
-    height: 100%;
-    padding: 9px 30px; }
-    header .nav.flag-container li:hover {
-      background-color: transparent; }
-    header .nav.flag-container li a.flag {
-      display: inline-block;
-      margin: 0px 3px;
-      text-decoration: none;
-      cursor: pointer; }
-      header .nav.flag-container li a.flag:before {
-        content: '';
-        display: inline-block;
-        background-repeat: no-repeat;
-        width: 16px;
-        height: 11px; }
-      header .nav.flag-container li a.flag.flag-de:before {
-        background-image: url(/media/de.png); }
-      header .nav.flag-container li a.flag.flag-en:before {
-        background-image: url(/media/gb.png); }
-      header .nav.flag-container li a.flag.active:before {
-        box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888; }
-      header .nav.flag-container li a.flag:hover {
-        background-color: transparent; }
-        header .nav.flag-container li a.flag:hover:before {
-          transform: scale(1.1); }
-      header .nav.flag-container li a.flag.active:hover:before {
-        transform: none; }
+    header ul.nav.menu > li + li.flag-container {
+      margin-left: 0px; }
+
+@inlude tablet-landscape {
+  header ul.nav.menu > li + li.flag-container {
+    margin-left: 10px; } }
+      @media (min-width: 1025px) {
+        header ul.nav.menu > li + li.flag-container {
+          margin-left: 40px; } }
+    header ul.nav.menu > li.flag-container + li.flag-container {
+      margin-left: 0px; }
   header ul.nav.navbar-second-level {
     float: right;
     z-index: 9999; }
@@ -8324,37 +8348,14 @@ header {
       padding-bottom: 5px !important;
       text-transform: lowercase; }
 
-@media (min-width: 768px) {
-  header ul.nav.menu {
-    height: calc(50px - 1px); }
-    header ul.nav.menu li > a {
-      padding: 10px 20px; } }
-
-@media (min-width: 992px) {
-  header {
-    height: 70px; }
-    header .navbar {
-      height: 70px; }
-    header .navbar-header img {
-      width: 120px !important; }
-    header .navbar-header .title {
-      display: inline-block !important; }
-    header ul.nav.menu {
-      height: calc(70px - 1px); }
-      header ul.nav.menu li > a {
-        padding: 15px 30px;
-        font-size: 22px;
-        line-height: 39px; }
-      header ul.nav.menu a.flag {
-        padding: 14px 20px !important; } }
-
 .content {
   display: block;
   position: relative;
-  height: calc(100% - 65px); }
+  height: calc(100% - 50px); }
   @media (min-width: 768px) {
     .content {
-      top: 10px; } }
+      top: 10px;
+      height: calc(100% - 65px); } }
   @media (min-width: 992px) {
     .content {
       height: calc(100% - 85px) !important;
@@ -8370,15 +8371,25 @@ header {
 
 .footer {
   position: absolute;
-  bottom: 0;
-  height: 60px;
+  height: 25px;
   width: 100%;
   background-color: #f5f5f5;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 19px;
+  padding-top: 6px;
   color: #777;
   border-top: 1px solid #e5e5e5; }
+  @media (min-width: 768px) {
+    .footer {
+      position: absolute;
+      bottom: 0;
+      height: 60px;
+      padding-top: 19px; } }
+  .footer p {
+    font-size: 1em; }
+    @media (min-width: 768px) {
+      .footer p {
+        font-size: 1.2em; } }
 
 .cookie-wrapper {
   position: absolute;
@@ -8405,7 +8416,7 @@ header {
 
 .nav-panel#home .intro {
   padding: 5px;
-  margin: 6px 0px 3px;
+  margin: 6px 10px 3px;
   position: relative;
   box-shadow: 2px 2px 5px #999, -2px 2px 5px #999;
   left: 1000px; }
@@ -8418,7 +8429,7 @@ header {
       margin: 0px 60px 20px;
       padding: 5px; } }
   .nav-panel#home .intro p {
-    font-size: 12px; }
+    font-size: 11px; }
     @media (min-width: 768px) and (max-width: 991px) {
       .nav-panel#home .intro p {
         font-size: 18px; } }
@@ -8429,10 +8440,37 @@ header {
       .nav-panel#home .intro p {
         font-size: 18px; } }
 
+.nav-panel#home .message {
+  padding: 3px;
+  left: 1000px;
+  z-index: 999;
+  left: 1000px;
+  box-shadow: 2px 2px 5px #555, -2px 2px 5px #555;
+  position: relative;
+  display: block;
+  margin: 0px -9px 6px 0px;
+  width: auto;
+  text-align: center;
+  top: -10px; }
+  @media (min-width: 768px) {
+    .nav-panel#home .message {
+      position: absolute;
+      width: 370px;
+      margin: 15px 80px 20px calc(100% - 360px);
+      padding: 5px;
+      top: auto; } }
+  @media (min-width: 1025px) {
+    .nav-panel#home .message {
+      padding: 10px; } }
+  .nav-panel#home .message p {
+    font-size: 12px; }
+    @media (min-width: 768px) {
+      .nav-panel#home .message p {
+        font-size: 16px; } }
+
 .nav-panel#home .video-container-outer {
   width: 100%;
-  height: 230px;
-  padding: 10px 0px;
+  height: 180px;
   text-align: center;
   box-shadow: 2px 2px 5px #888, -2px -2px 5px #888, -2px 2px 5px #888, 2px -2px 5px #888;
   box-shadow: 2px 2px 5px #999, -2px 2px 5px #999;
@@ -8443,65 +8481,55 @@ header {
   left: -1000px; }
   @media (min-width: 768px) and (max-width: 1024px) {
     .nav-panel#home .video-container-outer {
-      height: 320px; } }
+      height: 320px;
+      padding: 10px 0px; } }
   @media (min-width: 1025px) {
     .nav-panel#home .video-container-outer {
-      height: 420px; } }
-
-.nav-panel#home .video-container {
-  display: inline-block;
-  height: 210px;
-  width: 237px;
-  margin: auto; }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .nav-panel#home .video-container {
-      height: 300px;
-      width: 336px; } }
-  @media (min-width: 1025px) {
-    .nav-panel#home .video-container {
-      height: 400px;
-      width: 448px; } }
-
-.nav-panel#home .message {
-  padding: 5px;
-  left: 1000px;
-  z-index: 999;
-  left: 1000px;
-  box-shadow: 2px 2px 5px #555, -2px 2px 5px #555;
-  position: relative;
-  display: block;
-  margin: 4px -5px 6px 20px;
-  width: auto;
-  text-align: center; }
-  @media (min-width: 768px) {
-    .nav-panel#home .message {
-      position: absolute;
-      width: 370px;
-      margin: 15px 80px 20px calc(100% - 360px); } }
-  @media (min-width: 1025px) {
-    .nav-panel#home .message {
-      padding: 10px; } }
-  .nav-panel#home .message p {
-    font-size: 12px; }
-    @media (min-width: 768px) {
-      .nav-panel#home .message p {
-        font-size: 16px; } }
+      height: 420px;
+      padding: 10px 0px; } }
+  .nav-panel#home .video-container-outer .video-container {
+    display: inline-block;
+    height: 180px;
+    width: 237px;
+    margin: auto; }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .nav-panel#home .video-container-outer .video-container {
+        height: 300px;
+        width: 336px; } }
+    @media (min-width: 1025px) {
+      .nav-panel#home .video-container-outer .video-container {
+        height: 400px;
+        width: 448px; } }
 
 .nav-panel#home .info-area {
   margin: 15px;
   font-size: 1.2em; }
 
 .nav-panel#register {
-  box-shadow: 2px 2px 5px #888, -2px 2px 5px #888;
   /** control area **/ }
+  @media (min-width: 768px) {
+    .nav-panel#register {
+      box-shadow: 2px 2px 5px #888, -2px 2px 5px #888; } }
   .nav-panel#register .form-section {
-    height: 335px;
-    overflow-x: hidden;
-    margin-top: 15px; }
+    height: auto;
+    overflow-x: hidden; }
+    @media (min-width: 768px) {
+      .nav-panel#register .form-section {
+        height: 335px; } }
+    @media (min-width: 992px) {
+      .nav-panel#register .form-section {
+        height: calc(100% - 150px) !important; } }
     .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted {
       margin-bottom: 10px;
       text-align: left;
+      padding-top: 15px;
+      padding-left: 0px;
+      padding-right: 0px;
       /* html5 file uploader*/ }
+      @media (min-width: 768px) {
+        .nav-panel#register .form-section .input-panel, .nav-panel#register .form-section .input-panel-submitted {
+          padding-left: 15px;
+          padding-right: 15px; } }
       .nav-panel#register .form-section .input-panel h4, .nav-panel#register .form-section .input-panel-submitted h4, .nav-panel#register .form-section .input-panel h5, .nav-panel#register .form-section .input-panel-submitted h5 {
         font-weight: bold;
         -webkit-margin-before: 0px; }
@@ -8512,9 +8540,12 @@ header {
         font-weight: bold;
         font-size: 1.5em; }
       .nav-panel#register .form-section .input-panel .row, .nav-panel#register .form-section .input-panel-submitted .row {
-        margin: 24px 0px 0px; }
+        margin: 15px 0px 0px; }
       .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group {
-        margin-bottom: 25px; }
+        margin-bottom: 10px; }
+        @media (min-width: 768px) {
+          .nav-panel#register .form-section .input-panel .form-group, .nav-panel#register .form-section .input-panel-submitted .form-group {
+            margin-bottom: 25px; } }
         .nav-panel#register .form-section .input-panel .form-group label, .nav-panel#register .form-section .input-panel-submitted .form-group label {
           font-size: 1.5em;
           padding-top: 8px;
@@ -8523,7 +8554,8 @@ header {
         padding-left: 0px;
         padding-right: 0px; }
       .nav-panel#register .form-section .input-panel .toggle, .nav-panel#register .form-section .input-panel-submitted .toggle {
-        float: left; }
+        float: left;
+        display: inline-block; }
         .nav-panel#register .form-section .input-panel .toggle label, .nav-panel#register .form-section .input-panel-submitted .toggle label {
           font-size: 1.0em; }
           .nav-panel#register .form-section .input-panel .toggle label.toggle-on, .nav-panel#register .form-section .input-panel-submitted .toggle label.toggle-on {
@@ -8537,7 +8569,7 @@ header {
         padding-left: 0px;
         padding-right: 0px; }
       .nav-panel#register .form-section .input-panel .terms-container, .nav-panel#register .form-section .input-panel-submitted .terms-container {
-        height: 400px;
+        height: 300px;
         width: 100%;
         border-radius: 4px;
         border: 1px solid #ddd;
@@ -8563,14 +8595,23 @@ header {
         font-size: 1.2em; }
       .nav-panel#register .form-section .input-panel .accept-terms-container, .nav-panel#register .form-section .input-panel-submitted .accept-terms-container {
         float: left;
+        width: 100%;
         margin: 10px 0px;
         padding: 5px; }
+        @media (min-width: 768px) {
+          .nav-panel#register .form-section .input-panel .accept-terms-container, .nav-panel#register .form-section .input-panel-submitted .accept-terms-container {
+            margin: 10px 0px; } }
         .nav-panel#register .form-section .input-panel .accept-terms-container #lblTermsAccepted, .nav-panel#register .form-section .input-panel-submitted .accept-terms-container #lblTermsAccepted {
-          margin: 10px;
-          margin-right: 20px;
+          display: inline-block;
+          width: auto;
           font-size: 1.2em;
           font-weight: bold;
           float: left; }
+          @media (min-width: 768px) {
+            .nav-panel#register .form-section .input-panel .accept-terms-container #lblTermsAccepted, .nav-panel#register .form-section .input-panel-submitted .accept-terms-container #lblTermsAccepted {
+              margin: 5px;
+              margin-right: 20px;
+              font-size: 1.3em; } }
       .nav-panel#register .form-section .input-panel p, .nav-panel#register .form-section .input-panel-submitted p {
         text-align: center; }
         .nav-panel#register .form-section .input-panel p.explanation, .nav-panel#register .form-section .input-panel-submitted p.explanation, .nav-panel#register .form-section .input-panel p.form-answer, .nav-panel#register .form-section .input-panel-submitted p.form-answer {
@@ -8689,10 +8730,12 @@ header {
         font-size: 1.2em; }
   .nav-panel#register .controls-section {
     position: relative;
-    height: 135px;
-    margin-top: 10px;
-    padding: 10px 0px;
+    margin: 10px auto;
     text-align: center; }
+    @media (min-width: 768px) {
+      .nav-panel#register .controls-section {
+        height: 135px;
+        padding: 10px 0px; } }
     .nav-panel#register .controls-section .progress {
       width: 70%;
       margin: auto; }
@@ -8730,8 +8773,6 @@ header {
     float: right !important; } }
 
 @media (min-width: 992px) {
-  .form-section {
-    height: calc(100% - 150px) !important; }
   .answer-container.sm {
     height: 260px !important; }
   .answer-container.lg {
@@ -8740,8 +8781,6 @@ header {
     margin: 7px 0px 0px  !important; } }
 
 @media (min-width: 1025px) {
-  .input-panel row, .nav-panel#register .form-section .input-panel-submitted row {
-    margin: 15px 0px; }
   .input-panel h4, .nav-panel#register .form-section .input-panel-submitted h4 {
     font-size: 1.5em; }
   .input-panel h5, .nav-panel#register .form-section .input-panel-submitted h5 {
@@ -8806,6 +8845,9 @@ header {
         .nav-panel#faq .question-container img {
           display: inline-block !important;
           width: 220px; } }
+      @media (min-width: 1025px) {
+        .nav-panel#faq .question-container img {
+          width: 250px; } }
   .nav-panel#faq .answer-container .inner {
     margin: 25px 15px;
     border-bottom: 1px solid #ddd; }
@@ -8813,7 +8855,8 @@ header {
       margin-right: 5px; }
     .nav-panel#faq .answer-container .inner h4 {
       font-size: 1.4em;
-      color: #4d9d2a; }
+      color: #4d9d2a;
+      font-weight: bold; }
     .nav-panel#faq .answer-container .inner p {
       font-size: 1.2em; }
 
@@ -8909,10 +8952,14 @@ html {
 /* Space out content a bit */
 body {
   width: 100%;
-  height: auto;
-  margin-bottom: 50px;
-  font-size: 1.3em;
+  height: calc(100% - 25px);
+  margin-bottom: 25px;
+  font-size: 1.1em;
   overflow-y: hidden; }
+  @media (min-width: 768px) {
+    body {
+      height: calc(100% - 60px);
+      margin-bottom: 60px; } }
 
 p {
   font-size: 1.2em; }
@@ -8943,8 +8990,15 @@ label {
 
 .container {
   height: 100%;
-  overflow-y: hidden !important;
-  padding-bottom: 5px; }
+  overflow-y: auto;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px; }
+  @media (min-width: 768px) {
+    .container {
+      overflow-y: hidden !important;
+      padding-left: 15px;
+      padding-right: 15px; } }
 
 .bg-mg {
   background-image: url(/media/moregrasp-logo.jpg);
@@ -8961,8 +9015,11 @@ label {
 .button-area {
   position: relative;
   height: 35px;
-  margin: 20px 0px 10px 0px;
+  margin-top: 10px;
   text-align: center; }
+  @media (min-width: 768px) {
+    .button-area {
+      margin: 20px 0px 10px 0px; } }
   .button-area .btn, .button-area .nav-panel#register .form-section .input-panel #file-uploader .btn-file-upload, .nav-panel#register .form-section .input-panel #file-uploader .button-area .btn-file-upload, .button-area .nav-panel#register .form-section .input-panel-submitted #file-uploader .btn-file-upload, .nav-panel#register .form-section .input-panel-submitted #file-uploader .button-area .btn-file-upload, .button-area .nav-panel#register .form-section .input-panel output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel output#file-list .button-area .btn-file-output, .button-area .nav-panel#register .form-section .input-panel-submitted output#file-list .btn-file-output, .nav-panel#register .form-section .input-panel-submitted output#file-list .button-area .btn-file-output {
     min-width: 83px;
     margin: 0px 2px; }
@@ -9011,9 +9068,6 @@ div.bg-processing {
     padding-right: 0; } }
 
 @media (min-width: 768px) {
-  body {
-    height: calc(100% - 60px);
-    margin-bottom: 60px; }
   .container {
     width: calc(100% - 30px); }
   div.bg-processing {

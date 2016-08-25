@@ -43,6 +43,9 @@
                 display: inline-block !important;
                 width: 220px;
             }
+            @include desktop {
+                width: 250px;
+            }
         }
     }
 
@@ -58,6 +61,7 @@
             h4 {
                 font-size: 1.4em;
                 color: #4d9d2a;
+                font-weight: bold;
             }
             p {
                 font-size: 1.2em;

@@ -7906,11 +7906,17 @@ header {
   z-index: 999;
   border-bottom: 1px solid #e5e5e5;
   box-shadow: 0px 1px 4px #ddd; }
+  @media (min-width: 992px) {
+    header {
+      height: 70px; } }
   header .navbar {
     position: fixed;
     height: 50px;
     width: 100%;
     margin: 0px; }
+    @media (min-width: 992px) {
+      header .navbar {
+        height: 70px; } }
     header .navbar .container-fluid {
       height: 100%; }
     header .navbar .navbar-header {
@@ -7923,12 +7929,18 @@ header {
           float: left;
           height: 100%;
           width: 70px; }
+          @media (min-width: 992px) {
+            header .navbar .navbar-header .navbar-brand img {
+              width: 120px !important; } }
         header .navbar .navbar-header .navbar-brand .title {
           display: none;
           float: left;
           height: calc(100% - 2px);
           margin: 0px 16px;
           color: #ed1848; }
+          @media (min-width: 992px) {
+            header .navbar .navbar-header .navbar-brand .title {
+              display: inline-block !important; } }
           header .navbar .navbar-header .navbar-brand .title h3 {
             font-weight: 800;
             font-size: 1.4; }
@@ -7954,8 +7966,12 @@ header {
     margin-top: 1px !important; }
     @media (min-width: 768px) {
       header ul.nav.menu {
+        height: calc(50px - 1px);
         margin-top: 0px !important;
         margin-right: 15px !important; } }
+    @media (min-width: 992px) {
+      header ul.nav.menu {
+        height: calc(70px - 1px); } }
     header ul.nav.menu li {
       height: 100%; }
       header ul.nav.menu li > a {
@@ -7967,6 +7983,19 @@ header {
         text-transform: capitalize;
         background-color: transparent;
         color: #000; }
+        @media (min-width: 768px) {
+          header ul.nav.menu li > a {
+            padding: 10px 20px; } }
+        @media (min-width: 992px) {
+          header ul.nav.menu li > a {
+            padding: 15px 25px;
+            font-size: 22px;
+            line-height: 39px; } }
+        @media (min-width: 1025px) {
+          header ul.nav.menu li > a {
+            padding: 15px 30px;
+            font-size: 24px;
+            line-height: 39px; } }
       header ul.nav.menu li:hover > a {
         color: #fff;
         background-color: #4d9d2a; }
@@ -7995,7 +8024,15 @@ header {
             top: -2px; }
       header ul.nav.menu li.flag-container {
         display: inline-block !important;
-        background: transparent; }
+        background: transparent;
+        height: 50px; }
+        @media (min-width: 768px) {
+          header ul.nav.menu li.flag-container {
+            height: 100%; } }
+        header ul.nav.menu li.flag-container:first-child {
+          margin-left: 5px !important; }
+        header ul.nav.menu li.flag-container:last-child {
+          margin-right: 5px !important; }
         header ul.nav.menu li.flag-container:hover {
           background-color: transparent !important; }
         header ul.nav.menu li.flag-container.active {
@@ -8005,21 +8042,26 @@ header {
           margin: 0px;
           text-decoration: none;
           cursor: pointer; }
+
+@inlcude tablet-portrait {
+  header ul.nav.menu li.flag-container a.flag {
+    padding: 13px 20px; } }
+          @media (min-width: 992px) {
+            header ul.nav.menu li.flag-container a.flag {
+              padding: 20px 20px !important; } }
           header ul.nav.menu li.flag-container a.flag.active {
-            background: transparent;
-            box-shadow: none; }
+            background-color: #fdfdfd;
+            box-shadow: inset 1px 1px 2px #ddd, inset -1px -1px 2px #ddd; }
           header ul.nav.menu li.flag-container a.flag:before {
             content: '';
             display: inline-block;
             background-repeat: no-repeat;
-            width: 16px;
-            height: 11px; }
+            width: 24px;
+            height: 24px; }
           header ul.nav.menu li.flag-container a.flag.flag-de:before {
             background-image: url(/media/de.png); }
           header ul.nav.menu li.flag-container a.flag.flag-en:before {
             background-image: url(/media/gb.png); }
-          header ul.nav.menu li.flag-container a.flag.active:before {
-            box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888; }
           header ul.nav.menu li.flag-container a.flag:hover {
             background-color: transparent; }
             header ul.nav.menu li.flag-container a.flag:hover:before {
@@ -8028,35 +8070,17 @@ header {
             transform: none; }
     header ul.nav.menu > li + li {
       margin-left: 0px; }
-  header .nav.flag-container {
-    display: inline-block;
-    height: 100%;
-    padding: 9px 30px; }
-    header .nav.flag-container li:hover {
-      background-color: transparent; }
-    header .nav.flag-container li a.flag {
-      display: inline-block;
-      margin: 0px 3px;
-      text-decoration: none;
-      cursor: pointer; }
-      header .nav.flag-container li a.flag:before {
-        content: '';
-        display: inline-block;
-        background-repeat: no-repeat;
-        width: 16px;
-        height: 11px; }
-      header .nav.flag-container li a.flag.flag-de:before {
-        background-image: url(/media/de.png); }
-      header .nav.flag-container li a.flag.flag-en:before {
-        background-image: url(/media/gb.png); }
-      header .nav.flag-container li a.flag.active:before {
-        box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888; }
-      header .nav.flag-container li a.flag:hover {
-        background-color: transparent; }
-        header .nav.flag-container li a.flag:hover:before {
-          transform: scale(1.1); }
-      header .nav.flag-container li a.flag.active:hover:before {
-        transform: none; }
+    header ul.nav.menu > li + li.flag-container {
+      margin-left: 0px; }
+
+@inlude tablet-landscape {
+  header ul.nav.menu > li + li.flag-container {
+    margin-left: 10px; } }
+      @media (min-width: 1025px) {
+        header ul.nav.menu > li + li.flag-container {
+          margin-left: 40px; } }
+    header ul.nav.menu > li.flag-container + li.flag-container {
+      margin-left: 0px; }
   header ul.nav.navbar-second-level {
     float: right;
     z-index: 9999; }
@@ -8066,37 +8090,14 @@ header {
       padding-bottom: 5px !important;
       text-transform: lowercase; }
 
-@media (min-width: 768px) {
-  header ul.nav.menu {
-    height: calc(50px - 1px); }
-    header ul.nav.menu li > a {
-      padding: 10px 20px; } }
-
-@media (min-width: 992px) {
-  header {
-    height: 70px; }
-    header .navbar {
-      height: 70px; }
-    header .navbar-header img {
-      width: 120px !important; }
-    header .navbar-header .title {
-      display: inline-block !important; }
-    header ul.nav.menu {
-      height: calc(70px - 1px); }
-      header ul.nav.menu li > a {
-        padding: 15px 30px;
-        font-size: 22px;
-        line-height: 39px; }
-      header ul.nav.menu a.flag {
-        padding: 14px 20px !important; } }
-
 .content {
   display: block;
   position: relative;
-  height: calc(100% - 65px); }
+  height: calc(100% - 50px); }
   @media (min-width: 768px) {
     .content {
-      top: 10px; } }
+      top: 10px;
+      height: calc(100% - 65px); } }
   @media (min-width: 992px) {
     .content {
       height: calc(100% - 85px) !important;
@@ -8112,15 +8113,25 @@ header {
 
 .footer {
   position: absolute;
-  bottom: 0;
-  height: 60px;
+  height: 25px;
   width: 100%;
   background-color: #f5f5f5;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 19px;
+  padding-top: 6px;
   color: #777;
   border-top: 1px solid #e5e5e5; }
+  @media (min-width: 768px) {
+    .footer {
+      position: absolute;
+      bottom: 0;
+      height: 60px;
+      padding-top: 19px; } }
+  .footer p {
+    font-size: 1em; }
+    @media (min-width: 768px) {
+      .footer p {
+        font-size: 1.2em; } }
 
 .modal p.bg {
   padding: 10px !important;

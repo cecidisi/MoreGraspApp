@@ -15,7 +15,7 @@ router.get('/', function(req, res, next){
 });
 
 router.param('lang', function(req, res, next, locale){
-    console.log('ENTRAAAAAAA lang query = '+ locale);
+    console.log('lang query = '+ locale);
     req.i18n.setLocale(locale);
     res.cookie('LANG', locale);
     next();
@@ -25,19 +25,19 @@ router.param('lang', function(req, res, next, locale){
 router.get('/home', function(req, res, next){
     var locale = req.cookies.LANG || 'en';
     console.log('Home lang = '+locale);
-    res.render('rp/index', { title: 'Registration Platform', locale: locale, current_tab: 'home' });
+    res.render('rp/index', { locale: locale, current_tab: 'home' });
 });
 
 
 router.get('/register', function(req, res, next){
     var locale = req.cookies.LANG || 'en';
     console.log('Register lang = '+locale);
-    res.render('rp/register',  { title: 'Registration Platform', locale: locale, current_tab: 'register', countries: countries });
+    res.render('rp/register',  { locale: locale, current_tab: 'register', countries: countries });
 });
 
 
 router.get('/faq', function(req, res, next){
     var locale = req.cookies.LANG || 'en';
     console.log('FAQ lang = '+locale);
-    res.render('rp/faq', { title: 'Registration Platform', locale: locale, current_tab: 'faq' });
+    res.render('rp/faq', { locale: locale, current_tab: 'faq' });
 });

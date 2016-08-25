@@ -11,6 +11,10 @@
 	"mgrp-nav-home": "Home",
 	"mgrp-nav-register": "Register",
 	"mgrp-nav-faq": "FAQ",
+	"mgrp-home-welcome-msg": "Welcome to the MoreGrasp Registration Platform",
+	"mgrp-home-message": "Persons with a high spinal cord injury are wheelchair-bound and have a loss of arm and hand function. Our international team is developing a thought-controlled grasp neuroprosthesis for these persons. This neuroprosthesis will allow people with spinal cord injury to grasp objects again. After a training programme, the users should be able to carry out everyday movements with their hands.",
+	"mgrp-home-team": "The MoreGrasp Team",
+	"mgrp-home-know-more": "Want to know more? Visit us at",
 	"mgrp-btn-go-to-registration": "Go to Registration",
 	"mgrp-terms-and-conditions-title": "Terms and Conditions",
 	"mgrp-terms-and-conditions-p1.1": "Welcome to the registration website of the European MoreGrasp research consortium (for more details about partner: ",
@@ -134,5 +138,8 @@
 	"mgrp-error-not-capitalized": "Not capitalized",
 	"mgrp-error-invalid-email": "Invalid Email",
 	"mgrp-error-invalid-phone": "Invalid Phone",
-    "mgrp-error-did-not-select-3-options": "You must select 3 options"
+    "mgrp-error-did-not-select-3-options": "You must select 3 options",
+    "mgrp-cookies-message": "This Website uses cookies to ensure you have the best experience",
+    "mgrp-cookies-more": "More info",
+    "mgrp-cookies-got-it": "Got it"
 }

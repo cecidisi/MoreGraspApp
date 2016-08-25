@@ -5,8 +5,8 @@ header {
     @extend .affix-top;
     display: block;
     top: 0px;
-//    height: 70px;
     height: $header-height-sm;
+    // height: calc(#{$header-height-sm} + 32px);
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
@@ -14,11 +14,19 @@ header {
     border-bottom: 1px solid #e5e5e5;
     box-shadow: 0px 1px 4px #ddd;
 
+    @include tablet-landscape {
+        height: $header-height-lg;
+    }
+
     .navbar {
         position: fixed;
         height: $header-height-sm;
         width: 100%;
         margin: 0px;
+
+        @include tablet-landscape {
+            height: $header-height-lg;
+        }
 
         .container-fluid {
             height: 100%;
@@ -35,6 +43,10 @@ header {
                     float: left;
                     height: 100%;
                     width: 70px;
+
+                    @include tablet-landscape {
+                        width: 120px !important;
+                    }
                 }
 
                 .title {
@@ -43,6 +55,11 @@ header {
                     height: calc(100% - 2px);
                     margin: 0px 16px;
                     color: #ed1848;
+
+                    @include tablet-landscape {
+                        display: inline-block !important;
+                    }
+
                     h3 {
                         font-weight: 800;
                         font-size: 1.4;
@@ -70,7 +87,6 @@ header {
         height: auto !important;
         /*margin-left: 0px !important;
         margin-right: 0px !important;*/
-
         @include tablet-portrait {
             height: 100% !important;
         }
@@ -82,8 +98,13 @@ header {
         margin-top: 1px !important;
 
         @include tablet-portrait {
+            height: calc(#{$header-height-sm} - 1px);
             margin-top: 0px !important;
             margin-right: 15px !important;
+        }
+
+        @include tablet-landscape {
+            height: calc(#{$header-height-lg} - 1px);
         }
 
         li {
@@ -97,7 +118,24 @@ header {
                 text-transform: capitalize;
                 background-color: transparent;
                 color: #000;
+
+                @include tablet-portrait {
+                    padding: 10px 20px;
+                }
+
+                @include tablet-landscape {
+                    padding: 15px 25px;
+                    font-size: 22px;
+                    line-height: 39px;
+                }
+
+                @include desktop {
+                    padding: 15px 30px;
+                    font-size: 24px;
+                    line-height: 39px;
+                }
             }
+
             &:hover > a {
                 color: #fff;
                 background-color: #4d9d2a;
@@ -132,9 +170,22 @@ header {
                 }
             }
 
-            &.flag-container {
+            &.flag-container {  // li
                 display: inline-block !important;
                 background: transparent;
+                height: 50px;
+
+                @include tablet-portrait {
+                    height: 100%;
+                }
+
+                &:first-child {
+                    margin-left: 5px !important;
+                }
+
+                &:last-child {
+                    margin-right: 5px !important;
+                }
 
                 &:hover {
                     background-color: transparent !important;
@@ -146,26 +197,34 @@ header {
                 a.flag {
                     display: inline-block;
                     margin: 0px;
-//                    padding: 15px 30px;
                     text-decoration: none;
                     cursor: pointer;
 
+                    @inlcude tablet-portrait {
+                        padding: 13px 20px;
+                    }
+
+                    @include tablet-landscape {
+                        padding: 20px 20px !important;
+                    }
+
+
                     &.active {
-                        background: transparent;
-                        box-shadow: none;
+                        background-color: #fdfdfd;
+                        box-shadow: inset 1px 1px 2px #ddd, inset -1px -1px 2px #ddd;
                     }
 
                     &:before {
                         content: '';
                         display: inline-block;
                         background-repeat: no-repeat;
-                        width: 16px;
-                        height: 11px;
+                        width: 24px;
+                        height: 24px;
                     }
                     &.flag-de:before { background-image: url(/media/de.png); }
                     &.flag-en:before { background-image: url(/media/gb.png); }
                     &.active:before {
-                        box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888;
+                        //box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888;
                     }
                     &:hover {
                         background-color: transparent;
@@ -183,49 +242,22 @@ header {
         & > li + li {
             margin-left: 0px;
         }
-    }
+        & > li + li.flag-container {
+            margin-left: 0px;
 
-    .nav.flag-container {
-        display: inline-block;
-        height: 100%;
-        padding: 9px 30px;
-
-        li {
-            &:hover {
-                background-color: transparent;
+            @inlude tablet-landscape {
+                margin-left: 10px;                
             }
-            &.active {
-                //background: #ddd;
-            }
-
-            a.flag {
-                display: inline-block;
-                margin: 0px 3px;
-                text-decoration: none;
-                cursor: pointer;
-                &:before {
-                    content: '';
-                    display: inline-block;
-                    background-repeat: no-repeat;
-                    width: 16px;
-                    height: 11px;
-                }
-                &.flag-de:before { background-image: url(/media/de.png); }
-                &.flag-en:before { background-image: url(/media/gb.png); }
-                &.active:before {
-                    box-shadow: 1px 1px 4px #888, -1px -1px 4px #888, 1px -1px 4px #888, -1px 1px 4px #888;
-                }
-                &:hover {
-                    background-color: transparent;
-                    &:before { transform: scale(1.1); }
-                }
-                &.active:hover {
-                    &:before { transform: none; }
-                }
+            @include desktop {
+                margin-left: 40px;
             }
 
         }
+        & > li.flag-container + li.flag-container {
+            margin-left: 0px;
+        }
     }
+
 
     ul.nav.navbar-second-level {
         float: right;
@@ -242,70 +274,4 @@ header {
     }
 
 }
-
-
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-$screen-lg-min: 1200px;
-$screen-xl-min: 1530px;
-
-
-@media (min-width: $screen-sm-min) {
-
-    header {
-        ul.nav.menu {
-            height: calc(#{$header-height-sm} - 1px);
-
-            li {
-                & > a {
-                    padding: 10px 20px;
-                }
-            }
-        }
-    }
-
-}
-
-@media (min-width: $screen-md-min) {
-
-    header {
-        height: $header-height-lg;
-
-        .navbar {
-            height: $header-height-lg;
-        }
-
-        .navbar-header {
-
-            img {
-                width: 120px !important;
-            }
-
-            .title {
-                display: inline-block !important;
-            }
-        }
-        ul.nav.menu {
-            height: calc(#{$header-height-lg} - 1px);
-
-            li {
-                & > a {
-                    padding: 15px 30px;
-                    font-size: 22px;
-                    line-height: 39px;
-                }
-            }
-
-            a.flag {
-                padding: 14px 20px !important;
-            }
-        }
-    }
-
-}
-
-
-
-
-
 

@@ -12,7 +12,7 @@
 
     .intro {
         padding: 5px;
-        margin: 6px 0px 3px;
+        margin: 6px 10px 3px;
         position: relative;
         box-shadow: 2px 2px 5px #999, -2px 2px 5px #999;
         left: 1000px;
@@ -28,7 +28,7 @@
         }
 
         p {
-            font-size: 12px;
+            font-size: 11px;
 
             @include tablet-portrait-strict {
                 font-size: 18px;
@@ -44,57 +44,25 @@
         }
     }
 
-    .video-container-outer {
-        width: 100%;
-        height: 230px;
-        padding: 10px 0px;
-        text-align: center;
-        box-shadow: 2px 2px 5px #888, -2px -2px 5px #888, -2px 2px 5px #888, 2px -2px 5px #888;
-        box-shadow: 2px 2px 5px #999, -2px 2px 5px #999;
-        @include linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,1));
-        position: relative;
-        left: -1000px;
-
-        @include tablet-strict {
-            height: 320px;
-        }
-        @include desktop {
-            height: 420px;
-        }
-    }
-
-    .video-container {
-        display: inline-block;
-        height: 210px;
-        width: 237px;
-        margin: auto;
-
-        @include tablet-strict {
-            height: 300px;
-            width: 336px;
-        }
-        @include desktop {
-            height: 400px;
-            width: 448px;
-        }
-    }
-
     .message {
-        padding: 5px;
+        padding: 3px;
         left: 1000px;
         z-index: 999;
         left: 1000px;
         box-shadow: 2px 2px 5px #555, -2px 2px 5px #555;
         position: relative;
         display: block;
-        margin: 4px -5px 6px 20px;
+        margin: 0px -9px 6px 0px;
         width: auto;
         text-align: center;
+        top: -10px;
 
         @include tablet-portrait {
             position: absolute;
             width: 370px;
             margin: 15px 80px 20px calc(100% - 360px);
+            padding: 5px;
+            top: auto;
         }
         @include desktop {
             padding: 10px;
@@ -105,6 +73,42 @@
 
             @include tablet-portrait {
                 font-size: 16px;
+            }
+        }
+    }
+
+    .video-container-outer {
+        width: 100%;
+        height: 180px;        
+        text-align: center;
+        box-shadow: 2px 2px 5px #888, -2px -2px 5px #888, -2px 2px 5px #888, 2px -2px 5px #888;
+        box-shadow: 2px 2px 5px #999, -2px 2px 5px #999;
+        @include linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,1));
+        position: relative;
+        left: -1000px;
+
+        @include tablet-strict {
+            height: 320px;
+            padding: 10px 0px;
+        }
+        @include desktop {
+            height: 420px;
+            padding: 10px 0px;
+        }
+
+         .video-container {
+            display: inline-block;
+            height: 180px;
+            width: 237px;
+            margin: auto;            
+
+            @include tablet-strict {
+                height: 300px;
+                width: 336px;
+            }
+            @include desktop {
+                height: 400px;
+                width: 448px;
             }
         }
     }

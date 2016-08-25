@@ -12,7 +12,7 @@ html(lang=locale)
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width')
-    title= title
+    title #{__('mgrp-title')}
 
     block css
       //-<!-- build:css (./public) /css/rp-style.min.css -->
@@ -54,7 +54,7 @@ html(lang=locale)
                       span.icon-bar
                     a.navbar-brand(href='#')
                       img(src='/media/moregrasp-logo.jpg')
-                      div.title:  h3(data-i18n='mgrp-title')=title
+                      div.title:  h3(data-i18n='mgrp-title') #{__('mgrp-title')}
                   #mg-navbar-collapse.navbar-collapse.collapse(aria-expanded=true)
                     ul.nav.navbar-nav.navbar-right.menu
                         +nav_tab('home')
@@ -72,9 +72,9 @@ html(lang=locale)
 
     block cookie_consent
       .cookie-wrapper(style={display:'none'})
-        p.message This website uses cookies to ensure you get the best experience
-        a(href='#') More Info
-        a#btn-got-it.btn.btn-primary-mg(href='#') Got it
+        p.message #{__('mgrp-cookies-message')}
+        a(href='#') #{__('mgrp-cookies-more')}
+        a#btn-got-it.btn.btn-primary-mg(href='#') #{__('mgrp-cookies-got-it')}
 
       
     block js

@@ -1,19 +1,36 @@
 /////////////// REGISTRATION FORM
 
 .nav-panel#register {
-    box-shadow: 2px 2px 5px #888, -2px 2px 5px #888;
-//    top: 15px;
+
+    @include tablet-portrait {
+            box-shadow: 2px 2px 5px #888, -2px 2px 5px #888;        
+    }
 
     .form-section {
-//        height: auto;
-        height: 335px;
+        height: auto;
         overflow-x: hidden;
-        margin-top: 15px;
+        
+        @include tablet-portrait {
+            height: 335px;
+        }
+        @include tablet-landscape {
+            height: calc(100% - 150px) !important;
+        }
+
+
 
         .input-panel {
             @extend .col-sm-12, .col-md-12, .col-lg-10, .col-lg-offset-1;
             margin-bottom: 10px;
             text-align: left;
+            padding-top: 15px;
+            padding-left: 0px;
+            padding-right: 0px;
+
+            @include tablet-portrait {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
 
             h4, h5 {
                 font-weight: bold;
@@ -35,12 +52,16 @@
             }
 
             .row {
-                margin: 24px 0px 0px;
+                margin: 15px 0px 0px;
             }
 
             .form-group {
                 @extend .col-xs-12, .col-sm-6, .col-md-6, .col-lg-6;
-                margin-bottom: 25px;
+                margin-bottom: 10px;
+
+                @include tablet-portrait {
+                    margin-bottom: 25px;
+                }
 
                 label {
                     font-size: 1.5em;
@@ -60,13 +81,14 @@
             }
 
             .toggle-wrapper {
-                @extend .col-xs-12, .col-sm-2, .col-md-2, .col-lg-2;
+                @extend .col-xs-3, .col-sm-2, .col-md-2, .col-lg-2;
                 padding-left: 0px;
                 padding-right: 0px;
             }
 
-             .toggle {
+            .toggle {
                 float: left;
+                display: inline-block;
 
                 label {
                     font-size: 1.0em;
@@ -92,7 +114,7 @@
 
 
             .terms-container {
-                height: 400px;
+                height: 300px;
                 width: 100%;
                 border-radius: 4px;
                 border: 1px solid #ddd;
@@ -130,19 +152,26 @@
 
             .accept-terms-container {
                 float: left;
+                width: 100%;
                 margin: 10px 0px;
                 padding: 5px;
 
-//                input[type="checkbox"] {
-//                    margin: 4px;
-//                }
+                @include tablet-portrait {
+                    margin: 10px 0px;
+                }
 
-                #lblTermsAccepted {
-                    margin: 10px;
-                    margin-right: 20px;
+                #lblTermsAccepted {                    
+                    display: inline-block;
+                    width: auto;
                     font-size: 1.2em;
                     font-weight: bold;
                     float: left;
+
+                    @include tablet-portrait {
+                        margin: 5px;
+                        margin-right: 20px;     
+                        font-size: 1.3em;
+                    }
                 }
             }
 
@@ -172,7 +201,7 @@
             label {
 //                font-size: 1.1em;
                 &.question {
-                    @extend .col-xs-offset-0, .col-xs-10, .col-sm-offset-2, .col-sm-6, .col-md-offset-2, .col-md-6, .col-lg-offset-2, .col-lg-6;
+                    @extend .col-xs-offset-0, .col-xs-9, .col-sm-offset-2, .col-sm-6, .col-md-offset-2, .col-md-6, .col-lg-offset-2, .col-lg-6;
                     text-align: left;
                     margin-top: 8px;
                     padding-left: 0px !important;
@@ -362,12 +391,14 @@
 
     /** control area **/
     .controls-section {
-        position: relative;
-        //    bottom: -10px;
-        height: 135px;
-        margin-top: 10px;
-        padding: 10px 0px;
+        position: relative;        
+        margin: 10px auto;
         text-align: center;
+
+        @include tablet-portrait {
+            height: 135px;
+            padding: 10px 0px;
+        }
 
         .progress {
             width: 70%;
@@ -442,31 +473,6 @@ $desktop: "(min-width: 1025px)";
 
 @media #{$tablet-landscape} {
 
-    .form-section {
-        height: calc(100% - 150px) !important;
-    }
-
-    .input-panel {
-//        h4 {
-//            font-size: 1.5em;
-//        }
-//        h5 {
-//            font-size: 1.2em;
-//        }
-//        .row {
-//            margin: 15px 0px 0px !important;
-//        }
-//
-//        .form-group label, label.question, p.explanation {
-//            font-size: 1.2em !important;
-//        }
-//
-//        label.answer {
-//            font-size: 1em !important;
-//        }
-
-    }
-
 
     .answer-container {
         &.sm {
@@ -487,9 +493,6 @@ $desktop: "(min-width: 1025px)";
 @media #{$desktop} {
 
     .input-panel {
-        row {
-            margin: 15px 0px;
-        }
 
         h4 {
             font-size: 1.5em;

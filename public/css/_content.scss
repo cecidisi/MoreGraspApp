@@ -4,10 +4,11 @@ $height-lg: 70px;
 .content {
     display: block;
     position: relative;
-    height: calc(100% - 65px);
+    height: calc(100% - 50px);
 
     @include tablet-portrait {
         top: 10px;
+        height: calc(100% - 65px);
     }
     @include tablet-landscape {
         height: calc(100% - 85px) !important;

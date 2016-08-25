@@ -57,10 +57,17 @@ html {
 /* Space out content a bit */
 body {
     width: 100%;
-    height: auto;
-    margin-bottom: $header-height-sm;
-    font-size: 1.3em;
+    //height: auto;
+    height: calc(100% - 25px);
+    margin-bottom: 25px;    
+    //margin-bottom: $header-height-sm;
+    font-size: 1.1em;
     overflow-y: hidden;
+
+    @include tablet-portrait {
+        height: calc(100% - 60px);
+        margin-bottom: 60px;    
+    }
 }
 
 p {
@@ -105,9 +112,16 @@ label {
 .container {
     height: 100%;
 //    width: calc(100% - 20px);
-    overflow-y: hidden !important;
+    overflow-y: auto;
     padding-bottom: 5px;
-//    padding-top: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    @include tablet-portrait {
+        overflow-y: hidden !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .bg-mg {
@@ -120,9 +134,8 @@ label {
 .nav-panel {
     @extend .col-sm-12, .col-md-12, .col-lg-12;
     height: 100%;
-//    margin-top: 15px;
     position: relative;
-//    top: 15px;
+
     &.fade { display: none !important; }
 }
 
@@ -132,12 +145,18 @@ label {
     position: relative;
 //    bottom: -10px;
     height: 35px;
-    margin: 20px 0px 10px 0px;
+    margin-top: 10px;
     text-align: center;
+
+    @include tablet-portrait {
+        margin: 20px 0px 10px 0px;
+    }
+
     .btn {
         min-width: 83px;
         margin: 0px 2px;
     }
+
 }
 
 
@@ -228,11 +247,6 @@ $screen-xl-min: 1530px;
 
 
 @media (min-width: $screen-sm-min) {
-    body {
-        height: calc(100% - 60px);
-        margin-bottom: 60px;
-//        font-size: 1.1em;
-    }
 
     .container {
         width: calc(100% - 30px);
@@ -243,10 +257,6 @@ $screen-xl-min: 1530px;
     }
 }
 
-
-@media (min-width: $screen-md-min) {
-//    body { font-size: 1.2em; }
-}
 
 
 @media (min-width: $screen-lg-min) {

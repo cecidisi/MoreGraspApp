@@ -36,7 +36,6 @@ var FilterView = (function(){
         }).on('dp.change', function(e){
             //$('#datetimepickerFrom').data('DateTimePicker').maxDate(e.date);
         });
-
     }
 
 
