@@ -7,7 +7,7 @@
     "components"
   ],
   "dependencies": {
-    "bootstrap-sass": "bootstrap-sass-official#~3.3.6",
+    "bootstrap-sass": "bootstrap-sass-official#3.3.6",
     "bootstrap-toggle": "~2.2.1",
     "eonasdan-bootstrap-datetimepicker": "~4.17.37",
     "font-awesome": "~4.5.0",
