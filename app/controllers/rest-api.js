@@ -66,8 +66,6 @@ router.post('/login', function(req, res, next){
 
 
 
-
-
 var emailUsers = function(cb) {
 
     var transporter = nodemailer.createTransport({

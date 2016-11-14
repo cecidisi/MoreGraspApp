@@ -50,6 +50,12 @@ mkdirp('/public/uploads', function(err){
 });
 
 var app = express();
+app.use(function(req, res, next) {
+    console.log('In app.js I SHOULD ALLOW CORS!!!');
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 // invokes express
 require('./config/express')(app, config);
 
