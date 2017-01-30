@@ -1,6 +1,6 @@
 
 .cookie-wrapper {
-    @extend .affix-bottom, .col-xs-12;
+    @extend .col-xs-12; //.affix-bottom
     position: absolute;
     bottom: 0;
     padding: 20px;

@@ -71,7 +71,7 @@ html(lang=locale)
       .container:  p © MoreGrasp 2016
 
     block cookie_consent
-      .cookie-wrapper(style={display:'none'})
+      .cookie-wrapper.affix-bottom(style={display:'none'})
         p.message #{__('mgrp-cookies-message')}
         a(href='#') #{__('mgrp-cookies-more')}
         a#btn-got-it.btn.btn-primary-mg(href='#') #{__('mgrp-cookies-got-it')}

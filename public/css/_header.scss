@@ -2,7 +2,7 @@ $header-height-lg: 70px;
 $header-height-sm: 50px;
 
 header {
-    @extend .affix-top;
+    // @extend .affix-top;
     display: block;
     top: 0px;
     height: $header-height-sm;
